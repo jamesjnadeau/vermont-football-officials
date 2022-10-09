@@ -2,10 +2,6 @@
 title: Information for New Folks
 date: 2022-10-09T11:55:00.000Z
 ---
-Title: Information for new folks
-Date: 2022-09-21 12:00
-Category: Information
-
 ## Rule Book
 
 It's important to know the rules by heart. Many veteran officials can quote the rule book by memory and recite the rule number. It's helpful to have a good understanding of these rules when resolving conflicts with teams, as being able to quote from memory saves everyone time, and makes you look more professsional.
