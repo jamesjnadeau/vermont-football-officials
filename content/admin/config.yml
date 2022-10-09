@@ -8,7 +8,7 @@ media_folder: "content/uploads" # Media files will be stored in the repo under s
 public_folder: "/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+  - name: "information" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Information" # Used in the UI, ie.: "New Post"
     folder: "content/information" # The path to the folder where the documents are stored
     format: frontmatter
