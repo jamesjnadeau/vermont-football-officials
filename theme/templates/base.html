@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="{{ AUTHOR }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link href="{{ SITEURL }}/theme/css/default.css" rel="stylesheet">
+    
+
+    <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ SITEURL }}/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ SITEURL }}/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ SITEURL }}/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+    {% if FEED_RSS %}
+    <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+
+    <link href="/files/config.yml" type="text/yaml" rel="cms-config-url">
+
+  </head>
+
+  <body>
+
+    <header class="bg-dark text-white d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 px-3 mb-4 border-bottom">
+      <a href="{{ SITEURL }}/index.html" class="text-white d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
+        <img src="{{ SITEURL }}/theme/images/vermont.svg"style="max-height: 2em" />
+        {{ SITENAME }} 
+        {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}
+      </a>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          {% for title, link in MENUITEMS %}
+              <li><a class="text-white text-decoration-none" href="{{ link }}">{{ title }}</a></li>
+          {% endfor %}
+          {% if DISPLAY_PAGES_ON_MENU %}
+            {% for page in pages %}
+              <li><a class="text-white text-decoration-none" href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+            {% endfor %}
+            <li class="divider-vertical"></li>
+          {% endif %}
+          {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% for cat, null in categories %}
+                <li {% if cat == category %}class="active"{% endif %}>
+                  <a class="text-white text-decoration-none" href="{{ SITEURL }}/{{ cat.url }}">
+                    {{ cat }}
+                  </a>
+                </li>
+            {% endfor %}
+          {% endif %}
+
+        </ul>
+
+        <ul class="nav pull-right">
+          <li><a class="text-white text-decoration-none" href="{{ SITEURL }}/pages/contact-us.html">Contact Us</a></li>
+        </ul>
+        
+    </header>
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-8" id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        {#
+          <div class="span3 well sidebar-nav" id="sidebar">
+            {% include 'sidebar.html' %}
+          </div>/.well 
+        #}
+
+      </div>
+
+    </div>
+
+
+    {% include 'analytics.html' %}
+    {% include 'piwik.html' %}
+    {% include 'disqus_script.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

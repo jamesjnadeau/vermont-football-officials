@@ -1,0 +1,18 @@
+body {
+    background: repeating-linear-gradient(
+        to right,
+        #fff 0px,
+        #fff 40px,
+        #ddd 40px,
+        #ddd 80px
+      );
+}
+
+#content {
+    padding: 1em;
+    background-color: #fff;
+}
+
+.hidden {
+    display: none;
+}
