@@ -1,5 +1,6 @@
-Title: Contact Us
-
+---
+title: Contact Us
+---
 
 
 Use the form below with questions or for more information on joining.
