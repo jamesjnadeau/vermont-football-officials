@@ -17,8 +17,8 @@ You can find the rules:
 
 Some example Quizes that are helpful to test yourself:
 
-- [Quiz 1]({static}uploads/1ST YEAR OFFICIALS - Quiz 1.docx)
-- [Quiz 2]({static}uploads/1ST YEAR OFFICIALS - Quiz 2.docx)
+- [Quiz 1](/uploads/1ST YEAR OFFICIALS - Quiz 1.docx)
+- [Quiz 2](/uploads/1ST YEAR OFFICIALS - Quiz 2.docx)
 
 ## Uniforms
 
