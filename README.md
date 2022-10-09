@@ -5,7 +5,7 @@
 ```
 conda create --name pelican python=3.9
 conda activate pelican
-python -m pip install "pelican[markdown]" python-gettext
+python -m pip install "pelican[markdown]"
 ```
 
 # DEV
