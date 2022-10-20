@@ -5,24 +5,16 @@
         <meta name="charset" charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="date" content="2015-09-09" />
+        
         <title>Content Manager</title>
+
         <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
     </head>
 
     <body>
         <!-- Netlify Auth -->
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        <script>
-            if (window.netlifyIdentity) {
-              window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                  window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                  });
-                }
-              });
-            }
-        </script>
+        <script src="/admin/login.js"></script>
 
         <!-- Include the script that builds the page and powers Netlify CMS -->
         <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
@@ -47,9 +39,9 @@
           CMS.registerPreviewTemplate("information", PostPreview);
           CMS.registerPreviewTemplate("pages", PostPreview);
         </script>
-        
-                  
 
+        
+        
     </body>
 
 </html>

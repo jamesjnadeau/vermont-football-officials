@@ -1,0 +1,26 @@
+{
+  "name": "vermont-football-officials",
+  "version": "1.0.0",
+  "description": "``` conda create --name pelican python=3.9 conda activate pelican python -m pip install \"pelican[markdown]\" ```",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesjnadeau/vermont-football-officials.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesjnadeau/vermont-football-officials/issues"
+  },
+  "homepage": "https://github.com/jamesjnadeau/vermont-football-officials#readme",
+  "dependencies": {
+    "knex": "^2.3.0",
+    "knex-serverless-postgres": "^1.0.5",
+    "pg": "^8.8.0",
+    "serverless-postgres": "^2.0.0"
+  }
+}

@@ -1,2 +1,6 @@
 output
 __pycache__
+node_modules
+.env
+# Local Netlify folder
+.netlify
