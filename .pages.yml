@@ -1,0 +1,38 @@
+# Configuration for Pages CMS (https://pagescms.org) — the editing UI at
+# https://app.pagescms.org. Editors log in with GitHub, pick this repo, and
+# get a simple form + rich-text editor. Saving commits to master, which
+# triggers the GitHub Pages deploy.
+
+media:
+  input: static/uploads
+  output: /uploads
+
+content:
+  - name: information
+    label: Information
+    description: Articles shown on the Information page and the home page.
+    type: collection
+    path: content/information
+    extension: md
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, date]
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Publish date
+        type: date
+        required: true
+        options:
+          time: false
+      - name: body
+        label: Body
+        type: rich-text
