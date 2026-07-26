@@ -25,9 +25,10 @@ const articles = files
     ...matter(readFileSync(path.join(DIR, f), 'utf8')),
   }));
 
-test('all four expected articles exist as markdown', () => {
+test('all expected articles exist as markdown', () => {
   const want = [
     '7-man-mechanics.md',
+    'football-rules-summary.md',
     'foul-weather-procedures.md',
     'information-for-new-folks.md',
     'recommend-reading.md',

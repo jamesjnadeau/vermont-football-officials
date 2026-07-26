@@ -1,14 +1,15 @@
-# Cliff Notes — 2025 NFHS Football Rules Book
+---
+title: Cliff Notes — 2025 NFHS Football Rules Book
+date: 2026-07-26
+---
 
-A condensed study guide to the full rules book. 
+A condensed study guide to the full rules book.
 
-Rule references
-(`9-4-3m`) are rule-section-article and match the source text; each heading links
-to the chapter file with the actual language. 
+Rule references (`9-4-3m`) are rule-section-article and match the source text.
 
-**This is a study aid, not an
-authority** — for any ruling that matters, read the rule itself, and remember
-that your state association is the only binding interpreter of these rules.
+**This is a study aid, not an authority** — for any ruling that matters, read the
+rule itself, and remember that your state association is the only binding
+interpreter of these rules.
 
 ---
 
