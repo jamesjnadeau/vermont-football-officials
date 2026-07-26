@@ -1,6 +1,6 @@
 ---
 title: Foul Weather Procedures
-date: 2023-09-08T12:35:02.577Z
+date: 2023-09-08
 ---
 
 

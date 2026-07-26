@@ -22,6 +22,8 @@ Editing:
 4. Click an article to edit it, or **Add an entry** to write a new one.
 5. Click **Save**. That's it — the site updates itself within a few minutes.
 
+If your change doesn't appear on the site after about 5 minutes, email James so he can take a look.
+
 To attach a PDF or document: use the **Media** section to upload it, then
 link to it from your article with the editor's link button.
 

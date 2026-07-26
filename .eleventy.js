@@ -36,7 +36,7 @@ export default async function (eleventyConfig) {
       loadPaths: ["./node_modules"],
       quietDeps: true,
       style: "compressed",
-      sourceMap: true,
+      sourceMap: process.env.NODE_ENV !== "production",
     },
   });
 

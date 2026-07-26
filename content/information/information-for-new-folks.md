@@ -1,6 +1,6 @@
 ---
 title: Information for New Folks
-date: 2022-10-09T11:55:00.000Z
+date: 2022-10-09
 ---
 ## Rule Book
 
