@@ -1,0 +1,20 @@
+// Bootstrap's default link blue is 4.15:1 on white, just short of the 4.5:1
+// WCAG AA threshold. Darken it so body links pass.
+@use "bootstrap/scss/bootstrap" with (
+  $link-color: #0a58ca,
+);
+
+// Referee-stripe background, carried over from the old Pelican theme.
+body {
+  background: repeating-linear-gradient(
+    to right,
+    #fff 0px,
+    #fff 40px,
+    #ddd 40px,
+    #ddd 80px
+  );
+}
+
+#content {
+  background-color: #fff;
+}

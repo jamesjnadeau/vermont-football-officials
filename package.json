@@ -1,26 +1,38 @@
 {
   "name": "vermont-football-officials",
-  "version": "1.0.0",
-  "description": "``` conda create --name pelican python=3.9 conda activate pelican python -m pip install \"pelican[markdown]\" ```",
-  "main": "index.js",
+  "description": "Website of the Vermont Football Officials, built with Eleventy.",
   "type": "module",
-  "scripts": {
-    "dev": "netlify dev"
+  "version": "1.0.0",
+  "private": true,
+  "license": "WTFPL",
+  "engines": {
+    "node": ">=24"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesjnadeau/vermont-football-officials.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jamesjnadeau/vermont-football-officials/issues"
+  "scripts": {
+    "dev": "eleventy --config .eleventy.js --serve",
+    "build": "npm run clean && NODE_ENV=production eleventy --config .eleventy.js",
+    "clean": "rm -rf _site",
+    "test": "npm run build && npm run test:content && npm run test:output && npm run test:html && npm run test:links",
+    "test:content": "node --test \"test/content/frontmatter.test.js\"",
+    "test:output": "node --test \"test/content/output.test.js\"",
+    "test:html": "html-validate \"_site/**/*.html\"",
+    "test:links": "linkinator _site --recurse --silent --skip \"^https?://\""
   },
-  "homepage": "https://github.com/jamesjnadeau/vermont-football-officials#readme",
   "dependencies": {
-    "knex": "^2.3.0",
-    "knex-serverless-postgres": "^1.0.5",
-    "pg": "^8.8.0",
-    "serverless-postgres": "^2.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-pug": "^1.0.0",
+    "bootstrap": "^5.3.3",
+    "eleventy-plugin-purgecss": "^0.5.0",
+    "eleventy-sass": "^3.0.0-beta.0",
+    "sass": "^1.85.1"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "html-validate": "^11.5.6",
+    "linkinator": "^8.0.2"
   }
 }

@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width,initial-scale=1.0')
+    meta(name='theme-color' content='#212529')
+    title=title
+    if description
+      meta(name='description', content=description)
+    link(rel='icon' type='image/svg+xml' href='/images/vermont.svg')
+    link(rel='stylesheet', href='/styles/main.css')
+
+  body
+    nav#header.navbar.navbar-expand-md.navbar-dark.bg-dark
+      .container.p-2
+        a.navbar-brand.d-flex.align-items-center(href='/')
+          img.me-2(src='/images/vermont.svg' alt='' height='32')
+          | Vermont Football Officials
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#mainNav' aria-controls='mainNav' aria-label='Toggle main navigation')
+          span.navbar-toggler-icon
+        #mainNav.navbar-collapse.collapse
+          .navbar-nav.ms-auto
+            a.nav-item.nav-link.text-white.p-2(href='/information/') Information
+            a.nav-item.nav-link.text-white.p-2(href='/contact/') Contact Us
+    main#content.container.my-4.p-4.bg-white.rounded.shadow-sm
+      | !{content}
+
+    script(src='/js/bootstrap.bundle.min.js')
