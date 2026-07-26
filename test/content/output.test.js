@@ -37,8 +37,18 @@ test('every page emits a meta description', () => {
   assert.deepEqual(bad, []);
 });
 
-test('front-end JS is self-hosted, not loaded from a CDN', () => {
-  const bad = html.filter((f) => /<script[^>]+src="https?:\/\//.test(read(f)));
+// Third-party libraries (Bootstrap et al) must be self-hosted from node_modules.
+// Our own services are exempt: their widget script has to be served from the same
+// origin as the API it talks to, so it can't be vendored into the build.
+const FIRST_PARTY_SCRIPT_HOSTS = ['rules-bot.james-nadeau.workers.dev'];
+
+test('front-end JS is self-hosted, not loaded from a third-party CDN', () => {
+  const bad = html.flatMap((f) => {
+    const remote = [...read(f).matchAll(/<script[^>]+src="(https?:\/\/[^"]+)"/g)].map((m) => m[1]);
+    return remote
+      .filter((url) => !FIRST_PARTY_SCRIPT_HOSTS.includes(new URL(url).host))
+      .map((url) => `${f}: ${url}`);
+  });
   assert.deepEqual(bad, []);
 });
 
