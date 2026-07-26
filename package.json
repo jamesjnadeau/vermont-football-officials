@@ -20,7 +20,7 @@
     "test:content": "node --test \"test/content/frontmatter.test.js\"",
     "test:output": "node --test \"test/content/output.test.js\"",
     "test:html": "html-validate \"_site/**/*.html\"",
-    "test:links": "linkinator _site --recurse --skip \"https://\""
+    "test:links": "linkinator _site --recurse --silent --skip \"^https?://(?!(localhost|127\\\\.0\\\\.0\\\\.1))\""
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
