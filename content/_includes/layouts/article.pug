@@ -1,0 +1,11 @@
+---
+layout: layouts/main.pug
+---
+
+article
+  h1= title
+  if date
+    p.text-secondary
+      time(datetime=new Date(date).toISOString())
+        | #{new Date(date).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}
+  | !{content}

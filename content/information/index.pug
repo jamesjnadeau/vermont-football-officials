@@ -1,0 +1,19 @@
+---
+title: Information | Vermont Football Officials
+description: Articles and resources for Vermont high school football officials.
+layout: layouts/main.pug
+eleventyExcludeFromCollections: true
+---
+
+h1 Information
+p.lead Articles and resources for Vermont high school football officials.
+div.list-group
+  - var byDate = function(a, b) { return new Date(b.date) - new Date(a.date); }
+  each item in (collections.information || []).slice().sort(byDate)
+    a.list-group-item.list-group-item-action(href=item.url)
+      .row
+        .col
+          | #{item.data.title}
+        .col-auto.text-secondary
+          time(datetime=new Date(item.date).toISOString())
+            | #{new Date(item.date).toLocaleDateString('en-US', { timeZone: 'UTC' })}

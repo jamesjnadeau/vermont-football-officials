@@ -17,12 +17,12 @@ You can find the rules:
 
 Some example Quizes that are helpful to test yourself:
 
-- [Quiz 1](/uploads/1ST YEAR OFFICIALS - Quiz 1.docx)
-- [Quiz 2](/uploads/1ST YEAR OFFICIALS - Quiz 2.docx)
+- [Quiz 1](/uploads/first-year-officials-quiz-1.docx)
+- [Quiz 2](/uploads/first-year-officials-quiz-2.docx)
 
 ## Uniforms
 
-Football is unique in that it likely requires a larger upfront investment of equipment then most other sports.  Luckily, you’ll likely be able to pay for your equipment through the first two weeks of youth games. \
+Football is unique in that it likely requires a larger upfront investment of equipment then most other sports.  Luckily, you’ll likely be able to pay for your equipment through the first two weeks of youth games.
 
 - Jersey – 2 inch striped shirt. For the first few weeks you will be fine with a short sleeve shirt. Late September you will likely require a long sleeve as the weather gets colder. My favorite brand is Smittys. See below for options.
 - Pants – Eventually you will need the required black pants with the white stripe down the side.  Again, I prefer Smitty’s but there are many brands out there.  They come needing to be hemmed, so in the meantime you will be fine with black shorts. 
