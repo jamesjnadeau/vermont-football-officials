@@ -63,6 +63,27 @@ test('the stylesheet was compiled and is real CSS, not HTML-wrapped', () => {
   assert.ok(!read(css).includes('<html'), 'main.css contains HTML — css.liquid layout not applied');
 });
 
+// The Quizzes landing page is generated from the `quizzes` collection, so a new
+// quiz file should appear there with no other edit. Guards the data file/tag wiring.
+test('the quizzes landing page links every quiz that was built', () => {
+  const page = path.join(SITE, 'quizzes', 'index.html');
+  assert.ok(existsSync(page), 'missing _site/quizzes/index.html');
+  const listed = read(page);
+  const built = readdirSync(path.join(SITE, 'quizzes'), { recursive: true })
+    .map(String)
+    .filter((f) => f.endsWith('index.html') && f !== 'index.html')
+    .map((f) => `/quizzes/${path.dirname(f)}/`);
+  assert.ok(built.length > 0, 'no quiz pages were built');
+  assert.deepEqual(built.filter((url) => !listed.includes(`href="${url}"`)), []);
+});
+
+// Authoring docs, not pages — and their relative .md links would 404 if published.
+test('quiz authoring docs are not published', () => {
+  for (const f of ['quizzes/README/index.html', 'quizzes/asked-questions/index.html']) {
+    assert.ok(!existsSync(path.join(SITE, f)), `${f} should not be published`);
+  }
+});
+
 test('kept static assets are copied through', () => {
   for (const f of [
     'images/vermont.svg',

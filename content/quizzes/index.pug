@@ -1,0 +1,24 @@
+---
+title: Quizzes | Vermont Football Officials
+description: Study quizzes for Vermont high school football officials, drawn from the NFHS Football Rules Book and Case Book.
+layout: layouts/main.pug
+eleventyExcludeFromCollections: true
+---
+
+h1 Quizzes
+p.lead Study quizzes drawn from the NFHS Football Rules Book and Case Book. Each one ends with a fully cited answer key.
+div.list-group
+  //- Sorted by title, so numbered quizzes list in order as new ones are added.
+  - var byTitle = function(a, b) { return String(a.data.title).localeCompare(String(b.data.title)); }
+  each item in (collections.quizzes || []).slice().sort(byTitle)
+    a.list-group-item.list-group-item-action(href=item.url)
+      .row
+        .col
+          div= item.data.title
+          if item.data.description
+            small.text-secondary= item.data.description
+        .col-auto.text-secondary.text-nowrap
+          if item.data.level
+            span= item.data.level
+          if item.data.questions
+            span  &middot; #{item.data.questions} questions

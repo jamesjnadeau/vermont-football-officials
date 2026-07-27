@@ -22,6 +22,11 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("title", default_title);
   eleventyConfig.addGlobalData("description", default_description);
 
+  // Authoring docs that sit beside the quiz content but aren't pages: the
+  // folder README and the ledger that keeps questions from being reused.
+  eleventyConfig.ignores.add("content/quizzes/README.md");
+  eleventyConfig.ignores.add("content/quizzes/asked-questions.md");
+
   // Copy static/ to the site root; self-host Bootstrap's JS so the built
   // site is self-contained and reproducible.
   eleventyConfig.addPassthroughCopy({ static: "/" });

@@ -1,0 +1,22 @@
+---
+layout: layouts/main.pug
+---
+
+article
+  h1= title
+  dl.row.text-secondary.small
+    if source
+      dt.col-sm-3 Source
+      dd.col-sm-9= source
+    if level
+      dt.col-sm-3 Level
+      dd.col-sm-9= level
+    if questions
+      dt.col-sm-3 Questions
+      dd.col-sm-9= questions
+    if scope
+      dt.col-sm-3 Scope
+      dd.col-sm-9= scope
+  p
+    a.btn.btn-outline-secondary.btn-sm(href='/quizzes/') &larr; All quizzes
+  | !{content}

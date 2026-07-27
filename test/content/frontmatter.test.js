@@ -70,3 +70,57 @@ test('article links point at the renamed uploads', () => {
     .map((a) => a.name);
   assert.deepEqual(bad, []);
 });
+
+// --- Quizzes -----------------------------------------------------------
+// README.md and asked-questions.md are authoring docs, not pages; Eleventy
+// ignores them (see .eleventy.js), so the front-matter rules don't apply.
+const QUIZ_DIR = fileURLToPath(new URL('../../content/quizzes/', import.meta.url));
+const NOT_A_QUIZ = new Set(['README.md', 'asked-questions.md']);
+
+const quizzes = readdirSync(QUIZ_DIR)
+  .filter((f) => f.endsWith('.md') && !NOT_A_QUIZ.has(f))
+  .map((f) => ({ name: f, ...matter(readFileSync(path.join(QUIZ_DIR, f), 'utf8')) }));
+
+test('quizzes/ contains quizzes', () => {
+  assert.ok(quizzes.length > 0, 'no quiz markdown found in content/quizzes/');
+});
+
+test('every quiz has the front matter the list and layout need', () => {
+  const required = ['title', 'description', 'source', 'level', 'questions'];
+  const bad = quizzes.flatMap((q) =>
+    required.filter((k) => q.data[k] === undefined).map((k) => `${q.name}: missing ${k}`),
+  );
+  assert.deepEqual(bad, []);
+});
+
+// Eleventy parses `date:` with Luxon, which requires ISO 8601.
+test('every quiz has an ISO 8601 date', () => {
+  const bad = quizzes
+    .filter((q) => {
+      const d = q.data.date;
+      if (d === undefined) return true;
+      const s = d instanceof Date ? d.toISOString() : String(d);
+      return !/^\d{4}-\d{2}-\d{2}/.test(s) || Number.isNaN(new Date(s).getTime());
+    })
+    .map((q) => `${q.name}: ${JSON.stringify(q.data.date)}`);
+  assert.deepEqual(bad, []);
+});
+
+// The quiz lists sort on title, so the number has to lead for them to stay in order.
+test('every quiz title starts with its number', () => {
+  const bad = quizzes.filter((q) => !/^Quiz \d{3} /.test(String(q.data.title))).map((q) => q.name);
+  assert.deepEqual(bad, []);
+});
+
+// layouts/quiz.pug renders the title; an H1 in the body would duplicate it.
+test('no quiz body repeats the title as an H1', () => {
+  const bad = quizzes.filter((q) => /^# /m.test(q.content)).map((q) => q.name);
+  assert.deepEqual(bad, []);
+});
+
+test('no editor artifacts in quiz bodies', () => {
+  const bad = quizzes
+    .filter((q) => /[\uFEFF\u200B]/.test(q.content) || /\\\s*$/m.test(q.content))
+    .map((q) => q.name);
+  assert.deepEqual(bad, []);
+});

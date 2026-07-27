@@ -1,0 +1,4 @@
+{
+    "tags": "quizzes",
+    "layout": "layouts/quiz.pug"
+}

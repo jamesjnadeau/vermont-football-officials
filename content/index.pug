@@ -17,11 +17,16 @@ div.list-group
           time(datetime=new Date(item.date).toISOString())
             | #{new Date(item.date).toLocaleDateString('en-US', { timeZone: 'UTC' })}
 
-
-h2.mt-4 Rules Bot 
-div 
-  script(type="module" src="https://rules-bot.james-nadeau.workers.dev/widget/rules-bot.js")
-  rules-bot(endpoint="https://rules-bot.james-nadeau.workers.dev")
+h2.mt-4 Quizzes
+div.list-group
+  - var byTitle = function(a, b) { return String(a.data.title).localeCompare(String(b.data.title)); }
+  each item in (collections.quizzes || []).slice().sort(byTitle)
+    a.list-group-item.list-group-item-action(href=item.url)
+      .row
+        .col
+          | #{item.data.title}
+        .col-auto.text-secondary.text-nowrap
+          | #{item.data.questions} questions
 
 p.mt-4
   | Interested in becoming an official? 

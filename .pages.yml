@@ -36,3 +36,55 @@ content:
       - name: body
         label: Body
         type: rich-text
+
+  - name: quizzes
+    label: Quizzes
+    description: Study quizzes listed on the Quizzes page and the home page.
+    type: collection
+    path: content/quizzes
+    extension: md
+    format: yaml-frontmatter
+    filename: "quiz-{primary}.md"
+    exclude: [README.md, asked-questions.md]
+    view:
+      fields: [title, level, questions]
+      sort: [title, date]
+      default:
+        sort: title
+        order: asc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: 'Start with the quiz number so the list stays in order, e.g. "Quiz 006 — Fouls on the Kick".'
+      - name: date
+        label: Publish date
+        type: date
+        required: true
+        options:
+          time: false
+      - name: description
+        label: Focus
+        type: string
+        required: true
+        description: One line shown under the title in the quiz list, and used as the page meta description.
+      - name: source
+        label: Source
+        type: string
+        required: true
+      - name: level
+        label: Level
+        type: select
+        options:
+          values: [Rookie, Intermediate, Expert]
+      - name: questions
+        label: Number of questions
+        type: number
+        required: true
+      - name: scope
+        label: Scope note
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
