@@ -32,6 +32,7 @@ test('all expected articles exist as markdown', () => {
     'football-rules-summary.md',
     'foul-weather-procedures.md',
     'information-for-new-folks.md',
+    'kicking-plays-crew-card.md',
     'recommend-reading.md',
   ];
   assert.deepEqual(articles.map((a) => a.name).sort(), want);
