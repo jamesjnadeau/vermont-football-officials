@@ -28,6 +28,7 @@ const articles = files
 test('all expected articles exist as markdown', () => {
   const want = [
     '7-man-mechanics.md',
+    'back-judge-position-card.md',
     'between-downs-crew-card.md',
     'clock-officials-cheat-sheet.md',
     'clock-timing-crew-card.md',
@@ -36,8 +37,12 @@ test('all expected articles exist as markdown', () => {
     'fouls-enforcement-crew-card.md',
     'information-for-new-folks.md',
     'kicking-plays-crew-card.md',
+    'line-judge-position-card.md',
+    'linesman-position-card.md',
     'recommend-reading.md',
+    'referee-position-card.md',
     'run-pass-plays-crew-card.md',
+    'umpire-position-card.md',
   ];
   assert.deepEqual(articles.map((a) => a.name).sort(), want);
 });
