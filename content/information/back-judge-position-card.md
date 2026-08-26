@@ -4,12 +4,11 @@ date: 2026-08-26
 ---
 
 Your spot, your keys and your jobs, situation by situation — the Back Judge's
-card for a crew of five.
+card for a crew of five. You are the white marker
+on every diagram.
 
 **[Download the Back Judge Position Card (PDF, 2 pages)](/uploads/back-judge-position-card.pdf)** —
-print at 100% on Letter, two-sided, flip on the long edge. The printable card
-also carries six field diagrams showing these positions; everything written on it
-is below.
+print at 100% on Letter, two-sided, flip on the long edge.
 
 Built from the OHSAA Gold Book Brief & Concise mechanics for a crew of 5, which
 follows the NFHS Officials Manual. **Associations amend these** — check Vermont's
@@ -30,6 +29,21 @@ guidance before teaching it.
 ## Run and pass
 
 *Snap between the –10 and the +10.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/back-judge/run.svg" alt="Run — the whole crew of five, with the Back Judge highlighted as the white marker seventeen yards off the line between the uprights." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Run</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/back-judge/pass.svg" alt="Pass — the whole crew of five, with the Back Judge highlighted as the white marker seventeen yards off the line, taking the inside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Pass</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 
@@ -72,6 +86,21 @@ guidance before teaching it.
 ## Kicks
 
 *Free kick and scrimmage kick.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/back-judge/kickoff.svg" alt="Kickoff — the whole crew of five, with the Back Judge highlighted as the white marker on the kicking team's 40, two yards out of bounds on the press box side." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Kickoff</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/back-judge/punt.svg" alt="Punt — the whole crew of five, with the Back Judge highlighted as the white marker eight wide and five deep of the returner." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Punt</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 
@@ -117,6 +146,21 @@ guidance before teaching it.
 ## Goal line and place kicks
 
 *Snap on or inside the +10 · tee on the field.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/back-judge/goal-line.svg" alt="Goal line — the whole crew of five, with the Back Judge highlighted as the white marker on the end line between the uprights." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Goal line</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/back-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Back Judge highlighted as the white marker under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Field goal &amp; try</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 

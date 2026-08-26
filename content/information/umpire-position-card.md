@@ -4,12 +4,11 @@ date: 2026-08-26
 ---
 
 Your spot, your keys and your jobs, situation by situation — the Umpire's card
-for a crew of five.
+for a crew of five. You are the white marker
+on every diagram.
 
 **[Download the Umpire Position Card (PDF, 2 pages)](/uploads/umpire-position-card.pdf)** —
-print at 100% on Letter, two-sided, flip on the long edge. The printable card
-also carries six field diagrams showing these positions; everything written on it
-is below.
+print at 100% on Letter, two-sided, flip on the long edge.
 
 Built from the OHSAA Gold Book Brief & Concise mechanics for a crew of 5, which
 follows the NFHS Officials Manual. **Associations amend these** — check Vermont's
@@ -30,6 +29,21 @@ guidance before teaching it.
 ## Run and pass
 
 *Snap between the –10 and the +10.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/umpire/run.svg" alt="Run — the whole crew of five, with the Umpire highlighted as the white marker seven yards off the line inside the tight ends." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Run</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/umpire/pass.svg" alt="Pass — the whole crew of five, with the Umpire highlighted as the white marker seven yards off the line inside the tight ends." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Pass</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 
@@ -75,6 +89,21 @@ guidance before teaching it.
 
 *Free kick and scrimmage kick.*
 
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/umpire/kickoff.svg" alt="Kickoff — the whole crew of five, with the Umpire highlighted as the white marker on the receiving team's restraining line at the 50, two yards out of bounds opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Kickoff</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/umpire/punt.svg" alt="Punt — the whole crew of five, with the Umpire highlighted as the white marker seven yards off the line inside the ends, opposite the Referee." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Punt</figcaption>
+    </figure>
+  </div>
+</div>
+
 ### What you do
 
 - Kickoff: the receivers' restraining line — the 50 — two yards out of bounds,
@@ -116,6 +145,21 @@ guidance before teaching it.
 ## Goal line and place kicks
 
 *Snap on or inside the +10 · tee on the field.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/umpire/goal-line.svg" alt="Goal line — the whole crew of five, with the Umpire highlighted as the white marker seven yards off the line inside the ends." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Goal line</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/umpire/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Umpire highlighted as the white marker under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Field goal &amp; try</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 

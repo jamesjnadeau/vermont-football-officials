@@ -4,12 +4,11 @@ date: 2026-08-26
 ---
 
 Your spot, your keys and your reads, situation by situation — the Linesman's card
-for a crew of five. You work the sideline opposite the press box.
+for a crew of five. You work the sideline opposite the press box. You are the white marker
+on every diagram.
 
 **[Download the Linesman Position Card (PDF, 2 pages)](/uploads/linesman-position-card.pdf)** —
-print at 100% on Letter, two-sided, flip on the long edge. The printable card
-also carries six field diagrams showing these positions; everything written on it
-is below.
+print at 100% on Letter, two-sided, flip on the long edge.
 
 Built from the OHSAA Gold Book Brief & Concise mechanics for a crew of 5, which
 follows the NFHS Officials Manual. **Associations amend these** — check Vermont's
@@ -30,6 +29,21 @@ guidance before teaching it.
 ## Run and pass
 
 *Snap between the –10 and the +10.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/linesman/run.svg" alt="Run — the whole crew of five, with the Linesman highlighted as the white marker ten yards outside the widest offensive player on the sideline opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Run</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/linesman/pass.svg" alt="Pass — the whole crew of five, with the Linesman highlighted as the white marker ten yards outside the widest offensive player, taking the outside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Pass</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 
@@ -73,6 +87,21 @@ guidance before teaching it.
 
 *Free kick and scrimmage kick.*
 
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/linesman/kickoff.svg" alt="Kickoff — the whole crew of five, with the Linesman highlighted as the white marker on the goal line on the sideline opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Kickoff</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/linesman/punt.svg" alt="Punt — the whole crew of five, with the Linesman highlighted as the white marker on his own sideline at the line of scrimmage." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Punt</figcaption>
+    </figure>
+  </div>
+</div>
+
 ### What you do
 
 - Kickoff: the goal line on your sideline. Move up to the 10 if that team's first
@@ -114,6 +143,21 @@ guidance before teaching it.
 ## Goal line and place kicks
 
 *Snap on or inside the +10 · tee on the field.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/linesman/goal-line.svg" alt="Goal line — the whole crew of five, with the Linesman highlighted as the white marker two yards outside the sideline, standing on the goal line." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Goal line</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/linesman/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Linesman highlighted as the white marker on the field numbers at the line of scrimmage." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Field goal &amp; try</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 

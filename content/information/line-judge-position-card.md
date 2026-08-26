@@ -4,12 +4,11 @@ date: 2026-08-26
 ---
 
 Your spot, your keys and your reads, situation by situation — the Line Judge's
-card for a crew of five. You work the press box sideline and you own the clock.
+card for a crew of five. You work the press box sideline and you own the clock. You are the white marker
+on every diagram.
 
 **[Download the Line Judge Position Card (PDF, 2 pages)](/uploads/line-judge-position-card.pdf)** —
-print at 100% on Letter, two-sided, flip on the long edge. The printable card
-also carries six field diagrams showing these positions; everything written on it
-is below.
+print at 100% on Letter, two-sided, flip on the long edge.
 
 Built from the OHSAA Gold Book Brief & Concise mechanics for a crew of 5, which
 follows the NFHS Officials Manual. **Associations amend these** — check Vermont's
@@ -30,6 +29,21 @@ guidance before teaching it.
 ## Run and pass
 
 *Snap between the –10 and the +10.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/line-judge/run.svg" alt="Run — the whole crew of five, with the Line Judge highlighted as the white marker ten yards outside the widest offensive player on the press box sideline." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Run</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/line-judge/pass.svg" alt="Pass — the whole crew of five, with the Line Judge highlighted as the white marker ten yards outside the widest offensive player, taking the outside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Pass</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 
@@ -75,6 +89,21 @@ sideline — never into the field.*
 
 *Free kick and scrimmage kick.*
 
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/line-judge/kickoff.svg" alt="Kickoff — the whole crew of five, with the Line Judge highlighted as the white marker on the goal line on the press box sideline." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Kickoff</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/line-judge/punt.svg" alt="Punt — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage until the kick crosses it." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Punt</figcaption>
+    </figure>
+  </div>
+</div>
+
 ### What you do
 
 - Kickoff: the goal line on the press box sideline. Stand at the field numbers
@@ -118,6 +147,21 @@ sideline — never into the field.*
 ## Goal line and place kicks
 
 *Snap on or inside the +10 · tee on the field.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/line-judge/goal-line.svg" alt="Goal line — the whole crew of five, with the Line Judge highlighted as the white marker two yards outside the sideline, standing on the goal line." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Goal line</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/line-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Line Judge highlighted as the white marker on the field numbers at the line of scrimmage." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Field goal &amp; try</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 

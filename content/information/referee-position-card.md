@@ -4,12 +4,11 @@ date: 2026-08-26
 ---
 
 Your spot, your keys and your voice, situation by situation — the white hat's
-card for a crew of five.
+card for a crew of five. You are the white marker
+on every diagram.
 
 **[Download the Referee Position Card (PDF, 2 pages)](/uploads/referee-position-card.pdf)** —
-print at 100% on Letter, two-sided, flip on the long edge. The printable card
-also carries six field diagrams showing these positions; everything written on it
-is below.
+print at 100% on Letter, two-sided, flip on the long edge.
 
 Built from the OHSAA Gold Book Brief & Concise mechanics for a crew of 5, which
 follows the NFHS Officials Manual. **Associations amend these** — check Vermont's
@@ -30,6 +29,21 @@ guidance before teaching it.
 ## Run and pass
 
 *Snap between the –10 and the +10.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/referee/run.svg" alt="Run — the whole crew of five, with the Referee highlighted as the white marker 15 yards behind the line and 8 wide of the quarterback on the wide side." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Run</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/referee/pass.svg" alt="Pass — the whole crew of five, with the Referee highlighted as the white marker 15 back and 8 wide, holding a five-yard cushion on the passer." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Pass</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 
@@ -71,6 +85,21 @@ guidance before teaching it.
 ## Kicks
 
 *Free kick and scrimmage kick.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/referee/kickoff.svg" alt="Kickoff — the whole crew of five, with the Referee highlighted as the white marker straddling the receiving team's goal line in the middle of the field." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Kickoff</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/referee/punt.svg" alt="Punt — the whole crew of five, with the Referee highlighted as the white marker five deep and ten wide of the punter at 45 degrees." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Punt</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 
@@ -115,6 +144,21 @@ guidance before teaching it.
 ## Goal line and place kicks
 
 *Snap on or inside the +10 · tee on the field.*
+
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/referee/goal-line.svg" alt="Goal line — the whole crew of five, with the Referee highlighted as the white marker 15 back and 8 wide on the wide side, the same as any run or pass." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Goal line</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/position-cards/referee/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Referee highlighted as the white marker on the plant-leg side, five yards deeper than the holder and ten wide." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Field goal &amp; try</figcaption>
+    </figure>
+  </div>
+</div>
 
 ### What you do
 

@@ -107,6 +107,9 @@ test('kept static assets are copied through', () => {
     'uploads/linesman-position-card.pdf',
     'uploads/line-judge-position-card.pdf',
     'uploads/back-judge-position-card.pdf',
+    'images/position-cards/referee/run.svg',
+    'images/position-cards/umpire/kickoff.svg',
+    'images/position-cards/back-judge/field-goal.svg',
   ]) {
     assert.ok(existsSync(path.join(SITE, f)), `missing _site/${f}`);
   }
