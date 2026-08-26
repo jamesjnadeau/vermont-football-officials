@@ -10,9 +10,7 @@ Association's [Clock Administration](https://www.sdcfoa.org/clock-administration
 page.
 
 **[Download the Clock Officials Cheat Sheet (PDF, 2 pages)](/uploads/clock-officials-cheat-sheet.pdf)** —
-the printable version fits on two sides and has blanks at the bottom of page 1
-for the date and teams, the Line Judge's name, and how to reach you. The same
-content is written out below.
+the printable version fits on two sides. The same content is written out below.
 
 ---
 
