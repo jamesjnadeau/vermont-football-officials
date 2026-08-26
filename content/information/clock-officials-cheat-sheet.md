@@ -3,7 +3,9 @@ title: Clock Officials Cheat Sheet
 date: 2026-08-26
 ---
 
-A quick reference for the game clock operator — keep it at the timing table.
+A quick reference for the game clock operator in Vermont high school football —
+keep it at the timing table. Confirm anything venue-specific with the Line Judge
+before kickoff.
 
 The information on this page comes from the San Diego County Football Officials
 Association's [Clock Administration](https://www.sdcfoa.org/clock-administration)
@@ -168,10 +170,10 @@ unsure of.
 
 ## A note on the play clock
 
-California does not authorize a visible play clock, so the 25/40-second count is
-kept on the field by an official — not by you, and not on the scoreboard. If you
-see the Referee pump an open palm overhead, that resets the play clock and does
-not concern you. Your only job is the game clock.
+**Your only job is the game clock.** Unless the Line Judge tells you otherwise in
+the pregame, the 25/40-second play clock is kept on the field by an official — not
+by you, and not on the scoreboard. If you see the Referee pump an open palm
+overhead, that resets the play clock and does not concern you.
 
 ## If you are unsure
 
