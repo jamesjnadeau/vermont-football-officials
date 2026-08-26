@@ -28,9 +28,12 @@ const articles = files
 test('all expected articles exist as markdown', () => {
   const want = [
     '7-man-mechanics.md',
+    'between-downs-crew-card.md',
     'clock-officials-cheat-sheet.md',
+    'clock-timing-crew-card.md',
     'football-rules-summary.md',
     'foul-weather-procedures.md',
+    'fouls-enforcement-crew-card.md',
     'information-for-new-folks.md',
     'kicking-plays-crew-card.md',
     'recommend-reading.md',
