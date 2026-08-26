@@ -91,6 +91,9 @@ test('kept static assets are copied through', () => {
     'uploads/clock-officials-cheat-sheet.pdf',
     'uploads/first-year-officials-quiz-1.docx',
     'uploads/first-year-officials-quiz-2.docx',
+    'uploads/kicking-plays-crew-card.pdf',
+    'images/kicking-plays/kickoff-crew-of-5.svg',
+    'images/kicking-plays/field-goal-crew-of-4.svg',
   ]) {
     assert.ok(existsSync(path.join(SITE, f)), `missing _site/${f}`);
   }
