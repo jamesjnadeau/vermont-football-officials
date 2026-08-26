@@ -88,6 +88,7 @@ test('kept static assets are copied through', () => {
   for (const f of [
     'images/vermont.svg',
     'uploads/7-man-mechanics-2022.pdf',
+    'uploads/clock-officials-cheat-sheet.pdf',
     'uploads/first-year-officials-quiz-1.docx',
     'uploads/first-year-officials-quiz-2.docx',
   ]) {
