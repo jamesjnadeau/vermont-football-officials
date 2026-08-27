@@ -11,7 +11,15 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { cardImages, cardModel, printableArticles } from '../../lib/cards/extract.js';
-import { droppedContent, figureLabels, flatten, missingFigures, readPdf } from '../../lib/cards/inspect.js';
+import {
+  droppedContent,
+  figureLabels,
+  flatten,
+  headings,
+  missingFigures,
+  readPdf,
+  strandedHeadings,
+} from '../../lib/cards/inspect.js';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 const CARDS = path.join(ROOT, '_site', 'cards');
@@ -37,7 +45,7 @@ test('the build wrote a card for every printable article', () => {
   assert.ok(cards.length >= 11, `only ${cards.length} cards were built`);
 });
 
-for (const { model, pageCount, text } of cards) {
+for (const { model, pageCount, text, items } of cards) {
   // The gate that makes the whole design safe. Two pages, printed two-sided
   // and flipped on the long edge, is the constraint the cards exist under, and
   // a third page is the failure a CMS editor is most likely to cause and least
@@ -81,6 +89,24 @@ for (const { model, pageCount, text } of cards) {
     );
   });
 
+  // A heading at the foot of a column with its content in the next one reads as
+  // a hole in the card and a section that starts twice. The card is read in
+  // glances on a sideline, which is exactly when that costs something.
+  test(`${model.slug}: keeps every heading with its content`, () => {
+    const stranded = strandedHeadings(model, items);
+    assert.deepEqual(
+      stranded.map(
+        (s) =>
+          `"${s.heading}" ends page ${s.page} column ${s.column} with only ` +
+          `${s.followedBy.toFixed(1)}pt of its content under it`,
+      ),
+      [],
+      `${named(model)} strands a heading at the foot of a column. Chromium does ` +
+        'not chain `break-after: avoid`, so a heading followed by a short lede ' +
+        'needs the lede to carry the avoid too — see lib/cards/card.css.',
+    );
+  });
+
   test(`${model.slug}: does not print a link to itself`, () => {
     assert.ok(
       !flatten(text).includes(flatten(`/cards/${model.slug}.pdf`)),
@@ -118,6 +144,27 @@ test('a figure that did not render is caught', () => {
   assert.ok(
     missing.some((m) => m.src === src),
     `blanking ${src} did not fail the figure check`,
+  );
+});
+
+// The stranding check is only worth having if it fails on a stranded heading.
+// Moving a heading's own content out of its column is what the defect looks
+// like in the placed text, so that is what this simulates.
+test('a heading stranded at the foot of a column is caught', () => {
+  const { model, items } = sample;
+  const [first] = headings(model).filter((h) => h.length > 3);
+  const flat = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  const at = items.findIndex((i) => flat(i.str).startsWith(flat(first).slice(0, 6)));
+  assert.ok(at >= 0, `could not find "${first}" in the placed text`);
+  // Everything after the heading moves to the next column, leaving it alone.
+  const mangled = items.map((item, i) =>
+    i > at && item.page === items[at].page && item.column === items[at].column
+      ? { ...item, column: item.column + 1, x: item.x + 400 }
+      : item,
+  );
+  assert.ok(
+    strandedHeadings(model, mangled).some((s) => s.heading === first),
+    `emptying the column under "${first}" did not fail the stranding check`,
   );
 });
 

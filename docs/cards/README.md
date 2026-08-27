@@ -19,6 +19,12 @@ fail a build the editor had no way to know about.
 - **Two pages, Letter, two-sided, flip on the long edge.** Not a convention
   someone has to remember — `test/cards/output.test.js` reads the page count
   back out of the rendered PDF and fails the build on anything else.
+- **No heading is left at the foot of a column.** Also checked in the rendered
+  PDF: a heading must have at least two lines of its own content under it in
+  the same column. Chromium honours `break-after: avoid` for the one box that
+  follows a heading and does not chain it, so the lede paragraph under a
+  heading carries the avoid too (`h2 + p, h3 + p` in `card.css`). Remove that
+  rule and nine headings across the set strand themselves.
 - **Monochrome first.** The cards are printed on whatever laser the association
   has. Colour may add, never carry.
 - **PDFs are build output, never committed.** Same status as the compiled CSS.

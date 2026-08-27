@@ -44,6 +44,7 @@ Do not spend the proof re-checking these; they fail the deploy on their own
 - exactly two pages
 - every bullet, table cell and caption from the article present in the PDF
 - every diagram the article references actually rendered
+- no heading stranded at the foot of a column, away from its content
 - the title and the provenance line present
 
 ## If something is wrong

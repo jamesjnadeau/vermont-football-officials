@@ -117,6 +117,16 @@ body {
   break-after: avoid;
 }
 
+/* Chromium honours `break-after: avoid` for the one box that follows and does
+   not chain it. Several sections open with a one-line lede under the heading,
+   which satisfies the rule and lets the column break immediately after it —
+   stranding the heading and its lede at the foot of a column. Carry the avoid
+   onto the lede so the pair travels with the content it introduces. */
+h2 + p,
+h3 + p {
+  break-after: avoid;
+}
+
 p {
   margin: 0 0 1.2mm;
   orphans: 2;
