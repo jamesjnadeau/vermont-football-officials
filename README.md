@@ -14,7 +14,19 @@ One-time setup (James can walk you through it, ~10 minutes):
 2. Tell James your username so he can give you access.
 3. Accept the invitation email from GitHub.
 
-Editing:
+Editing a page you're looking at:
+
+1. Scroll to the bottom of the page and click **Edit this page**.
+2. Click **Sign in with GitHub** if it asks.
+3. Make your change and click **Save**. The site updates itself within a few
+   minutes.
+
+Pages without an **Edit this page** button (the home page, Contact, and the
+lists of articles and quizzes) aren't part of the CMS — their footer button
+says **Edit site content** and drops you at the list of everything you *can*
+edit. Email James if one of those needs changing.
+
+Starting from scratch instead:
 
 1. Go to https://app.pagescms.org and click **Sign in with GitHub**.
 2. Choose **vermont-football-officials**.
@@ -53,7 +65,11 @@ Sass), following the architecture of
   the same `tags` list, so templates filter it back out.
 - Static files (PDFs, images) live in `static/` and are copied to the site
   root, so `static/uploads/x.pdf` is served at `/uploads/x.pdf`.
-- `.pages.yml` configures the Pages CMS editing UI.
+- `.pages.yml` configures the Pages CMS editing UI. `lib/pages-cms.js` turns a
+  page's source path into its editor URL; `content/_data/eleventyComputed.js`
+  hands that to every page as `editLink`, which the footer in
+  `content/_includes/layouts/main.pug` renders. Rename or move a collection in
+  `.pages.yml` and `npm test` fails until `lib/pages-cms.js` agrees.
 
 ## Deploying
 
