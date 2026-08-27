@@ -24,8 +24,33 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      # Chromium renders the printable cards. The download is the slow part of
+      # a cold build and changes only with the Playwright version, so it is
+      # cached on the lockfile rather than fetched every run.
+      - uses: actions/cache@v4
+        id: playwright
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - if: steps.playwright.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+      - if: steps.playwright.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+      # The rendered cards, keyed on the run so an edit to one article rebuilds
+      # one card and restores the other ten. The cache is content-addressed
+      # (lib/cards/cache.js), so a restored entry is only used when every input
+      # behind it is unchanged; the key here only decides how much of it
+      # survives to the next run.
+      - uses: actions/cache@v4
+        with:
+          path: .cache/cards
+          key: cards-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            cards-${{ runner.os }}-
       # npm test builds without a path prefix, so internal links resolve
-      # against the _site/ root for linkinator.
+      # against the _site/ root for linkinator. A card that comes out at three
+      # pages, or that lost content to overflow, fails here and stops the
+      # deploy: the site keeps serving the last good build while someone looks.
       - run: npm test
 
   build:
@@ -38,6 +63,21 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - uses: actions/cache@v4
+        id: playwright
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - if: steps.playwright.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+      - if: steps.playwright.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+      - uses: actions/cache@v4
+        with:
+          path: .cache/cards
+          key: cards-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            cards-${{ runner.os }}-
       - uses: actions/configure-pages@v5
       # The site is served from the custom domain in static/CNAME, so it lives
       # at the domain root and needs no path prefix. (configure-pages' base_path
