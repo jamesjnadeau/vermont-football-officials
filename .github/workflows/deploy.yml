@@ -38,12 +38,13 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - id: pages
-        uses: actions/configure-pages@v5
-      # base_path is "/vermont-football-officials" for a project page and ""
-      # once a custom domain is configured; either way the trailing slash
-      # completes a valid Eleventy pathprefix.
-      - run: npm run build -- --pathprefix="${{ steps.pages.outputs.base_path }}/"
+      - uses: actions/configure-pages@v5
+      # The site is served from the custom domain in static/CNAME, so it lives
+      # at the domain root and needs no path prefix. (configure-pages' base_path
+      # lags the custom domain: it still reports the project path
+      # "/vermont-football-officials" on a build that runs before Pages has
+      # picked the domain up, which prefixes every asset URL into a 404.)
+      - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

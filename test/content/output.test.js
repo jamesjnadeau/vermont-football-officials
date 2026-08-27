@@ -202,3 +202,30 @@ test('article and quiz pages deep-link to their own source file', () => {
   });
   assert.deepEqual(bad.map(([url]) => url), []);
 });
+
+// --- Custom domain ------------------------------------------------------
+// GitHub Pages reads the custom domain out of the deployed artifact. Without
+// this file the domain setting can be dropped on a deploy, and the site falls
+// back to the project path — which is what the asset URLs below assume is gone.
+test('the build ships a CNAME for the custom domain', () => {
+  const cname = path.join(SITE, 'CNAME');
+  assert.ok(existsSync(cname), 'missing _site/CNAME');
+  assert.equal(read(cname).trim(), 'www.vermont-football-officials.org');
+});
+
+// The site is served from the domain root, so a build that stamped a path
+// prefix onto the CSS and JS URLs would 404 both and leave the page unstyled.
+test('asset URLs are root-relative, with no project path prefix', () => {
+  const bad = html.filter((f) => {
+    const s = read(f);
+    return (
+      !s.includes('href="/styles/main.css"') ||
+      !s.includes('src="/js/bootstrap.bundle.min.js"') ||
+      // A prefixed build stamps <base> and rewrites every local URL; the CMS
+      // links to github.com/jamesjnadeau/vermont-football-officials, so only
+      // root-relative occurrences count.
+      /(?:href|src)="\/vermont-football-officials\//.test(s)
+    );
+  });
+  assert.deepEqual(bad, []);
+});

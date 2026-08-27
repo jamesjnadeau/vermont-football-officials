@@ -1,7 +1,7 @@
 # Vermont Football Officials
 
 Website collecting knowledge for high school football officials in Vermont.
-Live at https://jamesjnadeau.github.io/vermont-football-officials/
+Live at https://www.vermont-football-officials.org/
 
 ## Editing the site (no coding needed)
 
@@ -74,5 +74,10 @@ Sass), following the architecture of
 ## Deploying
 
 Every push to `master` runs `.github/workflows/deploy.yml`: `npm test`, then
-an Eleventy build with `--pathprefix` for the GitHub Pages project path, then
-a deploy. Nothing manual to do.
+an Eleventy build, then a deploy. Nothing manual to do.
+
+The site is served from the custom domain in `static/CNAME`, so it builds at
+the domain root with no path prefix and every URL in the templates stays
+root-relative (`/styles/main.css`). Moving the site back to the GitHub Pages
+project path would mean building with `--pathprefix=/vermont-football-officials/`
+(`HtmlBasePlugin` rewrites the URLs) and dropping the CNAME.
