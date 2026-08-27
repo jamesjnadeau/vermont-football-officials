@@ -87,6 +87,7 @@ footnote; the rest state it in prose in the page body.
 | Crew cards (5) and position cards (5) | OHSAA Gold Book "Brief & Concise" (2026), following the NFHS Officials Manual | — | 2026-08-26 |
 | `nvyfl-youth-football-rules-2026.md` | 2026 NVYFL 5/6 Rulebook and 7/8 Game Rules | 2026 | 2026-08-27 |
 | `nvyfl-youth-football-rules-2025.md` | 2025 NVYFL 5/6 and 7/8 Game Rules — archived, superseded | 2025 | 2026-08-27 |
+| `official-signals.md` | 2025 NFHS Football Rules Book — penalty summary pp. 94–95 and the PENALTY statements in Rules 3–10 | 2025 | 2026-08-27 |
 | `clock-officials-cheat-sheet.md` | SDCFOA Clock Administration — stated in prose, no front matter | | |
 | `7-man-mechanics.md` | VFOA 7-man deck, 2022 | | |
 | `football-rules-summary.md` (Cliff Notes) | 2025 NFHS Football Rules Book — named in the page title, no front matter | 2025 | 2026-07-26 |
