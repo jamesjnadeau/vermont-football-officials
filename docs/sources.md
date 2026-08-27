@@ -35,35 +35,35 @@ The "Feeds" column is the page that is blocked until the row is answered.
 
 | # | Question | Feeds | Answer | Source | Checked |
 | --- | --- | --- | --- | --- | --- |
-| 1 | How does someone actually join the VFOA? Is there a form, an application window, a meeting they show up to, or an email to a specific person? | Becoming an Official (step-by-step) | | | |
-| 2 | Dues: current amount, when they're due, and confirmation of the standing practice that first-year officials don't pay them. | Becoming an Official (what it costs) | | | |
-| 3 | Background check: required or not, who runs it, who pays, how often it renews. | Becoming an Official (what's required) | | | |
-| 4 | Insurance: what coverage membership confers, and what it does not. | Becoming an Official (what's required) | | | |
-| 5 | Required NFHS Learn courses **for officials**. The VPA lists Implicit Bias as mandatory for officials as well as coaches; the published requirements are written mostly about coaches, so confirm the full current list for officials specifically. | Becoming an Official; Your First Season | | | |
-| 6 | Rules exam: is there one, when, what score is passing, and what happens if you miss it. | Becoming an Official; Your First Season | | | |
-| 7 | Meeting attendance: how many, when, where, and whether attendance affects assignments or playoff eligibility. | Becoming an Official; Getting Assigned | | | |
-| 8 | Rule book: are officials given a physical rule book, do they buy their own, or does the association provide the app subscription? | Resolves the `?You will be provided a physical rule book during training?` placeholder that is **live on the site today** in `information-for-new-folks.md` | | | |
+| 1 | How does someone actually join the VFOA? Is there a form, an application window, a meeting they show up to, or an email to a specific person? | Becoming an Official (step-by-step) | Please reach out to the current acting director, you can do that by using this sites contact page. | Personal Knowledge | true |
+| 2 | Dues: current amount, when they're due, and confirmation of the standing practice that first-year officials don't pay them. | Becoming an Official (what it costs) | There is a registration fee of $25 for our background check and events system. Also around $100 for membership dues, but it's waived the first year, and usually taken out of your millage reimbursement check after that. |  Personal Knowledge  | true |
+| 3 | Background check: required or not, who runs it, who pays, how often it renews. | Becoming an Official (what's required) | Required, and is performed by our registration and assignment software when you sign up. | Personal Knowledge | true |
+| 4 | Insurance: what coverage membership confers, and what it does not. | Becoming an Official (what's required) | Insurance is part of your registration fee of $25 for the year. It covers any liability for you officiating a game. | Personal Knowledge | true |
+| 5 | Required NFHS Learn courses **for officials**. The VPA lists Implicit Bias as mandatory for officials as well as coaches; the published requirements are written mostly about coaches, so confirm the full current list for officials specifically. | Becoming an Official; Your First Season | We are only required to take concussion training, we are not required to take an Implicit Bias class that I'm aware of | Personal Knowledge | True |
+| 6 | Rules exam: is there one, when, what score is passing, and what happens if you miss it. | Becoming an Official; Your First Season | There is no rules exam, but we do use quizes to help test knowledge. This is usually a group activity. | Personal Knowledge | True |
+| 7 | Meeting attendance: how many, when, where, and whether attendance affects assignments or playoff eligibility. | Becoming an Official; Getting Assigned | There are usually 3 to 4 pre-season meetings, at least one in person. Presence is mandatory. Most meetings are virtual, especially during the season. | Personal Knowledge | true |
+| 8 | Rule book: are officials given a physical rule book, do they buy their own, or does the association provide the app subscription? | Resolves the `?You will be provided a physical rule book during training?` placeholder that is **live on the site today** in `information-for-new-folks.md` | Rulebooks are provided as part of your membership dues. This includes print and digital copies | Personal Knowledge | True |
 
 ### Assignment and progression
 
 | # | Question | Feeds | Answer | Source | Checked |
 | --- | --- | --- | --- | --- | --- |
-| 9 | Who is the assignor, and what platform is used — Arbiter, RefTown, something else, or email? | Getting Assigned | | | |
-| 10 | How is availability submitted, and what's the deadline? | Getting Assigned | | | |
-| 11 | Turnback policy: how to give a game back, by when, who to notify, and the etiquette and consequences. | Getting Assigned | | | |
-| 12 | The progression youth → freshman → JV → varsity. What actually determines when someone moves up — seasons served, evaluation, the commissioners' judgement, a crew chief recommendation? | Your First Season; Getting Assigned | | | |
-| 13 | Playoff assignment criteria: what makes an official eligible. | Getting Assigned | | | |
-| 14 | Evaluation and mentoring: is there a formal program, an assigned mentor, film review, observed games? | Your First Season | | | |
-| 15 | How are crews formed? Can an official request or avoid particular crews, and how is a white hat designated? | Getting Assigned | | | |
+| 9 | Who is the assignor, and what platform is used — Arbiter, RefTown, something else, or email? | Getting Assigned | Arbiter is assignment platform, and our organizations leadership manages assignments. We try to match folks to games at their skill level, if you are ready for JV, we'll put you in a JV game, same for varsity. | Personal Knowledge | true |
+| 10 | How is availability submitted, and what's the deadline? | Getting Assigned | Please keep your availability up to date in Arbiter, there is no hard deadline, but please have it in a week before the season starts. | Personal Knowledge | true |
+| 11 | Turnback policy: how to give a game back, by when, who to notify, and the etiquette and consequences. | Getting Assigned | You can accept or decline games through the Arbiter system, it's expected that you do so as quickly as possible. The expectation is for you to act in a professional manor and notify folks through the proper channels if you have issues. We understand people are human and make mistakes, do all you can to remedy problems you create and you'll be fine. | Personal Knowledge | True |
+| 12 | The progression youth → freshman → JV → varsity. What actually determines when someone moves up — seasons served, evaluation, the commissioners' judgement, a crew chief recommendation? | Your First Season; Getting Assigned | You will be assigned games that match your skill level. If you can do Varsity, we will assign you to varsity games. Your knowledge of the mechanics, rules and character determine your eligibility. | | |
+| 13 | Playoff assignment criteria: what makes an official eligible. | Getting Assigned | Seniority usually holds out here, but we prefer to give new folks an opportunity to have playoff games each year to share the experience with everyone who is able. | Personal Knowledge | True |
+| 14 | Evaluation and mentoring: is there a formal program, an assigned mentor, film review, observed games? | Your First Season | We have several knowledgeable mentors who will go out of their way to help you learn. Just like the game, it's a team effort, and we support each other to help grow our organization. | Personal Knowledge | True |
+| 15 | How are crews formed? Can an official request or avoid particular crews, and how is a white hat designated? | Getting Assigned | Crews are formed based on needs of the game and compatibility of members. We try to rotate the crews each week so folks become familiar working with everyone. | Personal Knowledge | True |
 
 ### Pay and contacts
 
 | # | Question | Feeds | Answer | Source | Checked |
 | --- | --- | --- | --- | --- | --- |
-| 16 | Current game fees, varsity and sub-varsity. | Becoming an Official; Getting Assigned | | | |
-| 17 | Mileage: rate, how it's calculated, how it's claimed. | Becoming an Official; Getting Assigned | | | |
-| 18 | How and when officials are paid — by the school on site, by the VPA for playoffs, direct deposit, check. | Getting Assigned | | | |
-| 19 | Tax treatment: the 1099 threshold and who issues it. To be stated factually; the site does not give tax advice. | Getting Assigned | | | |
+| 16 | Current game fees, varsity and sub-varsity. | Becoming an Official; Getting Assigned | JV: $75, Varsity: $97.50 | Personal Knowledge | True |
+| 17 | Mileage: rate, how it's calculated, how it's claimed. | Becoming an Official; Getting Assigned | You fill out a form listing your milage and for what game. You get paid back at the end of the season based on the standard milage reimbursement from the IRS. | Personal Knowledge | True |
+| 18 | How and when officials are paid — by the school on site, by the VPA for playoffs, direct deposit, check. | Getting Assigned | You are paid through the Arbiter system, which you can withdraw your payments out via several methods. | Personal Knowledge | True |
+| 19 | Tax treatment: the 1099 threshold and who issues it. To be stated factually; the site does not give tax advice. | Getting Assigned | Arbiter holds the 1099, this site does not give tax advice. | Personal Knowledge | true |
 | 20 | The contact list: commissioners, rules interpreter, assignor, treasurer, mentor coordinator, and who handles new-member inquiries. | Becoming an Official; Getting Assigned; contact page | | | |
 
 **On item 20:** confirm each person is willing to be listed publicly before
