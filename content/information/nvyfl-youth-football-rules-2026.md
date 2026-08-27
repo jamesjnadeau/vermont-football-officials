@@ -8,11 +8,14 @@ verified: 2026-08-27
 tags:
   - Rules
   - Game Management
+  - Printable
 ---
 
 <p class="lead">The Northern Vermont Youth Football League publishes a separate rule set for each tackle level. Both supplement the NFHS football rules book rather than replace it: anything the league does not address is played by NFHS rule.</p>
 
 <div class="alert alert-secondary" role="note"><strong>Working a youth game?</strong> Read the changes first — the 5/6 quarter length, the 5/6 ball size and the 7/8 kickoff all moved for 2026, and the 5/6 playoff structure is gone. The 2025 rules are kept at <a href="/information/nvyfl-youth-football-rules-2025/">NVYFL Youth Football Rules — 2025 (archived)</a> for reference on a past season.</div>
+
+<p><strong>The league's own documents:</strong> <a href="/uploads/nvyfl-5-6-tackle-rules-2026.pdf">5/6 Tackle Rules (PDF, 10 pages)</a> and <a href="/uploads/nvyfl-7-8-tackle-rules-2026.pdf">7/8 Tackle Rules (PDF, 8 pages)</a>. Everything below is transcribed from those two files; where a transcription and the PDF disagree, the PDF governs.</p>
 
 <p>Two notes on how this page reproduces the league documents. The wording of every rule is the league's own, transcribed from the 2026 PDFs. The outline lettering has been regularised where the source PDFs broke their own numbering — the 2026 5/6 document renumbers section 3 as 1/1.1/1.2 and section 4 as A/B with mismatched sub-items — so the two levels and the two years can be read side by side. Section numbers are unchanged and remain citable.</p>
 

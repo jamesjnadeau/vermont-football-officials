@@ -44,9 +44,9 @@ it is blocked.
 | **VFOA bylaws / member handbook** | | **needed** | Dues, membership, discipline |
 | **VFOA assignment process** | Currently oral only — the officer answers in the tables below | 2026-08-27 | Assignor, availability, turnbacks |
 | OHSAA Gold Book "Brief & Concise" (2026) | [ohsaafb.com — Gold Book handbook](https://www.ohsaafb.com/mechanics/2018-07-15-ohsaa-goldbook-approved-football-officiating-mechanics-regulations-standards-handbook/) | 2026-08-27 | Crew and position mechanics, crews of 4 and 5 |
-| NVYFL 5/6 Tackle Rules (2026) | League PDF, supplied by James Nadeau | 2026-08-27 | Youth 5/6 game rules |
-| NVYFL 7/8 Tackle Rules (2026) | League PDF, supplied by James Nadeau | 2026-08-27 | Youth 7/8 game rules |
-| NVYFL 5/6 and 7/8 Tackle Rules (2025) | League PDFs, supplied by James Nadeau | 2026-08-27 | Superseded; kept for the archived 2025 page |
+| NVYFL 5/6 Tackle Rules (2026) | League PDF, supplied by James Nadeau; published at `/uploads/nvyfl-5-6-tackle-rules-2026.pdf` | 2026-08-27 | Youth 5/6 game rules |
+| NVYFL 7/8 Tackle Rules (2026) | League PDF, supplied by James Nadeau; published at `/uploads/nvyfl-7-8-tackle-rules-2026.pdf` | 2026-08-27 | Youth 7/8 game rules |
+| NVYFL 5/6 and 7/8 Tackle Rules (2025) | League PDFs, supplied by James Nadeau; published at `/uploads/nvyfl-{5-6,7-8}-tackle-rules-2025.pdf` | 2026-08-27 | Superseded; kept for the archived 2025 page |
 | SDCFOA Clock Administration | [sdcfoa.org/clock-administration](https://www.sdcfoa.org/clock-administration) | | Clock operator reference |
 | VFOA 7-man mechanics deck (Justin Fortier) | `/uploads/7-man-mechanics-2022.pdf` | 2022 | 7-man mechanics |
 
@@ -66,7 +66,10 @@ printed on the document and, if it is not 2026, correct all ten.
 they say so on the page — both rule sets supplement the NFHS book rather than
 replace it. The two 2026 pages were transcribed from the PDFs on 2026-08-27
 and diffed against the 2025 pair the same day; the change list on the 2026
-page is the output of that diff. Ask the league for the next edition each
+page is the output of that diff. All four PDFs are served from
+`/uploads/` and linked at the top of their year's page, so a reader can check
+a transcription against the document it came from; where the two disagree the
+PDF governs, and the pages say so. Ask the league for the next edition each
 summer — the 2026 5/6 document is titled a Rulebook and the 7/8 one is dated
 July 2026, so the two levels are not always revised together.
 

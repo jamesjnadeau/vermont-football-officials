@@ -7,9 +7,12 @@ source: the 2025 NVYFL 5/6 Game Rules and the 2025 NVYFL 7/8 Game Rules
 verified: 2026-08-27
 tags:
   - Rules
+  - Printable
 ---
 
 <div class="alert alert-warning" role="alert"><strong>Archived — do not officiate from this page.</strong> These are the 2025 Northern Vermont Youth Football League rules. They were superseded for the 2026 season. Use <a href="/information/nvyfl-youth-football-rules-2026/">NVYFL Youth Football Rules — 2026</a>, which also lists what changed. This page is kept so a past season, a suspension carried over, or a disputed call can be read against the rules that were actually in force.</div>
+
+<p><strong>The league's own 2025 documents:</strong> <a href="/uploads/nvyfl-5-6-tackle-rules-2025.pdf">5/6 Game Rules (PDF, 8 pages)</a> and <a href="/uploads/nvyfl-7-8-tackle-rules-2025.pdf">7/8 Game Rules (PDF, 9 pages)</a>. Superseded, and kept for the same reason this page is.</p>
 
 <p>Both rule sets supplement the NFHS football rules book rather than replace it: anything the league did not address was played by NFHS rule. The wording below is the league's own, transcribed from the 2025 PDFs.</p>
 
