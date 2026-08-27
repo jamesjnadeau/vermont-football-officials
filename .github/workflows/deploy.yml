@@ -3,6 +3,12 @@ name: Test and deploy to GitHub Pages
 on:
   push:
     branches: [master]
+  # Run the tests on every pull request too. Without this nothing checks a
+  # branch until it is already on master, which is how a card gate failure
+  # first reached a deploy. Only the test job runs here — see the `if` guards
+  # on build and deploy; a pull request must not publish to Pages.
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +17,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  # Deploys serialize on one group, so two pushes to master cannot race each
+  # other onto Pages. Pull requests group per branch instead: sharing the
+  # `pages` group would let a push to any PR cancel the deploy of the commit
+  # that had just been merged.
+  group: >-
+    ${{ github.event_name == 'pull_request'
+        && format('pr-{0}', github.ref)
+        || 'pages' }}
   cancel-in-progress: true
 
 jobs:
@@ -55,6 +68,8 @@ jobs:
 
   build:
     needs: test
+    # Tests run on pull requests; publishing does not.
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -91,6 +106,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
