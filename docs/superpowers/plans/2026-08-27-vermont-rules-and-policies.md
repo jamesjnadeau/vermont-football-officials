@@ -221,7 +221,7 @@ and points of emphasis change annually.
   from, which Tasks 3–7 read to populate their `source` front matter, and which
   becomes the checklist for the annual re-verification pass.
 
-- [ ] **Step 1: Create the source register**
+- [x] **Step 1: Create the source register**
 
 Create `docs/sources.md`:
 
@@ -294,7 +294,7 @@ each lands.
 pages fully covered and leave the others as stubs with an explicit "not yet
 verified" note rather than filling gaps from the public page.
 
-- [ ] **Step 3: Commit the register**
+- [x] **Step 3: Commit the register**
 
 ```bash
 git add docs/sources.md

@@ -23,6 +23,61 @@ Pages that carry these facts should also set the `source` and `verified` front
 matter, which renders as a provenance footnote and fails the build once the
 verified date is more than 400 days old.
 
+The two tables directly below are the register proper: what the site is built
+from, and which page rests on which document. The question tables after them are
+the open gates — facts nobody has supplied yet.
+
+---
+
+## Primary sources
+
+The documents the site is built from. **Obtained** is the date someone last had
+the edition in hand; blank means the site does not hold it and any page needing
+it is blocked.
+
+| Source | Where | Obtained | Covers |
+| --- | --- | --- | --- |
+| NFHS Football Rules Book (2025) | Via [nfhs-rules-converter](https://github.com/jamesjnadeau/nfhs-rules-converter) | 2026-07-26 | Baseline rules; cliff notes; quizzes 001–007 |
+| NFHS Football Case Book (2025) | Same repository | 2026-07-26 | Quiz rulings 001–005 |
+| NFHS Football Officials Manual | Not held directly — reached secondhand through the OHSAA Gold Book | | Baseline mechanics |
+| **VPA Football Guide** | [vpaonline.org/athletics/football/](https://vpaonline.org/athletics/football/) | **needed** | Vermont amendments, fees, calendar, playoffs, points of emphasis |
+| **VFOA bylaws / member handbook** | | **needed** | Dues, membership, discipline |
+| **VFOA assignment process** | Currently oral only — the officer answers in the tables below | 2026-08-27 | Assignor, availability, turnbacks |
+| OHSAA Gold Book "Brief & Concise" | | | Crew and position mechanics, crews of 4 and 5 |
+| SDCFOA Clock Administration | [sdcfoa.org/clock-administration](https://www.sdcfoa.org/clock-administration) | | Clock operator reference |
+| VFOA 7-man mechanics deck (Justin Fortier) | `/uploads/7-man-mechanics-2022.pdf` | 2022 | 7-man mechanics |
+
+The three rows in bold are what the Vermont rules and policies plan is waiting
+on. Until the VPA guide row has an edition and a date, no page may state a
+Vermont fee, date, or rule amendment.
+
+## Page → source map
+
+Which page rests on which document, and when a human last read one against the
+other. Pages that set `source` in front matter print this publicly as a
+footnote; the rest state it in prose in the page body.
+
+| Page | Source | Rules year | Verified |
+| --- | --- | --- | --- |
+| `becoming-an-official.md` | VFOA officers, recorded below | — | 2026-08-27 |
+| `getting-assigned.md` | VFOA officers, recorded below | — | 2026-08-27 |
+| `your-first-season.md` | VFOA officers, recorded below | — | 2026-08-27 |
+| Crew cards (5) and position cards (5) | OHSAA Gold Book "Brief & Concise", following the NFHS Officials Manual — stated in prose, no front matter | | |
+| `clock-officials-cheat-sheet.md` | SDCFOA Clock Administration — stated in prose, no front matter | | |
+| `7-man-mechanics.md` | VFOA 7-man deck, 2022 | | |
+| `football-rules-summary.md` (Cliff Notes) | 2025 NFHS Football Rules Book — named in the page title, no front matter | 2025 | 2026-07-26 |
+| `information-for-new-folks.md` | Email from Bryan Fortier, 2022 — not re-checked since | | |
+| `foul-weather-procedures.md` | **No source stated** — states a 30-minute lightning pause; check it against the VPA guide when that lands | | |
+| `recommend-reading.md` | No external source — a link list | — | — |
+| `vermont-rules-and-policies.md` | Blocked — VPA Football Guide | | |
+| `game-day-administration.md` | Blocked — VPA Football Guide | | |
+| `ejections-and-reporting.md` | Blocked — VFOA ejection workflow | | |
+| `season-calendar.md` | Blocked — VPA Football Guide | | |
+
+The last four pages do not exist yet. `test/content/frontmatter.test.js` already
+requires all three of `ruleYear`, `source` and `verified` on them, so they bind
+the moment the files land.
+
 ---
 
 ## VFOA membership facts
@@ -95,3 +150,21 @@ would sharpen a specific paragraph.
 | Quiz questions 006–007 (rookie definitions) | 2025 NFHS Football Rules Book, Rules 1, 2, 6 and 7, via the same repository | 2026-08-27 |
 | Cliff Notes — 2025 NFHS Football Rules Book | Same repository | 2026-07-26 |
 | Equipment guidance in `information-for-new-folks.md` | Email from Bryan Fortier, generalised by James Nadeau | 2022-10-09 |
+
+---
+
+## Annual re-verification
+
+Every August, before week 1:
+
+1. Obtain the new VPA Football Guide and NFHS rules book, and update **Obtained**
+   in the primary sources table.
+2. Walk the page → source map top to bottom.
+3. For each page: re-read it against its source, update `ruleYear` and
+   `verified`, fix what changed, and say what changed in the commit message.
+4. Rebuild any PDF whose source article changed.
+5. Run `npm test` — the 400-day check catches any page that was skipped.
+
+The 400-day window is deliberately longer than a year: a page verified in
+August passes through the following August without failing mid-season, and
+fails soon after if that year's pass never happened.
