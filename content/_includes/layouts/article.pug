@@ -22,5 +22,8 @@ article
       if verified
         |  Last checked #{new Date(verified).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}.
       br
-      | Verify against the current rule book and VPA guide before teaching this as authoritative.
+      if ruleYear
+        | Verify against the current rule book and VPA guide before teaching this as authoritative.
+      else
+        | Dues, fees and association practice change. Confirm with the association before relying on this.
   | !{content}

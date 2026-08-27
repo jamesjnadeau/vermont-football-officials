@@ -70,6 +70,21 @@ The "Feeds" column is the page that is blocked until the row is answered.
 publishing a name or an address. No contact goes on the site unconfirmed, and
 none is invented as a placeholder.
 
+### Still open
+
+Written around rather than guessed at. The pages are complete without these; each
+would sharpen a specific paragraph.
+
+| # | Question | Feeds | Answer | Source | Checked |
+| --- | --- | --- | --- | --- | --- |
+| 21 | Season shape: when preseason meetings start, when the first games are, when the season ends. Becoming an Official currently says only "through the fall". | Becoming an Official | | | |
+| 22 | How many high school programs the association covers, and roughly how many games an official works in a season. | Becoming an Official ("what a season looks like in hours") | | | |
+| 23 | Minimum age to register, if there is one. Omitted from the Common Questions section for now. | Becoming an Official | | | |
+| 24 | Youth and freshman game fees. Only varsity ($97.50) and JV ($75.00) are published. | Becoming an Official; Getting Assigned | | | |
+| 25 | Rough all-in equipment cost for a first-year official. The pages state the outlay is real and quote the association's offer to help, but no figure. | Becoming an Official; Equipment | | | |
+| 26 | Item 12 (progression) has an answer but no Source or Checked entry — confirm and date it. | Your First Season | | | |
+| 27 | Equipment page content (brands, item list, sourcing sites) has not been re-checked since Bryan Fortier's original email in 2022. It carries no `verified` front matter for that reason. | Equipment | | | |
+
 ---
 
 ## Already sourced

@@ -1,31 +1,15 @@
 ---
-title: Information for New Folks
+title: Equipment for New Officials
 date: 2022-10-09
 tags:
   - Getting Started
-  - Rules
 ---
-## Rule Book
+What you need to buy, where to get it, and what to do if the cost is a problem.
 
-It's important to know the rules by heart. Many veteran officials can quote the rule book by memory and recite the rule number. It's helpful to have a good understanding of these rules when resolving conflicts with teams, as being able to quote from memory saves everyone time, and makes you look more professsional.
-
-There are however, an lot of rules. So we understand it will take new folks some time before they are able to fully up to speed.
-
-You can find the rules:
-
-- [In print form](http://www.nfhs.com/c-204-football.aspx)
-- [As an App](https://nfhs.org/sports-resource-content/nfhs-rules-app-information/)
-
-?You will be provided a physical rule book during training?
-
-The two take-home quizzes first-year officials used to get as Word documents
-are now on the site, with the rule citations worked out in the answer key:
-
-- [Quiz 006 — Rookie Definitions, Part 1](/quizzes/quiz-006-rookie-definitions-part-1/) — the dead ball, the neutral zone, fumble versus muff, false start
-- [Quiz 007 — Rookie Definitions, Part 2](/quizzes/quiz-007-rookie-definitions-part-2/) — linemen and backs, forward passes, free and scrimmage kicks
-
-Answer them out loud with the rule, section and article, the way the paper
-version asked for it. The rest are on the [quizzes page](/quizzes/).
+New to all of this? Start at
+[Becoming a Football Official](/information/becoming-an-official/). The rule
+book, the quizzes and what to study first are on
+[Your First Season](/information/your-first-season/).
 
 ## Uniforms
 
