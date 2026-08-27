@@ -27,8 +27,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | **LJ** | Line Judge |
 | **BJ** | Back Judge (5-man only) |
 
-Boxed items on the card are white-hat only, and appear below under "Referee —
-white hat only."
+In every diagram below the white marker is the Referee, and the press box is on
+the right. What is the Referee's alone appears under "Referee — white hat only."
 
 ---
 
