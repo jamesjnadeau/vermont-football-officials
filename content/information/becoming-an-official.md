@@ -6,7 +6,6 @@ verified: 2026-08-27
 tags:
   - Getting Started
 ---
-
 You do not need to have played football. You do not need experience officiating
 anything. Most people who do this started by asking one question of one person,
 and the answer to that question is at the bottom of this page.
@@ -27,10 +26,10 @@ mentors are for.
 
 - No prior experience, and no playing career.
 - Enough fitness to keep up with the play for a couple of hours. Wing officials
-  move most.
+move most.
 - A way to get to games, some of which will be a drive.
 - The [equipment](/information/information-for-new-folks/) — a striped shirt,
-  black pants, hat, shoes, flag, beanbag, whistle and a down indicator.
+black pants, hat, shoes, flag, beanbag, whistle and a down indicator.
 
 Almost everyone starts on youth and sub-varsity games and works up from there.
 
@@ -39,11 +38,13 @@ Almost everyone starts on youth and sub-varsity games and works up from there.
 Be aware of this up front, because it is the real barrier and nobody should
 discover it later:
 
-| | |
-| --- | --- |
+
+|  |  |
+| --------------- | -------------------------------------------------------------------------------------------------- |
 | Registration | **$25/year** — covers the background check, the assignment system, and your insurance for the year |
 | Membership dues | **around $100/year** — **waived for your first year** |
 | Equipment | The one real outlay. Football takes more gear than most sports. |
+
 
 Two things take the edge off that. **First-year officials do not pay dues**,
 specifically because the association knows you are buying equipment that year.
@@ -57,10 +58,13 @@ That is a real offer. Ask.
 
 ## What you get paid
 
+
 | Game | Fee |
-| --- | --- |
+| -------------- | ---------- |
 | Varsity | **$97.50** |
 | Junior varsity | **$75.00** |
+| Youth(5/6 & 7/8, 2 games) | **$125** | 
+
 
 Plus mileage, reimbursed at the standard IRS rate at the end of the season — you
 submit a form listing your mileage and the game it was for. Payment runs through
@@ -73,30 +77,35 @@ through your first couple of weeks of youth games.
 
 - **Register** and pay the $25 registration fee.
 - **Background check** — required, and run by the registration system when you
-  sign up. There is nothing separate to arrange.
+sign up. There is nothing separate to arrange.
 - **Concussion training** through NFHS Learn. That is the only required course.
 - **Meetings** — three or four before the season, at least one of them in
-  person, and attendance is expected. During the season most meetings are
-  virtual.
+person, and attendance is expected. During the season most meetings are
+virtual.
 - **No rules exam.** The association uses quizzes to build knowledge, usually
-  worked through as a group rather than graded.
+worked through as a group rather than graded.
 
 Your rule book comes with your membership, in print and digital.
 
 ## How to start
 
 1. **Get in touch.** Reach out to the current acting director through the
-   [contact page](/contact/). That is the first step and there is no form to
+
+  [contact page](/contact/). That is the first step and there is no form to
    find or window to wait for.
 2. **Register**, which runs the background check and sets up your assignment
-   account.
+
+  account.
 3. **Do the concussion training** on NFHS Learn.
 4. **Come to the preseason meetings.** This is where you will meet the people
-   you will be working with.
+
+  you will be working with.
 5. **Get your equipment** — see the [equipment page](/information/information-for-new-folks/),
-   and say something if the cost is a problem.
+
+  and say something if the cost is a problem.
 6. **Put your availability in Arbiter**, ideally a week before the season
-   starts.
+
+  starts.
 7. **Work your first games**, which will be at the level you are ready for.
 
 [Your First Season](/information/your-first-season/) covers what happens after
