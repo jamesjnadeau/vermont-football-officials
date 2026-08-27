@@ -27,4 +27,17 @@ html(lang='en')
     main#content.container.my-4.p-4.bg-white.rounded.shadow-sm
       | !{content}
 
+    //- The card treatment matches #content so the footer reads as part of the
+    //- page and not as a stripe of background. `editLink` is computed per page
+    //- in content/_data/eleventyComputed.js.
+    footer#footer.container.mb-4.p-4.bg-white.rounded.shadow-sm
+      .row.gy-3.align-items-center
+        .col-md
+          p.mb-1 Vermont Football Officials
+          p.mb-0.small.text-secondary Spot something out of date? Anyone with access can fix it — no coding needed.
+        .col-md-auto.text-md-end
+          a.btn.btn-outline-secondary.btn-sm(href=editLink.url)= editLink.label
+          p.mb-0.mt-2.small.text-secondary
+            a.link-secondary(href='https://github.com/jamesjnadeau/vermont-football-officials#editing-the-site-no-coding-needed') How editing works
+
     script(src='/js/bootstrap.bundle.min.js')
