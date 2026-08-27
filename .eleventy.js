@@ -51,6 +51,10 @@ export default async function (eleventyConfig) {
       config: {
         content: ["./_site/**/*.html", "./_site/**/*.js"],
         css: ["./_site/**/*.css"],
+        // `card-only` marks a block that belongs on the printed card and not
+        // on the page, so by definition no built HTML uses it until an editor
+        // reaches for it — and by then the rule that hides it would be gone.
+        safelist: ["card-only"],
       },
       quiet: false,
     });
