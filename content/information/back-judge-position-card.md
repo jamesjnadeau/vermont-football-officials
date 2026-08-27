@@ -1,6 +1,10 @@
 ---
 title: Back Judge Position Card
 date: 2026-08-26
+tags:
+  - Mechanics
+  - Position Cards
+  - Printable
 ---
 
 Your spot, your keys and your jobs, situation by situation — the Back Judge's

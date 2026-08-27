@@ -10,6 +10,13 @@ import matter from 'gray-matter';
 const DIR = fileURLToPath(new URL('../../content/information/', import.meta.url));
 const files = readdirSync(DIR);
 
+// The topic (tag) vocabulary. Articles may only be tagged with these names, so
+// that every tag has a page at /tags/<slug>/ to link to.
+const TOPICS = JSON.parse(
+  readFileSync(fileURLToPath(new URL('../../content/_data/topics.json', import.meta.url)), 'utf8'),
+);
+const TOPIC_NAMES = TOPICS.map((t) => t.name);
+
 test('every file in information/ has a known extension', () => {
   // Catches extension-less files (Decap once wrote "7-man-mechanics" with no .md),
   // which Eleventy silently skips.
@@ -71,6 +78,62 @@ test('no editor artifacts (zero-width chars, trailing backslashes) in bodies', (
     .filter((a) => /[\uFEFF\u200B]/.test(a.content) || /\\\s*$/m.test(a.content))
     .map((a) => a.name);
   assert.deepEqual(bad, []);
+});
+
+// --- Topics (tags) -----------------------------------------------------
+// content/_data/topics.json drives the topic pages, the pills on each article
+// and the "Browse by topic" row, so it has to stay well-formed.
+test('every topic has a name, a URL-safe slug and a description', () => {
+  const bad = TOPICS.flatMap((t, i) => {
+    const errs = [];
+    if (!t.name) errs.push(`topics[${i}]: missing name`);
+    if (!t.description) errs.push(`topics[${i}]: missing description`);
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(String(t.slug))) {
+      errs.push(`topics[${i}]: slug ${JSON.stringify(t.slug)} is not URL-safe`);
+    }
+    return errs;
+  });
+  assert.deepEqual(bad, []);
+});
+
+test('topic names and slugs are unique', () => {
+  assert.equal(new Set(TOPIC_NAMES).size, TOPICS.length, 'duplicate topic name');
+  assert.equal(new Set(TOPICS.map((t) => t.slug)).size, TOPICS.length, 'duplicate topic slug');
+});
+
+// An untagged article is reachable only from the full list — it never shows up
+// under any topic.
+test('every article is tagged with at least one topic', () => {
+  const bad = articles.filter((a) => !(a.data.tags || []).length).map((a) => a.name);
+  assert.deepEqual(bad, []);
+});
+
+// A tag outside the vocabulary has no page, so layouts/article.pug drops it
+// rather than linking to a 404.
+test('every article tag is a known topic', () => {
+  const bad = articles.flatMap((a) =>
+    (a.data.tags || [])
+      .filter((t) => !TOPIC_NAMES.includes(t))
+      .map((t) => `${a.name}: unknown topic ${JSON.stringify(t)}`),
+  );
+  assert.deepEqual(bad, []);
+});
+
+// `information` comes from information.11tydata.json and is merged in by
+// Eleventy; repeating it in front matter would double it up in the pills.
+test('no article repeats the collection tag in its front matter', () => {
+  const bad = articles.filter((a) => (a.data.tags || []).includes('information')).map((a) => a.name);
+  assert.deepEqual(bad, []);
+});
+
+// Editors pick topics from a dropdown in Pages CMS. If that list drifts from
+// topics.json they can save a tag that has no page.
+test('the Pages CMS topic dropdown offers exactly the known topics', () => {
+  const cms = readFileSync(fileURLToPath(new URL('../../.pages.yml', import.meta.url)), 'utf8');
+  const field = cms.match(/\n {6}- name: tags\n(?: {8}.*\n| {10}.*\n| {12}.*\n)*/);
+  assert.ok(field, 'no `tags` field found in .pages.yml');
+  const offered = [...field[0].matchAll(/^ {12}- (.+)$/gm)].map((m) => m[1].trim());
+  assert.deepEqual(offered.slice().sort(), TOPIC_NAMES.slice().sort());
 });
 
 // Uploads were renamed to URL-safe names in static/uploads/; any link still

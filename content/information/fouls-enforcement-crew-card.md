@@ -1,6 +1,11 @@
 ---
 title: Fouls & Enforcement Crew Card
 date: 2026-08-26
+tags:
+  - Mechanics
+  - Crew Cards
+  - Rules
+  - Printable
 ---
 
 Who throws it, who enforces it, who announces it. For crews of five and crews of

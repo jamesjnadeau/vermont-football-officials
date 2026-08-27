@@ -1,6 +1,8 @@
 ---
 title: Foul Weather Procedures
 date: 2023-09-08
+tags:
+  - Game Management
 ---
 
 

@@ -2,10 +2,13 @@
 layout: layouts/main.pug
 ---
 
+include ../mixins/topics.pug
+
 article
   h1= title
   if date
-    p.text-secondary
+    p.text-secondary.mb-2
       time(datetime=new Date(date).toISOString())
         | #{new Date(date).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}
+  +topicLinks(tags, topics)
   | !{content}

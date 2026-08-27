@@ -1,6 +1,9 @@
 ---
 title: Clock Officials Cheat Sheet
 date: 2026-08-26
+tags:
+  - Game Management
+  - Printable
 ---
 
 A quick reference for the game clock operator in Vermont high school football —

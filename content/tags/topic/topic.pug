@@ -1,0 +1,32 @@
+---
+layout: layouts/main.pug
+eleventyExcludeFromCollections: true
+pagination:
+  data: topics
+  size: 1
+  alias: topic
+---
+
+include ../../_includes/mixins/topics.pug
+
+nav(aria-label='Breadcrumb')
+  ol.breadcrumb
+    li.breadcrumb-item
+      a(href='/information/') Information
+    li.breadcrumb-item
+      a(href='/tags/') Topics
+    li.breadcrumb-item.active(aria-current='page')= topic.name
+
+h1= topic.name
+p.lead= topic.description
+
+- var byDate = function(a, b) { return new Date(b.date) - new Date(a.date); }
+- var tagged = (collections.information || []).filter(function (item) { return (item.data.tags || []).indexOf(topic.name) !== -1; }).sort(byDate)
+
+if tagged.length
+  +articleList(tagged, topics)
+else
+  p.text-secondary Nothing is filed under #{topic.name} yet.
+
+p.mt-4
+  a(href='/tags/') Browse all topics

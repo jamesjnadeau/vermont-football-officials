@@ -5,15 +5,23 @@ layout: layouts/main.pug
 eleventyExcludeFromCollections: true
 ---
 
+include ../_includes/mixins/topics.pug
+
 h1 Information
 p.lead Articles and resources for Vermont high school football officials.
-div.list-group
-  - var byDate = function(a, b) { return new Date(b.date) - new Date(a.date); }
-  each item in (collections.information || []).slice().sort(byDate)
-    a.list-group-item.list-group-item-action(href=item.url)
-      .row
-        .col
-          | #{item.data.title}
-        .col-auto.text-secondary
-          time(datetime=new Date(item.date).toISOString())
-            | #{new Date(item.date).toLocaleDateString('en-US', { timeZone: 'UTC' })}
+
+- var count = function(name) { return (collections.information || []).filter(function (item) { return (item.data.tags || []).indexOf(name) !== -1; }).length; }
+
+h2.h6.text-secondary.text-uppercase Browse by topic
+p.mb-1
+  each topic in (topics || [])
+    - var n = count(topic.name)
+    if n
+      a.topic-link.badge.rounded-pill.text-bg-light.border.text-decoration-none.me-1(href='/tags/' + topic.slug + '/')
+        | #{topic.name}&nbsp;
+        span.text-secondary= n
+p.small.mb-4
+  a(href='/tags/') What each topic covers
+
+- var byDate = function(a, b) { return new Date(b.date) - new Date(a.date); }
++articleList((collections.information || []).slice().sort(byDate), topics)

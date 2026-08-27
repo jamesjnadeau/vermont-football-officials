@@ -18,3 +18,11 @@ body {
 #content {
   background-color: #fff;
 }
+
+// Topic pills link to /tags/<topic>/. The chip shape carries the affordance;
+// hover and focus confirm it. The !important overrides Bootstrap's
+// .text-bg-light, which sets the background the same way.
+.topic-link:hover,
+.topic-link:focus-visible {
+  background-color: var(--bs-secondary-bg) !important;
+}

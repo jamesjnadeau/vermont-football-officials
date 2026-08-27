@@ -1,6 +1,9 @@
 ---
 title: 7 Man Mechanics
 date: 2023-11-01
+tags:
+  - Mechanics
+  - Printable
 ---
 
 The VFOA's 7-man mechanics presentation by Justin Fortier — who has what on free

@@ -1,6 +1,10 @@
 ---
 title: Kicking Plays Crew Card
 date: 2026-08-26
+tags:
+  - Mechanics
+  - Crew Cards
+  - Printable
 ---
 
 Where every official goes on kickoffs, onside kicks, punts, field goals and

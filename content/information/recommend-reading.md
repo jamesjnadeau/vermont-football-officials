@@ -1,6 +1,8 @@
 ---
 title: Recommend Reading
 date: 2023-06-30
+tags:
+  - Getting Started
 ---
 
 The referee training manuals available on this site are great:

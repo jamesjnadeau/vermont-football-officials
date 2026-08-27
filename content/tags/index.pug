@@ -1,0 +1,25 @@
+---
+title: Topics | Vermont Football Officials
+description: The Information articles grouped by topic — getting started, rules, mechanics, crew cards, position cards, game management and printables.
+layout: layouts/main.pug
+eleventyExcludeFromCollections: true
+---
+
+h1 Topics
+p.lead Every Information article, grouped by what it's about.
+
+- var count = function(name) { return (collections.information || []).filter(function (item) { return (item.data.tags || []).indexOf(name) !== -1; }).length; }
+
+div.list-group
+  each topic in (topics || [])
+    a.list-group-item.list-group-item-action(href='/tags/' + topic.slug + '/')
+      .row
+        .col
+          div= topic.name
+          small.text-secondary= topic.description
+        .col-auto.text-secondary.text-nowrap
+          - var n = count(topic.name)
+          | #{n} #{n === 1 ? 'article' : 'articles'}
+
+p.mt-4
+  a(href='/information/') See every article

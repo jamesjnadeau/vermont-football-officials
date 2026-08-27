@@ -1,6 +1,8 @@
 ---
 title: Cliff Notes — 2025 NFHS Football Rules Book
 date: 2026-07-26
+tags:
+  - Rules
 ---
 
 A condensed study guide to the full rules book.

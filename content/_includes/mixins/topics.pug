@@ -1,0 +1,40 @@
+//- Shared pieces of the topic (tag) system.
+//-
+//- An article's topics live in its front-matter `tags:`. The directory data
+//- file adds `information` to that list to keep the article in the collection,
+//- so both mixins below drop any name that isn't a real topic (see
+//- content/_data/topics.json) before rendering.
+
+//- Linked pills. Not safe inside a list-group anchor — nested <a> is invalid
+//- HTML — so use topicBadges there instead.
+mixin topicLinks(names, topics)
+  - var bySlug = {};
+  - (topics || []).forEach(function (t) { bySlug[t.name] = t.slug; });
+  - var known = (names || []).filter(function (n) { return bySlug[n]; });
+  if known.length
+    p.mb-3
+      each name in known
+        a.topic-link.badge.rounded-pill.text-bg-light.border.text-decoration-none.me-1(href='/tags/' + bySlug[name] + '/')= name
+
+//- The same pills without links, for use inside a row that is itself a link.
+mixin topicBadges(names, topics)
+  - var known = {};
+  - (topics || []).forEach(function (t) { known[t.name] = true; });
+  - var shown = (names || []).filter(function (n) { return known[n]; });
+  if shown.length
+    div.mt-1
+      each name in shown
+        span.badge.rounded-pill.text-bg-light.border.fw-normal.me-1= name
+
+//- The article list shared by the Information page and every topic page.
+mixin articleList(items, topics)
+  div.list-group
+    each item in items
+      a.list-group-item.list-group-item-action(href=item.url)
+        .row
+          .col
+            div= item.data.title
+            +topicBadges(item.data.tags, topics)
+          .col-auto.text-secondary.text-nowrap
+            time(datetime=new Date(item.date).toISOString())
+              | #{new Date(item.date).toLocaleDateString('en-US', { timeZone: 'UTC' })}
