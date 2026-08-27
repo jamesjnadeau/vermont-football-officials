@@ -1,6 +1,8 @@
 ---
 title: Running & Passing Plays Crew Card
 date: 2026-08-26
+source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
+verified: 2026-08-26
 tags:
   - Mechanics
   - Crew Cards
@@ -13,10 +15,9 @@ for crews of five and crews of four.
 **[Download the Running & Passing Plays Crew Card (PDF, 2 pages)](/uploads/run-pass-plays-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
-Built from the OHSAA Gold Book Brief & Concise mechanics for crews of 5 and 4,
-which follows the NFHS Officials Manual. **Associations amend these** — check
-Vermont's guidance before teaching it. This is the companion to the
-[Kicking Plays Crew Card](/information/kicking-plays-crew-card/).
+**Associations amend these** — check Vermont's guidance before teaching it.
+This is the companion to the [Kicking Plays Crew Card](/information/kicking-
+plays-crew-card/).
 
 ## Who's who
 

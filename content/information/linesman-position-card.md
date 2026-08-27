@@ -1,6 +1,8 @@
 ---
 title: Linesman Position Card
 date: 2026-08-26
+source: 'the OHSAA Gold Book "Brief & Concise" mechanics for a crew of 5 (2026 edition), which follow the NFHS Officials Manual'
+verified: 2026-08-26
 tags:
   - Mechanics
   - Position Cards
@@ -14,9 +16,7 @@ on every diagram.
 **[Download the Linesman Position Card (PDF, 2 pages)](/uploads/linesman-position-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
-Built from the OHSAA Gold Book Brief & Concise mechanics for a crew of 5, which
-follows the NFHS Officials Manual. **Associations amend these** — check Vermont's
-guidance before teaching it.
+**Associations amend these** — check Vermont's guidance before teaching it.
 
 ## Who's who
 

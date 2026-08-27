@@ -53,10 +53,11 @@ Vermont fee, date, or rule amendment.
 
 **On the Gold Book row:** the URL's slug carries a 2018 date because that is
 when OHSAA first published the page, not the edition it serves — James supplied
-it as the 2026 source. The ten cards were written before this URL was recorded,
-so which edition they were built from is not established; confirm the edition
-string printed on the document itself before it goes into any page's `source`
-front matter, and re-read the cards against it.
+it as the 2026 source. The ten cards now carry that edition in their `source`
+front matter on the strength of that identification, not a check against the
+document: the cards were written on 2026-08-26 from "the OHSAA Gold Book Brief &
+Concise" with no edition recorded at the time. Confirm the edition string
+printed on the document and, if it is not 2026, correct all ten.
 
 ## Page → source map
 
@@ -69,7 +70,7 @@ footnote; the rest state it in prose in the page body.
 | `becoming-an-official.md` | VFOA officers, recorded below | — | 2026-08-27 |
 | `getting-assigned.md` | VFOA officers, recorded below | — | 2026-08-27 |
 | `your-first-season.md` | VFOA officers, recorded below | — | 2026-08-27 |
-| Crew cards (5) and position cards (5) | OHSAA Gold Book "Brief & Concise", following the NFHS Officials Manual — stated in prose, no front matter | | |
+| Crew cards (5) and position cards (5) | OHSAA Gold Book "Brief & Concise" (2026), following the NFHS Officials Manual | — | 2026-08-26 |
 | `clock-officials-cheat-sheet.md` | SDCFOA Clock Administration — stated in prose, no front matter | | |
 | `7-man-mechanics.md` | VFOA 7-man deck, 2022 | | |
 | `football-rules-summary.md` (Cliff Notes) | 2025 NFHS Football Rules Book — named in the page title, no front matter | 2025 | 2026-07-26 |

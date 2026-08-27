@@ -1,6 +1,8 @@
 ---
 title: Kicking Plays Crew Card
 date: 2026-08-26
+source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
+verified: 2026-08-26
 tags:
   - Mechanics
   - Crew Cards
@@ -13,10 +15,8 @@ tries — for crews of five and crews of four.
 **[Download the Kicking Plays Crew Card (PDF, 2 pages)](/uploads/kicking-plays-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
-Built from the OHSAA Gold Book Brief & Concise mechanics for crews of 5 and 4,
-which follows the NFHS Officials Manual. **Associations amend these** — the 4-man
-punt and the good/no-good call move most; check Vermont's guidance before
-teaching it.
+**Associations amend these** — the 4-man punt and the good/no-good call move
+most; check Vermont's guidance before teaching it.
 
 ## Who's who
 

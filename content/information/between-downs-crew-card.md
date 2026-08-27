@@ -1,6 +1,8 @@
 ---
 title: Between Downs Crew Card
 date: 2026-08-26
+source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
+verified: 2026-08-26
 tags:
   - Mechanics
   - Crew Cards
@@ -13,9 +15,7 @@ makes a crew look sharp. For crews of five and crews of four.
 **[Download the Between Downs Crew Card (PDF, 2 pages)](/uploads/between-downs-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
-Built from the OHSAA Gold Book Brief & Concise mechanics for crews of 5 and 4,
-which follows the NFHS Officials Manual. **Associations amend these** — check
-Vermont's guidance before teaching it.
+**Associations amend these** — check Vermont's guidance before teaching it.
 
 ## Who's who
 
