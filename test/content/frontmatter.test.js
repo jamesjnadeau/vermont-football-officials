@@ -40,9 +40,11 @@ test('all expected articles exist as markdown', () => {
     'between-downs-crew-card.md',
     'clock-officials-cheat-sheet.md',
     'clock-timing-crew-card.md',
+    'ejections-and-reporting.md',
     'football-rules-summary.md',
     'foul-weather-procedures.md',
     'fouls-enforcement-crew-card.md',
+    'game-day-administration.md',
     'getting-assigned.md',
     'information-for-new-folks.md',
     'kicking-plays-crew-card.md',
@@ -51,7 +53,9 @@ test('all expected articles exist as markdown', () => {
     'recommend-reading.md',
     'referee-position-card.md',
     'run-pass-plays-crew-card.md',
+    'season-calendar.md',
     'umpire-position-card.md',
+    'vermont-rules-and-policies.md',
     'your-first-season.md',
   ];
   assert.deepEqual(articles.map((a) => a.name).sort(), want);

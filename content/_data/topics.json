@@ -5,6 +5,11 @@
     "description": "Where to begin if you are new to officiating football in Vermont."
   },
   {
+    "name": "Vermont",
+    "slug": "vermont",
+    "description": "What the VPA changes or adds on top of the NFHS rule book — the layer that makes a Vermont game a Vermont game."
+  },
+  {
     "name": "Rules",
     "slug": "rules",
     "description": "The NFHS rules themselves — summaries, study aids and where to read the real thing."

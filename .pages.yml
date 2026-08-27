@@ -63,6 +63,7 @@ content:
           multiple: true
           values:
             - Getting Started
+            - Vermont
             - Rules
             - Mechanics
             - Crew Cards
