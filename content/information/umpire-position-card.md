@@ -13,7 +13,7 @@ Your spot, your keys and your jobs, situation by situation — the Umpire's card
 for a crew of five. You are the white marker
 on every diagram.
 
-**[Download the Umpire Position Card (PDF, 2 pages)](/uploads/umpire-position-card.pdf)** —
+**[Download the Umpire Position Card (PDF, 2 pages)](/cards/umpire-position-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.

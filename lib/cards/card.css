@@ -1,0 +1,245 @@
+/*
+ * The printable card: two Letter pages, printed two-sided and flipped on the
+ * long edge, read on a sideline in bad light.
+ *
+ * ---------------------------------------------------------------------------
+ * THE THREE KNOBS
+ *
+ * A card that comes out at three pages is a failed build (see
+ * test/cards/output.test.js). These are the three things that decide whether a
+ * card fits, in the order to reach for them. Push these before you start
+ * cutting content — and stop before the type stops being readable at arm's
+ * length on a wet evening, because that is the whole point of the card.
+ * ---------------------------------------------------------------------------
+ */
+:root {
+  /* 1. Columns per page. Two is the densest that stays readable at this size. */
+  --card-columns: 2;
+
+  /* 2. Body type. 7pt is the floor; below that the card is decoration. */
+  --card-font-size: 7.4pt;
+  --card-line-height: 1.28;
+
+  /* 3. Figure width. Two diagrams sit side by side in one column, so this is
+     a little under half the column measure. Field diagrams are ~1.46 as tall
+     as they are wide, which is what makes them the expensive part of a card. */
+  --card-figure-width: 43mm;
+
+  /* Page geometry, measured off the cards this pipeline replaces. */
+  --card-margin: 11mm;
+  --card-gap: 5mm;
+
+  --card-rule: #999;
+  --card-rule-soft: #ccc;
+  --card-muted: #444;
+}
+
+@page {
+  size: Letter;
+  margin: 11mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* The end-zone hatching and the table zebra are information, not decoration,
+     so they have to survive a printer that would rather drop backgrounds. */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  /* The same stack the field diagrams set on themselves, so a caption and the
+     labels inside the diagram it captions are the same typeface. */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--card-font-size);
+  line-height: var(--card-line-height);
+  color: #000;
+  background: #fff;
+  hyphens: auto;
+}
+
+.card {
+  columns: var(--card-columns);
+  column-gap: var(--card-gap);
+  column-fill: auto;
+}
+
+/* --- Masthead ---------------------------------------------------------- */
+
+.card-head {
+  column-span: all;
+  border-bottom: 1.2pt solid #000;
+  padding-bottom: 1.2mm;
+  margin-bottom: 2.4mm;
+}
+
+.card-head h1 {
+  font-size: calc(var(--card-font-size) * 1.85);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.card-sub {
+  margin: 0.8mm 0 0;
+  font-size: calc(var(--card-font-size) * 1.05);
+  color: var(--card-muted);
+}
+
+/* --- Sections ---------------------------------------------------------- */
+
+.card-section {
+  break-inside: auto;
+  margin-bottom: 2.4mm;
+}
+
+.card-section > h2 {
+  font-size: calc(var(--card-font-size) * 1.2);
+  line-height: 1.15;
+  margin: 0 0 1mm;
+  padding-bottom: 0.5mm;
+  border-bottom: 0.7pt solid var(--card-rule);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  break-after: avoid;
+}
+
+.card-section h3 {
+  font-size: var(--card-font-size);
+  margin: 1.6mm 0 0.6mm;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--card-muted);
+  break-after: avoid;
+}
+
+p {
+  margin: 0 0 1.2mm;
+  orphans: 2;
+  widows: 2;
+}
+
+/* A card is read in glances, so the bullet has to sit tight to its text. */
+ul,
+ol {
+  margin: 0 0 1.2mm;
+  padding-left: 3.4mm;
+}
+
+li {
+  margin-bottom: 0.5mm;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* Links are dead ink on paper: keep the words, drop the colour and the rule. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  border-top: 0.5pt solid var(--card-rule-soft);
+  margin: 1.6mm 0;
+}
+
+/* --- Tables ------------------------------------------------------------ */
+/* Several cards lean on a table as a two-column definition list, with a
+   deliberately empty header cell. It should not draw a rule across the top. */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.4mm;
+  font-size: calc(var(--card-font-size) * 0.96);
+}
+
+th,
+td {
+  padding: 0.35mm 1mm 0.35mm 0;
+  text-align: left;
+  vertical-align: top;
+  border-top: 0.4pt solid var(--card-rule-soft);
+}
+
+thead th {
+  border-top: 0;
+  border-bottom: 0.7pt solid var(--card-rule);
+  font-weight: 700;
+}
+
+thead th:empty {
+  border-bottom: 0;
+  padding: 0;
+}
+
+tbody tr:first-child td {
+  border-top: 0;
+}
+
+/* --- Figures ----------------------------------------------------------- */
+/* The articles lay diagrams out in a Bootstrap grid row of two columns. On the
+   card the same markup becomes a pair of figures sized in millimetres: a
+   diagram that reads on a screen is illegible at a third of a column. */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5mm;
+  margin: 1.2mm 0 1.8mm;
+  break-inside: avoid;
+}
+
+.row > [class*="col-"] {
+  flex: 1 1 var(--card-figure-width);
+  min-width: 0;
+}
+
+figure {
+  margin: 0;
+  break-inside: avoid;
+}
+
+figure img,
+img {
+  display: block;
+  width: 100%;
+  max-width: var(--card-figure-width);
+  height: auto;
+  border: 0.4pt solid var(--card-rule-soft);
+  background: #fff;
+}
+
+.figure-caption {
+  margin-top: 0.4mm;
+  font-size: calc(var(--card-font-size) * 0.86);
+  color: var(--card-muted);
+  text-align: center;
+}
+
+/* --- Provenance -------------------------------------------------------- */
+/* Lands at the end of the flow, which puts it at the foot of the last page.
+   A card with no date on it is a card nobody can trust two seasons later. */
+
+.card-prov {
+  margin-top: 2mm;
+  padding-top: 1mm;
+  border-top: 0.5pt solid var(--card-rule-soft);
+  font-size: calc(var(--card-font-size) * 0.82);
+  color: var(--card-muted);
+  break-inside: avoid;
+}
+
+/* Blocks an editor marked as belonging to the web page only. The card side of
+   the `card-omit` / `card-only` pair; the page hides `.card-only` in its own
+   stylesheet. */
+.card-omit {
+  display: none;
+}

@@ -12,12 +12,12 @@ tags:
 Where every official starts on a play from scrimmage and what each one keys on —
 for crews of five and crews of four.
 
-**[Download the Running & Passing Plays Crew Card (PDF, 2 pages)](/uploads/run-pass-plays-crew-card.pdf)** —
+**[Download the Running & Passing Plays Crew Card (PDF, 2 pages)](/cards/run-pass-plays-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.
-This is the companion to the [Kicking Plays Crew Card](/information/kicking-
-plays-crew-card/).
+This is the companion to the
+[Kicking Plays Crew Card](/information/kicking-plays-crew-card/).
 
 ## Who's who
 
@@ -32,7 +32,7 @@ plays-crew-card/).
 | **○** | Defense (B) |
 
 In every diagram below the white marker is the Referee, and the press box is on
-the right. Boxed items are white-hat only.
+the right. What is the Referee's alone appears under "Referee — white hat only."
 
 ---
 

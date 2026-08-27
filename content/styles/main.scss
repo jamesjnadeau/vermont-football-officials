@@ -66,3 +66,11 @@ body {
   border-left: 3px solid var(--bs-border-color);
   color: var(--bs-secondary-color);
 }
+
+// The printed card and the web page are two renderings of the same article
+// (see docs/cards/README.md). `card-only` is the escape hatch for a block that
+// belongs on the card and not the page; `card-omit` is handled the other way,
+// by lib/cards/extract.js dropping the block before it reaches the card.
+.card-only {
+  display: none;
+}

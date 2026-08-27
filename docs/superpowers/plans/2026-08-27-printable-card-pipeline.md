@@ -1,5 +1,10 @@
 # Printable Card Pipeline Implementation Plan
 
+> **Implemented.** Every step below is done except Task 6 Step 3, proofing on
+> paper, which needs a black-and-white laser and a person — see
+> `docs/cards/proofing.md`. The pipeline lives in `lib/cards/`, the gates in
+> `test/cards/output.test.js`, and the design rules in `docs/cards/README.md`.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** The article is the card. Editing `kicking-plays-crew-card.md` in Pages
@@ -93,14 +98,14 @@ itself, which on the card would be a link to the thing in your hand.
 - Produces: `cardModel(article)` returning `{ title, subtitle, sections, provenance }`
   from a parsed article, with the web-only parts already dropped.
 
-- [ ] **Step 1: Inventory what differs, across all eleven articles**
+- [x] **Step 1: Inventory what differs, across all eleven articles**
 
 Read all eleven and list every block that belongs on the page but not the card,
 and vice versa. The known ones: the download link paragraph, the framing lede,
 the provenance footnote. Do not design from the two you remember — read them all
 and write the list down, because the rule has to cover the ones you didn't.
 
-- [ ] **Step 2: Choose convention over markup**
+- [x] **Step 2: Choose convention over markup**
 
 Default to rules that need nothing from the editor:
 
@@ -118,7 +123,7 @@ Then one escape hatch for the exceptions Step 1 found: a `card-omit` class on a
 block keeps it off the card, and `card-only` keeps it off the page. Both are
 plain HTML attributes an editor can ignore and a maintainer can reach for.
 
-- [ ] **Step 3: Handle the figures**
+- [x] **Step 3: Handle the figures**
 
 The diagrams are the bulk of the cards and the reason they're worth printing.
 On the page they sit in Bootstrap grid rows; on the card they need to be sized
@@ -127,13 +132,13 @@ in physical units, because a diagram that reads on screen can be illegible at
 that the two-column `row` markup has to survive translation into the card's
 layout.
 
-- [ ] **Step 4: Test the extraction**
+- [x] **Step 4: Test the extraction**
 
 Assert against real articles, not fixtures: for each of the eleven, the card
 model has a non-empty title, a subtitle, at least one section, and contains no
 link to its own PDF. Assert that an article with no card link is left alone.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 npm test
@@ -154,7 +159,7 @@ git commit -m "Work out which parts of an article become the card"
 - Consumes: Task 1's card model.
 - Produces: `renderCardHtml(model)` returning a self-contained HTML document.
 
-- [ ] **Step 1: Write the page box**
+- [x] **Step 1: Write the page box**
 
 `@page { size: Letter; margin: … }` with the margins the existing cards use —
 measure a current PDF rather than guessing. Set `print-color-adjust: exact` so
@@ -162,28 +167,28 @@ the end-zone hatching survives, and establish the type scale once. This is the
 "corrected base" the field-reference-cards plan wanted extracted; it is being
 written here instead, from scratch, because there is nothing left to extract.
 
-- [ ] **Step 2: Make the two-page constraint visible in the CSS**
+- [x] **Step 2: Make the two-page constraint visible in the CSS**
 
 Column count, type size and figure size are the three knobs that decide whether
 a card fits. Put them in named custom properties at the top of the file with a
 comment saying so, so the next person who has to make a card fit knows where to
 push before they start cutting content.
 
-- [ ] **Step 3: Inline everything**
+- [x] **Step 3: Inline everything**
 
 The renderer loads the HTML from a string with no web server. Every image must
 be inlined as a data URI — the field diagrams are SVG, so they inline as text
 cheaply. No external fonts: use the same system stack the diagrams use, so the
 card and its figures agree.
 
-- [ ] **Step 4: Write the card README**
+- [x] **Step 4: Write the card README**
 
 `docs/cards/README.md`: the design rules from Global Constraints, the build
 command, the two-page constraint and which knobs to turn, and the instruction to
 proof on an actual black-and-white laser before shipping. The document that
 stops the rules being reinvented.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 npm test
@@ -206,7 +211,7 @@ The incremental part. A card re-renders when its inputs change and not otherwise
 - Produces: `renderCard(model, { cacheDir })` returning a PDF buffer, from cache
   when the inputs are unchanged.
 
-- [ ] **Step 1: Get the cache key right — this is the whole task**
+- [x] **Step 1: Get the cache key right — this is the whole task**
 
 The key is a hash of everything that can change the output. Miss one input and
 the failure mode is a card that looks fine and is wrong, which is worse than no
@@ -224,20 +229,20 @@ Write the key as a sorted list of `name: sha256` pairs so a cache miss can be
 explained. When a card rebuilds and you don't know why, the answer has to be
 one diff away.
 
-- [ ] **Step 2: Render**
+- [x] **Step 2: Render**
 
 Launch Chromium once for the whole run, not once per card. `page.setContent`,
 wait for fonts, then `page.pdf({ format: 'Letter', printBackground: true })`.
 Reuse the page; close the browser in a `finally`.
 
-- [ ] **Step 3: Cache on disk**
+- [x] **Step 3: Cache on disk**
 
 `.cache/cards/<key>.pdf`, added to `.gitignore`. On a hit, copy; on a miss,
 render and store. Log one line per card saying hit or miss and, on a miss, which
 input changed — that line is what makes the incrementality checkable rather than
 merely claimed.
 
-- [ ] **Step 4: Test the cache**
+- [x] **Step 4: Test the cache**
 
 The tests that matter are the invalidation ones, and they should be written to
 fail first:
@@ -248,7 +253,7 @@ fail first:
 - bump `CARD_FORMAT_VERSION` → miss
 - a corrupt or truncated cache entry → miss, not a broken PDF
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 npm test
@@ -267,26 +272,26 @@ git commit -am "Render cards through a content-addressed cache"
 **Interfaces:**
 - Produces: `_site/cards/<slug>.pdf` for every article tagged `Printable`.
 
-- [ ] **Step 1: Emit to `/cards/`, not `/uploads/`**
+- [x] **Step 1: Emit to `/cards/`, not `/uploads/`**
 
 `static/uploads/` is Pages CMS's media directory — editors upload into it. A
 generated file living there will eventually collide with one an editor put
 there. Generated cards get their own path, and the separation stays obvious:
 `uploads/` is what people put in, `cards/` is what the build makes.
 
-- [ ] **Step 2: Add the Eleventy hook**
+- [x] **Step 2: Add the Eleventy hook**
 
 An `eleventyConfig.on('eleventy.after')` handler that finds articles tagged
 `Printable`, skips the 7-man deck (which links an artefact, not a generated
 card), and writes each PDF into the output directory.
 
-- [ ] **Step 3: Keep `npm run dev` fast**
+- [x] **Step 3: Keep `npm run dev` fast**
 
 Development builds skip cards entirely unless `CARDS=1` is set. A live-reload
 cycle must not wait on a browser. State this in the dev docs, because the first
 person to wonder why their card didn't update will be the person who wrote it.
 
-- [ ] **Step 4: Update the article links and delete the old PDFs**
+- [x] **Step 4: Update the article links and delete the old PDFs**
 
 Change the eleven download links to `/cards/<slug>.pdf` and delete the eleven
 committed PDFs. Leave `7-man-mechanics-2022.pdf` alone.
@@ -295,7 +300,7 @@ Verify `npm test`'s link check passes — it crawls `_site`, so the generated
 cards must exist by the time it runs. If they don't, the ordering is wrong and
 that is the bug to fix, not a reason to skip the check.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 npm test
@@ -315,14 +320,14 @@ editor can change a card without knowing they did.
 - Create: `test/cards/output.test.js`
 - Modify: `.github/workflows/deploy.yml`
 
-- [ ] **Step 1: Assert the page count**
+- [x] **Step 1: Assert the page count**
 
 Every card is exactly two pages. Read it back from the rendered PDF and fail
 naming the card and the count. This is the gate that makes the whole design
 safe: it is the failure an editor is most likely to cause and least likely to
 notice.
 
-- [ ] **Step 2: Assert nothing was silently dropped**
+- [x] **Step 2: Assert nothing was silently dropped**
 
 Overflow is the quiet failure — content pushed off the page box renders as a
 clean-looking card with a missing bullet. Compare the text extracted from the
@@ -330,20 +335,20 @@ PDF against the text of the card model and fail on anything missing. Assert too
 that every figure the model references appears, since a broken data URI produces
 a blank space rather than an error.
 
-- [ ] **Step 3: Cache the cache in CI**
+- [x] **Step 3: Cache the cache in CI**
 
 `actions/cache` on `.cache/cards`, keyed so it survives across runs. Cache the
 Playwright browser download separately — it is the slow part of a cold build.
 An edit to one article should rebuild one card.
 
-- [ ] **Step 4: Fail loudly, and only on the real thing**
+- [x] **Step 4: Fail loudly, and only on the real thing**
 
 A gate failure fails the deploy, which for a CMS editor means the site keeps
 serving the last good build while someone looks. That is the right trade: a
 stale card that a human is about to fix beats a wrong one nobody noticed. Make
 the failure message name the article by its CMS title, not its file path.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 npm test
@@ -358,7 +363,7 @@ git commit -am "Gate card output on page count and completeness"
 - Modify: the eleven articles, as each is brought across
 - Create: `docs/cards/proofing.md`
 
-- [ ] **Step 1: Render all eleven and compare against the committed PDFs**
+- [x] **Step 1: Render all eleven and compare against the committed PDFs**
 
 Put the generated card beside the current one, page by page. They will not
 match — the current ones came from a lost source through a different renderer —
@@ -370,24 +375,24 @@ article, where it should have been.
 This step is the real work of the task. Expect it to turn up material on the
 cards that never made it to the web pages.
 
-- [ ] **Step 2: Fix what the gates catch**
+- [x] **Step 2: Fix what the gates catch**
 
 Cards that come out at three pages need cutting, per the constraint. Cut content
 rather than shrinking type past legibility — the type size is already set for
 someone reading in bad light on a sideline.
 
-- [ ] **Step 3: Proof on paper**
+- [ ] **Step 3: Proof on paper** — NOT DONE; needs a laser and a person
 
 Print all eleven on a black-and-white laser, two-sided, flip on long edge. Check
 the flip actually works — a card whose back is upside down is a card nobody uses
 twice. This is manual and cannot be skipped.
 
-- [ ] **Step 4: Write the proofing doc**
+- [x] **Step 4: Write the proofing doc**
 
 `docs/cards/proofing.md`: what to check on paper, what the gates already cover,
 and what only a human can catch. Short enough to be read before each print run.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 npm test

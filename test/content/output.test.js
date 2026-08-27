@@ -149,28 +149,19 @@ test('quiz authoring docs are not published', () => {
 test('kept static assets are copied through', () => {
   for (const f of [
     'images/vermont.svg',
+    // The 2022 slide deck is an artefact someone else produced, not a card the
+    // build could render from article text, so it stays a committed upload.
     'uploads/7-man-mechanics-2022.pdf',
     'images/7-man-mechanics/coin-toss.jpg',
     'images/7-man-mechanics/keys.jpg',
-    'uploads/clock-officials-cheat-sheet.pdf',
     'uploads/first-year-officials-quiz-1.docx',
     'uploads/first-year-officials-quiz-2.docx',
-    'uploads/kicking-plays-crew-card.pdf',
     'images/kicking-plays/kickoff-crew-of-5.svg',
     'images/kicking-plays/field-goal-crew-of-4.svg',
-    'uploads/run-pass-plays-crew-card.pdf',
     'images/run-pass-plays/every-down-crew-of-5.svg',
     'images/run-pass-plays/goal-line-crew-of-4.svg',
-    'uploads/between-downs-crew-card.pdf',
-    'uploads/clock-timing-crew-card.pdf',
-    'uploads/fouls-enforcement-crew-card.pdf',
     'images/between-downs/getting-it-back-crew-of-5.svg',
     'images/fouls-enforcement/flag-down-crew-of-4.svg',
-    'uploads/referee-position-card.pdf',
-    'uploads/umpire-position-card.pdf',
-    'uploads/linesman-position-card.pdf',
-    'uploads/line-judge-position-card.pdf',
-    'uploads/back-judge-position-card.pdf',
     'images/position-cards/referee/run.svg',
     'images/position-cards/umpire/kickoff.svg',
     'images/position-cards/back-judge/field-goal.svg',
@@ -181,6 +172,16 @@ test('kept static assets are copied through', () => {
   ]) {
     assert.ok(existsSync(path.join(SITE, f)), `missing _site/${f}`);
   }
+});
+
+// The printable cards are build output, not commits — the whole point of the
+// pipeline is that they cannot be stale. `uploads/` is what editors put in;
+// `cards/` is what the build makes, and the two must not mix.
+test('no generated card is committed under uploads/', () => {
+  const stale = readdirSync('static/uploads')
+    .map(String)
+    .filter((f) => f.endsWith('.pdf') && f !== '7-man-mechanics-2022.pdf');
+  assert.deepEqual(stale, []);
 });
 
 // --- Footer / editing link ---------------------------------------------

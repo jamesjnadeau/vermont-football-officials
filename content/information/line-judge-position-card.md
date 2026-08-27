@@ -13,7 +13,7 @@ Your spot, your keys and your reads, situation by situation — the Line Judge's
 card for a crew of five. You work the press box sideline and you own the clock. You are the white marker
 on every diagram.
 
-**[Download the Line Judge Position Card (PDF, 2 pages)](/uploads/line-judge-position-card.pdf)** —
+**[Download the Line Judge Position Card (PDF, 2 pages)](/cards/line-judge-position-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.

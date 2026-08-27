@@ -13,7 +13,7 @@ Your spot, your keys and your reads, situation by situation — the Linesman's c
 for a crew of five. You work the sideline opposite the press box. You are the white marker
 on every diagram.
 
-**[Download the Linesman Position Card (PDF, 2 pages)](/uploads/linesman-position-card.pdf)** —
+**[Download the Linesman Position Card (PDF, 2 pages)](/cards/linesman-position-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.

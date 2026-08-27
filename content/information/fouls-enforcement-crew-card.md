@@ -13,7 +13,7 @@ tags:
 Who throws it, who enforces it, who announces it. For crews of five and crews of
 four.
 
-**[Download the Fouls & Enforcement Crew Card (PDF, 2 pages)](/uploads/fouls-enforcement-crew-card.pdf)** —
+**[Download the Fouls & Enforcement Crew Card (PDF, 2 pages)](/cards/fouls-enforcement-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.
@@ -27,6 +27,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | **LM** | Linesman (H/DJ) |
 | **LJ** | Line Judge |
 | **BJ** | Back Judge (5-man only) |
+
+In every diagram below the white marker is the Referee, and the press box is on
+the right. What is the Referee's alone appears under "Referee — white hat only."
 
 ---
 
