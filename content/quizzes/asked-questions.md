@@ -63,6 +63,32 @@ same concept are still duplicates — check this column too.
 | 005 | 8 | 10.2.5 SIT F | 10 | Fouls before vs after enforcement is determined: offset vs enforced separately |
 | 005 | 9 | OT 3.1.1 SIT J | OT | Dead-ball foul between regulation and OT: succeeding spot is the 5 or the 25 |
 | 005 | 10 | OT 3.1.1 SIT O | OT | Roughing the holder on an accepted OT try: opponent's series starts at the 25 |
+| 006 | 1 | 1-2-5 | 1 | Line-to-gain and down indicators: what they are, who supplies them, where they are operated |
+| 006 | 2 | 2-39 | 2 | Shift defined, and the one-second absolute stop that must follow it |
+| 006 | 3 | 2-1-2 | 2 | Live ball: becomes live on a legal snap or free kick with a down in progress |
+| 006 | 4 | 2-1-1 | 2 | Dead ball: not in play, and dead throughout the interval between downs |
+| 006 | 5 | 7-1-7 | 7 | False start: the three ways it happens; a false start that causes encroachment is the only foul |
+| 006 | 6 | 2-7-1 | 2 | Down defined and ended; loss of down is loss of the right to replay, not the ball |
+| 006 | 7 | 2-18 | 2 | Fumble: any loss of possession other than by handing, passing or legal kick |
+| 006 | 8 | 2-27 | 2 | Muff vs fumble: possession is the difference, and it drives the 4-3-1 exception |
+| 006 | 9 | 2-28-1 | 2 | Neutral zone width on a scrimmage down vs a free-kick down, established at the ready |
+| 006 | 10 | 2-8-1 | 2 | Encroachment: the interval it spans, and the substitute who is not yet a player |
+| 006 | 11 | 2-14-1 | 2 | Scrimmage formation: minimum five A players legally on the line at the snap |
+| 007 | 1 | 2-32-9 | 2 | Lineman: head or foot breaking the plane through the snapper's waist at the snap |
+| 007 | 2 | 2-32-3 | 2 | Back: no body part breaking the plane through the nearest on-line teammate's waist |
+| 007 | 3 | 7-2-3 | 7 | Baseline legal formation on downs 1-3: only one player under the snapper, four-back maximum |
+| 007 | 4 | 2-31-2 | 2 | Forward vs backward pass decided by initial direction; arm moving forward on contact |
+| 007 | 5 | 7-5-6 | 7 | Eligible receivers: ends and backs numbered 0-49/80-99, all of A once B touches, all of B |
+| 007 | 6 | 2-4-1 | 2 | Catch: possession of a ball in flight plus first contacting the ground inbounds |
+| 007 | 7 | 7-5-13 | 7 | Illegal touching by an ineligible A player; 5 yards plus loss of down |
+| 007 | 8 | 7-5-1 | 7 | Legal forward pass: both feet in or behind the NZ, before a change of possession, one per down |
+| 007 | 9 | 7-5-2 | 7 | The four illegal forward passes and their penalties, with the spike and throwaway exceptions |
+| 007 | 10 | 2-24-3 | 2 | Free kick defined; used for a kickoff, after a safety, and after a fair catch |
+| 007 | 11 | 6-1-3 | 6 | Free-kick formation: nobody beyond the line, K within 5 yards, four each side of the kicker |
+| 007 | 12 | 2-24-4 | 2 | Scrimmage kick: any kick from in or behind the NZ during a scrimmage down |
+| 007 | 13 | 2-14-2 | 2 | Scrimmage-kick formation is a definition, not a requirement for kicking legally |
+| 007 | 14 | 6-2-2 | 6 | Who may advance a kick: R generally; K only from in or behind the neutral zone |
+| 007 | 15 | 2-9-1 | 2 | Fair catch and the valid signal; only the signaller is protected |
 
 ## Coverage by rule
 
@@ -70,13 +96,13 @@ Update after each quiz. Prefer under-used rules when picking the next batch.
 
 | Rule | Questions |
 | --- | --- |
-| 1 — Field, players, equipment | 1 |
-| 2 — Definitions | 3 |
+| 1 — Field, players, equipment | 2 |
+| 2 — Definitions | 20 |
 | 3 — Periods, timing, substitutions | 10 |
 | 4 — Ball in play, dead ball, OOB | 6 |
 | 5 — Series of downs | 2 |
-| 6 — Kicking, fair catch | 4 |
-| 7 — Snapping, handling, passing | 4 |
+| 6 — Kicking, fair catch | 6 |
+| 7 — Snapping, handling, passing | 10 |
 | 8 — Scoring, touchbacks | 5 |
 | 9 — Conduct of players | 10 |
 | 10 — Penalty enforcement | 3 |

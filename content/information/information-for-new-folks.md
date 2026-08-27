@@ -18,10 +18,14 @@ You can find the rules:
 
 ?You will be provided a physical rule book during training?
 
-Some example Quizes that are helpful to test yourself:
+The two take-home quizzes first-year officials used to get as Word documents
+are now on the site, with the rule citations worked out in the answer key:
 
-- [Quiz 1](/uploads/first-year-officials-quiz-1.docx)
-- [Quiz 2](/uploads/first-year-officials-quiz-2.docx)
+- [Quiz 006 — Rookie Definitions, Part 1](/quizzes/quiz-006-rookie-definitions-part-1/) — the dead ball, the neutral zone, fumble versus muff, false start
+- [Quiz 007 — Rookie Definitions, Part 2](/quizzes/quiz-007-rookie-definitions-part-2/) — linemen and backs, forward passes, free and scrimmage kicks
+
+Answer them out loud with the rule, section and article, the way the paper
+version asked for it. The rest are on the [quizzes page](/quizzes/).
 
 ## Uniforms
 

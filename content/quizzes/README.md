@@ -13,6 +13,8 @@ are excluded from the build (see `.eleventy.js`).
 | [quiz-003-dead-ball-and-definitions.md](quiz-003-dead-ball-and-definitions.md) | Expert | 10 | Rules 1, 2, 4 — dead ball, inadvertent whistle, progress, numbering |
 | [quiz-004-rule-9-conduct.md](quiz-004-rule-9-conduct.md) | Expert | 10 | Rule 9 — blocks, horse collar, helmets off, illegal participation |
 | [quiz-005-kicks-passes-enforcement-overtime.md](quiz-005-kicks-passes-enforcement-overtime.md) | Expert | 10 | Rules 5, 6, 7, 10 + overtime — PSK, spikes, basic spots, tie-breaker |
+| [quiz-006-rookie-definitions-part-1.md](quiz-006-rookie-definitions-part-1.md) | Rookie | 11 | Rules 1, 2, 7 — dead ball, neutral zone, fumble vs muff, false start |
+| [quiz-007-rookie-definitions-part-2.md](quiz-007-rookie-definitions-part-2.md) | Rookie | 15 | Rules 2, 6, 7 — linemen and backs, forward passes, free and scrimmage kicks |
 
 [asked-questions.md](asked-questions.md) is the ledger of every question already
 used. Nothing in it may be asked again.
