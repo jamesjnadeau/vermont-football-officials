@@ -26,3 +26,43 @@ body {
 .topic-link:focus-visible {
   background-color: var(--bs-secondary-bg) !important;
 }
+
+// Markdown tables reach the page as a bare <table> with no class for Bootstrap
+// to hang styling on, and several articles lean on them for the numbers that
+// matter most — fees and dues on the recruiting pages, the penalty cheat sheet
+// in the rules summary. Style them where they land instead.
+#content table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+#content th,
+#content td {
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid var(--bs-border-color);
+  text-align: left;
+  vertical-align: top;
+}
+
+#content thead th {
+  border-top: 0;
+  border-bottom: 2px solid var(--bs-border-color);
+}
+
+// Several tables are used as two-column definition lists and have a deliberately
+// empty header row; it should not draw a rule across the top.
+#content thead th:empty {
+  border-bottom: 0;
+  padding: 0;
+}
+
+// Markdown blockquotes arrive bare too. Both recruiting pages quote the
+// association's own words at the point where the reader most needs to hear
+// them, so the quote has to look like one. Matches the provenance footnote.
+#content blockquote {
+  margin: 0 0 1rem;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--bs-border-color);
+  color: var(--bs-secondary-color);
+}

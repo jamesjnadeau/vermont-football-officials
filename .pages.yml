@@ -17,7 +17,7 @@ content:
     format: yaml-frontmatter
     filename: "{primary}.md"
     view:
-      fields: [title, date, tags]
+      fields: [title, date, tags, ruleYear, verified]
       sort: [date, title]
       default:
         sort: date
@@ -33,6 +33,24 @@ content:
         required: true
         options:
           time: false
+      # Provenance. Optional, and only meaningful on rules content — the
+      # article layout renders these as a footnote when `source` is filled in.
+      # A test requires `verified` whenever `source` is set, and fails once a
+      # verified date is more than 400 days old.
+      - name: ruleYear
+        label: NFHS rules year
+        type: number
+        description: The rules year this page reflects, e.g. 2026. Leave blank for pages that aren't rules content.
+      - name: source
+        label: Built from
+        type: string
+        description: 'What this was written from, e.g. "2026 VPA Football Guide". If you fill this in you must also fill in the checked date.'
+      - name: verified
+        label: Last checked on
+        type: date
+        options:
+          time: false
+        description: The date a human last read this page against the source above. Update it every time you re-check, even if nothing changed.
       # Groups the article on the Information page and lists it on its topic
       # page at /tags/<topic>/. The values here must match the names in
       # content/_data/topics.json — a test asserts the two lists agree.

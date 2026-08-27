@@ -11,4 +11,19 @@ article
       time(datetime=new Date(date).toISOString())
         | #{new Date(date).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}
   +topicLinks(tags, topics)
+  //- Provenance. Renders only for articles that declare a `source`, so the
+  //- pages that don't claim rules authority are untouched. A test requires
+  //- `verified` alongside `source` and fails once it goes stale.
+  if source
+    p.small.text-secondary.border-start.border-3.ps-3.py-1
+      if ruleYear
+        | Reflects the #{ruleYear} NFHS rules year.
+      |  Built from #{source}.
+      if verified
+        |  Last checked #{new Date(verified).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}.
+      br
+      if ruleYear
+        | Verify against the current rule book and VPA guide before teaching this as authoritative.
+      else
+        | Dues, fees and association practice change. Confirm with the association before relying on this.
   | !{content}

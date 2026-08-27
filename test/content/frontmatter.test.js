@@ -36,12 +36,14 @@ test('all expected articles exist as markdown', () => {
   const want = [
     '7-man-mechanics.md',
     'back-judge-position-card.md',
+    'becoming-an-official.md',
     'between-downs-crew-card.md',
     'clock-officials-cheat-sheet.md',
     'clock-timing-crew-card.md',
     'football-rules-summary.md',
     'foul-weather-procedures.md',
     'fouls-enforcement-crew-card.md',
+    'getting-assigned.md',
     'information-for-new-folks.md',
     'kicking-plays-crew-card.md',
     'line-judge-position-card.md',
@@ -50,6 +52,7 @@ test('all expected articles exist as markdown', () => {
     'referee-position-card.md',
     'run-pass-plays-crew-card.md',
     'umpire-position-card.md',
+    'your-first-season.md',
   ];
   assert.deepEqual(articles.map((a) => a.name).sort(), want);
 });
@@ -141,6 +144,54 @@ test('the Pages CMS topic dropdown offers exactly the known topics', () => {
 test('article links point at the renamed uploads', () => {
   const bad = articles
     .filter((a) => /%20|1ST YEAR|7-MAN MECHANICS/.test(a.content))
+    .map((a) => a.name);
+  assert.deepEqual(bad, []);
+});
+
+// --- Provenance ------------------------------------------------------
+// Optional front matter lets an article declare which NFHS rules year it
+// reflects (`ruleYear`), what it was built from (`source`), and when a human
+// last read it against that source (`verified`). layouts/article.pug renders
+// them as a footnote. Articles that set none of them are unaffected.
+
+// A page that claims a source must say when a human last checked it against
+// that source. Rules change annually; a stale verification date is worse than
+// none because it looks authoritative.
+test('any article with a source also has a verified date', () => {
+  const bad = articles.filter((a) => a.data.source && !a.data.verified).map((a) => a.name);
+  assert.deepEqual(bad, []);
+});
+
+test('no verified date is in the future or more than 400 days old', () => {
+  const now = Date.now();
+  const MAX_AGE_MS = 400 * 24 * 60 * 60 * 1000;
+  const bad = articles
+    .filter((a) => a.data.verified)
+    .filter((a) => {
+      const d = a.data.verified;
+      const t = (d instanceof Date ? d : new Date(String(d))).getTime();
+      if (Number.isNaN(t)) return true;
+      return t > now || now - t > MAX_AGE_MS;
+    })
+    .map((a) => `${a.name}: ${JSON.stringify(a.data.verified)}`);
+  assert.deepEqual(bad, []);
+});
+
+// Vermont-specific pages are the ones where being out of date does real harm,
+// so they are required to carry the full provenance triple. This passes
+// vacuously until those files exist, then binds automatically — the guard is
+// in place before the content it guards.
+const VERMONT_PAGES = [
+  'vermont-rules-and-policies.md',
+  'game-day-administration.md',
+  'ejections-and-reporting.md',
+  'season-calendar.md',
+];
+
+test('Vermont-specific pages declare ruleYear, source, and verified', () => {
+  const bad = articles
+    .filter((a) => VERMONT_PAGES.includes(a.name))
+    .filter((a) => !(a.data.ruleYear && a.data.source && a.data.verified))
     .map((a) => a.name);
   assert.deepEqual(bad, []);
 });
