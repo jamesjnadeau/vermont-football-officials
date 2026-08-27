@@ -2,6 +2,7 @@ import { HtmlBasePlugin } from "@11ty/eleventy";
 import pugPlugin from "@11ty/eleventy-plugin-pug";
 import purgeCssPlugin from "eleventy-plugin-purgecss";
 import eleventySass from "eleventy-sass";
+import path from "node:path";
 
 const default_title = "Vermont Football Officials";
 const default_description = "Information and resources for high school football officials in the state of Vermont.";
@@ -72,10 +73,10 @@ export default async function (eleventyConfig) {
   // Skipped while serving or watching unless CARDS=1, because a live-reload
   // cycle must not wait on a browser. The import is dynamic for the same
   // reason: `npm run dev` should not pay to load Playwright to skip it.
-  eleventyConfig.on("eleventy.after", async ({ dir, runMode }) => {
+  eleventyConfig.on("eleventy.after", async ({ directories, runMode }) => {
     if (runMode !== "build" && process.env.CARDS !== "1") return;
     const { writeCards } = await import("./lib/cards/render.js");
-    await writeCards({ outputDir: `${dir.output}/cards` });
+    await writeCards({ outputDir: path.join(directories.output, "cards") });
   });
 
   // Code blocks scroll horizontally, which makes them a scrollable region.
