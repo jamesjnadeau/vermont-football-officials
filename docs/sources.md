@@ -44,6 +44,9 @@ it is blocked.
 | **VFOA bylaws / member handbook** | | **needed** | Dues, membership, discipline |
 | **VFOA assignment process** | Currently oral only — the officer answers in the tables below | 2026-08-27 | Assignor, availability, turnbacks |
 | OHSAA Gold Book "Brief & Concise" (2026) | [ohsaafb.com — Gold Book handbook](https://www.ohsaafb.com/mechanics/2018-07-15-ohsaa-goldbook-approved-football-officiating-mechanics-regulations-standards-handbook/) | 2026-08-27 | Crew and position mechanics, crews of 4 and 5 |
+| NVYFL 5/6 Tackle Rules (2026) | League PDF, supplied by James Nadeau | 2026-08-27 | Youth 5/6 game rules |
+| NVYFL 7/8 Tackle Rules (2026) | League PDF, supplied by James Nadeau | 2026-08-27 | Youth 7/8 game rules |
+| NVYFL 5/6 and 7/8 Tackle Rules (2025) | League PDFs, supplied by James Nadeau | 2026-08-27 | Superseded; kept for the archived 2025 page |
 | SDCFOA Clock Administration | [sdcfoa.org/clock-administration](https://www.sdcfoa.org/clock-administration) | | Clock operator reference |
 | VFOA 7-man mechanics deck (Justin Fortier) | `/uploads/7-man-mechanics-2022.pdf` | 2022 | 7-man mechanics |
 
@@ -59,6 +62,14 @@ document: the cards were written on 2026-08-26 from "the OHSAA Gold Book Brief &
 Concise" with no edition recorded at the time. Confirm the edition string
 printed on the document and, if it is not 2026, correct all ten.
 
+**On the NVYFL rows:** these are league documents, not VPA or NFHS ones, and
+they say so on the page — both rule sets supplement the NFHS book rather than
+replace it. The two 2026 pages were transcribed from the PDFs on 2026-08-27
+and diffed against the 2025 pair the same day; the change list on the 2026
+page is the output of that diff. Ask the league for the next edition each
+summer — the 2026 5/6 document is titled a Rulebook and the 7/8 one is dated
+July 2026, so the two levels are not always revised together.
+
 ## Page → source map
 
 Which page rests on which document, and when a human last read one against the
@@ -71,6 +82,8 @@ footnote; the rest state it in prose in the page body.
 | `getting-assigned.md` | VFOA officers, recorded below | — | 2026-08-27 |
 | `your-first-season.md` | VFOA officers, recorded below | — | 2026-08-27 |
 | Crew cards (5) and position cards (5) | OHSAA Gold Book "Brief & Concise" (2026), following the NFHS Officials Manual | — | 2026-08-26 |
+| `nvyfl-youth-football-rules-2026.md` | 2026 NVYFL 5/6 Rulebook and 7/8 Game Rules | 2026 | 2026-08-27 |
+| `nvyfl-youth-football-rules-2025.md` | 2025 NVYFL 5/6 and 7/8 Game Rules — archived, superseded | 2025 | 2026-08-27 |
 | `clock-officials-cheat-sheet.md` | SDCFOA Clock Administration — stated in prose, no front matter | | |
 | `7-man-mechanics.md` | VFOA 7-man deck, 2022 | | |
 | `football-rules-summary.md` (Cliff Notes) | 2025 NFHS Football Rules Book — named in the page title, no front matter | 2025 | 2026-07-26 |
@@ -170,8 +183,11 @@ Every August, before week 1:
 2. Walk the page → source map top to bottom.
 3. For each page: re-read it against its source, update `ruleYear` and
    `verified`, fix what changed, and say what changed in the commit message.
-4. Rebuild any PDF whose source article changed.
-5. Run `npm test` — the 400-day check catches any page that was skipped.
+4. Ask the NVYFL for that year's 5/6 and 7/8 rules, publish them as a new
+   year page, diff them against the outgoing year, and move the outgoing
+   page to archived.
+5. Rebuild any PDF whose source article changed.
+6. Run `npm test` — the 400-day check catches any page that was skipped.
 
 The 400-day window is deliberately longer than a year: a page verified in
 August passes through the following August without failing mid-season, and

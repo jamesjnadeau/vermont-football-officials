@@ -48,6 +48,8 @@ test('all expected articles exist as markdown', () => {
     'kicking-plays-crew-card.md',
     'line-judge-position-card.md',
     'linesman-position-card.md',
+    'nvyfl-youth-football-rules-2025.md',
+    'nvyfl-youth-football-rules-2026.md',
     'recommend-reading.md',
     'referee-position-card.md',
     'run-pass-plays-crew-card.md',
