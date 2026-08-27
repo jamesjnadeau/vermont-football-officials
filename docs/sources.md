@@ -43,13 +43,20 @@ it is blocked.
 | **VPA Football Guide** | [vpaonline.org/athletics/football/](https://vpaonline.org/athletics/football/) | **needed** | Vermont amendments, fees, calendar, playoffs, points of emphasis |
 | **VFOA bylaws / member handbook** | | **needed** | Dues, membership, discipline |
 | **VFOA assignment process** | Currently oral only — the officer answers in the tables below | 2026-08-27 | Assignor, availability, turnbacks |
-| OHSAA Gold Book "Brief & Concise" | | | Crew and position mechanics, crews of 4 and 5 |
+| OHSAA Gold Book "Brief & Concise" (2026) | [ohsaafb.com — Gold Book handbook](https://www.ohsaafb.com/mechanics/2018-07-15-ohsaa-goldbook-approved-football-officiating-mechanics-regulations-standards-handbook/) | 2026-08-27 | Crew and position mechanics, crews of 4 and 5 |
 | SDCFOA Clock Administration | [sdcfoa.org/clock-administration](https://www.sdcfoa.org/clock-administration) | | Clock operator reference |
 | VFOA 7-man mechanics deck (Justin Fortier) | `/uploads/7-man-mechanics-2022.pdf` | 2022 | 7-man mechanics |
 
 The three rows in bold are what the Vermont rules and policies plan is waiting
 on. Until the VPA guide row has an edition and a date, no page may state a
 Vermont fee, date, or rule amendment.
+
+**On the Gold Book row:** the URL's slug carries a 2018 date because that is
+when OHSAA first published the page, not the edition it serves — James supplied
+it as the 2026 source. The ten cards were written before this URL was recorded,
+so which edition they were built from is not established; confirm the edition
+string printed on the document itself before it goes into any page's `source`
+front matter, and re-read the cards against it.
 
 ## Page → source map
 
