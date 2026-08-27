@@ -15,8 +15,11 @@ and the answer to that question is at the bottom of this page.
 
 High school football in Vermont is worked by crews — five officials on a varsity
 crew, four on many sub-varsity games. Each of you has a position with its own
-keys and its own responsibilities, and the crew works as a unit. Games run
-through the fall, and your season starts before that with preseason meetings.
+keys and its own responsibilities, and the crew works as a unit. The playing
+season runs from mid-August to mid-November — in 2026, practice starts 10 August
+and the championships are on 14 November — and your own season starts before
+that with preseason meetings. The
+[Season Calendar](/information/season-calendar/) has this year's dates.
 
 A game is roughly a two-and-a-half hour commitment on the field, plus travel and
 a pregame with your crew beforehand. You are not on the field alone and you are

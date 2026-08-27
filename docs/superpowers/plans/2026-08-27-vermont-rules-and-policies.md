@@ -62,7 +62,7 @@ articles.
   Plus a test rule: **if a page sets `source`, it must also set `verified`**,
   and a `verified` date more than 400 days old fails the build.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Append to `test/content/frontmatter.test.js`:
 
@@ -114,7 +114,7 @@ Note the third test is written to pass vacuously until Tasks 3–6 create those
 files, then bind automatically. That's intentional — it means the guard is in
 place before the content it guards.
 
-- [ ] **Step 2: Run it — should pass (vacuously) against current content**
+- [x] **Step 2: Run it — should pass (vacuously) against current content**
 
 Run: `node --test "test/content/frontmatter.test.js"`
 Expected: PASS. No current article sets `source` or `verified`, so the new tests
@@ -122,7 +122,7 @@ have nothing to reject. If any test errors rather than passing, the append was
 placed outside the module scope where `articles` is defined — move it below the
 `articles` const.
 
-- [ ] **Step 3: Render the banner in article.pug**
+- [x] **Step 3: Render the banner in article.pug**
 
 Modify `content/_includes/layouts/article.pug` so the provenance line renders
 under the date when present. Keep it quiet — this is a footnote, not a warning:
@@ -147,7 +147,7 @@ article
   | !{content}
 ```
 
-- [ ] **Step 4: Add the fields to Pages CMS**
+- [x] **Step 4: Add the fields to Pages CMS**
 
 In `.pages.yml`, under the `information` collection's `fields:` list, add after
 the `date` field:
@@ -177,7 +177,7 @@ CMS index shows staleness at a glance:
       fields: [title, date, ruleYear, verified]
 ```
 
-- [ ] **Step 5: Verify the YAML parses**
+- [x] **Step 5: Verify the YAML parses**
 
 ```bash
 node --input-type=module -e "
@@ -188,7 +188,7 @@ console.log('YAML OK');
 "
 ```
 
-- [ ] **Step 6: Smoke-test the banner**
+- [x] **Step 6: Smoke-test the banner**
 
 Temporarily add to `content/information/clock-timing-crew-card.md` front matter:
 `ruleYear: 2026`, `source: "OHSAA Gold Book Brief & Concise"`,
@@ -196,7 +196,7 @@ Temporarily add to `content/information/clock-timing-crew-card.md` front matter:
 renders below the date and reads cleanly. Then **revert the temporary front
 matter** — that card's real provenance is set in Task 7.
 
-- [ ] **Step 7: Full suite and commit**
+- [x] **Step 7: Full suite and commit**
 
 ```bash
 npm test
@@ -262,7 +262,7 @@ Every August, before week 1:
 5. Run `npm test` — the 400-day check catches anything skipped.
 ```
 
-- [ ] **Step 2: STOP — collect the sources**
+- [x] **Step 2: STOP — collect the sources**
 
 The following must be obtained and confirmed current by James before any
 Vermont content is written. Fill the "Obtained" column in `docs/sources.md` as
@@ -317,14 +317,14 @@ game, covering everything the VPA changes or adds on top of NFHS.
 - Produces: `/information/vermont-rules-and-policies/`, linked from the clock
   cards (Task 7) and from the new-official page (plan 2).
 
-- [ ] **Step 1: Add the filename to the test first**
+- [x] **Step 1: Add the filename to the test first**
 
 Add `'vermont-rules-and-policies.md'` to the `want` array in
 `test/content/frontmatter.test.js`. Run
 `node --test "test/content/frontmatter.test.js"` — expect FAIL on the file list
 test. That failure is the spec.
 
-- [ ] **Step 2: Write the article**
+- [x] **Step 2: Write the article**
 
 Create `content/information/vermont-rules-and-policies.md` with front matter:
 
@@ -375,17 +375,17 @@ from the web page cited in the audit, which mixes years:
 Length target: this is a reference page, not a card. Long is fine. Use tables
 for the clock lists and the fee schedule.
 
-- [ ] **Step 3: Update the source register**
+- [x] **Step 3: Update the source register**
 
 Add the row to the page → source map in `docs/sources.md`.
 
-- [ ] **Step 4: Verify**
+- [x] **Step 4: Verify**
 
 Run `npm test`. Expect PASS. Then `npm run dev` and read the page end to end
 against the guide with the guide open beside it — this page will be quoted at
 by coaches, so a wrong number here is worse than no page.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -408,9 +408,9 @@ field ninety minutes out, not studying midweek.
 - Consumes: Task 1 front matter; Task 2 verified facts.
 - Produces: `/information/game-day-administration/`.
 
-- [ ] **Step 1: Add to `want`, confirm it fails**
+- [x] **Step 1: Add to `want`, confirm it fails**
 
-- [ ] **Step 2: Write the article**
+- [x] **Step 2: Write the article**
 
 Full provenance front matter as Task 3. Sections:
 
@@ -435,7 +435,7 @@ Full provenance front matter as Task 3. Sections:
    consult the visiting administrator. Cross-link
    [Foul Weather Procedures](/information/foul-weather-procedures/).
 
-- [ ] **Step 3: Update `docs/sources.md`, run `npm test`, commit**
+- [x] **Step 3: Update `docs/sources.md`, run `npm test`, commit**
 
 ```bash
 git commit -am "feat: Game Day Administration — host obligations and the crew's pregame walk"
@@ -455,9 +455,9 @@ The workflow a white hat needs to know cold and currently cannot find anywhere.
 - Consumes: Task 1 front matter; Task 2's verified VFOA workflow.
 - Produces: `/information/ejections-and-reporting/`.
 
-- [ ] **Step 1: Add to `want`, confirm it fails**
+- [x] **Step 1: Add to `want`, confirm it fails**
 
-- [ ] **Step 2: Write the article**
+- [x] **Step 2: Write the article**
 
 Sections:
 
@@ -485,7 +485,7 @@ Sections:
    spectator problems, facility or safety issues. Who to tell, and the standing
    advice to write it the same night.
 
-- [ ] **Step 3: Update `docs/sources.md`, run `npm test`, commit**
+- [x] **Step 3: Update `docs/sources.md`, run `npm test`, commit**
 
 ```bash
 git commit -am "feat: Ejections & Reporting — on-field mechanics and the VFOA review workflow"
@@ -507,9 +507,9 @@ the others: it goes stale fastest and is the first thing to update each August.
 - Produces: `/information/season-calendar/`, linked from the home page in
   plan 4.
 
-- [ ] **Step 1: Add to `want`, confirm it fails**
+- [x] **Step 1: Add to `want`, confirm it fails**
 
-- [ ] **Step 2: Write the article**
+- [x] **Step 2: Write the article**
 
 A table-first page. Rows for: association meeting dates, rules interpretation
 meetings, the exam window, first practice, first scrimmage date, week 1 through
@@ -521,7 +521,7 @@ Open with one line stating which season it covers, so a reader who lands on it
 in July of the following year knows immediately it's stale — belt and braces
 alongside the `verified` banner.
 
-- [ ] **Step 3: Update `docs/sources.md`, run `npm test`, commit**
+- [x] **Step 3: Update `docs/sources.md`, run `npm test`, commit**
 
 ```bash
 git commit -am "feat: season calendar page"
@@ -546,14 +546,14 @@ the crew card or the operator sheet. Both articles and both PDFs need it.
 - Produces: updated articles carrying full provenance front matter, and PDFs
   regenerated from the corrected HTML sources.
 
-- [ ] **Step 1: Confirm the PDF build inputs**
+- [x] **Step 1: Confirm the PDF build inputs**
 
 Run `ls static/uploads/` and locate the HTML sources the current PDFs were
 generated from. If the source HTML is not in the repo, that is itself a finding:
 note it, and reconstruct or re-add the source before regenerating, so the next
 person isn't in the same position. Record the outcome in `docs/sources.md`.
 
-- [ ] **Step 2: Add the running clock to the crew card**
+- [x] **Step 2: Add the running clock to the crew card**
 
 In `clock-timing-crew-card.md`, add a Vermont section covering the running
 clock's trigger, the wind/stop lists, and the restart rule. The two-page
@@ -564,26 +564,26 @@ that the position cards already carry.
 Add full provenance front matter, with `source` naming both the mechanics manual
 and the VPA guide.
 
-- [ ] **Step 3: Add it to the operator sheet**
+- [x] **Step 3: Add it to the operator sheet**
 
 `clock-officials-cheat-sheet.md` is written for the scoreboard operator, who is
 the person actually running the clock during a blowout and is usually a
 volunteer. This is the highest-stakes place for it to be clear. Write it as
 plain instructions, not rule citations. Add the same provenance front matter.
 
-- [ ] **Step 4: Cross-link**
+- [x] **Step 4: Cross-link**
 
 Both documents link to
 [Vermont Rules & Policies](/information/vermont-rules-and-policies/) for the
 full treatment. The Vermont page links back to both.
 
-- [ ] **Step 5: Regenerate both PDFs**
+- [ ] **Step 5: Regenerate both PDFs** — BLOCKED, see below
 
 Rebuild with WeasyPrint. Verify: two pages each, no orphaned section headers,
 prints legibly on a black-and-white laser at 100% on Letter. Confirm no gray
 fills crept in — hatching only.
 
-- [ ] **Step 6: Verify and commit**
+- [x] **Step 6: Verify and commit**
 
 ```bash
 npm test
@@ -592,6 +592,36 @@ git commit -m "feat: add Vermont 35-point running clock to clock card and operat
 ```
 
 ---
+
+## Outcome — 2026-08-27
+
+**The gate opened without needing James.** Task 2 Step 2 assumed the VPA guide
+had to be supplied by hand. It did not: `vpaonline.org/athletics/football/` now
+404s, but [Athletic Guides & Rules](https://vpaonline.org/athletic-guides-rules/)
+serves the 2026 Football Guide and the high school Athletic Policies as Google
+Docs, and both export as plain text with `/export?format=txt`. The 2026 edition
+answered every question in Task 2's list except the play clock.
+
+Tasks 1 and 3–6 are complete. Task 7 is complete in the articles and blocked at
+Step 5, the PDF rebuild.
+
+**Still open, and why:**
+
+- **The play clock.** The 2026 guide never mentions one. The Vermont page says
+  exactly that rather than inferring adoption or prohibition from silence, and
+  the rules interpreter is the person to close it. Recorded as item 28 in
+  `docs/sources.md`.
+- **The crew's half of the ejection workflow.** §III.3 gives the review — both
+  commissioners plus the rules interpreter, determination to the VPA and the
+  VIFL Executive Secretary by noon Monday — but not who the crew notifies, on
+  what form, or by when. VFOA-internal. Item 29.
+- **Playoff fee rate and the mileage rate.** The guide says the VPA pays all
+  tournament officials' fees and never says at what rate; it mentions mileage
+  only inside the cancellation rules and never sets one. Items 31 and 32.
+- **Task 7 Step 5, the PDF rebuild.** `static/uploads/` holds eleven PDFs and
+  the repo holds HTML sources for none of them; WeasyPrint is not installed.
+  Both clock pages now say the PDF is behind the page. Reconstructing the
+  sources under `docs/cards/` is plan 3's Task 1 and unblocks this step.
 
 ## Post-plan notes (not tasks)
 

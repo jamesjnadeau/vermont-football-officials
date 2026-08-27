@@ -1,7 +1,8 @@
 ---
 title: Getting Assigned
 date: 2026-08-27
-source: VFOA officers, recorded in docs/sources.md
+ruleYear: 2026
+source: VFOA officers, recorded in docs/sources.md, plus the 2026 VPA Football Guide for fees and playoff dates
 verified: 2026-08-27
 tags:
   - Getting Started
@@ -83,6 +84,13 @@ fixed crew.
 | Varsity | **$97.50** |
 | Junior varsity | **$75.00** |
 
+These are the 2026 rates set by the VPA Football Guide, which also fixes what
+you are owed when a game does not get played: a full fee plus mileage if the
+game is suspended after pregame activity has started, nothing if it is cancelled
+with two hours' notice or more, and half a fee plus mileage if it is cancelled
+without adequate notice and you were there. The full schedule is on
+[Vermont Rules & Policies](/information/vermont-rules-and-policies/).
+
 **Payment** runs through Arbiter, and you withdraw it by whichever of the
 available methods suits you.
 
@@ -95,6 +103,10 @@ that mileage reimbursement rather than billed separately.
 someone who does if you need it.
 
 ## Playoffs
+
+Playoff fees are paid by the VPA rather than by the host school. The
+[Season Calendar](/information/season-calendar/) carries this year's pairing,
+semifinal and championship dates.
 
 Playoff assignments lean on seniority. That said, the association deliberately
 tries to give newer officials a playoff game each year where it can, so the

@@ -20,6 +20,22 @@ deduplicated against the new pages.
 
 **Tech Stack:** No new dependencies. Existing markdown pipeline.
 
+## Status — 2026-08-27
+
+**Tasks 2–5 have landed.** `information-for-new-folks.md` is the equipment page
+and its rule-book placeholder is resolved; `becoming-an-official.md`,
+`your-first-season.md` and `getting-assigned.md` are live and carry provenance
+front matter. Task 1's gate was answered by the officers for items 1–19, which
+are recorded in `docs/sources.md`. The step checkboxes below were never ticked
+as the work went in; treat this note as the record rather than them.
+
+**What Task 1 still has not answered:** item 20 (the contact list — no name goes
+on the site until the person has consented), and items 21–27 in the "Still open"
+table, which sharpen paragraphs rather than block them. Item 21 is now half
+answered: the playing season's dates came out of the 2026 VPA Football Guide and
+are on the [Season Calendar](../../../content/information/season-calendar.md),
+but the association's own meeting dates are still unpublished.
+
 ## Global Constraints
 
 - Depends on **plan 1, Task 1** (verification front matter) having landed.
