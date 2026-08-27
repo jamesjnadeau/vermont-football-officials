@@ -12,7 +12,7 @@ tags:
 Where every official goes on kickoffs, onside kicks, punts, field goals and
 tries — for crews of five and crews of four.
 
-**[Download the Kicking Plays Crew Card (PDF, 2 pages)](/uploads/kicking-plays-crew-card.pdf)** —
+**[Download the Kicking Plays Crew Card (PDF, 2 pages)](/cards/kicking-plays-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — the 4-man punt and the good/no-good call move

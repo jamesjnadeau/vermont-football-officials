@@ -13,7 +13,7 @@ Your spot, your keys and your voice, situation by situation — the white hat's
 card for a crew of five. You are the white marker
 on every diagram.
 
-**[Download the Referee Position Card (PDF, 2 pages)](/uploads/referee-position-card.pdf)** —
+**[Download the Referee Position Card (PDF, 2 pages)](/cards/referee-position-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.

@@ -60,6 +60,24 @@ export default async function (eleventyConfig) {
     });
   }
 
+  // The printable cards. Each article tagged `Printable` is rendered to a
+  // two-page PDF at /cards/<slug>.pdf, so the article is the only source for
+  // both the web page and the card an official carries (docs/cards/README.md).
+  //
+  // /cards/ and not /uploads/: `static/uploads/` is the Pages CMS media
+  // directory that editors upload into, and a generated file living there
+  // would eventually collide with one someone put there by hand. `uploads/` is
+  // what people put in; `cards/` is what the build makes.
+  //
+  // Skipped while serving or watching unless CARDS=1, because a live-reload
+  // cycle must not wait on a browser. The import is dynamic for the same
+  // reason: `npm run dev` should not pay to load Playwright to skip it.
+  eleventyConfig.on("eleventy.after", async ({ dir, runMode }) => {
+    if (runMode !== "build" && process.env.CARDS !== "1") return;
+    const { writeCards } = await import("./lib/cards/render.js");
+    await writeCards({ outputDir: `${dir.output}/cards` });
+  });
+
   // Code blocks scroll horizontally, which makes them a scrollable region.
   // Those must be keyboard-focusable (axe: scrollable-region-focusable).
   eleventyConfig.addTransform("focusableCodeBlocks", function (content) {

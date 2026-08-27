@@ -13,7 +13,7 @@ tags:
 Wind it, stop it, count it down, and fix it when the scoreboard lies. For crews
 of five and crews of four.
 
-**[Download the Clock & Timing Crew Card (PDF, 2 pages)](/uploads/clock-timing-crew-card.pdf)** —
+**[Download the Clock & Timing Crew Card (PDF, 2 pages)](/cards/clock-timing-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.

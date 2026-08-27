@@ -12,7 +12,7 @@ tags:
 Where every official starts on a play from scrimmage and what each one keys on —
 for crews of five and crews of four.
 
-**[Download the Running & Passing Plays Crew Card (PDF, 2 pages)](/uploads/run-pass-plays-crew-card.pdf)** —
+**[Download the Running & Passing Plays Crew Card (PDF, 2 pages)](/cards/run-pass-plays-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.

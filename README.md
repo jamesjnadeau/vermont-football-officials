@@ -63,8 +63,16 @@ Sass), following the architecture of
   something that isn't in the list. Eleventy merges the collection tag
   (`information`, set in `content/information/information.11tydata.json`) into
   the same `tags` list, so templates filter it back out.
-- Static files (PDFs, images) live in `static/` and are copied to the site
-  root, so `static/uploads/x.pdf` is served at `/uploads/x.pdf`.
+- Static files (images, the 2022 slide deck, the quiz .docx files) live in
+  `static/` and are copied to the site root, so `static/uploads/x.pdf` is served
+  at `/uploads/x.pdf`. `static/uploads/` is also the Pages CMS media directory
+  that editors upload into.
+- The eleven printable cards are **generated**, not committed. Each article
+  tagged `Printable` is rendered to a two-page PDF at `/cards/<slug>.pdf` during
+  the build, so the article is the only source for both the web page and the
+  card an official carries. `npm run dev` skips them — a live-reload cycle
+  should not wait on a browser — so use `CARDS=1 npm run dev` to see one change.
+  See [docs/cards/README.md](docs/cards/README.md).
 - `.pages.yml` configures the Pages CMS editing UI. `lib/pages-cms.js` turns a
   page's source path into its editor URL; `content/_data/eleventyComputed.js`
   hands that to every page as `editLink`, which the footer in

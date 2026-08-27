@@ -12,7 +12,7 @@ tags:
 The whistle, the spot, the ball and the chains — the work between plays that
 makes a crew look sharp. For crews of five and crews of four.
 
-**[Download the Between Downs Crew Card (PDF, 2 pages)](/uploads/between-downs-crew-card.pdf)** —
+**[Download the Between Downs Crew Card (PDF, 2 pages)](/cards/between-downs-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.

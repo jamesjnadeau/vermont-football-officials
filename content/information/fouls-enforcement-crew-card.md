@@ -13,7 +13,7 @@ tags:
 Who throws it, who enforces it, who announces it. For crews of five and crews of
 four.
 
-**[Download the Fouls & Enforcement Crew Card (PDF, 2 pages)](/uploads/fouls-enforcement-crew-card.pdf)** —
+**[Download the Fouls & Enforcement Crew Card (PDF, 2 pages)](/cards/fouls-enforcement-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.

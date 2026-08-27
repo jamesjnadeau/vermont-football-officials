@@ -14,7 +14,7 @@ The information on this page comes from the San Diego County Football Officials
 Association's [Clock Administration](https://www.sdcfoa.org/clock-administration)
 page.
 
-**[Download the Clock Officials Cheat Sheet (PDF, 2 pages)](/uploads/clock-officials-cheat-sheet.pdf)** —
+**[Download the Clock Officials Cheat Sheet (PDF, 2 pages)](/cards/clock-officials-cheat-sheet.pdf)** —
 the printable version fits on two sides. The same content is written out below.
 
 ---
