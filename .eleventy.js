@@ -61,9 +61,10 @@ export default async function (eleventyConfig) {
     });
   }
 
-  // The printable cards. Each article tagged `Printable` is rendered to a
-  // two-page PDF at /cards/<slug>.pdf, so the article is the only source for
-  // both the web page and the card an official carries (docs/cards/README.md).
+  // The printable cards. An article that is tagged `Printable` and links its
+  // own /cards/<slug>.pdf is rendered to a two-page PDF there, so the article
+  // is the only source for both the web page and the card an official carries
+  // (docs/cards/README.md).
   //
   // /cards/ and not /uploads/: `static/uploads/` is the Pages CMS media
   // directory that editors upload into, and a generated file living there

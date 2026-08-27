@@ -175,12 +175,15 @@ test('kept static assets are copied through', () => {
 });
 
 // The printable cards are build output, not commits — the whole point of the
-// pipeline is that they cannot be stale. `uploads/` is what editors put in;
-// `cards/` is what the build makes, and the two must not mix.
+// pipeline is that they cannot be stale. `uploads/` is what editors put in and
+// `cards/` is what the build makes, so the check is not "uploads holds no
+// PDFs" — editors upload plenty, and should — but "no card the build renders
+// also sits there as a committed copy that could drift from it".
 test('no generated card is committed under uploads/', () => {
-  const stale = readdirSync('static/uploads')
+  const uploaded = new Set(readdirSync('static/uploads').map(String));
+  const stale = readdirSync(path.join(SITE, 'cards'))
     .map(String)
-    .filter((f) => f.endsWith('.pdf') && f !== '7-man-mechanics-2022.pdf');
+    .filter((f) => uploaded.has(f));
   assert.deepEqual(stale, []);
 });
 

@@ -55,18 +55,18 @@ content:
       # page at /tags/<topic>/. The values here must match the names in
       # content/_data/topics.json — a test asserts the two lists agree.
       #
-      # `Printable` is load-bearing beyond grouping: the build renders every
-      # article carrying it to a two-page PDF at /cards/<slug>.pdf, and fails
-      # if the result is not exactly two pages (docs/cards/README.md).
+      # `Printable` groups articles that have something to print, whoever made
+      # it. It does not on its own make the build render a card: that needs a
+      # /cards/<slug>.pdf link in the body as well (docs/cards/README.md), so
+      # tagging a page here cannot fail a build.
       - name: tags
         label: Topics
         type: select
         required: true
         description: >-
           Pick every topic the article belongs to. Used to group it on the
-          Information page. "Printable" also means this article is a printed
-          card — the site builds a two-page PDF from it, so only use it on an
-          article meant to fit on one card.
+          Information page. "Printable" means there is something on this page
+          worth printing — a card the site builds, or a PDF you have linked.
         options:
           multiple: true
           values:

@@ -2,9 +2,17 @@
 
 Eleven articles double as printed reference cards, carried in a pocket and read
 on a sideline. **The article is the card.** There is no second document: the
-build renders each article tagged `Printable` to a two-page PDF at
-`/cards/<slug>.pdf`, so an editor who fixes a mechanic in Pages CMS has fixed
-the card too, with nothing to rebuild.
+build renders each one to a two-page PDF at `/cards/<slug>.pdf`, so an editor
+who fixes a mechanic in Pages CMS has fixed the card too, with nothing to
+rebuild.
+
+**An article is a card when it links its own card** — a `/cards/<slug>.pdf`
+link in the body — and is tagged `Printable`. The link is the deciding fact,
+because `Printable` means "there is something here to print", which is not the
+same thing: the 2022 slide deck and the NVYFL rules pages are tagged
+`Printable` and link documents somebody else produced. Deriving it from the
+link rather than keeping a list means tagging a new page `Printable` can never
+fail a build the editor had no way to know about.
 
 ## The rules
 

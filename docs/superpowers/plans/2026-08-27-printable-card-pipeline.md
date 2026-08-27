@@ -440,3 +440,11 @@ key before anything else — and when in doubt, add the input.
   readers; after this it also decides what the build renders. Worth a line in
   the CMS field description so an editor doesn't add it to an article that isn't
   a card and get a confusing failure.
+
+  **This happened, within the hour.** The NVYFL rules pages picked up the tag in
+  a parallel branch and the first build after the merge tried to render them as
+  cards; they came out at seven and eight pages and failed the gate. A line in
+  the CMS was not enough, so the tag was made not load-bearing instead: an
+  article is a generated card when it **links its own `/cards/<slug>.pdf`**, a
+  fact already in the markdown. `Printable` went back to meaning what it meant
+  to readers, and tagging a page can no longer fail a build.
