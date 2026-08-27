@@ -94,7 +94,7 @@ footnote; the rest state it in prose in the page body.
 | `7-man-mechanics.md` | VFOA 7-man deck, 2022 | | |
 | `football-rules-summary.md` (Cliff Notes) | 2025 NFHS Football Rules Book — named in the page title, no front matter | 2025 | 2026-07-26 |
 | `information-for-new-folks.md` | Email from Bryan Fortier, 2022 — not re-checked since | | |
-| `foul-weather-procedures.md` | VPA Athletic Policies, High School — "VPA Lightning Rule"; NFHS rule 3-1-5 for the suspension procedure | 2026 | 2026-08-27 |
+| `foul-weather-procedures.md` | VPA Athletic Policies, High School — "VPA Lightning Rule" | 2026 | 2026-08-27 |
 | `recommend-reading.md` | No external source — a link list | — | — |
 | `vermont-rules-and-policies.md` | 2026 VPA Football Guide | 2026 | 2026-08-27 |
 | `game-day-administration.md` | 2026 VPA Football Guide | 2026 | 2026-08-27 |

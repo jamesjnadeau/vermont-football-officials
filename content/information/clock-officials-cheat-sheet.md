@@ -1,8 +1,12 @@
 ---
 title: Clock Officials Cheat Sheet
 date: 2026-08-26
+ruleYear: 2026
+source: SDCFOA Clock Administration, plus the 2026 VPA Football Guide for the point differential running clock
+verified: 2026-08-27
 tags:
   - Game Management
+  - Vermont
   - Printable
 ---
 
@@ -15,7 +19,11 @@ Association's [Clock Administration](https://www.sdcfoa.org/clock-administration
 page.
 
 **[Download the Clock Officials Cheat Sheet (PDF, 2 pages)](/uploads/clock-officials-cheat-sheet.pdf)** —
-the printable version fits on two sides. The same content is written out below.
+the printable version fits on two sides.
+
+**The PDF is behind this page.** It predates the Vermont running clock section
+below and does not contain it. Print the PDF if you like, but read the
+Running clock section here before a game that might turn lopsided.
 
 ---
 
@@ -86,11 +94,47 @@ them.
 - **End of period:** do not reset for the next period until the Referee declares
   it over by facing the press box and holding the ball overhead.
 
-## Running clock
+## Running clock — the Vermont point differential rule
 
-If the Referee or Line Judge tells you from the field to **run the clock**, it
-stops only for **timeouts and scores** — keep it running regardless of any other
-signal from the field.
+When one team is far enough ahead, Vermont switches to a running clock so the
+game ends at a sensible hour. **The Referee or the Line Judge will tell you when
+it starts.** Never start one on your own because the score looks lopsided, and
+never stop running it because the score closed up.
+
+**When it starts.** In the first three quarters, at a 35-point difference, if
+both coaches and the Referee agree. In the third quarter, at a 42-point
+difference, automatically. Once it is on in the fourth quarter it stays on for
+the rest of the game — even if the losing team scores and the difference drops
+back under 35.
+
+**Once you are told to run the clock, keep it running through all of these.**
+These are things that would normally make you stop:
+
+- A first down for either team, including after the ball changes hands
+- The ball or the runner going out of bounds
+- An incomplete pass
+- A touchback
+- A whistle blown by mistake
+- Any penalty being marked off
+
+**Stop the clock only for these:**
+
+- The end of a quarter
+- Any score — touchdown, try, field goal, safety
+- A free kick after a fair catch
+- A team timeout
+- A coach talking with the Referee
+- An officials' timeout — injury, equipment, a measurement, anything else
+
+**Starting it again after one of those:** start when the Referee marks the ball
+ready for play, or, if a free kick follows, the moment the ball is legally
+touched on the kick.
+
+If you are ever unsure whether the running clock is still on, ask the Line
+Judge. Do not guess, and do not let the press box tell you.
+
+The full rule is on
+[Vermont Rules & Policies](/information/vermont-rules-and-policies/).
 
 ## When does the clock restart?
 

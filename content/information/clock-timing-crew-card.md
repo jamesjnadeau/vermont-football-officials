@@ -1,10 +1,12 @@
 ---
 title: Clock & Timing Crew Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual, plus the 2026 VPA Football Guide for the point differential clock'
+ruleYear: 2026
+verified: 2026-08-27
 tags:
   - Mechanics
+  - Vermont
   - Crew Cards
   - Game Management
   - Printable
@@ -15,6 +17,9 @@ of five and crews of four.
 
 **[Download the Clock & Timing Crew Card (PDF, 2 pages)](/uploads/clock-timing-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
+
+**The PDF is behind this page.** It carries the mechanics but not the Vermont
+point differential clock added below.
 
 **Associations amend these** — check Vermont's guidance before teaching it.
 
@@ -186,6 +191,62 @@ coordinator says they're ready. The Umpire stays over the ball.*
 - **LJ** — Same as a crew of 5, and you are the only clock specialist.
 - **R** — You and the Line Judge carry the scoreboard between you.
 - **U / LM** — Announce the time to the near bench.
+
+---
+
+## Vermont: the point differential clock
+
+*The scoreboard is getting away from somebody.*
+
+### The trigger
+
+| Quarter | Differential | Running clock |
+| --- | --- | --- |
+| 1st–3rd | **35+** | **May** be used — both coaches *and* the Referee must agree |
+| 3rd | **42+** | **Shall** be used, and stays on for the rest of the game |
+| 4th, once on | any | Stays on, even if the deficit falls below 35 |
+
+It starts on the snap, or the legal touch of a free kick, on the first play
+after the differential is reached. It applies in the playoffs and in
+championship games.
+
+### Everyone on this
+
+- **The Referee tells the operator**, through the Line Judge. Nobody assumes it
+  from the scoreboard, and nobody turns it off because the trailing team scored.
+- Signal your timeouts exactly as you always would. The difference is what the
+  operator does with them, not what you signal.
+- Get it settled with the winning and losing head coaches *before* it starts.
+  A running clock announced at the 35-point mark is a conversation; one that
+  appears without warning is an argument.
+
+### Keeps running
+
+- First down to either team, change of possession included
+- Ball or runner out of bounds
+- Incomplete forward pass, legal or illegal
+- Touchback
+- Inadvertent whistle
+- All penalty enforcements
+
+### Still stops
+
+- End of a period
+- Any score — touchdown, try, field goal, safety
+- Free kick awarded after a fair catch
+- Charged team timeout
+- Coach–referee conference
+- Official's timeout — injury, equipment, measurement, anything required
+
+### Restart
+
+On the **ready for play**, or on the **legal touch of the free kick** following
+a score, a fair catch, or an awarded fair catch.
+
+*Crew of 4: unchanged. The Line Judge still owns the conversation with the
+operator; the Referee still owns the decision.*
+
+Full rule on [Vermont Rules & Policies](/information/vermont-rules-and-policies/).
 
 ---
 

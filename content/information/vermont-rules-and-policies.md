@@ -72,7 +72,9 @@ Tell the clock operator before the game that this rule exists and what the
 signal will be. They are usually a volunteer, and the running clock is the
 single most confusing thing that can happen to them —
 the [Clock Officials Cheat Sheet](/information/clock-officials-cheat-sheet/)
-covers it from their side of the table.
+covers it from their side of the table, and the
+[Clock & Timing Crew Card](/information/clock-timing-crew-card/) carries the
+same lists in the crew's own shorthand.
 
 ## Sub-varsity differences
 
