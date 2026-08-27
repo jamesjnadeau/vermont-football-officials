@@ -16,8 +16,11 @@ Letter-size, two-sided PDF built from self-contained HTML with inline styles and
 inline SVG. No new machinery. The one structural addition is a shared card
 stylesheet, extracted so drift can't recur.
 
-**Tech Stack:** HTML/CSS with inline stylesheets and inline SVG, WeasyPrint for
-PDF generation, existing Eleventy pipeline for the articles.
+**Tech Stack:** ~~HTML/CSS with inline stylesheets and inline SVG, WeasyPrint for
+PDF generation, existing Eleventy pipeline for the articles.~~ Out of date — see
+Task 1. Cards are generated from the article markdown by the Eleventy build
+through headless Chromium (`lib/cards/`), so a new card needs an article and
+nothing else.
 
 ## Global Constraints
 
@@ -42,71 +45,28 @@ PDF generation, existing Eleventy pipeline for the articles.
 
 ---
 
-### Task 1: Extract a shared card stylesheet
+### Task 1: ~~Extract a shared card stylesheet~~ — SUPERSEDED
 
-The first two topic cards use an older stylesheet with smaller body type than
-the last three. Rebuilding them through a corrected base unifies the set — and
-extracting that base to a single file stops the drift from recurring the next
-time a card is added.
+**Struck. Done differently by
+[2026-08-27-printable-card-pipeline.md](2026-08-27-printable-card-pipeline.md),
+which has landed.**
 
-**Files:**
-- Create: `docs/cards/card-base.css` (or equivalent location; see Step 1)
-- Create: `docs/cards/README.md`
-- Modify: the HTML sources for the ten existing cards
+This task assumed the cards were HTML documents in the repo that a shared
+stylesheet could be extracted from. They were not: the HTML the committed PDFs
+were built from was never in the repo, which is the finding Step 1 asked for.
+There is nothing to recover.
 
-**Interfaces:**
-- Produces: one canonical card stylesheet that every card's build inlines, and a
-  short README documenting the build command and the design rules above.
+The cards are now generated from the article markdown during the site build, so
+the HTML is a build intermediate and the shared stylesheet was written once,
+from scratch, at `lib/cards/card.css`. `docs/cards/README.md` and
+`docs/cards/proofing.md` are the documents this task wanted. The two-page
+constraint is no longer a rule someone remembers — the build reads the page
+count back out of each PDF and fails on anything but two.
 
-- [ ] **Step 1: Locate the card HTML sources**
-
-Run `ls static/uploads/` and `find . -name '*.html' -not -path './node_modules/*' -not -path './_site/*'`.
-
-The cards are delivered as PDFs in `static/uploads/`. If the HTML sources they
-were generated from are **not in the repo**, that is the finding to act on
-first: the cards can't be maintained or rebuilt without them. Add the sources to
-the repo under `docs/cards/` before proceeding with anything else in this plan.
-Record the outcome in `docs/sources.md`.
-
-- [ ] **Step 2: Diff the two stylesheet generations**
-
-Compare the inline stylesheet in a card 1–2 source against a card 3–5 source.
-Identify every difference, not just the body type size — the known gap is font
-size, but an older base likely differs in more than one place.
-
-- [ ] **Step 3: Extract the corrected base**
-
-Write `docs/cards/card-base.css` from the newer generation. Document each rule's
-purpose in comments, particularly the print-specific ones: the page box, the
-hatching pattern definition, the badge shape classes, and anything that exists
-because of copier behavior rather than aesthetics.
-
-- [ ] **Step 4: Write the card README**
-
-`docs/cards/README.md` covering: the design rules from Global Constraints above,
-the WeasyPrint build command, the two-page constraint, and the instruction to
-proof on an actual black-and-white laser before committing a PDF. This is the
-document that stops the next person from reinventing the rules.
-
-- [ ] **Step 5: Rebuild cards 1 and 2 through the corrected base**
-
-Regenerate the kicking plays and running/passing plays cards. Verify each is
-still exactly two pages after the type size change — larger body type may push
-content over, in which case something gets cut per the constraint.
-
-- [ ] **Step 6: Visual regression check**
-
-Print all ten cards on the same black-and-white laser. Confirm the set now reads
-as one system: same body size, same heading scale, same badge treatment, same
-margins. This check is manual and cannot be skipped.
-
-- [ ] **Step 7: Commit**
-
-```bash
-npm test
-git add -A
-git commit -m "refactor: extract shared card stylesheet, rebuild cards 1-2 to match set"
-```
+What this task wanted that still holds, and is now free: **a new card needs no
+HTML at all.** Write the article, tag it `Printable`, and the card follows.
+Tasks 2 to 5 below should be read that way — their `docs/cards/*.html` files do
+not need to exist.
 
 ---
 
