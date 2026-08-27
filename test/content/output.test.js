@@ -178,3 +178,27 @@ test('kept static assets are copied through', () => {
     assert.ok(existsSync(path.join(SITE, f)), `missing _site/${f}`);
   }
 });
+
+// --- Footer / editing link ---------------------------------------------
+// The footer is how a non-technical editor finds the CMS at all, so it has to
+// be on every page, not just the articles.
+test('every page has a footer linking into Pages CMS', () => {
+  const bad = html.filter((f) => {
+    const footer = read(f).match(/<footer[^>]*>[\s\S]*?<\/footer>/);
+    return !footer || !footer[0].includes('href="https://app.pagescms.org/');
+  });
+  assert.deepEqual(bad, []);
+});
+
+// An article whose link doesn't name its own file opens the editor on the
+// wrong entry — or on nothing.
+test('article and quiz pages deep-link to their own source file', () => {
+  const bad = [
+    ['information/7-man-mechanics', 'information', 'content/information/7-man-mechanics.md'],
+    ['quizzes/quiz-001-expert-mixed', 'quizzes', 'content/quizzes/quiz-001-expert-mixed.md'],
+  ].filter(([url, collection, source]) => {
+    const want = `/collection/${collection}/edit/${encodeURIComponent(source)}"`;
+    return !read(path.join(SITE, url, 'index.html')).includes(want);
+  });
+  assert.deepEqual(bad.map(([url]) => url), []);
+});

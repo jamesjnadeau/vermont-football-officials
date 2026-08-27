@@ -16,8 +16,9 @@
     "dev": "eleventy --config .eleventy.js --serve",
     "build": "npm run clean && NODE_ENV=production eleventy --config .eleventy.js",
     "clean": "rm -rf _site",
-    "test": "npm run build && npm run test:content && npm run test:output && npm run test:html && npm run test:links",
+    "test": "npm run build && npm run test:content && npm run test:editing && npm run test:output && npm run test:html && npm run test:links",
     "test:content": "node --test \"test/content/frontmatter.test.js\"",
+    "test:editing": "node --test \"test/content/editing.test.js\"",
     "test:output": "node --test \"test/content/output.test.js\"",
     "test:html": "html-validate \"_site/**/*.html\"",
     "test:links": "linkinator _site --recurse --silent --skip \"^https?://(?!(localhost|127\\\\.0\\\\.0\\\\.1))\""
