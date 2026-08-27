@@ -1,6 +1,9 @@
 ---
 title: Information for New Folks
 date: 2022-10-09
+tags:
+  - Getting Started
+  - Rules
 ---
 ## Rule Book
 

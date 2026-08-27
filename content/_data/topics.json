@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Getting Started",
+    "slug": "getting-started",
+    "description": "Where to begin if you are new to officiating football in Vermont."
+  },
+  {
+    "name": "Rules",
+    "slug": "rules",
+    "description": "The NFHS rules themselves — summaries, study aids and where to read the real thing."
+  },
+  {
+    "name": "Mechanics",
+    "slug": "mechanics",
+    "description": "Where to stand, what to key on and who has what, play by play."
+  },
+  {
+    "name": "Crew Cards",
+    "slug": "crew-cards",
+    "description": "Whole-crew reference cards, one phase of the game at a time, for crews of five and four."
+  },
+  {
+    "name": "Position Cards",
+    "slug": "position-cards",
+    "description": "One card per position on a crew of five — your spot, your keys and your jobs."
+  },
+  {
+    "name": "Game Management",
+    "slug": "game-management",
+    "description": "Running the game around the football — weather, the clock and the game site."
+  },
+  {
+    "name": "Printable",
+    "slug": "printable",
+    "description": "Articles that come with a PDF you can print and carry in your pocket."
+  }
+]

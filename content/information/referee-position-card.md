@@ -1,6 +1,10 @@
 ---
 title: Referee Position Card
 date: 2026-08-26
+tags:
+  - Mechanics
+  - Position Cards
+  - Printable
 ---
 
 Your spot, your keys and your voice, situation by situation — the white hat's

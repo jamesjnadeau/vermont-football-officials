@@ -1,6 +1,11 @@
 ---
 title: Clock & Timing Crew Card
 date: 2026-08-26
+tags:
+  - Mechanics
+  - Crew Cards
+  - Game Management
+  - Printable
 ---
 
 Wind it, stop it, count it down, and fix it when the scoreboard lies. For crews

@@ -1,6 +1,10 @@
 ---
 title: Between Downs Crew Card
 date: 2026-08-26
+tags:
+  - Mechanics
+  - Crew Cards
+  - Printable
 ---
 
 The whistle, the spot, the ball and the chains — the work between plays that

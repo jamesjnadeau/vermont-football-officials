@@ -1,6 +1,10 @@
 ---
 title: Umpire Position Card
 date: 2026-08-26
+tags:
+  - Mechanics
+  - Position Cards
+  - Printable
 ---
 
 Your spot, your keys and your jobs, situation by situation — the Umpire's card

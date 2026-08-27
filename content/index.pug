@@ -2,20 +2,19 @@
 title: Vermont Football Officials
 ---
 
+include _includes/mixins/topics.pug
+
 h1.text-center Vermont Football Officials
 p.lead.text-center Resources and information for high school football officials in Vermont.
 
 h2.mt-4 Information
-div.list-group
-  - var byDate = function(a, b) { return new Date(b.date) - new Date(a.date); }
-  each item in (collections.information || []).slice().sort(byDate)
-    a.list-group-item.list-group-item-action(href=item.url)
-      .row
-        .col
-          | #{item.data.title}
-        .col-auto.text-secondary
-          time(datetime=new Date(item.date).toISOString())
-            | #{new Date(item.date).toLocaleDateString('en-US', { timeZone: 'UTC' })}
+- var count = function(name) { return (collections.information || []).filter(function (item) { return (item.data.tags || []).indexOf(name) !== -1; }).length; }
+p
+  each topic in (topics || [])
+    if count(topic.name)
+      a.topic-link.badge.rounded-pill.text-bg-light.border.text-decoration-none.me-1(href='/tags/' + topic.slug + '/')= topic.name
+- var byDate = function(a, b) { return new Date(b.date) - new Date(a.date); }
++articleList((collections.information || []).slice().sort(byDate), topics)
 
 h2.mt-4 Quizzes
 div.list-group

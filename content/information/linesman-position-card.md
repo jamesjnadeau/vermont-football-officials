@@ -1,6 +1,10 @@
 ---
 title: Linesman Position Card
 date: 2026-08-26
+tags:
+  - Mechanics
+  - Position Cards
+  - Printable
 ---
 
 Your spot, your keys and your reads, situation by situation — the Linesman's card
