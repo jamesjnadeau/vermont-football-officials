@@ -1,32 +1,104 @@
 ---
 title: Vermont Football Officials
+description: Rules, mechanics and getting-started information for high school football officials in Vermont — including how to become one.
 ---
 
 include _includes/mixins/topics.pug
 
-h1.text-center Vermont Football Officials
-p.lead.text-center Resources and information for high school football officials in Vermont.
+//- The home page is a signpost, not an index.
+//-
+//- Two audiences arrive here and want different things: people deciding whether
+//- to try officiating, and officials already working games. Listing every
+//- article and quiz served neither — it put whatever was written most recently
+//- on top and made the reader do the sorting. The full lists still live at
+//- /information/ and /quizzes/, both one click away in the navbar, so this page
+//- curates instead of enumerating.
 
-h2.mt-4 Information
+.text-center.mb-4
+  h1.display-6 Vermont Football Officials
+  p.lead.mb-2
+    | Rules, mechanics and getting-started information for high school football officials in Vermont.
+  p.text-secondary.mb-0
+    | Varsity football here is worked by crews of five.
+    |  Nobody starts out knowing the job — the crew teaches you.
+
 - var count = function(name) { return (collections.information || []).filter(function (item) { return (item.data.tags || []).indexOf(name) !== -1; }).length; }
-p
+
+.row.g-4
+  .col-lg-6
+    .card
+      .card-body.pb-2
+        h2.h4.card-title New to officiating
+        p.card-text.text-secondary.mb-0
+          | You do not need to have played football and you do not need experience officiating anything.
+          |  First-year dues are waived.
+          |  These four pages, in order, are the whole path from curious to on the field.
+      .list-group.list-group-flush
+        a.list-group-item.list-group-item-action(href='/information/becoming-an-official/')
+          div.fw-semibold Becoming a Football Official
+          small.text-secondary What the job is, what it costs, what it pays, and how to start.
+        a.list-group-item.list-group-item-action(href='/information/information-for-new-folks/')
+          div.fw-semibold Equipment for New Officials
+          small.text-secondary What to buy, where to get it, and what to do if the cost is a problem.
+        a.list-group-item.list-group-item-action(href='/information/your-first-season/')
+          div.fw-semibold Your First Season
+          small.text-secondary What to study and in what order, plus what your first game looks like.
+        a.list-group-item.list-group-item-action(href='/information/getting-assigned/')
+          div.fw-semibold Getting Assigned
+          small.text-secondary How games actually reach you — availability, turnbacks and fees.
+      //- The recruiting call to action, and the last thing in this column on
+      //- purpose: everything above it exists to get someone as far as this button.
+      .card-body.pt-3
+        a.btn.btn-dark(href='/contact/') Email us about officiating
+        p.card-text.small.text-secondary.mt-2.mb-0
+          | Most people who do this started by asking one question of one person.
+
+  .col-lg-6
+    .card
+      .card-body.pb-2
+        h2.h4.card-title Already officiating
+        p.card-text.text-secondary.mb-0
+          | Field reference for officials on a crew: the cards you print and carry, the rules you look up mid-week, and the machinery around the game.
+      .list-group.list-group-flush
+        a.list-group-item.list-group-item-action(href='/tags/position-cards/')
+          div.fw-semibold
+            | Position Cards
+            if count('Position Cards')
+              span.text-secondary.fw-normal.ms-1 (#{count('Position Cards')})
+          small.text-secondary Your spot, your keys and your jobs — one card per position on a crew of five.
+        a.list-group-item.list-group-item-action(href='/tags/crew-cards/')
+          div.fw-semibold
+            | Crew Cards
+            if count('Crew Cards')
+              span.text-secondary.fw-normal.ms-1 (#{count('Crew Cards')})
+          small.text-secondary Who has what, one phase of the game at a time, for crews of five and four.
+        a.list-group-item.list-group-item-action(href='/information/football-rules-summary/')
+          div.fw-semibold Cliff Notes — NFHS Football Rules Book
+          small.text-secondary The rule book boiled down, with penalty enforcement in one table.
+        a.list-group-item.list-group-item-action(href='/information/clock-officials-cheat-sheet/')
+          div.fw-semibold Clock Officials Cheat Sheet
+          small.text-secondary For the person on the clock — starts, stops and the untimed down.
+        //- Also linked in the New column above. It is the one page both audiences
+        //- need — the newcomer to understand how games arrive, the veteran for
+        //- turnbacks and playoffs — so it is listed for each, framed for each.
+        a.list-group-item.list-group-item-action(href='/information/getting-assigned/')
+          div.fw-semibold Getting Assigned
+          small.text-secondary Availability, turnbacks, mileage, playoffs and how you get paid.
+        a.list-group-item.list-group-item-action(href='/information/foul-weather-procedures/')
+          div.fw-semibold Foul Weather Procedures
+          small.text-secondary Lightning, delays and when the game stops.
+        a.list-group-item.list-group-item-action(href='/quizzes/')
+          div.fw-semibold Quizzes
+          small.text-secondary Rules questions with a fully cited answer key. Good for a crew meeting.
+
+h2.h6.text-secondary.text-uppercase.mt-5.mb-2 Browse by topic
+p.mb-2
   each topic in (topics || [])
     if count(topic.name)
       a.topic-link.badge.rounded-pill.text-bg-light.border.text-decoration-none.me-1(href='/tags/' + topic.slug + '/')= topic.name
-- var byDate = function(a, b) { return new Date(b.date) - new Date(a.date); }
-+articleList((collections.information || []).slice().sort(byDate), topics)
-
-h2.mt-4 Quizzes
-div.list-group
-  - var byTitle = function(a, b) { return String(a.data.title).localeCompare(String(b.data.title)); }
-  each item in (collections.quizzes || []).slice().sort(byTitle)
-    a.list-group-item.list-group-item-action(href=item.url)
-      .row
-        .col
-          | #{item.data.title}
-        .col-auto.text-secondary.text-nowrap
-          | #{item.data.questions} questions
-
-p.mt-4
-  | Interested in becoming an official? 
-  a(href='/information/becoming-an-official/') Here's how to start.
+p.small.mb-0
+  a(href='/information/') All information articles
+  span.text-secondary.mx-2 ·
+  a(href='/quizzes/') All quizzes
+  span.text-secondary.mx-2 ·
+  a(href='/tags/') What each topic covers
