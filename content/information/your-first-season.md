@@ -6,7 +6,6 @@ verified: 2026-08-27
 tags:
   - Getting Started
 ---
-
 You have registered and you are on the schedule. This page is what to do
 between now and your first game, and what to do after it.
 
@@ -24,11 +23,10 @@ If you have not registered yet, start at
 
 ## The rule book
 
-Your rule book comes with your membership, in **both print and digital form** —
+Your rule book comes with your membership, in **both print and digital form** —  
 you do not need to buy one. The NFHS also publishes them directly:
 
-- [In print form](http://www.nfhs.com/c-204-football.aspx)
-- [As an app](https://nfhs.org/sports-resource-content/nfhs-rules-app-information/)
+- [https://nfhs.org/](https://nfhs.org/)
 
 Veteran officials quote rules from memory with the rule number attached. That is
 not where you start, and nobody expects it in your first year — but it is worth
@@ -116,12 +114,12 @@ outcome. Guessing quickly is the only actual mistake available to you here.
 ## After the game
 
 - Write down every situation you were unsure about, while it is fresh. That list
-  is your study plan for the week.
+is your study plan for the week.
 - **Ask your white hat for feedback, specifically.** "How did I do?" gets you
-  "fine". "Was I in the right spot on the sweep to my side?" gets you something
-  you can use.
+"fine". "Was I in the right spot on the sweep to my side?" gets you something
+you can use.
 - Look up the rules behind whatever you wrote down, and read them properly, not
-  just the summary.
+just the summary.
 
 ## Working with a mentor
 
