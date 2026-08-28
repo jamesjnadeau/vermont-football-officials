@@ -150,3 +150,37 @@ body {
   stroke-width: 1.6;
   stroke-dasharray: 4 3;
 }
+
+// An arrow on the board. It isn't dragged (only drawn and removed), so it
+// gets a pointer cursor rather than the tokens' grab/grabbing pair.
+.draw-arrow {
+  cursor: pointer;
+}
+
+// The invisible twin of an arrow's dotted `.mv` path (lib/field/markers.js),
+// wide for the reason `.draw-hit` is: `.mv`'s dots are too sparse on their
+// own to reliably click. `pointer-events: all` on a `fill: none` path still
+// hits along the stroke regardless of the stroke's own value, same as the
+// token circles above — see their comment.
+.draw-hit-line {
+  fill: none;
+  stroke: none;
+  stroke-width: 14;
+  pointer-events: all;
+}
+
+// The rubber band shown while an arrow is mid-draw. It is drawn with the
+// same `movement()` markup as a finished one — one renderer, one look — so
+// only opacity marks it as not committed yet; anything more would need the
+// overlay to know a second way to draw an arrow, which is exactly the
+// duplication `markers.js` exists to avoid.
+.draw-arrow-preview {
+  opacity: 0.55;
+}
+
+// Arrow mode draws instead of picking things up, and the crosshair is the
+// one hint of that for anyone not reading the toolbar — the equivalent of
+// the tokens' own cursor: grab.
+.draw-mode-arrow {
+  cursor: crosshair;
+}

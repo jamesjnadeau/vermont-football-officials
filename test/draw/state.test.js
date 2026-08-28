@@ -14,10 +14,12 @@ import {
   addToken,
   clampToFrame,
   emptyBoard,
+  findArrow,
   findToken,
   frameCentre,
   moveToken,
   openSpot,
+  removeArrow,
   removeToken,
   setView,
   tokenName,
@@ -202,4 +204,21 @@ test('an arrow keeps its points in order and gets an id of its own', () => {
   );
   assert.deepEqual(board.arrows[0].points, points);
   assert.notEqual(board.arrows[0].points, points);
+});
+
+test('an arrow is findable and removable the same way a token is', () => {
+  const points = [
+    { across: 0, down: 0 },
+    { across: 4, down: -6 },
+  ];
+  let board = addArrow(addArrow(emptyBoard(), { points }), { points });
+  assert.deepEqual(findArrow(board, 'a1'), { id: 'a1', points });
+  assert.equal(findArrow(board, 'a9'), null);
+
+  board = removeArrow(board, 'a1');
+  assert.deepEqual(
+    board.arrows.map((arrow) => arrow.id),
+    ['a2'],
+  );
+  assert.throws(() => removeArrow(board, 'a1'), /no arrow/);
 });
