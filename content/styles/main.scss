@@ -74,3 +74,47 @@ body {
 .card-only {
   display: none;
 }
+
+// /draw: the field-drawing board (lib/draw/). Nothing here drags yet — Task 2
+// of the field-drawing plan only puts the field on screen — but the surface
+// properties that later tasks depend on are set now, because they describe
+// the board, not any one thing on it.
+.draw-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.draw-board-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.draw-board {
+  // No width/height attribute is set on the <svg> itself, so the browser
+  // takes its intrinsic aspect ratio from the viewBox lib/draw/board.js
+  // writes — the same way an <img> takes its ratio from the bitmap it
+  // loads. width: 100% plus height: auto is then enough to stay in ratio;
+  // max-height is what stops the tallest crop (kickoff, 270x394) from
+  // outgrowing a laptop screen and forcing a scroll to see the whole field.
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  max-height: calc(100vh - 14rem);
+
+  // A drag has nowhere to go yet, but it is a property of the board surface,
+  // not of any one token — set once here rather than repeated per tool.
+  // Without it, dragging a token on a phone scrolls the page underneath it
+  // instead of moving the token.
+  touch-action: none;
+}
+
+// The overlay layer (lib/draw/board.js) holds only UI chrome — a selection
+// outline, an in-progress arrow preview — and nothing lives there yet. Kept
+// out of the hit-testing order so an empty overlay never intercepts a click
+// or drag meant for a layer underneath it.
+.draw-layer-overlay {
+  pointer-events: none;
+}
