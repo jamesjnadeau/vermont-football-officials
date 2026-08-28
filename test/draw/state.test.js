@@ -105,12 +105,15 @@ test('an id freed by a removal is reused rather than left as a hole', () => {
 });
 
 test('setView changes the crop and not one coordinate on the field', () => {
-  const before = crew();
+  // An arrow on the board too, not just tokens: `crew()` alone would leave
+  // `before.arrows` as emptyBoard()'s `[]` forever, so the identity assertion
+  // below would hold even if setView started copying or touching arrows.
+  const before = addArrow(crew(), { points: [{ across: 0, down: 0 }, { across: 5, down: 5 }] });
   for (const name of viewNames) {
     const after = setView(before, name);
     assert.equal(after.view, name);
     // By identity, not just by value: there is no coordinate fixup here to
-    // get subtly wrong, because there is no copy of the tokens at all.
+    // get subtly wrong, because there is no copy of the tokens or arrows.
     assert.equal(after.tokens, before.tokens);
     assert.equal(after.arrows, before.arrows);
   }

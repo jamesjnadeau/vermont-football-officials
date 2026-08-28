@@ -4,7 +4,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { official, player, movement, note, flag, label } from '../../lib/field/markers.js';
+import { official, player, movement, movementPath, note, flag, label } from '../../lib/field/markers.js';
 import { x, y as yardToY } from '../../lib/field/geometry.js';
 import { views } from '../../lib/field/views.js';
 
@@ -39,6 +39,17 @@ test('every mark renders the same thing every time', () => {
     movement({ points: [at, { across: 1, down: 4 }], label: 'go' }, view),
     movement({ points: [at, { across: 1, down: 4 }], label: 'go' }, view),
   );
+});
+
+test("movementPath() is movement()'s own d, without asking a caller to parse the markup for it", () => {
+  const points = [at, { across: 1, down: 4 }, { across: 2.222, down: 5.555 }];
+  const d = movementPath(points, view);
+  const svg = movement({ points, label: 'go' }, view);
+  assert.ok(svg.includes(`d="${d}"`));
+  // Points only, no <path>/marker/label wrapper — a caller gets exactly the
+  // geometry, and nothing it would have to strip back out.
+  assert.ok(!d.includes('<'));
+  assert.match(d, /^M -?[\d.]+ -?[\d.]+( L -?[\d.]+ -?[\d.]+){2}$/);
 });
 
 test('note() escapes text that could break out of the markup', () => {
