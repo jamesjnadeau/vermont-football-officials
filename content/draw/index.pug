@@ -9,11 +9,19 @@ h1 Draw a Play
 p.lead Lay players and officials out on a field, draw their movement, and share the result as a link.
 
 .draw-toolbar
-  //- Populated client-side by app.js: the Select/Arrow tool toggle, the
+  //- Populated client-side by app.js: the Select/Arrow/Text tool toggle, the
   //- preset groups (Formations, Situations), the marker palette, and Undo.
   //- The share button (Task 7) still lands here later; left empty in markup
   //- either way, since none of this can be rendered server-side (see the
   //- noscript note below).
+
+//- The caption editor, also filled in by app.js. It is real HTML form
+//- controls and not an editable <text> in the SVG on purpose: SVG has no
+//- dependable contenteditable, and an <input> brings the mobile keyboard,
+//- IME, text selection and screen-reader support that hand-rolling it in
+//- SVG would have to reinvent badly. Hidden until a caption is selected —
+//- in the markup as well as in app.js, so it never flashes on first paint.
+.draw-props(hidden)
 
 .draw-board-wrap
   svg#board.draw-board

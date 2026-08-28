@@ -10,9 +10,16 @@ import {
   DEFAULT_VIEW,
   OFFICIALS,
   PLAYERS,
+  TEXT_DEFAULTS,
+  TEXT_MAX_LENGTH,
+  TEXT_SIZE_MAX,
+  TEXT_SIZE_MIN,
+  TEXT_SWATCHES,
   addArrow,
   addToken,
   clampToFrame,
+  commitText,
+  editText,
   emptyBoard,
   findArrow,
   findToken,
@@ -221,4 +228,178 @@ test('an arrow is findable and removable the same way a token is', () => {
     ['a2'],
   );
   assert.throws(() => removeArrow(board, 'a1'), /no arrow/);
+});
+
+// ---------------------------------------------------------------------------
+// Captions
+//
+// A caption is the one item on the board that carries free-form words and a
+// colour, and from Task 7 on both of those ride in a URL a stranger can
+// write. So these are not only "does the feature work" tests: the size, the
+// angle and the colour each have exactly one legal shape, and these are what
+// say so.
+// ---------------------------------------------------------------------------
+
+const caption = (props = {}) =>
+  addToken(emptyBoard(), { type: 'text', text: 'Trips right', across: 0, down: 0, ...props })
+    .tokens[0];
+
+test('a caption with nothing set is black, 12, upright and plain', () => {
+  const token = caption();
+  assert.equal(token.type, 'text');
+  assert.equal(token.size, TEXT_DEFAULTS.size);
+  assert.equal(token.color, TEXT_DEFAULTS.color);
+  assert.equal(token.bold, false);
+  assert.equal(token.underline, false);
+  assert.equal(token.rotate, 0);
+});
+
+test('a caption survives a change of view unmoved, like everything else', () => {
+  // The view is a camera. A caption placed on the run/pass crop is at the
+  // same yards on the kickoff crop; only what is in frame changes.
+  let board = addToken(emptyBoard(), { type: 'text', text: 'Blitz', across: -7.5, down: 3.25 });
+  const before = structuredClone(board.tokens);
+  for (const name of viewNames) {
+    const after = setView(board, name);
+    assert.deepEqual(after.tokens, before);
+    // By identity, not just by value: this cannot quietly acquire a
+    // coordinate fixup for captions later.
+    assert.equal(after.tokens, board.tokens);
+    board = after;
+  }
+});
+
+test('an angle is stored in one encoding, whichever one it arrives in', () => {
+  // 450 and -270 are both 90. If the board kept them apart, a board and the
+  // same board round-tripped through a share link would stop comparing
+  // equal while drawing exactly the same picture.
+  assert.equal(caption({ rotate: 450 }).rotate, 90);
+  assert.equal(caption({ rotate: -270 }).rotate, 90);
+  assert.equal(caption({ rotate: 90 }).rotate, 90);
+  assert.equal(caption({ rotate: 360 }).rotate, 0);
+  assert.equal(caption({ rotate: -360 }).rotate, 0);
+  assert.equal(caption({ rotate: 180 }).rotate, 180);
+  assert.equal(caption({ rotate: -180 }).rotate, 180);
+  assert.equal(caption({ rotate: -90 }).rotate, -90);
+  assert.equal(caption({ rotate: 271 }).rotate, -89);
+  assert.throws(() => caption({ rotate: 'sideways' }), /rotate must be a finite number/);
+});
+
+test('a size outside the range is clamped, not rejected into a broken caption', () => {
+  assert.equal(caption({ size: 1 }).size, TEXT_SIZE_MIN);
+  assert.equal(caption({ size: 500 }).size, TEXT_SIZE_MAX);
+  assert.equal(caption({ size: 24 }).size, 24);
+  assert.throws(() => caption({ size: 'big' }), /size must be a finite number/);
+});
+
+test('a colour is black or a hex triple and is never a raw CSS string', () => {
+  // `fill` accepts url(#...), so a colour that is whatever the user typed is
+  // a way to point a caption at another element in the document. The value
+  // comes off a URL; the check is a shape, not a list of known-bad strings.
+  for (const swatch of TEXT_SWATCHES) assert.equal(caption({ color: swatch.color }).color, swatch.color);
+  assert.equal(caption({ color: '#C00000' }).color, '#c00000');
+  // One spelling of black, so an untouched default and the picker set to
+  // black are the same stored value.
+  assert.equal(caption({ color: '#000000' }).color, 'black');
+  for (const bad of ['url(#ar)', 'red', 'rgb(1,2,3)', '#fff', '#0000001', 'black;fill:red', 12, null]) {
+    assert.throws(() => caption({ color: bad }), /color must be/, `accepted ${JSON.stringify(bad)}`);
+  }
+});
+
+test('bold and underline are booleans, not anything that happens to be truthy', () => {
+  assert.equal(caption({ bold: true }).bold, true);
+  assert.throws(() => caption({ bold: 'bold' }), /bold must be true or false/);
+  assert.throws(() => caption({ underline: 1 }), /underline must be true or false/);
+});
+
+test('a caption is text and only text', () => {
+  assert.throws(() => caption({ text: 42 }), /text must be a string/);
+  assert.equal(caption({ text: 'x'.repeat(500) }).text.length, TEXT_MAX_LENGTH);
+});
+
+test('the words a caption carries are stored exactly as typed', () => {
+  // Escaping is markers.js's job and happens on the way to the document, not
+  // on the way into the state — if it happened here the same string would be
+  // escaped again every time it was edited.
+  const typed = '<script>alert(1)</script>';
+  assert.equal(caption({ text: typed }).text, typed);
+});
+
+test('editing a caption changes what was asked and nothing else', () => {
+  let board = addToken(emptyBoard(), { type: 'text', text: 'Trips', across: 2, down: -3 });
+  const before = structuredClone(board);
+  board = editText(board, 't1', { text: 'Trips right', size: 18, bold: true });
+  assert.deepEqual(board.tokens[0], {
+    id: 't1',
+    type: 'text',
+    text: 'Trips right',
+    size: 18,
+    color: 'black',
+    bold: true,
+    underline: false,
+    rotate: 0,
+    across: 2,
+    down: -3,
+  });
+  assert.deepEqual(before, structuredClone(before));
+  assert.equal(before.tokens[0].text, 'Trips');
+  // An edit revalidates every field, so there is no path to a stored caption
+  // that was legal when it was made and is not now.
+  assert.throws(() => editText(board, 't1', { color: 'url(#ar)' }), /color must be/);
+  assert.throws(() => editText(board, 't1', { rotate: Infinity }), /rotate must be/);
+});
+
+test('only a caption can be edited as one', () => {
+  let board = addToken(emptyBoard(), { type: 'official', mark: 'R', across: 0, down: 0 });
+  assert.throws(() => editText(board, 't1', { text: 'hi' }), /not a caption/);
+  assert.throws(() => editText(board, 't9', { text: 'hi' }), /no token/);
+});
+
+test('a caption left blank is dropped, and one with words is kept', () => {
+  // An empty caption is an invisible zero-width <text> that can only be
+  // selected by accident. Same rule as the arrow too short to mean anything.
+  let board = addToken(emptyBoard(), { type: 'text', text: '', across: 0, down: 0 });
+  assert.equal(commitText(board, 't1').tokens.length, 0);
+
+  board = editText(board, 't1', { text: '   ' });
+  assert.equal(commitText(board, 't1').tokens.length, 0);
+
+  board = editText(board, 't1', { text: 'Blitz' });
+  // Unchanged by identity, so a caller can tell whether anything happened.
+  assert.equal(commitText(board, 't1'), board);
+
+  // A blur can land after the caption has already gone; that is not an error.
+  assert.equal(commitText(board, 't9'), board);
+  const official = addToken(emptyBoard(), { type: 'official', mark: 'R', across: 0, down: 0 });
+  assert.equal(commitText(official, 't1'), official);
+});
+
+test('a caption answers to its own words, and says so when it has none', () => {
+  assert.equal(tokenName(caption({ text: 'Trips right' })), 'Trips right');
+  assert.equal(tokenName(caption({ text: '' })), 'Empty caption');
+});
+
+test('a caption is a token: it is found, moved, removed and numbered like one', () => {
+  let board = crew();
+  board = addToken(board, { type: 'text', text: 'Blitz', across: 0, down: 0 });
+  assert.equal(board.tokens.length, 4);
+  assert.equal(findToken(board, 't4').text, 'Blitz');
+  board = moveToken(board, 't4', { across: -10, down: 6 });
+  assert.deepEqual(
+    { across: findToken(board, 't4').across, down: findToken(board, 't4').down },
+    { across: -10, down: 6 },
+  );
+  assert.equal(findToken(board, 't4').text, 'Blitz');
+  board = removeToken(board, 't4');
+  assert.equal(findToken(board, 't4'), null);
+  assert.equal(board.tokens.length, 3);
+});
+
+test('a caption is stepped off the pile like any other new token', () => {
+  let board = emptyBoard();
+  board = addToken(board, { type: 'official', mark: 'R', ...frameCentre(board.view) });
+  const spot = openSpot(board);
+  assert.notDeepEqual(spot, frameCentre(board.view));
+  board = addToken(board, { type: 'text', text: 'Blitz', ...spot });
+  assert.deepEqual(clampToFrame(spot, board.view), spot);
 });

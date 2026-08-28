@@ -91,6 +91,20 @@ body {
   justify-content: center;
 }
 
+// How much of the window is spoken for above the board: the site header, the
+// page heading and lead, the wrapped toolbar and the hint under it — and,
+// when a caption is selected, the caption editor as well.
+//
+// Both are measured in a browser at a desktop width rather than derived,
+// because the toolbar's height depends on how many rows its buttons wrap
+// onto, which depends on the window's width, which CSS cannot ask about
+// here. So they are right at one width and generous at wider ones; below
+// about 900px the toolbar wraps further and the board scrolls again, which
+// is the cost of a fixed number and not something a bigger one fixes.
+// Re-measure them whenever the toolbar gains or loses a control.
+$draw-chrome: 27rem;
+$draw-chrome-editing: 37rem;
+
 .draw-board {
   // No width/height attribute is set on the <svg> itself, so the browser
   // takes its intrinsic aspect ratio from the viewBox lib/draw/board.js
@@ -102,7 +116,15 @@ body {
   width: 100%;
   max-width: 40rem;
   height: auto;
-  max-height: calc(100vh - 14rem);
+  max-height: calc(100vh - #{$draw-chrome});
+
+  // The caption editor only exists while a caption is selected, so the
+  // chrome above the board is two heights, not one. Subtracting the taller
+  // one always would shrink the board for everyone who never writes on it;
+  // this pays for the strip only while it is on screen.
+  .draw-props:not([hidden]) ~ .draw-board-wrap & {
+    max-height: calc(100vh - #{$draw-chrome-editing});
+  }
 
   // A drag has nowhere to go yet, but it is a property of the board surface,
   // not of any one token — set once here rather than repeated per tool.
@@ -183,4 +205,77 @@ body {
 // the tokens' own cursor: grab.
 .draw-mode-arrow {
   cursor: crosshair;
+}
+
+// Text mode places a caption where the next click lands, and the caret is
+// the same one-glance hint the crosshair is for arrows.
+.draw-mode-text {
+  cursor: text;
+}
+
+// A caption on the board. Its hit circle (`.draw-hit`, above) covers the
+// anchor point, but the words are what a user actually aims at, and SVG
+// text answers a click only where its glyphs are painted — so a click
+// inside the counter of an "o" would otherwise fall through to the field.
+.draw-caption text {
+  pointer-events: all;
+}
+
+// The caption editor. A row of real form controls rather than anything in
+// the SVG (see content/draw/index.pug for why), laid out the same way the
+// toolbar above it is so the two read as one block of chrome.
+.draw-props {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.375rem;
+}
+
+// Each control keeps its own label next to it, so a strip that wraps onto
+// two lines on a phone never separates a slider from what it is a slider
+// for.
+.draw-props-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+// Narrow enough that a size and an angle sit on one line beside their
+// sliders; both are at most four characters.
+.draw-props-number {
+  width: 4.5rem;
+}
+
+.draw-props-slider {
+  width: 7rem;
+}
+
+// The colour swatches. Square, thumb-sized, and showing their colour as
+// their own background — the one place on this page where a control is its
+// value rather than a word for it.
+.draw-swatch {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.25rem;
+
+  // The pressed swatch is ringed rather than recoloured: recolouring it
+  // would mean the control no longer shows the colour it selects.
+  &[aria-pressed='true'] {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 1px;
+  }
+}
+
+// Said once, beside the colour control: colour on this board is for the
+// screen, and a caption that means something only because of its colour
+// means nothing on the photocopy an official reads on a sideline.
+.draw-props-print-note {
+  flex-basis: 100%;
+  margin: 0;
 }
