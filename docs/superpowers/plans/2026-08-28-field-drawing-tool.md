@@ -411,9 +411,19 @@ data from that. **Do not transcribe positions by hand**; the diagram plan's Task
 3 Step 1 says the same thing for the same reason, and this script is a first
 draft of that extractor. Keep it in the scratchpad, not the repo.
 
-Use the un-highlighted crew-of-5 rendering, since a drawing board has no
-"you". Where a crew-of-4 preset is wanted it is the crew-of-5 with the Back
-Judge removed — express it that way rather than as a second literal.
+Use the un-highlighted crew-of-5 rendering, since a drawing board has no "you".
+
+**Corrected after the gate ran: crew-of-4 presets are out.** This plan originally
+said a crew-of-4 preset is the crew-of-5 with the Back Judge removed. The
+extraction disproved that against the committed art. Measured against
+(crew-of-5 − BJ), the real crew-of-4 diagrams move officials by: kickoff — U by
+10.0 yd, R by (12.8, −10.0) yd, LM by (16.8, −10.0) yd, **LJ by 50.0 yd
+downfield**; field goal — LM by (21.6, 10.73) yd into BJ's old spot. When a crew
+works with four, the remaining officials redistribute coverage; that is real
+mechanics, and the derivation this plan assumed would have taught four officials
+to stand in the wrong places. Ship crew-of-5 presets only. If crew-of-4 presets
+are wanted later they must be extracted from their own committed art as separate
+scenes — never derived.
 
 For the offensive formations — Wing-T, Trips, Power I, Shotgun — nothing in this
 repo holds them. They are standard and widely published; take them from a
@@ -447,7 +457,12 @@ Goal Line, Spot). The second group is the one carrying officials.
   off the canvas is invisible and unfixable by the user.
 - Every official's `mark` is in the allowed set; every formation has 11
   offensive players, or a comment on the preset saying why not.
-- The crew-of-4 variants are exactly their crew-of-5 minus the Back Judge.
+- No preset is derived from another by removing an official. The crew-of-4
+  derivation this plan first assumed is false against the committed art (see
+  Step 1), so a test asserting it would lock in the error.
+- Every preset places its tokens at explicit extracted coordinates. Nothing goes
+  through Task 3's `openSpot` add-cascade, which is for hand-placed tokens and is
+  known to collapse onto one clamped corner past roughly a dozen same-mark adds.
 
 - [ ] **Step 4: Commit**
 
