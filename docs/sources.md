@@ -129,6 +129,21 @@ from a named look. It carries nothing to cite and needs no source; it is
 listed here so its absence from the table below reads as "nothing to source,"
 not as a gap nobody noticed.
 
+**The shipped horizontal positions are these sourced alignments doubled.**
+Every distance from the middle of the field is twice the number the source
+gives. That is a legibility decision and not a claim about real alignment: a
+guard splitting the cited "two feet" from the centre is a quarter of the width
+of the mark that draws him at diagram scale, so a truthful line renders as one
+smear. Doubling separates the marks while keeping each formation's shape — who
+is inside whom, which side is strong. Depths down the field are untouched. The
+numbers below are the sourced ones, so the two can always be compared.
+
+The **Trips** receivers are the one exception. Doubling their 6-yard spacing
+would put the outside receiver 36 yards from the middle of the field — nine
+yards out of bounds — and 12-yard gaps would also exceed the "5 to 10 yards"
+its own source states. They are widened to 6.5-yard gaps instead, which fits
+both constraints, with the outermost 1.67 yards inside the sideline.
+
 | Formation | Source | What it supplied |
 | --- | --- | --- |
 | Wing-T | [wingt-coach.com — Positions, Formations, and Alignment](https://wingt-coach.com/wing-t-basics-positions-formations-and-alignment/) | Quoted numbers: guard-to-centre and lineman-to-lineman splits ("two feet"), the fullback's depth ("heels four yards behind the football"), the wingback's alignment ("1 yard deep and 1 yard outside the TE"), and the halfback's ("same depth as the FB..., outside foot of the tackle"). |
