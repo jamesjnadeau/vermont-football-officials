@@ -1,5 +1,23 @@
 # The Field Drawing Tool Implementation Plan
 
+> **Implemented.** All nine tasks landed: `/draw` builds, is deliberately
+> unlinked from the site, and its guard rails (`test/draw/*.test.js`,
+> `test/content/output.test.js`) pass. Kickoff, Field Goal, Goal Line, Punt
+> and Spot shipped as Situation presets, and Wing-T, Trips, Power I and
+> Shotgun as Formation presets, per Task 4. Two things shipped on weaker
+> footing than the rest, and both are stated where the data lives
+> (`docs/sources.md`'s "Draw-a-play presets" section), not just here:
+> **Spot rests on one uncorroborated source diagram** (no position cards
+> exist for that scene, unlike the other four Situations, each checked
+> against five or six agreeing sources), and **crew-of-4 presets did not
+> ship** — this plan originally assumed a crew of four is a crew of five
+> minus the Back Judge, and extracting the real crew-of-4 art (Task 4
+> Step 1) disproved it: officials redistribute coverage rather than one
+> simply stepping out, so shipping a derived crew-of-4 would have taught
+> wrong mechanics. A crew-of-4 preset still needs its own extraction from
+> its own art, not a formula. See `docs/draw/README.md`,
+> `lib/field/README.md` and `docs/sources.md` for what shipped and why.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** A page at `/draw` where an official can lay a play out on a field —
