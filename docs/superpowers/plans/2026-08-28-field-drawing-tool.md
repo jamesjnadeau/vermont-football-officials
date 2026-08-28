@@ -4,8 +4,8 @@
 
 **Goal:** A page at `/draw` where an official can lay a play out on a field —
 drop players and officials, drag them where they go, start from a named
-formation, draw movement arrows — and hand somebody the result as a link. The
-field it draws on is the same field `lib/field/` already draws for the
+formation, draw movement arrows, write on it — and hand somebody the result as
+a link. The field it draws on is the same field `lib/field/` already draws for the
 committed diagrams, not a second one that will drift from it.
 
 **Architecture:** The field modules under `lib/field/` are dependency-free ESM
@@ -74,14 +74,14 @@ anything links to it.
 **Nothing needs doing to keep it out of the navigation.** The nav in
 `layouts/main.pug` is three hardcoded `a.nav-item` links, and the topic/tag
 machinery only picks up what carries a topic tag. `eleventyExcludeFromCollections:
-true` and no `tags:` is the whole of it — but Task 7 adds a test, because "it's
+true` and no `tags:` is the whole of it — but Task 8 adds a test, because "it's
 hidden because nobody remembered to link it" is not a guarantee.
 
 **No path prefix.** The site builds at the domain root (`static/CNAME`,
 and the comment on the `npm run build` step in `deploy.yml` says why). Root-
 absolute module specifiers like `/js/draw/app.js` are safe. `HtmlBasePlugin`
 rewrites HTML, not JavaScript, so if a path prefix is ever introduced this page
-breaks — noted in Task 8.
+breaks — noted in Task 9.
 
 ---
 
@@ -92,18 +92,25 @@ breaks — noted in Task 8.
   a yard-to-unit conversion, or a copy of a mark's shape. Everything comes
   through `lib/field/`. If the page needs something the renderer can't express,
   the renderer gains it — that is the point of building `markers.js` here.
-- **Monochrome**, inherited from `2026-08-27-field-reference-cards.md`. The
-  board is the same black-and-white the cards print in. UI chrome (selection
-  outline, hover, the active tool) may use colour, because it is chrome and
-  never leaves the screen; a mark may not.
+- **Monochrome, with one deliberate exception.** The field, and every player,
+  official and arrow on it, stay the black-and-white the cards print in —
+  inherited from `2026-08-27-field-reference-cards.md`. UI chrome (selection
+  outline, hover, the active tool) may use colour because it never leaves the
+  screen. **Text annotations are colourable by the user**, which is asked for
+  and is not the same act as the site publishing a diagram. It carries a real
+  cost: a coloured caption on a black-and-white laser prints as flat grey and a
+  pale one all but vanishes, so colour must never be the only thing carrying a
+  caption's meaning. Say that on the page, once, beside the colour control.
 - **Football units in state, SVG units nowhere.** A saved board holds yards
   across from centre and yards from the view's anchor line. A share link made
   today must still open correctly after somebody retunes a view's `scaleY`.
 - **Untrusted input.** The share payload comes off the URL, which means anyone
   can hand an official a crafted link to a page on the association's domain.
   Everything decoded is validated against an allowlist before it reaches the
-  DOM, and no free text is interpolated into markup unescaped. This is a
-  correctness requirement, not a nice-to-have — see Task 6 Step 2.
+  DOM, and no free text is interpolated into markup unescaped. Text
+  annotations make this load-bearing rather than precautionary: from Task 6 on,
+  the URL carries words, a colour, a size and an angle that all end up in the
+  document. See Task 7 Step 2.
 - **No new dependencies.** Node 24 and the browser both have `TextEncoder`,
   `btoa`/`atob`, `structuredClone`, and Pointer Events.
 - **The officials' positions in the presets are mechanics.** They come from the
@@ -124,8 +131,8 @@ by the diagram renderer.
 
 **Interfaces:**
 - Consumes: `geometry.js` (`x`, `y`, `num`).
-- Produces: `official()`, `player()`, `movement()`, `note()`, `flag()`, each
-  returning an SVG fragment string.
+- Produces: `official()`, `player()`, `movement()`, `note()`, `label()`,
+  `flag()`, each returning an SVG fragment string.
 
 - [ ] **Step 1: Write `markers.js` to the shapes measured above**
 
@@ -140,11 +147,24 @@ One function per primitive, each taking football coordinates and the view:
 - `movement({ points, label })` — a `<path class="mv">` with `marker-end`.
   Takes a list of points, so a straight arrow is the two-point case and a bent
   one needs no new function.
-- `note({ text, at, anchor })`, `flag({ at })`.
+- `note({ text, at, anchor })`, `flag({ at })` — the diagrams' fixed italic
+  caption and the penalty flag. These keep their current styling and stay
+  driven by the shared `STYLE` block.
+- `label({ text, at, size, color, bold, underline, rotate })` — the drawing
+  page's writable text, and the one mark whose styling cannot live in `STYLE`.
+  Any size and any colour is an unbounded vocabulary, so `label()` emits
+  **inline presentation attributes** (`font-size`, `fill`, `font-weight`,
+  `text-decoration`) rather than classes. That is the whole reason it is a
+  second function instead of an option on `note()`; comment it there, or
+  somebody will merge them back.
+
+  `rotate` is emitted as `transform="rotate(a cx cy)"` about the label's own
+  anchor point, so changing the angle spins the text in place instead of
+  swinging it across the field.
 
 Escape every string that reaches text content. `field.js` already has an
 `escapeText` helper doing exactly this — **lift it into a shared module rather
-than copying it**, since Task 6 depends on it holding.
+than copying it**, since Tasks 6 and 7 depend on it holding.
 
 Round through `num()`. No literal ever appears twice.
 
@@ -169,7 +189,13 @@ Structure, not pixels, per the diagram plan's Task 2 Step 3:
 - A highlighted official emits exactly one `halo`, one `hat-w`, one `mk-d`, and
   no `hat-b`; an unhighlighted one emits `hat-b` + `mk-l` and no halo.
 - The same call twice returns identical strings.
-- A mark whose text contains `<`, `&`, or a quote comes back escaped.
+- A mark whose text contains `<`, `&`, or a quote comes back escaped —
+  `note()` and `label()` both, since `label()` is the one that will carry text
+  a stranger typed.
+- A `label()` emits its size, colour, weight and decoration as attributes, and
+  emits nothing for the ones left at their defaults.
+- A rotated `label()` and an unrotated one have the same anchor coordinates:
+  rotation must not move the text.
 - Every emitted coordinate carries at most two decimals.
 - A mark rendered at the origin plus a `translate` lands where the same mark
   rendered absolutely lands (this is the Step 2 invariant, and it is the one
@@ -243,8 +269,15 @@ the no-JS rendering would silently show the wrong play.)
 Takes a view name, returns the `viewBox`, the `<style>`, the `<defs>`, and the
 field body — all of it straight from `renderField()` and `STYLE`/`DEFS`. The
 SVG gets stacked `<g>` layers in paint order, created once and never
-reordered: `field`, `players`, `officials`, `arrows`, `overlay`. A note must
-never end up under a player, and the way to guarantee that is structural.
+reordered:
+
+    field → players → officials → arrows → text → overlay
+
+A caption must never end up under a player, and the way to guarantee that is
+structural rather than per-item. **Text is the topmost content layer** — that is
+what "highest z" means here. `overlay` sits above it and holds only UI chrome:
+the selection outline and the in-progress arrow preview, which are never part
+of a shared board.
 
 - [ ] **Step 4: Style it**
 
@@ -294,7 +327,7 @@ git commit -m "Draw the field on a page at /draw"
 anchor line — the same units `geometry.js` takes. **The view is a camera, not
 part of a token.** Changing the crop must not move anything; it changes what is
 in frame and nothing else. This is what makes Task 4's preset switching and
-Task 6's share link both work without special cases.
+Task 7's share link both work without special cases.
 
 Pure functions only: `addToken`, `moveToken`, `removeToken`, `setView`,
 `addArrow`. Each returns a new state. No DOM, no globals — `node --test` runs
@@ -467,7 +500,105 @@ git commit -m "Draw movement arrows on the board"
 
 ---
 
-### Task 6: The share link
+### Task 6: Text
+
+Writing on the board: a caption, a down-and-distance, a name for a formation.
+The one thing on the board the user can colour, and the one thing that carries
+words rather than positions.
+
+**Files:**
+- Modify: `lib/draw/state.js`, `lib/draw/app.js`, `content/draw/index.pug`, `content/styles/main.scss`
+- Modify: `test/draw/state.test.js`
+
+- [ ] **Step 1: Add text to the state**
+
+```js
+{ id, kind: 'text', text, across, down,
+  size, color, bold, underline, rotate }
+```
+
+Same football units as everything else, so a caption keeps its place when the
+crop changes. `size` is in SVG user units, which is the space the rest of the
+board's type lives in — `.mk` is 10 and `.note` is 8.6 — so **6 to 36** spans
+"smaller than a diagram caption" to "a banner across the field". `rotate` is
+degrees, normalised to the range −180…180 on the way in, so two encodings of
+the same angle are the same state.
+
+Defaults: black, 12, not bold, not underlined, 0°. A user who never touches the
+controls gets something that looks like the rest of the board.
+
+- [ ] **Step 2: Put it on the top layer**
+
+Into the `text` layer from Task 2 Step 3, above the arrows, through `label()`
+from Task 1 Step 1. Nothing here computes an SVG coordinate or writes an
+attribute by hand — if a caption needs something `label()` cannot express, it
+goes in `label()`.
+
+- [ ] **Step 3: Place one, and edit it in real form controls**
+
+A third tool mode beside Select and Arrow (Task 5 Step 1). Click on the board
+places a caption there and moves focus straight to the text field, so placing
+and typing is one gesture.
+
+**The editing happens in an HTML `<input>` in a properties strip, not inside
+the SVG.** SVG has no dependable `contenteditable`, and a real input brings the
+mobile keyboard, IME, text selection, undo-in-field and screen-reader support
+that hand-rolling it in SVG would all have to reinvent badly. The strip appears
+when a caption is selected and edits that caption live.
+
+An empty caption is not a caption: if the field is left blank on blur, drop the
+item rather than leaving an invisible zero-width `<text>` that can be selected
+only by accident. Same rule as the too-short arrow in Task 5 Step 2.
+
+- [ ] **Step 4: The formatting controls**
+
+In the properties strip, all acting on the selected caption and all remembered
+as the default for the next one:
+
+- **Size** — a number input plus a slider, clamped to the 6–36 of Step 1.
+- **Colour** — a short row of swatches (black, plus a few that stay legible at
+  small sizes on white) alongside `<input type="color">`. The swatches are what
+  a phone user will actually hit; the picker is the escape hatch. Note beside
+  it, once, that colour prints grey — the Global Constraints entry says why.
+- **Bold** and **Underline** — toggle buttons carrying `aria-pressed`.
+- **Angle** — a slider *and* a number input, because a slider alone cannot be
+  driven from a keyboard with any precision. Snap to 0 and ±90 within a couple
+  of degrees; those three are most of the real uses (flat, and reading up or
+  down a sideline).
+
+Bold and underline are booleans that select between fixed attribute values.
+Neither the colour nor the size is ever passed through as a raw CSS string —
+`fill` accepts `url(#…)`, so "whatever the user typed" is not a colour.
+
+- [ ] **Step 5: Select, move, delete, undo — the same way as everything else**
+
+A caption is a token as far as the rest of the page is concerned: dragging
+(Task 3 Step 2), keyboard nudging (Task 3 Step 4), Delete, and undo (Task 3
+Step 5) all work on it with no separate code path. Its drag transform and its
+rotation compose as `translate(…) rotate(…)` in that order — the other way
+round moves the caption when you rotate it.
+
+Its accessible name is its own text, so a screen reader reads the caption
+rather than "text item 3".
+
+- [ ] **Step 6: Test it**
+
+Extend `test/draw/state.test.js`: a caption survives `setView` unmoved, like
+every other item; an angle of 450 normalises to 90 and −270 to 90 as well; a
+size outside 6–36 is clamped, not rejected into a broken item; a blank caption
+is dropped.
+
+- [ ] **Step 7: Commit**
+
+```bash
+npm test
+git add -A
+git commit -m "Write on the board"
+```
+
+---
+
+### Task 7: The share link
 
 **Files:**
 - Create: `lib/draw/codec.js`
@@ -480,7 +611,9 @@ git commit -m "Draw movement arrows on the board"
 
 - JSON with short keys and coordinates rounded to one decimal — a full board of
   22 players and 5 officials lands around 700 characters encoded, which is
-  comfortably inside every browser's URL limit.
+  comfortably inside every browser's URL limit. Captions are the variable part:
+  each costs its own text plus its styling, so omit every field that is still
+  at its default rather than writing the whole record out.
 - **base64url** (`-`/`_`, no padding), not plain base64: `+`, `/` and `=` all
   need percent-encoding in a URL and will be mangled by something on the way to
   the recipient.
@@ -501,8 +634,23 @@ the page is on the association's domain.
   unvalidated one plus a future `innerHTML` path is a stored XSS on a real site.
 - Every number must be finite and inside the board, clamped rather than
   trusted.
-- Token and arrow counts capped, so a crafted link cannot hang the page
-  building a hundred thousand nodes.
+- Token, arrow and caption counts capped, so a crafted link cannot hang the
+  page building a hundred thousand nodes.
+
+And for the captions from Task 6, which are the only free text in the payload
+and so the only part a stranger fully controls:
+
+- `text` is capped in length and reaches the document **only** through
+  `label()`'s escaping, or through `textContent`. Never `innerHTML`, on any
+  path, including the accessible name and the properties strip.
+- `color` must match `/^#[0-9a-f]{6}$/i`. Not "a non-empty string" — `fill`
+  takes `url(#…)`, and a colour that is really a reference is how a well-formed
+  payload starts pointing at something it should not.
+- `size` clamped to 6–36, `rotate` to a finite −180…180. A `NaN` here does not
+  fail loudly; it produces an attribute the browser ignores and a caption that
+  silently vanishes.
+- `bold` and `underline` coerced to real booleans, and used only to pick
+  between fixed attribute values.
 
 Anything that fails validation is dropped; if the whole payload fails, the page
 opens the default board and shows a dismissible notice. **A bad link never
@@ -542,6 +690,12 @@ as a colour change.
 - The hostile cases are *dropped, not sanitised into something*: a `mark` of
   `<script>`, an unknown `view`, `across: Infinity`, `across: 1e9`, a
   `__proto__` key, ten thousand tokens.
+- The caption cases, each asserted separately because each is a different
+  mistake: `color: "url(#x)"`, `color: "red"`, `color: "#fff"` (three digits —
+  decide and test whether it is accepted or dropped), `size: 1e6`,
+  `rotate: NaN`, a `text` of a megabyte, and a `text` of
+  `<script>alert(1)</script>` which must survive as those literal characters
+  and never as an element.
 - A hand-written version-1 payload committed in the test file still decodes.
   This is the test that stops a refactor from silently invalidating every link
   anyone has already shared.
@@ -556,7 +710,7 @@ git commit -m "Share a drawn play as a link"
 
 ---
 
-### Task 7: Guard rails
+### Task 8: Guard rails
 
 **Files:**
 - Create: `test/draw/page.test.js`
@@ -587,9 +741,15 @@ HTTP — **not `file://`**, which blocks ES module imports — and assert:
    same board.
 4. Opening `/draw#d=notvalidbase64` shows the default board and the notice, and
    logs no uncaught error.
+5. Opening a link whose caption text is `<script>alert(1)</script>` shows those
+   characters on the field as words, adds no `<script>` element to the
+   document, and fires no dialog.
 
-That last one is the real reason for this test: it is the case a unit test
-cannot cover and the one a stranger with a mangled link will hit.
+The last two are the real reason for this test. Neither is reachable from a
+unit test, one is what a stranger with a mangled link hits, and the other is
+the thing the whole of Task 7 Step 2 exists to prevent — an assertion in Node
+that a string was escaped is not the same as a browser confirming it never
+became an element.
 
 Reuse `chromiumExecutable()` from `lib/cards/render.js` rather than calling
 `chromium.launch()` bare — it already handles the several places a browser can
@@ -605,7 +765,7 @@ git commit -m "Guard the drawing page against drift and bad links"
 
 ---
 
-### Task 8: Document it
+### Task 9: Document it
 
 **Files:**
 - Create: `docs/draw/README.md`
@@ -649,12 +809,17 @@ git commit -m "Document the drawing page"
    the mechanics — or dropped entirely, leaving only the situations — that
    changes Task 4 and nothing else.
 
-2. **No text on the board in v1.** No arrow labels and no free-text notes,
-   which keeps the share payload to a fixed vocabulary and the injection surface
-   at zero. `markers.js` supports both from day one, so adding them later is UI
-   plus one codec field plus escaping — but it is the change that turns a
-   share link into a channel for arbitrary text on the association's domain, so
-   it deserves its own decision rather than arriving by default.
+2. **Text is in, and it is why the codec's validation matters.** A caption
+   carries words, a colour, a size and an angle, all of them in the share link
+   — which makes `/draw` a way to put arbitrary text on a page at this
+   association's domain and hand somebody the URL. That exposure is inherent in
+   a shareable board that can be written on, not something the implementation
+   adds, and Task 7 Step 2 plus Task 8 Step 3 are what keep it to *words*. Worth
+   confirming you want it knowing that, because it is the one part of this plan
+   where a sloppy implementation is a security bug rather than a wrong diagram.
+
+   Arrow labels are still out — an arrow's caption can be a text item placed
+   beside it, which needs no second text path to get right.
 
 3. **The share state lives in the fragment.** Nothing server-side ever sees a
    board. The cost is that a shared link's content is invisible to link
@@ -670,15 +835,20 @@ git commit -m "Document the drawing page"
   territory.
 - **Animation, play sequencing, printing.**
 - **Compressing the share payload.** `CompressionStream` exists in both
-  runtimes and would roughly halve a long link. Not needed at ~700 characters;
-  revisit if labels or multi-frame plays push it past a couple of thousand.
+  runtimes and would roughly halve a long link. Not needed at ~700 characters,
+  and browsers handle far longer URLs than that — but captions are the one part
+  of the payload with no fixed size, so a board with a paragraph on it is the
+  likeliest thing to force this. Measure before adding it.
+- **Fonts.** One family, the board's own. A font picker means either shipping
+  files or a third-party host the output test forbids.
 
 ## Notes for whoever picks this up
 
-- **Task 1 is the risky one and Task 6 Step 2 is the important one.**
+- **Task 1 is the risky one and Task 7 Step 2 is the important one.**
   `markers.js` has 50 committed diagrams to check its shapes against — use
   them. The codec has nothing to check against except the tests written for it,
-  and it is the part handling input from strangers.
+  and it is the part handling input from strangers. Captions arriving in Task 6
+  are what turn that from a precaution into the reason the task exists.
 
 - **This plan advances `2026-08-27-field-diagrams-svg.md` rather than forking
   it.** Task 1 here is that plan's Task 2 Step 1. When that plan resumes, its
