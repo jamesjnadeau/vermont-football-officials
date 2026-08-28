@@ -1,8 +1,11 @@
 # The Field Drawing Tool Implementation Plan
 
-> **Implemented.** All nine tasks landed: `/draw` builds, is deliberately
-> unlinked from the site, and its guard rails (`test/draw/*.test.js`,
-> `test/content/output.test.js`) pass. Kickoff, Field Goal, Goal Line, Punt
+> **Implemented.** All nine tasks landed: `/draw` builds and its guard rails
+> (`test/draw/*.test.js`, `test/content/output.test.js`) pass. It shipped
+> deliberately unlinked, as this plan specified; it was later added to the main
+> navigation as "Play Draw" at the site owner's request, and the test that
+> asserted nothing linked it was inverted to require the nav link. It stays out
+> of the article collections either way. Kickoff, Field Goal, Goal Line, Punt
 > and Spot shipped as Situation presets, and Wing-T, Trips, Power I, Shotgun
 > and an empty scrimmage set shipped as Formation presets, per Task 4. Two
 > things shipped on weaker footing than the rest, and both are stated where

@@ -7,18 +7,25 @@ field renderer the site's diagrams use (`lib/field/`), not a second copy of a
 field, so a mark on this page and a mark in a diagram can never quietly
 disagree about what it looks like.
 
-**Finding it:** go to `/draw`. It carries no link from anywhere else on the
-site — not the navigation, not an article, not a topic listing — and that is
-on purpose, not an oversight. It is a tool for building and sharing one play,
-not an article somebody has written and verified the way everything else on
-this site is (see `docs/sources.md`), so it does not belong presented
-alongside the association's reviewed pages as something to browse to. Two
-tests hold this in place: `test/content/output.test.js` fails the build if any
-rendered page links `/draw` or if it turns up in a topic listing, and
-`test/draw/page.test.js` confirms the page itself still renders and works. If
-`/draw` ever should be linked from somewhere, that is a decision to make
-explicitly — change `content/draw/index.pug` and update both tests, not just
-one.
+**Finding it:** it is in the main navigation as **Play Draw**, and at `/draw`.
+
+That is a change from how it shipped. It was originally unlinked on purpose —
+the argument being that it is a tool for building one play rather than an
+article the association has written and verified the way everything else here
+is (see `docs/sources.md`), so it should not sit in the nav as something to
+browse to. That argument still holds for its *presets*: the Situations carry
+officials and are mechanics, the Formations are cited scenery, and both say so
+where a reader can see it. What changed is the judgement about discoverability
+— a tool nobody can find is a tool nobody uses.
+
+Two tests hold the current state in place: `test/content/output.test.js` fails
+the build if any rendered page is missing the nav link, or if `/draw` turns up
+inside an article or topic *listing* (it is a tool, not an article, and
+`eleventyExcludeFromCollections` keeps it out of the collections), and
+`test/draw/page.test.js` confirms the page itself renders and works. Whichever
+way that decision goes in future, it is one to make explicitly: the nav lives
+in `content/_includes/layouts/main.pug` and both tests encode the current
+answer, so changing one without the other fails the build rather than drifting.
 
 ## `lib/` is served twice, and both copies must agree
 
