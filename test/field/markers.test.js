@@ -64,8 +64,12 @@ test('no emitted coordinate carries more than two decimals', () => {
     flag({ at }, view),
     label({ text: 'X', at, size: 13.333, rotate: 12.345 }, view),
   ];
+  // Scanning the whole string, not just whole-attribute values: movement()'s
+  // and flag()'s primary geometry lives inside one quoted `d="M 1.23 4.56 L
+  // …"` attribute holding several space-separated numbers, which a pattern
+  // anchored to `"..."` would skip entirely.
   for (const svg of svgs) {
-    for (const [, digits] of svg.matchAll(/"[-\d]*\.(\d+)"/g)) {
+    for (const [, digits] of svg.matchAll(/-?\d+\.(\d+)/g)) {
       assert.ok(digits.length <= 2, `.${digits} in ${svg}`);
     }
   }
@@ -108,33 +112,67 @@ test('rotating a label does not move its anchor', () => {
 // Step 2: the drawing page moves a token by wrapping it in a translated <g>
 // instead of re-placing it. A mark rendered at the origin and then shifted
 // by a transform has to land on the same point as the same mark rendered
-// straight at that position — otherwise the drawing page and the diagram
-// renderer would draw two different pictures from the same scene.
+// straight at that position — on *both* axes, and including whatever lives
+// inside a `d="…"` path, not only bare `cx=`/`x=`-style attributes — or the
+// drawing page and the diagram renderer would draw two different pictures
+// from the same scene.
 test('a mark at the origin, translated, lands where the same mark placed absolutely lands', () => {
   const dx = x(at.across);
   const dy = yardToY(view, at.down);
-  const close = (a, b) => assert.ok(Math.abs(a - b) < 0.01, `${a} vs ${b}`);
+  const TOL = 0.01;
 
-  for (const [absolute, origin] of [
-    [official({ mark: 'R', at, highlight: true }, view), official({ mark: 'R', highlight: true })],
-    [player({ kind: 'k', at }, view), player({ kind: 'k' })],
-    [player({ kind: 'r', at }, view), player({ kind: 'r' })],
-    [flag({ at }, view), flag({})],
-    [note({ text: 'spot', at }, view), note({ text: 'spot' })],
-    [label({ text: 'X', at }, view), label({ text: 'X' })],
-  ]) {
-    const nums = (svg) => [...svg.matchAll(/(?:cx|cy|x1|y1|x2|y2|x|y)="(-?[\d.]+)"/g)].map((m) => +m[1]);
-    const [absoluteFirst] = nums(absolute);
-    const [originFirst] = nums(origin);
-    // Every mark's first emitted coordinate is an x; compare it against the
-    // absolute one shifted by the same delta the wrapper <g> would apply.
-    close(absoluteFirst, originFirst + dx);
-    void dy; // y-coordinates are checked the same way per-shape below.
+  // Every number in the string, in emission order — attribute values and
+  // whatever is packed into a `d="…"` path alike, so flag()'s kite (which is
+  // entirely a `d` attribute) is covered as fully as official()'s cx/cy.
+  const allNumbers = (svg) => [...svg.matchAll(/-?\d+(?:\.\d+)?/g)].map(Number);
+
+  // A number that reappears unshifted between the two renders is a shape
+  // constant (a radius, a relative path delta) — expected, and not what this
+  // test is checking. What it must find, per shape, is at least one number
+  // that shifted by exactly dx and at least one that shifted by exactly dy;
+  // finding neither means an axis went untested, and finding a shift that is
+  // none of {0, dx, dy} means placement and translation disagree.
+  function assertTranslatesCleanly(shapeName, absoluteSvg, originSvg) {
+    const abs = allNumbers(absoluteSvg);
+    const org = allNumbers(originSvg);
+    assert.equal(
+      abs.length,
+      org.length,
+      `${shapeName}: origin and absolute renders have different shapes (${abs.length} vs ${org.length} numbers)`,
+    );
+    let sawDxShift = false;
+    let sawDyShift = false;
+    for (let i = 0; i < abs.length; i += 1) {
+      const diff = abs[i] - org[i];
+      if (Math.abs(diff) < TOL) continue; // an unshifted constant — fine
+      if (Math.abs(diff - dx) < TOL) {
+        sawDxShift = true;
+        continue;
+      }
+      if (Math.abs(diff - dy) < TOL) {
+        sawDyShift = true;
+        continue;
+      }
+      assert.fail(
+        `${shapeName}: number #${i} (${org[i]} -> ${abs[i]}, diff ${diff}) is not a translation by dx (${dx}) or dy (${dy})`,
+      );
+    }
+    assert.ok(sawDxShift, `${shapeName}: nothing shifted by dx — the x-axis went unchecked`);
+    assert.ok(sawDyShift, `${shapeName}: nothing shifted by dy — the y-axis went unchecked`);
   }
 
-  // Spot-check a y coordinate too (official's circle cy).
-  const abs = official({ mark: 'R', at, highlight: true }, view);
-  const org = official({ mark: 'R', highlight: true });
-  const cy = (svg) => +svg.match(/cy="(-?[\d.]+)"/)[1];
-  close(cy(abs), cy(org) + dy);
+  assertTranslatesCleanly(
+    'official (highlighted)',
+    official({ mark: 'R', at, highlight: true }, view),
+    official({ mark: 'R', highlight: true }),
+  );
+  assertTranslatesCleanly('player (k)', player({ kind: 'k', at }, view), player({ kind: 'k' }));
+  assertTranslatesCleanly('player (r)', player({ kind: 'r', at }, view), player({ kind: 'r' }));
+  // flag()'s kite is entirely a `d="M … l … l … l … z"` path: the leading
+  // M is the only absolute point in it, the three `l`s are relative deltas
+  // that must stay put — exactly the case allNumbers()/assertTranslatesCleanly
+  // has to get right for this test to mean anything for this shape.
+  assertTranslatesCleanly('flag', flag({ at }, view), flag({}));
+  assertTranslatesCleanly('note', note({ text: 'spot', at }, view), note({ text: 'spot' }));
+  assertTranslatesCleanly('label', label({ text: 'X', at }, view), label({ text: 'X' }));
 });
