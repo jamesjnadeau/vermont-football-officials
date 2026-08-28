@@ -35,6 +35,16 @@ export default async function (eleventyConfig) {
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js": "js/bootstrap.bundle.min.js",
   });
 
+  // Serve lib/field/ and lib/draw/ to the browser at matching subpaths. The
+  // mirroring is deliberate, not incidental: a relative import inside those
+  // files, such as `../field/geometry.js`, then resolves identically whether
+  // the importer is `node --test` or a browser loading /js/draw/app.js — no
+  // module needs a second spelling of its own dependencies for the two
+  // runtimes. Everything under both directories must therefore stay
+  // DOM-free and `node:`-import-free except lib/draw/app.js, which says so
+  // in its own header.
+  eleventyConfig.addPassthroughCopy({ "lib/field": "js/field", "lib/draw": "js/draw" });
+
   // Sass -> CSS (see https://www.11ty.dev/docs/languages/custom/)
   eleventyConfig.addTemplateFormats("scss");
   eleventyConfig.addPlugin(eleventySass, {

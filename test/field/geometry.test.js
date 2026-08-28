@@ -19,7 +19,9 @@ import {
   playingFieldBottomYard,
   topYard,
   x,
+  xToYards,
   y,
+  yToYards,
 } from '../../lib/field/geometry.js';
 import { views, viewNames } from '../../lib/field/views.js';
 import { renderField } from '../../lib/field/field.js';
@@ -121,6 +123,24 @@ test('turf and end zone together cover the drawn field, without overlapping', ()
 test('a view renders the same thing every time', () => {
   for (const name of viewNames) {
     assert.equal(renderField(views[name]).svg, renderField(views[name]).svg, name);
+  }
+});
+
+// The drawing page reads a pointer position back out of the picture, which is
+// the only direction the diagrams never go. A conversion that doesn't survive
+// the round trip puts a token somewhere other than where it was dropped.
+test('every conversion survives a round trip in both directions', () => {
+  for (const yards of [-36, -26.5, 0, 3.75, 26.5, 36]) {
+    assert.equal(round(xToYards(x(yards)), 6), yards);
+  }
+  for (const name of viewNames) {
+    const view = views[name];
+    for (const yards of [-10, 0, 7.5, view.bottomYard]) {
+      assert.equal(round(yToYards(view, y(view, yards)), 6), yards);
+    }
+    // The frame's own edges, which is what a drag is clamped against.
+    assert.equal(round(y(view, yToYards(view, 0)), 6), 0);
+    assert.equal(round(y(view, yToYards(view, view.height)), 6), view.height);
   }
 });
 

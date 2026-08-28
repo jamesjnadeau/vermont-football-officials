@@ -73,6 +73,77 @@ PDF governs, and the pages say so. Ask the league for the next edition each
 summer — the 2026 5/6 document is titled a Rulebook and the 7/8 one is dated
 July 2026, so the two levels are not always revised together.
 
+## Draw-a-play presets
+
+`lib/draw/presets.js` ships two kinds of preset, sourced two different ways.
+
+**Situations** (Kickoff, Field Goal, Goal Line, Punt, Spot) carry officials,
+and their positions are not a citation problem — they were extracted directly
+from this site's own committed diagrams by a throwaway script kept out of the
+repo. The five scenes do not all stand on equally solid ground, and the
+difference is stated here rather than smoothed over:
+
+- **Kickoff, Field Goal, Goal Line, Punt** are each drawn on six or five
+  agreeing sources — the position card for every one of the five officials,
+  plus a crew-of-5 card where one exists (`static/images/position-cards/*/
+  kickoff.svg`, `.../field-goal.svg`, `.../goal-line.svg`, `.../punt.svg`,
+  and the crew cards in `static/images/kicking-plays/`). Every card for a
+  given scene agreed exactly (0 spread), and all 98 extracted points
+  (officials plus players, across the four scenes) round-trip to their
+  original SVG coordinate. This is the same standard the original three
+  scenes shipped on; Punt was extracted and verified afterward, to the
+  identical method, once the same six-source pattern was confirmed to hold
+  for it too.
+- **Spot (between-downs)** rests on exactly one diagram —
+  `static/images/between-downs/getting-it-back-crew-of-5.svg` — because no
+  position cards exist for this scene at all. Its five officials' positions
+  are extracted correctly from that one drawing and round-trip exactly, but
+  nothing corroborates the drawing itself: a single mislabeled mark or
+  authoring slip in that one file would ship unnoticed, which is not true of
+  the other four scenes. Say so before treating Spot's positions as equal to
+  Kickoff's. Spot can move onto the same footing as the others the day a
+  second, independently-drawn source of this scene exists to cross-check
+  against.
+
+  The source diagram also draws one player marker, an open circle with no
+  kicking/receiving distinction (this scene is the ball being reset between
+  downs, not a kicking play, so the diagram draws no team-side split for it).
+  That marker is **not shipped** in the Spot preset: `state.js` and
+  `markers.js` know exactly two player kinds, and rendering this one through
+  either would draw it as a receiving-team player — asserting a team side the
+  source never states, to save adding a third player kind for one dot. Spot
+  ships its five officials only.
+
+**Formations** (Wing-T, Trips, Power I, Shotgun) carry no officials — they are
+an offense-only starting point, not this association's mechanics, and
+`app.js` labels and colours their buttons differently from Situations for that
+reason. Nothing in this repo holds them, so each is built from a named public
+source. None of these sources publish a single diagram with every position's
+exact coordinates; where a source gives no number, the formation uses a
+generic convention noted below rather than a second source's number, so the
+whole formation traces to one citation.
+
+A fifth Formation preset, **Empty (scrimmage)**, places no players at all — it
+is the run/pass crop with no formation assumed, for a play that doesn't start
+from a named look. It carries nothing to cite and needs no source; it is
+listed here so its absence from the table below reads as "nothing to source,"
+not as a gap nobody noticed.
+
+| Formation | Source | What it supplied |
+| --- | --- | --- |
+| Wing-T | [wingt-coach.com — Positions, Formations, and Alignment](https://wingt-coach.com/wing-t-basics-positions-formations-and-alignment/) | Quoted numbers: guard-to-centre and lineman-to-lineman splits ("two feet"), the fullback's depth ("heels four yards behind the football"), the wingback's alignment ("1 yard deep and 1 yard outside the TE"), and the halfback's ("same depth as the FB..., outside foot of the tackle"). |
+| Power I | [footballadvantage.com — Power I Formation Offense](https://footballadvantage.com/power-i/) | Quoted backfield depths: fullback "about three steps directly behind the Quarterback" (read here as ~3 yards — a judgement call, noted in `presets.js`), running back "about two yards directly behind the Fullback", H-back "at the same depth as the Fullback, about three yards" to a side. Also confirms this formation runs two tight ends and no wide receiver. |
+| Shotgun | [footballadvantage.com — Shotgun Formation Offense](https://footballadvantage.com/shotgun-formation/) | Quoted numbers: quarterback "5-7 yards behind the center" (the preset uses 5), running back "about two yards directly to the left or right of the Quarterback". Receiver splits are not given by this source and use the generic convention below. |
+| Trips | [northeastern18.com — Understanding Trips Formation](https://northeastern18.com/trips-formation-spacing-routes-player-roles/) for spacing ("receivers should aim for a distance of about 5 to 10 yards apart"); [cfbtrack.com — Trips Formation](https://cfbtrack.com/football-formations/offense/trips-formation) for the personnel naming (a single receiver isolated backside, three receivers to the trips side) | Receiver spacing and the backside-isolation shape; exact per-receiver coordinates are this page's own placement within the cited 5–10 yard spacing, not a further number from either source. |
+
+**Generic convention, used where a formation's source gives no line split or
+receiver split:** offensive linemen at roughly a yard's gap centre-to-centre,
+and a receiver off the line of scrimmage a yard deeper than one on it ("a step
+or two," in the Shotgun source's own words). This is ordinary football
+knowledge repeated across the coaching sources above and not itself drawn from
+one citable diagram; it is used only to fill a gap a formation's own source
+leaves open, never in place of a number a source states.
+
 ## Page → source map
 
 Which page rests on which document, and when a human last read one against the

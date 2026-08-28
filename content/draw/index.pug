@@ -1,0 +1,49 @@
+---
+title: Draw a Play | Vermont Football Officials
+description: Lay players and officials out on a field, draw their movement, and share the result as a link.
+layout: layouts/main.pug
+eleventyExcludeFromCollections: true
+---
+
+h1 Draw a Play
+p.lead Lay players and officials out on a field, draw their movement, and share the result as a link.
+
+//- Where a share link that could not be read says so. Empty and hidden
+//- until app.js has one to report, and above everything else because it is
+//- the first thing somebody arriving on a broken link needs to know: the
+//- board under it is the default one, not the play they were sent.
+.draw-notice(hidden)
+
+.draw-toolbar
+  //- Populated client-side by app.js: the Select/Arrow/Text tool toggle, the
+  //- preset groups (Formations, Situations), the marker palette, Undo and
+  //- Copy link. Left empty in markup, since none of this can be rendered
+  //- server-side (see the noscript note below).
+
+//- What "Copy link" has to say for itself: a live region so the
+//- confirmation is announced and not only seen, and — where the browser
+//- refuses to reach the clipboard, which it does on anything that is not a
+//- secure context — the link itself in a field to copy by hand. Both filled
+//- in by app.js, and silent until the button is pressed.
+.draw-share
+
+//- The caption editor, also filled in by app.js. It is real HTML form
+//- controls and not an editable <text> in the SVG on purpose: SVG has no
+//- dependable contenteditable, and an <input> brings the mobile keyboard,
+//- IME, text selection and screen-reader support that hand-rolling it in
+//- SVG would have to reinvent badly. Hidden until a caption is selected —
+//- in the markup as well as in app.js, so it never flashes on first paint.
+.draw-props(hidden)
+
+.draw-board-wrap
+  svg#board.draw-board
+
+//- The board is built entirely client-side from lib/field/ and lib/draw/, so
+//- with no JavaScript this page is a blank white box. A default board isn't
+//- rendered server-side instead, because a shared link's state lives in the
+//- URL fragment, which never reaches the server — a no-JS rendering
+//- would silently show the wrong play rather than none at all.
+noscript
+  p This page draws in your browser and needs JavaScript. For the same diagrams as static images, see #[a(href='/information/') Information].
+
+script(type='module' src='/js/draw/app.js')

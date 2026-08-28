@@ -221,6 +221,38 @@ test('the build ships a CNAME for the custom domain', () => {
   assert.equal(read(cname).trim(), 'www.vermont-football-officials.org');
 });
 
+// --- /draw: built, and deliberately unlisted ----------------------------
+// The drawing page exists and works, but the plan requires it stay out of
+// the site's own navigation — reachable by a direct link or a shared one,
+// never by browsing. `eleventyExcludeFromCollections` in content/draw/
+// index.pug is what keeps it out of Eleventy's own collections; these three
+// checks are the surfaces a stray tag or a stray link could still put it on.
+test('the build wrote /draw', () => {
+  assert.ok(existsSync(path.join(SITE, 'draw', 'index.html')), 'missing _site/draw/index.html');
+});
+
+test('no built page links to /draw', () => {
+  const bad = html.filter((f) => /href="\/draw\/?"/.test(read(f)));
+  assert.deepEqual(
+    bad,
+    [],
+    '/draw is deliberately absent from the site navigation — see content/draw/index.pug',
+  );
+});
+
+// A stray topic tag on content/draw/index.pug would slip it into a topic
+// page regardless of eleventyExcludeFromCollections, which only keeps
+// Eleventy's own collections clean — the Information index and every topic
+// page are exactly where that would surface.
+test('/draw appears in no collection listing', () => {
+  const listings = [
+    path.join(SITE, 'information', 'index.html'),
+    ...TOPICS.map((t) => path.join(SITE, 'tags', t.slug, 'index.html')),
+  ];
+  const bad = listings.filter((f) => read(f).includes('/draw'));
+  assert.deepEqual(bad, []);
+});
+
 // The site is served from the domain root, so a build that stamped a path
 // prefix onto the CSS and JS URLs would 404 both and leave the page unstyled.
 test('asset URLs are root-relative, with no project path prefix', () => {

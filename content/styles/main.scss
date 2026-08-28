@@ -74,3 +74,243 @@ body {
 .card-only {
   display: none;
 }
+
+// /draw: the field-drawing board (lib/draw/). What is set here describes the
+// board surface itself — how big it can get, what a pointer on it does —
+// rather than any one token, arrow or caption drawn on it; those have their
+// own rules further down.
+.draw-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.draw-board-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+// What "Copy link" has to say for itself. Empty and taking no room until the
+// button is pressed, which is why it has no padding or border of its own:
+// a permanently visible empty strip above the board would cost the board
+// height on a phone for something that is silent almost all the time.
+.draw-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+// The manual-copy field, shown only when the browser refuses the clipboard.
+// It grows, because a share link is longer than any sensible input width and
+// what matters here is that as much of it as possible is visibly selected.
+.draw-share-manual {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1 1 100%;
+
+  input {
+    flex: 1 1 auto;
+  }
+}
+
+// A share link that would not open. Margin only when it is showing — an
+// element that is `hidden` still has margins, and an invisible gap above the
+// toolbar is the sort of thing that gets chased for an hour later.
+.draw-notice:not([hidden]) {
+  margin-bottom: 1rem;
+}
+
+// How much of the window everything that is not the board takes up: the site
+// header, the page heading and lead and the wrapped toolbar above it, the
+// hint paragraph below it (app.js puts it under the board, not above — see
+// the comment there) — and, when a caption is selected, the caption editor
+// as well. A total rather than only what sits above, because what this pays
+// for is the whole page fitting, not just the board's top edge.
+//
+// Both are measured in a browser at a desktop width rather than derived,
+// because the toolbar's height depends on how many rows its buttons wrap
+// onto, which depends on the window's width, which CSS cannot ask about
+// here. So they are right at one width and generous at wider ones; below
+// about 900px the toolbar wraps further and the board scrolls again, which
+// is the cost of a fixed number and not something a bigger one fixes.
+// Re-measure them whenever the toolbar gains or loses a control.
+$draw-chrome: 27rem;
+$draw-chrome-editing: 37rem;
+
+.draw-board {
+  // No width/height attribute is set on the <svg> itself, so the browser
+  // takes its intrinsic aspect ratio from the viewBox lib/draw/board.js
+  // writes — the same way an <img> takes its ratio from the bitmap it
+  // loads. width: 100% plus height: auto is then enough to stay in ratio;
+  // max-height is what stops the tallest crop (kickoff, 270x394) from
+  // outgrowing a laptop screen and forcing a scroll to see the whole field.
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  max-height: calc(100vh - #{$draw-chrome});
+
+  // The caption editor only exists while a caption is selected, so the
+  // chrome above the board is two heights, not one. Subtracting the taller
+  // one always would shrink the board for everyone who never writes on it;
+  // this pays for the strip only while it is on screen.
+  .draw-props:not([hidden]) ~ .draw-board-wrap & {
+    max-height: calc(100vh - #{$draw-chrome-editing});
+  }
+
+  // Dragging is a property of the board surface, not of any one token — set
+  // once here rather than repeated per tool. Without it, dragging a token on
+  // a phone scrolls the page underneath it instead of moving the token.
+  touch-action: none;
+}
+
+// The overlay layer (lib/draw/board.js) holds only UI chrome — a selection
+// outline, an in-progress arrow preview. Kept out of the hit-testing order
+// because it covers the whole board: neither of those is something to click
+// on, and without this the layer would swallow every click and drag meant
+// for the tokens underneath it.
+.draw-layer-overlay {
+  pointer-events: none;
+}
+
+// A token on the board: an official's disc or a player's mark, wrapped so it
+// can be dragged. The cursor is the only thing telling a mouse user these
+// move at all, since a marker that can be picked up looks exactly like one on
+// a printed diagram — which is the point, and why the affordance has to come
+// from the chrome instead of from the mark.
+.draw-token {
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+// The invisible disc under each token. `pointer-events: all` is what does the
+// work: a defense player is an unfilled circle and an offense player two
+// crossed lines, so without a target that answers over its whole interior a
+// click only counts when it lands on a stroke a yard and a half wide.
+.draw-hit {
+  fill: none;
+  pointer-events: all;
+}
+
+// Selection. Colour is allowed here and nowhere else on the board: this lives
+// in the overlay layer, which is never printed and never shared, so it can say
+// "this one" the way the rest of the field deliberately can't.
+.draw-selection {
+  fill: none;
+  stroke: #0d6efd;
+  stroke-width: 1.6;
+  stroke-dasharray: 4 3;
+}
+
+// An arrow on the board. It isn't dragged (only drawn and removed), so it
+// gets a pointer cursor rather than the tokens' grab/grabbing pair.
+.draw-arrow {
+  cursor: pointer;
+}
+
+// The invisible twin of an arrow's dotted `.mv` path (lib/field/markers.js),
+// wide for the reason `.draw-hit` is: `.mv`'s dots are too sparse on their
+// own to reliably click. `pointer-events: all` on a `fill: none` path still
+// hits along the stroke regardless of the stroke's own value, same as the
+// token circles above — see their comment.
+.draw-hit-line {
+  fill: none;
+  stroke: none;
+  stroke-width: 14;
+  pointer-events: all;
+}
+
+// The rubber band shown while an arrow is mid-draw. It is drawn with the
+// same `movement()` markup as a finished one — one renderer, one look — so
+// only opacity marks it as not committed yet; anything more would need the
+// overlay to know a second way to draw an arrow, which is exactly the
+// duplication `markers.js` exists to avoid.
+.draw-arrow-preview {
+  opacity: 0.55;
+}
+
+// Arrow mode draws instead of picking things up, and the crosshair is the
+// one hint of that for anyone not reading the toolbar — the equivalent of
+// the tokens' own cursor: grab.
+.draw-mode-arrow {
+  cursor: crosshair;
+}
+
+// Text mode places a caption where the next click lands, and the caret is
+// the same one-glance hint the crosshair is for arrows.
+.draw-mode-text {
+  cursor: text;
+}
+
+// A caption on the board. Its hit circle (`.draw-hit`, above) covers the
+// anchor point, but the words are what a user actually aims at, and SVG
+// text answers a click only where its glyphs are painted — so a click
+// inside the counter of an "o" would otherwise fall through to the field.
+.draw-caption text {
+  pointer-events: all;
+}
+
+// The caption editor. A row of real form controls rather than anything in
+// the SVG (see content/draw/index.pug for why), laid out the same way the
+// toolbar above it is so the two read as one block of chrome.
+.draw-props {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.375rem;
+}
+
+// Each control keeps its own label next to it, so a strip that wraps onto
+// two lines on a phone never separates a slider from what it is a slider
+// for.
+.draw-props-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+// Narrow enough that a size and an angle sit on one line beside their
+// sliders; both are at most four characters.
+.draw-props-number {
+  width: 4.5rem;
+}
+
+.draw-props-slider {
+  width: 7rem;
+}
+
+// The colour swatches. Square, thumb-sized, and showing their colour as
+// their own background — the one place on this page where a control is its
+// value rather than a word for it.
+.draw-swatch {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.25rem;
+
+  // The pressed swatch is ringed rather than recoloured: recolouring it
+  // would mean the control no longer shows the colour it selects.
+  &[aria-pressed='true'] {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 1px;
+  }
+}
+
+// Said once, beside the colour control: colour on this board is for the
+// screen, and a caption that means something only because of its colour
+// means nothing on the photocopy an official reads on a sideline.
+.draw-props-print-note {
+  flex-basis: 100%;
+  margin: 0;
+}

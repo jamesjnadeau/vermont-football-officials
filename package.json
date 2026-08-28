@@ -16,14 +16,15 @@
     "dev": "eleventy --config .eleventy.js --serve",
     "build": "npm run clean && NODE_ENV=production eleventy --config .eleventy.js",
     "clean": "rm -rf _site",
-    "test": "npm run build && npm run test:field && npm run test:cards && npm run test:content && npm run test:editing && npm run test:output && npm run test:html && npm run test:links",
+    "test": "npm run build && npm run test:field && npm run test:draw && npm run test:cards && npm run test:content && npm run test:editing && npm run test:output && npm run test:html && npm run test:links",
     "test:field": "node --test \"test/field/*.test.js\"",
+    "test:draw": "node --test \"test/draw/*.test.js\"",
     "test:cards": "node --test \"test/cards/*.test.js\"",
     "test:content": "node --test \"test/content/frontmatter.test.js\"",
     "test:editing": "node --test \"test/content/editing.test.js\"",
     "test:output": "node --test \"test/content/output.test.js\"",
     "test:html": "html-validate \"_site/**/*.html\"",
-    "test:links": "linkinator _site --recurse --silent --skip \"^https?://(?!(localhost|127\\\\.0\\\\.0\\\\.1))\""
+    "test:links": "linkinator . draw --server-root _site --recurse --silent --skip \"^https?://(?!(localhost|127\\\\.0\\\\.0\\\\.1))\""
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
