@@ -73,6 +73,53 @@ PDF governs, and the pages say so. Ask the league for the next edition each
 summer — the 2026 5/6 document is titled a Rulebook and the 7/8 one is dated
 July 2026, so the two levels are not always revised together.
 
+## Draw-a-play presets
+
+`lib/draw/presets.js` ships two kinds of preset, sourced two different ways.
+
+**Situations** (Kickoff, Field Goal, Goal Line) carry officials, and their
+positions are not a citation problem — they were extracted directly from this
+site's own committed diagrams (`static/images/position-cards/*/kickoff.svg`,
+`.../field-goal.svg`, `.../goal-line.svg`, and the crew cards in
+`static/images/kicking-plays/`) by a throwaway script kept out of the repo, and
+cross-checked: every card for a scene agreed exactly, and all 73 extracted
+points round-trip to their original SVG coordinate. See the OHSAA Gold Book row
+above, which is what those diagrams were drawn from in the first place.
+
+**Punt and Spot are not shipped as presets.** The plan named both alongside
+Kickoff, Field Goal and Goal Line, but no position cards for punt or a
+between-downs spot were parsed — the extraction was scoped to the three scenes
+already named as verified. Rather than derive their officials from memory or
+from the Punt / Spot crew cards' highlighted "you" framing (which is a
+different question — where the crew stands relative to the highlighted
+official, not the absolute positions this page needs), both are left out. A
+Punt or Spot preset can be added once someone runs the same extraction against
+`static/images/kicking-plays/punt-crew-of-5.svg` and a punt position card set.
+
+**Formations** (Wing-T, Trips, Power I, Shotgun) carry no officials — they are
+an offense-only starting point, not this association's mechanics, and
+`app.js` labels and colours their buttons differently from Situations for that
+reason. Nothing in this repo holds them, so each is built from a named public
+source. None of these sources publish a single diagram with every position's
+exact coordinates; where a source gives no number, the formation uses a
+generic convention noted below rather than a second source's number, so the
+whole formation traces to one citation.
+
+| Formation | Source | What it supplied |
+| --- | --- | --- |
+| Wing-T | [wingt-coach.com — Positions, Formations, and Alignment](https://wingt-coach.com/wing-t-basics-positions-formations-and-alignment/) | Quoted numbers: guard-to-centre and lineman-to-lineman splits ("two feet"), the fullback's depth ("heels four yards behind the football"), the wingback's alignment ("1 yard deep and 1 yard outside the TE"), and the halfback's ("same depth as the FB..., outside foot of the tackle"). |
+| Power I | [footballadvantage.com — Power I Formation Offense](https://footballadvantage.com/power-i/) | Quoted backfield depths: fullback "about three steps directly behind the Quarterback" (read here as ~3 yards — a judgement call, noted in `presets.js`), running back "about two yards directly behind the Fullback", H-back "at the same depth as the Fullback, about three yards" to a side. Also confirms this formation runs two tight ends and no wide receiver. |
+| Shotgun | [footballadvantage.com — Shotgun Formation Offense](https://footballadvantage.com/shotgun-formation/) | Quoted numbers: quarterback "5-7 yards behind the center" (the preset uses 5), running back "about two yards directly to the left or right of the Quarterback". Receiver splits are not given by this source and use the generic convention below. |
+| Trips | [northeastern18.com — Understanding Trips Formation](https://northeastern18.com/trips-formation-spacing-routes-player-roles/) for spacing ("receivers should aim for a distance of about 5 to 10 yards apart"); [cfbtrack.com — Trips Formation](https://cfbtrack.com/football-formations/offense/trips-formation) for the personnel naming (a single receiver isolated backside, three receivers to the trips side) | Receiver spacing and the backside-isolation shape; exact per-receiver coordinates are this page's own placement within the cited 5–10 yard spacing, not a further number from either source. |
+
+**Generic convention, used where a formation's source gives no line split or
+receiver split:** offensive linemen at roughly a yard's gap centre-to-centre,
+and a receiver off the line of scrimmage a yard deeper than one on it ("a step
+or two," in the Shotgun source's own words). This is ordinary football
+knowledge repeated across the coaching sources above and not itself drawn from
+one citable diagram; it is used only to fill a gap a formation's own source
+leaves open, never in place of a number a source states.
+
 ## Page → source map
 
 Which page rests on which document, and when a human last read one against the
