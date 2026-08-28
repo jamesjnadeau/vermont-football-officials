@@ -9,8 +9,10 @@ h1 Draw a Play
 p.lead Lay players and officials out on a field, draw their movement, and share the result as a link.
 
 .draw-toolbar
-  //- The tool palette, presets and the share button land here in later
-  //- tasks. Left empty on purpose for this one.
+  //- Populated client-side by app.js: the preset groups (Formations,
+  //- Situations), the marker palette, and Undo. The share button (Task 7)
+  //- still lands here later; left empty in markup either way, since none of
+  //- this can be rendered server-side (see the noscript note below).
 
 .draw-board-wrap
   svg#board.draw-board

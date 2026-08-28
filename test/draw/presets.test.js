@@ -167,3 +167,33 @@ test('every preset is tagged with the group the UI sorts it by', () => {
   for (const preset of FORMATIONS) assert.equal(preset.group, 'formation');
   for (const preset of SITUATIONS) assert.equal(preset.group, 'situation');
 });
+
+/**
+ * Spot's officials rest on the between-downs crew card alone — no position
+ * cards exist for this scene, so nothing corroborates them (see
+ * docs/sources.md). That single-source standing is a documentation concern,
+ * not a structural one, so the earlier generic tests already cover its
+ * shape; what's specific to Spot is the one thing deliberately left off it.
+ */
+test('Spot ships its five officials and no players — the single-source player marker was dropped', () => {
+  const spot = SITUATIONS.find((p) => p.id === 'spot');
+  assert.ok(spot, 'Spot preset is missing');
+  assert.equal(spot.tokens.filter((t) => t.type === 'official').length, 5);
+  assert.equal(spot.tokens.filter((t) => t.type === 'player').length, 0);
+});
+
+test('Punt ships full kicking and receiving units, verified the same way as Kickoff and Field Goal', () => {
+  const punt = SITUATIONS.find((p) => p.id === 'punt');
+  assert.ok(punt, 'Punt preset is missing');
+  const kicking = punt.tokens.filter((t) => t.type === 'player' && t.kind === 'k');
+  const receiving = punt.tokens.filter((t) => t.type === 'player' && t.kind === 'r');
+  assert.equal(kicking.length, 10);
+  assert.equal(receiving.length, 10);
+});
+
+test('all five situations are present: Kickoff, Field Goal, Goal Line, Punt, Spot', () => {
+  assert.deepEqual(
+    SITUATIONS.map((p) => p.id).sort(),
+    ['fieldGoal', 'goalLine', 'kickoff', 'punt', 'spot'],
+  );
+});

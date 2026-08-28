@@ -77,24 +77,42 @@ July 2026, so the two levels are not always revised together.
 
 `lib/draw/presets.js` ships two kinds of preset, sourced two different ways.
 
-**Situations** (Kickoff, Field Goal, Goal Line) carry officials, and their
-positions are not a citation problem — they were extracted directly from this
-site's own committed diagrams (`static/images/position-cards/*/kickoff.svg`,
-`.../field-goal.svg`, `.../goal-line.svg`, and the crew cards in
-`static/images/kicking-plays/`) by a throwaway script kept out of the repo, and
-cross-checked: every card for a scene agreed exactly, and all 73 extracted
-points round-trip to their original SVG coordinate. See the OHSAA Gold Book row
-above, which is what those diagrams were drawn from in the first place.
+**Situations** (Kickoff, Field Goal, Goal Line, Punt, Spot) carry officials,
+and their positions are not a citation problem — they were extracted directly
+from this site's own committed diagrams by a throwaway script kept out of the
+repo. The five scenes do not all stand on equally solid ground, and the
+difference is stated here rather than smoothed over:
 
-**Punt and Spot are not shipped as presets.** The plan named both alongside
-Kickoff, Field Goal and Goal Line, but no position cards for punt or a
-between-downs spot were parsed — the extraction was scoped to the three scenes
-already named as verified. Rather than derive their officials from memory or
-from the Punt / Spot crew cards' highlighted "you" framing (which is a
-different question — where the crew stands relative to the highlighted
-official, not the absolute positions this page needs), both are left out. A
-Punt or Spot preset can be added once someone runs the same extraction against
-`static/images/kicking-plays/punt-crew-of-5.svg` and a punt position card set.
+- **Kickoff, Field Goal, Goal Line, Punt** are each drawn on six or five
+  agreeing sources — the position card for every one of the five officials,
+  plus a crew-of-5 card where one exists (`static/images/position-cards/*/
+  kickoff.svg`, `.../field-goal.svg`, `.../goal-line.svg`, `.../punt.svg`,
+  and the crew cards in `static/images/kicking-plays/`). Every card for a
+  given scene agreed exactly (0 spread), and all 98 extracted points
+  (officials plus players, across the four scenes) round-trip to their
+  original SVG coordinate. This is the same standard the original three
+  scenes shipped on; Punt was extracted and verified afterward, to the
+  identical method, once the same six-source pattern was confirmed to hold
+  for it too.
+- **Spot (between-downs)** rests on exactly one diagram —
+  `static/images/between-downs/getting-it-back-crew-of-5.svg` — because no
+  position cards exist for this scene at all. Its five officials' positions
+  are extracted correctly from that one drawing and round-trip exactly, but
+  nothing corroborates the drawing itself: a single mislabeled mark or
+  authoring slip in that one file would ship unnoticed, which is not true of
+  the other four scenes. Say so before treating Spot's positions as equal to
+  Kickoff's. Spot can move onto the same footing as the others the day a
+  second, independently-drawn source of this scene exists to cross-check
+  against.
+
+  The source diagram also draws one player marker, an open circle with no
+  kicking/receiving distinction (this scene is the ball being reset between
+  downs, not a kicking play, so the diagram draws no team-side split for it).
+  That marker is **not shipped** in the Spot preset: `state.js` and
+  `markers.js` know exactly two player kinds, and rendering this one through
+  either would draw it as a receiving-team player — asserting a team side the
+  source never states, to save adding a third player kind for one dot. Spot
+  ships its five officials only.
 
 **Formations** (Wing-T, Trips, Power I, Shotgun) carry no officials — they are
 an offense-only starting point, not this association's mechanics, and
