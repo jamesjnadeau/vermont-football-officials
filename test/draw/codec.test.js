@@ -20,14 +20,17 @@ import {
   VERSION,
   decode,
   encode,
+  tooBigForALink,
 } from '../../lib/draw/codec.js';
 import {
+  COORD_BOUNDS,
   TEXT_MAX_LENGTH,
   TEXT_SIZE_MAX,
   addArrow,
   addToken,
   emptyBoard,
 } from '../../lib/draw/state.js';
+import { PRESETS, boardFromPreset } from '../../lib/draw/presets.js';
 import { label } from '../../lib/field/markers.js';
 import { views } from '../../lib/field/views.js';
 
@@ -255,6 +258,35 @@ test('a coordinate that is not a finite number on the field is dropped', () => {
   // Dropped and not clamped: a token a billion yards out must not come back
   // as one sitting at the edge of the frame, where it looks placed.
   assert.deepEqual(decode(wire({ v: 1, w: 'runPass', t: [['p', 'k', 1e9, 0]] })).tokens, []);
+});
+
+test('a coordinate no view could show is dropped, however modest the number', () => {
+  // The harm is not the size of the number, it is that the token lands
+  // where nobody can see or click it while still holding a tabindex and an
+  // accessible name — so a keyboard or screen-reader user tabs through
+  // phantoms. 199.9 does that as thoroughly as 1e9 does.
+  const state = decode(
+    wire({ v: 1, w: 'runPass', t: [['p', 'k', 199.9, -199.9], ['p', 'r', 0, 0]] }),
+  );
+  assert.equal(state.tokens.length, 1, 'the off-screen token should be gone');
+  assert.deepEqual(state.tokens[0].kind, 'r');
+
+  // Just outside every edge of the bound, and just inside it.
+  for (const at of [
+    { across: COORD_BOUNDS.across[1] + 0.1, down: 0 },
+    { across: COORD_BOUNDS.across[0] - 0.1, down: 0 },
+    { across: 0, down: COORD_BOUNDS.down[1] + 0.1 },
+    { across: 0, down: COORD_BOUNDS.down[0] - 0.1 },
+  ]) {
+    const payload = wire({ v: 1, w: 'runPass', t: [['p', 'k', at.across, at.down]] });
+    assert.deepEqual(decode(payload).tokens, [], JSON.stringify(at));
+  }
+  const edge = wire({
+    v: 1,
+    w: 'runPass',
+    t: [['p', 'k', COORD_BOUNDS.across[1], COORD_BOUNDS.down[1]]],
+  });
+  assert.equal(decode(edge).tokens.length, 1, 'the bound itself is legal');
 });
 
 test('a token row that is not a row of four is dropped', () => {
@@ -537,3 +569,80 @@ test('a version-1 link written before any of this still opens', () => {
 test('that same link re-encodes to itself, so a board opened and shared again is unchanged', () => {
   assert.equal(encode(decode(VERSION_1_LINK)), VERSION_1_LINK);
 });
+
+// ---------------------------------------------------------------------------
+// Boards too big for a link
+// ---------------------------------------------------------------------------
+
+test('every preset survives the trip with nothing dropped', () => {
+  // The ten boards this tool actually ships. A cap or a bound that ever
+  // started refusing one of these would be silently breaking the mechanics
+  // the page exists to teach, and it would break them only for the people
+  // who shared a link rather than for the person who drew it.
+  for (const preset of PRESETS) {
+    const before = boardFromPreset(preset);
+    const after = decode(encode(before));
+    assert.notEqual(after, null, preset.id);
+    assert.equal(after.view, before.view, preset.id);
+    assert.equal(after.tokens.length, before.tokens.length, preset.id);
+    assert.equal(after.arrows.length, before.arrows.length, preset.id);
+    for (const [i, token] of before.tokens.entries()) {
+      const back = after.tokens[i];
+      assert.equal(back.id, token.id, `${preset.id} token ${i}`);
+      assert.equal(back.type, token.type, `${preset.id} token ${i}`);
+      assert.equal(back.mark, token.mark, `${preset.id} token ${i}`);
+      assert.equal(back.kind, token.kind, `${preset.id} token ${i}`);
+      // The only difference allowed is the one-decimal rounding, and it has
+      // to be exactly that — asserted against the rounding itself rather
+      // than against a tolerance, so a coordinate that drifted for any
+      // other reason cannot hide inside the allowance.
+      const to1 = (value) => Math.round(value * 10) / 10;
+      assert.equal(back.across, to1(token.across), `${preset.id} token ${i} across`);
+      assert.equal(back.down, to1(token.down), `${preset.id} token ${i} down`);
+    }
+    assert.equal(tooBigForALink(before), null, preset.id);
+  }
+});
+
+test('a board that fits says nothing', () => {
+  assert.equal(tooBigForALink(emptyBoard()), null);
+  assert.equal(tooBigForALink(board()), null);
+});
+
+test('a board past a cap says which cap, and by how much', () => {
+  // `encode` will happily write these; `decode` will not read them back the
+  // same. The point of the message is that somebody pressing Copy link is
+  // told what to take off, rather than handed a link that quietly is not
+  // the board they are looking at.
+  const many = { ...emptyBoard(), tokens: Array.from({ length: MAX_TOKENS + 3 }, () => ({})) };
+  assert.match(tooBigForALink(many), /203 markers and captions/);
+  assert.match(tooBigForALink(many), new RegExp(`link can carry ${MAX_TOKENS}`));
+  assert.match(tooBigForALink(many), /Remove 3/);
+
+  const crowded = { ...emptyBoard(), arrows: Array.from({ length: MAX_ARROWS + 1 }, () => ({ points: [] })) };
+  assert.match(tooBigForALink(crowded), /51 arrows/);
+  assert.match(tooBigForALink(crowded), /Remove 1/);
+
+  const bent = {
+    ...emptyBoard(),
+    arrows: [{ id: 'a1', points: Array.from({ length: MAX_ARROW_POINTS + 1 }, () => ({ across: 0, down: 0 })) }],
+  };
+  assert.match(tooBigForALink(bent), /One arrow has 41 points/);
+  assert.match(tooBigForALink(bent), new RegExp(`link can carry ${MAX_ARROW_POINTS}`));
+});
+
+test('the warning fires exactly where the decoder would lose something', () => {
+  // The two have to agree on the boundary, or the button reassures somebody
+  // about a link that does not open — or refuses one that would have.
+  const atCap = { ...emptyBoard(), arrows: [{ id: 'a1', points: straight(MAX_ARROW_POINTS) }] };
+  assert.equal(tooBigForALink(atCap), null);
+  assert.equal(decode(encode(atCap)).arrows.length, 1);
+
+  const overCap = { ...emptyBoard(), arrows: [{ id: 'a1', points: straight(MAX_ARROW_POINTS + 1) }] };
+  assert.notEqual(tooBigForALink(overCap), null);
+  // What the warning is standing in front of: the arrow simply vanishes.
+  assert.equal(decode(encode(overCap)).arrows.length, 0);
+});
+
+/** A path of `count` points, each a tenth of a yard further down the field. */
+const straight = (count) => Array.from({ length: count }, (unused, i) => ({ across: 0, down: i * 0.1 }));

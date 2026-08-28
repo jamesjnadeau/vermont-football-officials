@@ -7,7 +7,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
-  COORD_LIMIT_YARDS,
+  COORD_BOUNDS,
   DEFAULT_VIEW,
   OFFICIALS,
   PLAYERS,
@@ -32,8 +32,9 @@ import {
   setView,
   tokenName,
 } from '../../lib/draw/state.js';
-import { SIDELINE_LEFT, VIEWBOX_WIDTH, x, xToYards, y, yToYards } from '../../lib/field/geometry.js';
+import { SIDELINE_LEFT, SIDELINE_RIGHT, VIEWBOX_WIDTH, x, xToYards, y, yToYards } from '../../lib/field/geometry.js';
 import { views, viewNames } from '../../lib/field/views.js';
+import { PRESETS } from '../../lib/draw/presets.js';
 
 const crew = () => {
   let board = emptyBoard();
@@ -153,33 +154,86 @@ test('a view named off the prototype chain is not a view', () => {
   }
 });
 
-test('a coordinate off the end of the world is refused, not folded onto the field', () => {
-  // Finite is not enough: `across: 1e9` is a perfectly good number and a
-  // token nobody can ever see or click, still in the tab order and still
-  // read out. It cannot be clamped either — putting it at the edge of the
-  // frame would make a token nobody placed look like one somebody did.
+test('a coordinate no view could ever show is refused, not folded onto the field', () => {
+  // Finite is not enough, and neither is small. `across: 199.9` is a
+  // perfectly good number that lands a token far off the side of a
+  // 270-unit viewBox — never visible, never clickable, and still carrying a
+  // tabindex and an accessible name for somebody to tab into. Clamping it
+  // is no answer either: that puts a token nobody placed where it looks
+  // like one somebody did.
   const board = emptyBoard();
-  const far = COORD_LIMIT_YARDS + 0.5;
-  assert.throws(() => addToken(board, { type: 'player', kind: 'k', across: 1e9, down: 0 }), /within/);
-  assert.throws(() => addToken(board, { type: 'player', kind: 'k', across: 0, down: -far }), /within/);
-  assert.throws(
-    () => addArrow(board, { points: [{ across: 0, down: 0 }, { across: far, down: 0 }] }),
-    /within/,
-  );
-  const placed = addToken(board, { type: 'player', kind: 'k', across: COORD_LIMIT_YARDS, down: 0 });
-  assert.equal(placed.tokens[0].across, COORD_LIMIT_YARDS);
-  assert.throws(() => moveToken(placed, 't1', { across: far, down: 0 }), /within/);
+  for (const at of [
+    { across: 1e9, down: 0 },
+    { across: 199.9, down: -199.9 },
+    { across: COORD_BOUNDS.across[1] + 0.1, down: 0 },
+    { across: COORD_BOUNDS.across[0] - 0.1, down: 0 },
+    { across: 0, down: COORD_BOUNDS.down[1] + 0.1 },
+    { across: 0, down: COORD_BOUNDS.down[0] - 0.1 },
+  ]) {
+    assert.throws(() => addToken(board, { type: 'player', kind: 'k', ...at }), /must be between/, JSON.stringify(at));
+    assert.throws(
+      () => addArrow(board, { points: [{ across: 0, down: 0 }, at] }),
+      /must be between/,
+      JSON.stringify(at),
+    );
+  }
+
+  // The bound itself is legal, so a token clamped to the edge of the widest
+  // frame and rounded through a share link still lands somewhere it can be.
+  const placed = addToken(board, {
+    type: 'player',
+    kind: 'k',
+    across: COORD_BOUNDS.across[1],
+    down: COORD_BOUNDS.down[0],
+  });
+  assert.equal(placed.tokens[0].across, COORD_BOUNDS.across[1]);
+  assert.throws(() => moveToken(placed, 't1', { across: 199.9, down: 0 }), /must be between/);
 });
 
-test('the coordinate limit is far outside anything a view can show', () => {
-  // If it were not, a legitimate drag to the corner of the deepest crop
-  // would start throwing — the limit is about numbers that are not
-  // coordinates at all, never about where on the field a token may go.
+test('the bound holds every view\u2019s frame, with room for the rounding a link does', () => {
+  // If it did not, a legitimate drag into the corner of the deepest crop
+  // would start throwing — and a board that survived the drag would stop
+  // surviving its own share link, which rounds to a tenth of a yard.
   for (const name of viewNames) {
-    const corner = clampToFrame({ across: -1e6, down: 1e6 }, name);
-    assert.ok(Math.abs(corner.across) < COORD_LIMIT_YARDS, name);
-    assert.ok(Math.abs(corner.down) < COORD_LIMIT_YARDS, name);
-    assert.ok(Math.abs(clampToFrame({ across: 1e6, down: -1e6 }, name).down) < COORD_LIMIT_YARDS, name);
+    for (const at of [
+      { across: -1e6, down: -1e6 },
+      { across: 1e6, down: 1e6 },
+    ]) {
+      const corner = clampToFrame(at, name);
+      const rounded = { across: Math.round(corner.across * 10) / 10, down: Math.round(corner.down * 10) / 10 };
+      for (const point of [corner, rounded]) {
+        assert.ok(point.across >= COORD_BOUNDS.across[0] && point.across <= COORD_BOUNDS.across[1], name);
+        assert.ok(point.down >= COORD_BOUNDS.down[0] && point.down <= COORD_BOUNDS.down[1], name);
+      }
+    }
+  }
+});
+
+test('the bound never reaches in far enough to pull an official onto the field', () => {
+  // The wings work the sideline from out of bounds. The committed diagrams
+  // put them at \u00b130.67 yards across, outside the touchlines at
+  // \u00b126.67, and the drawing tool exists to teach where a crew stands —
+  // so a bound that moved one would be teaching the wrong mechanics to
+  // enforce a rule nobody asked for. This is the test that fails first if a
+  // future tightening forgets that.
+  const sideline = xToYards(SIDELINE_RIGHT);
+  assert.ok(COORD_BOUNDS.across[1] > sideline, `bound ${COORD_BOUNDS.across[1]} is inside the sideline`);
+  assert.ok(COORD_BOUNDS.across[0] < -sideline, `bound ${COORD_BOUNDS.across[0]} is inside the sideline`);
+  // The whole viewBox, which is what `clampToFrame` allows and therefore
+  // what a drag can reach: the wings at \u00b130.67 live in that margin.
+  assert.ok(COORD_BOUNDS.across[0] <= xToYards(0));
+  assert.ok(COORD_BOUNDS.across[1] >= xToYards(VIEWBOX_WIDTH));
+
+  // Every token of every preset, at its own independently-sourced
+  // coordinates, still goes on the board it was measured for.
+  for (const preset of PRESETS) {
+    let built = emptyBoard(preset.view);
+    for (const token of preset.tokens) {
+      assert.doesNotThrow(() => {
+        built = addToken(built, token);
+      }, `${preset.id}: ${token.mark ?? token.kind} at ${token.across}, ${token.down}`);
+    }
+    assert.equal(built.tokens.length, preset.tokens.length, preset.id);
   }
 });
 
