@@ -109,7 +109,10 @@ Presets live in `lib/draw/presets.js` as `{ id, label, group, view, tokens }`.
   are offense-only scenery from named public coaching sources, not this
   association's material, which is why `app.js` labels and colours their
   buttons differently. Adding one means citing a source in `docs/sources.md`,
-  the same section, not eyeballing a diagram.
+  the same section, not eyeballing a diagram. A fifth formation preset,
+  **Empty (scrimmage)**, places nothing — the run/pass crop with no formation
+  assumed, for a play that doesn't start from a named look — and needs no
+  source because there is nothing on it to source.
 
 Either way: never hand-type an official's position from memory or from eyeing
 a picture. If a position can't be pinned to a source, leave it out and record

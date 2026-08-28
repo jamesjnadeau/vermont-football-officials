@@ -123,6 +123,12 @@ exact coordinates; where a source gives no number, the formation uses a
 generic convention noted below rather than a second source's number, so the
 whole formation traces to one citation.
 
+A fifth Formation preset, **Empty (scrimmage)**, places no players at all — it
+is the run/pass crop with no formation assumed, for a play that doesn't start
+from a named look. It carries nothing to cite and needs no source; it is
+listed here so its absence from the table below reads as "nothing to source,"
+not as a gap nobody noticed.
+
 | Formation | Source | What it supplied |
 | --- | --- | --- |
 | Wing-T | [wingt-coach.com — Positions, Formations, and Alignment](https://wingt-coach.com/wing-t-basics-positions-formations-and-alignment/) | Quoted numbers: guard-to-centre and lineman-to-lineman splits ("two feet"), the fullback's depth ("heels four yards behind the football"), the wingback's alignment ("1 yard deep and 1 yard outside the TE"), and the halfback's ("same depth as the FB..., outside foot of the tackle"). |

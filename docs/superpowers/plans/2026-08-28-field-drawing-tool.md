@@ -3,9 +3,10 @@
 > **Implemented.** All nine tasks landed: `/draw` builds, is deliberately
 > unlinked from the site, and its guard rails (`test/draw/*.test.js`,
 > `test/content/output.test.js`) pass. Kickoff, Field Goal, Goal Line, Punt
-> and Spot shipped as Situation presets, and Wing-T, Trips, Power I and
-> Shotgun as Formation presets, per Task 4. Two things shipped on weaker
-> footing than the rest, and both are stated where the data lives
+> and Spot shipped as Situation presets, and Wing-T, Trips, Power I, Shotgun
+> and an empty scrimmage set shipped as Formation presets, per Task 4. Two
+> things shipped on weaker footing than the rest, and both are stated where
+> the data lives
 > (`docs/sources.md`'s "Draw-a-play presets" section), not just here:
 > **Spot rests on one uncorroborated source diagram** (no position cards
 > exist for that scene, unlike the other four Situations, each checked
