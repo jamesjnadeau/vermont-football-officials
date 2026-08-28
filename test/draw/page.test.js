@@ -119,7 +119,7 @@ test('/draw renders the field: two sidelines and hash marks are on it', async ()
     // own visibility check reads as not visible even though it is drawn.
     // Deterministic either way — this waits on the shape actually landing
     // in the DOM, not on a timer.
-    await page.waitForFunction(() => document.querySelectorAll('#board .sl').length === 2);
+    await page.waitForFunction(() => document.querySelectorAll('#board .sl').length === 2, null, { timeout: 5000 });
     assert.equal(await page.locator('#board .sl').count(), 2, 'expected exactly two sideline lines');
     assert.ok((await page.locator('#board .hash').count()) > 0, 'expected at least one hash mark');
     assert.deepEqual(errors, []);
@@ -134,7 +134,7 @@ test('clicking a preset puts the expected number of tokens on the board', async 
     await page.goto(`${base}/draw/`);
     // Kickoff: 5 officials + 21 players (presets.js), independent of this test.
     await page.click('button[data-preset="kickoff"]');
-    await page.waitForFunction(() => document.querySelectorAll('.draw-token').length === 26);
+    await page.waitForFunction(() => document.querySelectorAll('.draw-token').length === 26, null, { timeout: 5000 });
     assert.equal(await page.locator('.draw-token').count(), 26);
     assert.deepEqual(errors, []);
   } finally {
@@ -142,39 +142,73 @@ test('clicking a preset puts the expected number of tokens on the board', async 
   }
 });
 
-test('dragging a token updates the share link, and reloading it reproduces the same board', async () => {
-  const { page, errors } = await openPage();
+test('dragging a token updates the share link, and reopening it reproduces the same board', async () => {
+  let fragment;
+  {
+    const { page, errors } = await openPage();
+    try {
+      await page.goto(`${base}/draw/`);
+      await page.click('button[data-add-official="R"]');
+      await page.waitForSelector('.draw-token', { timeout: 5000 });
+
+      const box = await page.locator('.draw-token').first().boundingBox();
+      assert.ok(box, 'the added token has no bounding box to drag from');
+      const startX = box.x + box.width / 2;
+      const startY = box.y + box.height / 2;
+      await page.mouse.move(startX, startY);
+      await page.mouse.down();
+      // `steps` so intermediate pointermove events fire — a single jump from
+      // down to up never crosses the "this was a drag" threshold app.js checks.
+      await page.mouse.move(startX + 40, startY + 30, { steps: 5 });
+      await page.mouse.up();
+
+      // The write is debounced 200ms (app.js), so this is the real condition
+      // to wait on rather than a sleep timed to outlast it.
+      await page.waitForFunction(() => location.hash.startsWith('#d='), null, { timeout: 5000 });
+      fragment = await page.evaluate(() => location.hash);
+      assert.deepEqual(errors, []);
+    } finally {
+      await page.close();
+    }
+  }
+
+  // A fresh tab and a real `goto`, not `page.reload()`. `reload()` keeps the
+  // current URL — hash included — so `location.hash` would already equal
+  // `fragment` the instant the reloaded page started running, before
+  // `app.js` had decoded a single byte of it: a wait on that equality would
+  // pass on the first, trivial check and never observe what this page's own
+  // `decode()` actually produced. A brand new tab that has never held any
+  // hash but this one, opened the way a recipient of the link actually
+  // would, is what makes the check about what the *link* carries rather
+  // than about what one tab's address bar still happened to say.
+  const { page: opened, errors: openedErrors } = await openPage();
   try {
-    await page.goto(`${base}/draw/`);
-    await page.click('button[data-add-official="R"]');
-    await page.waitForSelector('.draw-token');
+    await opened.goto(`${base}/draw/${fragment}`);
+    await opened.waitForFunction(() => document.querySelectorAll('.draw-token').length === 1, null, {
+      timeout: 5000,
+    });
 
-    const box = await page.locator('.draw-token').first().boundingBox();
-    assert.ok(box, 'the added token has no bounding box to drag from');
-    const startX = box.x + box.width / 2;
-    const startY = box.y + box.height / 2;
-    await page.mouse.move(startX, startY);
-    await page.mouse.down();
-    // `steps` so intermediate pointermove events fire — a single jump from
-    // down to up never crosses the "this was a drag" threshold app.js checks.
-    await page.mouse.move(startX + 40, startY + 30, { steps: 5 });
-    await page.mouse.up();
-
-    // The write is debounced 200ms (app.js), so this is the real condition
-    // to wait on rather than a sleep timed to outlast it.
-    await page.waitForFunction(() => location.hash.startsWith('#d='));
-    const fragment = await page.evaluate(() => location.hash);
-
-    await page.reload();
-    await page.waitForFunction(() => document.querySelectorAll('.draw-token').length === 1);
-    // The board round-trips through its own link deterministically
-    // (test/draw/codec.test.js), so the freshly-booted page's own re-encode
-    // of what it just decoded has to land back on the same fragment.
-    await page.waitForFunction((expected) => location.hash === expected, fragment);
-    assert.equal(await page.evaluate(() => location.hash), fragment);
-    assert.deepEqual(errors, []);
+    // The URL already reads `fragment` — that's just the address just
+    // navigated to, and proves nothing yet. What proves the round trip is
+    // whether `app.js`'s own debounced `writeUrl()` (200ms) leaves it alone
+    // or rewrites it: decoding this fragment into a board and re-encoding
+    // that board (test/draw/codec.test.js asserts this is deterministic)
+    // has to land back on the same string, or the token this link describes
+    // is not the token it opens to. There is no positive DOM signal for
+    // "nothing changed", so this races a real condition — the hash actually
+    // moving — against a timeout comfortably past the debounce, and a
+    // timeout here is the pass: settled, and unchanged.
+    await opened
+      .waitForFunction((initial) => location.hash !== initial, fragment, { timeout: 500 })
+      .catch(() => {});
+    assert.equal(
+      await opened.evaluate(() => location.hash),
+      fragment,
+      'reopening the link changed the board it opened to — the round trip through codec.js is not stable',
+    );
+    assert.deepEqual(openedErrors, []);
   } finally {
-    await page.close();
+    await opened.close();
   }
 });
 
@@ -182,7 +216,7 @@ test('opening a garbage share link shows the default board and the notice, with 
   const { page, errors } = await openPage();
   try {
     await page.goto(`${base}/draw/#d=notvalidbase64`);
-    await page.waitForSelector('.draw-notice .alert', { state: 'visible' });
+    await page.waitForSelector('.draw-notice .alert', { state: 'visible', timeout: 5000 });
     assert.equal(await page.locator('.draw-token').count(), 0, 'a garbage link should draw no tokens');
     assert.equal(await page.locator('.draw-arrow').count(), 0, 'a garbage link should draw no arrows');
     assert.deepEqual(errors, [], `a garbage link logged: ${errors.map(String).join('; ')}`);
@@ -214,7 +248,7 @@ test('a caption of literal script tags renders as words, not as an element, and 
   const { page, errors, dialogs } = await openPage();
   try {
     await page.goto(`${base}/draw/${fragment}`);
-    await page.waitForSelector('.draw-caption text');
+    await page.waitForSelector('.draw-caption text', { timeout: 5000 });
     const shown = await page.locator('.draw-caption text').first().textContent();
     assert.equal(shown, '<script>alert(1)</script>', 'the caption was not shown verbatim as words');
     assert.equal(
@@ -253,7 +287,7 @@ test("a caption's colour of url(#x) never reaches a fill attribute", async () =>
     // this deterministic. waitForFunction, not waitForSelector's default
     // 'visible' state, for the same reason as the first test above: a
     // vertical <line> has a zero-width bounding box.
-    await page.waitForFunction(() => document.querySelectorAll('#board .sl').length === 2);
+    await page.waitForFunction(() => document.querySelectorAll('#board .sl').length === 2, null, { timeout: 5000 });
     assert.equal(
       await page.locator('.draw-caption').count(),
       0,
