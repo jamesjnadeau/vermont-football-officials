@@ -169,6 +169,8 @@ test('kept static assets are copied through', () => {
     'uploads/nvyfl-7-8-tackle-rules-2026.pdf',
     'uploads/nvyfl-5-6-tackle-rules-2025.pdf',
     'uploads/nvyfl-7-8-tackle-rules-2025.pdf',
+    'images/official-signals/07-dead-ball-foul.svg',
+    'images/official-signals/47-disqualification.svg',
   ]) {
     assert.ok(existsSync(path.join(SITE, f)), `missing _site/${f}`);
   }

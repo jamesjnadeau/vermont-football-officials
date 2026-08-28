@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 580" width="400" height="580" role="img" aria-label="NFHS football signal 39: Clipping">
+<title>39. Clipping</title>
+<style>
+  .bg   { fill: #ffffff; }
+  .ink, .ink-s { stroke: #14171a; }
+  .ink-f { fill: #14171a; }
+  .cap  { fill: #ffffff; }
+  .num  { fill: #14171a; }
+  .cap-t{ fill: #14171a; }
+  .note { fill: #5f6873; }
+  .rule { stroke: #d7dbe0; }
+</style>
+<rect class="bg" x="0" y="0" width="400" height="580"/>
+<g font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<circle cx="34" cy="34" r="23" fill="none" class="ink-s" stroke-width="4"/>
+<text class="num" x="34" y="42" text-anchor="middle" font-size="24" font-weight="700">39</text>
+<path class="ink" opacity="0.42" d="M148.0,284.0 L133.4,352.5 L145.3,419.4" stroke="#14171a" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path class="ink" d="M148.0,284.0 L164.9,351.9 L150.8,418.4" stroke="#14171a" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path class="ink" opacity="0.42" d="M222.8,211.8 L246.0,269.2 L287.8,309.5" stroke="#14171a" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle class="ink-f" cx="287.8" cy="309.5" r="9" fill="#14171a"/><path class="ink" d="M222.8,211.8 L193.7,266.5 L164.7,316.7" stroke="#14171a" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path class="ink" d="M151.7,309.2 L177.7,324.2" stroke="#14171a" stroke-width="7" stroke-linecap="round" fill="none"/><path class="ink" d="M238.6,196.5 L148.0,284.0" stroke="#14171a" stroke-width="9" stroke-linecap="round" fill="none"/><path class="ink" d="M222.8,211.8 L222.8,211.8" stroke="#14171a" stroke-width="8" stroke-linecap="round" fill="none"/><path class="ink" d="M203.0,221.2 L212.7,231.3" stroke="#14171a" stroke-width="4" stroke-linecap="round" opacity="0.55" fill="none"/><path class="ink" d="M186.6,237.0 L196.4,247.0" stroke="#14171a" stroke-width="4" stroke-linecap="round" opacity="0.55" fill="none"/><path class="ink" d="M170.3,252.7 L180.1,262.8" stroke="#14171a" stroke-width="4" stroke-linecap="round" opacity="0.55" fill="none"/><circle class="ink-s" cx="260.2" cy="175.6" r="26.0" fill="none" stroke="#14171a" stroke-width="7"/><path class="ink-s cap" d="M246.5,151.3 C268.0,130.6 305.5,169.4 284.0,190.2" fill="#ffffff" stroke="#14171a" stroke-width="6" stroke-linejoin="round"/><path class="ink" d="M284.0,190.2 L297.9,204.6" stroke="#14171a" stroke-width="7" stroke-linecap="round" fill="none"/><path class="mo" d="M130.7,270.7 Q119.8,303.6 153.7,310.2" fill="none" stroke="#c8452c" stroke-width="4.0" stroke-linecap="round"/><path class="mof" d="M158.7,318.7 L146.9,322.0 L149.0,311.2 Z" fill="#c8452c"/>
+<path class="rule" d="M50,428.0 L350,428.0" stroke-width="3" stroke-linecap="round"/>
+<text class="cap-t" x="200" y="464.0" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="0.5">CLIPPING</text>
+<text class="note" x="200" y="493.0" text-anchor="middle" font-size="14.5" font-style="italic">Bend at the waist, strike the back of your own</text>
+<text class="note" x="200" y="511.0" text-anchor="middle" font-size="14.5" font-style="italic">leg.</text>
+</g></svg>

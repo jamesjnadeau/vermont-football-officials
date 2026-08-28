@@ -49,6 +49,7 @@ it is blocked.
 | NVYFL 5/6 and 7/8 Tackle Rules (2025) | League PDFs, supplied by James Nadeau; published at `/uploads/nvyfl-{5-6,7-8}-tackle-rules-2025.pdf` | 2026-08-27 | Superseded; kept for the archived 2025 page |
 | SDCFOA Clock Administration | [sdcfoa.org/clock-administration](https://www.sdcfoa.org/clock-administration) | | Clock operator reference |
 | VFOA 7-man mechanics deck (Justin Fortier) | `/uploads/7-man-mechanics-2022.pdf` | 2022 | 7-man mechanics |
+| NFHS Official Football Signals chart (2026) | Redrawn as stick figures in `tools/signal-svgs/`, supplied by James Nadeau | 2026-08-28 | Signal numbers 1–47, chart captions, the timing and administrative numbers |
 
 The three rows in bold are what the Vermont rules and policies plan is waiting
 on. Until the VPA guide row has an edition and a date, no page may state a
@@ -173,7 +174,7 @@ footnote; the rest state it in prose in the page body.
 | Crew cards (5) and position cards (5) | OHSAA Gold Book "Brief & Concise" (2026), following the NFHS Officials Manual | — | 2026-08-26 |
 | `nvyfl-youth-football-rules-2026.md` | 2026 NVYFL 5/6 Rulebook and 7/8 Game Rules | 2026 | 2026-08-27 |
 | `nvyfl-youth-football-rules-2025.md` | 2025 NVYFL 5/6 and 7/8 Game Rules — archived, superseded | 2025 | 2026-08-27 |
-| `official-signals.md` | 2025 NFHS Football Rules Book — penalty summary pp. 94–95 and the PENALTY statements in Rules 3–10 | 2025 | 2026-08-27 |
+| `official-signals.md` | 2025 NFHS Football Rules Book — penalty summary pp. 94–95 and the PENALTY statements in Rules 3–10. The drawings, their captions and the Section 5 timing numbers follow the 2026 signal chart | 2025 | 2026-08-28 |
 | `clock-officials-cheat-sheet.md` | SDCFOA Clock Administration — stated in prose, no front matter | | |
 | `7-man-mechanics.md` | VFOA 7-man deck, 2022 | | |
 | `football-rules-summary.md` (Cliff Notes) | 2025 NFHS Football Rules Book — named in the page title, no front matter | 2025 | 2026-07-26 |
