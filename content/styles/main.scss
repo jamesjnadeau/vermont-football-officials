@@ -91,6 +91,38 @@ body {
   justify-content: center;
 }
 
+// What "Copy link" has to say for itself. Empty and taking no room until the
+// button is pressed, which is why it has no padding or border of its own:
+// a permanently visible empty strip above the board would cost the board
+// height on a phone for something that is silent almost all the time.
+.draw-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+// The manual-copy field, shown only when the browser refuses the clipboard.
+// It grows, because a share link is longer than any sensible input width and
+// what matters here is that as much of it as possible is visibly selected.
+.draw-share-manual {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1 1 100%;
+
+  input {
+    flex: 1 1 auto;
+  }
+}
+
+// A share link that would not open. Margin only when it is showing — an
+// element that is `hidden` still has margins, and an invisible gap above the
+// toolbar is the sort of thing that gets chased for an hour later.
+.draw-notice:not([hidden]) {
+  margin-bottom: 1rem;
+}
+
 // How much of the window is spoken for above the board: the site header, the
 // page heading and lead, the wrapped toolbar and the hint under it — and,
 // when a caption is selected, the caption editor as well.

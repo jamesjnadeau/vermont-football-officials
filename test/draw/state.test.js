@@ -7,6 +7,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
+  COORD_LIMIT_YARDS,
   DEFAULT_VIEW,
   OFFICIALS,
   PLAYERS,
@@ -136,6 +137,50 @@ test('nothing outside the allowlist reaches the board', () => {
   assert.throws(() => moveToken(board, 't9', { across: 0, down: 0 }), /no token/);
   assert.throws(() => removeToken(board, 't9'), /no token/);
   assert.throws(() => addArrow(board, { points: [{ across: 0, down: 0 }] }), /two points/);
+});
+
+test('a view named off the prototype chain is not a view', () => {
+  // `views['__proto__']` is `Object.prototype`, and `views['constructor']`
+  // is a function: both truthy, so a lookup checked for truth alone lets
+  // them through and every later `view.scaleY` becomes `undefined`. That is
+  // a whole board of NaN coordinates, arrived at from a word a stranger put
+  // in a share link.
+  const board = emptyBoard();
+  for (const name of ['__proto__', 'constructor', 'toString', 'valueOf', 'hasOwnProperty']) {
+    assert.throws(() => setView(board, name), /unknown view/, name);
+    assert.throws(() => emptyBoard(name), /unknown view/, name);
+    assert.throws(() => clampToFrame({ across: 0, down: 0 }, name), /unknown view/, name);
+  }
+});
+
+test('a coordinate off the end of the world is refused, not folded onto the field', () => {
+  // Finite is not enough: `across: 1e9` is a perfectly good number and a
+  // token nobody can ever see or click, still in the tab order and still
+  // read out. It cannot be clamped either — putting it at the edge of the
+  // frame would make a token nobody placed look like one somebody did.
+  const board = emptyBoard();
+  const far = COORD_LIMIT_YARDS + 0.5;
+  assert.throws(() => addToken(board, { type: 'player', kind: 'k', across: 1e9, down: 0 }), /within/);
+  assert.throws(() => addToken(board, { type: 'player', kind: 'k', across: 0, down: -far }), /within/);
+  assert.throws(
+    () => addArrow(board, { points: [{ across: 0, down: 0 }, { across: far, down: 0 }] }),
+    /within/,
+  );
+  const placed = addToken(board, { type: 'player', kind: 'k', across: COORD_LIMIT_YARDS, down: 0 });
+  assert.equal(placed.tokens[0].across, COORD_LIMIT_YARDS);
+  assert.throws(() => moveToken(placed, 't1', { across: far, down: 0 }), /within/);
+});
+
+test('the coordinate limit is far outside anything a view can show', () => {
+  // If it were not, a legitimate drag to the corner of the deepest crop
+  // would start throwing — the limit is about numbers that are not
+  // coordinates at all, never about where on the field a token may go.
+  for (const name of viewNames) {
+    const corner = clampToFrame({ across: -1e6, down: 1e6 }, name);
+    assert.ok(Math.abs(corner.across) < COORD_LIMIT_YARDS, name);
+    assert.ok(Math.abs(corner.down) < COORD_LIMIT_YARDS, name);
+    assert.ok(Math.abs(clampToFrame({ across: 1e6, down: -1e6 }, name).down) < COORD_LIMIT_YARDS, name);
+  }
 });
 
 test('the marks on the palette are the ones the position cards already draw', () => {
