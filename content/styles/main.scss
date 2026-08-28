@@ -75,10 +75,10 @@ body {
   display: none;
 }
 
-// /draw: the field-drawing board (lib/draw/). Nothing here drags yet — Task 2
-// of the field-drawing plan only puts the field on screen — but the surface
-// properties that later tasks depend on are set now, because they describe
-// the board, not any one thing on it.
+// /draw: the field-drawing board (lib/draw/). What is set here describes the
+// board surface itself — how big it can get, what a pointer on it does —
+// rather than any one token, arrow or caption drawn on it; those have their
+// own rules further down.
 .draw-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -123,9 +123,12 @@ body {
   margin-bottom: 1rem;
 }
 
-// How much of the window is spoken for above the board: the site header, the
-// page heading and lead, the wrapped toolbar and the hint under it — and,
-// when a caption is selected, the caption editor as well.
+// How much of the window everything that is not the board takes up: the site
+// header, the page heading and lead and the wrapped toolbar above it, the
+// hint paragraph below it (app.js puts it under the board, not above — see
+// the comment there) — and, when a caption is selected, the caption editor
+// as well. A total rather than only what sits above, because what this pays
+// for is the whole page fitting, not just the board's top edge.
 //
 // Both are measured in a browser at a desktop width rather than derived,
 // because the toolbar's height depends on how many rows its buttons wrap
@@ -158,17 +161,17 @@ $draw-chrome-editing: 37rem;
     max-height: calc(100vh - #{$draw-chrome-editing});
   }
 
-  // A drag has nowhere to go yet, but it is a property of the board surface,
-  // not of any one token — set once here rather than repeated per tool.
-  // Without it, dragging a token on a phone scrolls the page underneath it
-  // instead of moving the token.
+  // Dragging is a property of the board surface, not of any one token — set
+  // once here rather than repeated per tool. Without it, dragging a token on
+  // a phone scrolls the page underneath it instead of moving the token.
   touch-action: none;
 }
 
 // The overlay layer (lib/draw/board.js) holds only UI chrome — a selection
-// outline, an in-progress arrow preview — and nothing lives there yet. Kept
-// out of the hit-testing order so an empty overlay never intercepts a click
-// or drag meant for a layer underneath it.
+// outline, an in-progress arrow preview. Kept out of the hit-testing order
+// because it covers the whole board: neither of those is something to click
+// on, and without this the layer would swallow every click and drag meant
+// for the tokens underneath it.
 .draw-layer-overlay {
   pointer-events: none;
 }

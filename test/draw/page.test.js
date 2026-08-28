@@ -6,6 +6,13 @@
 // caption text cannot become an element. An assertion in Node that a string
 // was escaped is not the same as a browser confirming it never became one.
 //
+// Two of the tests here are about a keystroke or a click and nothing else,
+// and neither could live anywhere but a browser: that the Delete button
+// removes what is selected (the only way to remove anything on a device with
+// no Delete key), and that a caption's size can be typed one digit at a time
+// (a defect that reproduces only across two separate key presses, never in
+// one atomic set of the value).
+//
 // Requires `npm run build` first, same as test/content/output.test.js and
 // test/cards/output.test.js.
 import { test, before, after } from 'node:test';
@@ -220,6 +227,127 @@ test('opening a garbage share link shows the default board and the notice, with 
     assert.equal(await page.locator('.draw-token').count(), 0, 'a garbage link should draw no tokens');
     assert.equal(await page.locator('.draw-arrow').count(), 0, 'a garbage link should draw no arrows');
     assert.deepEqual(errors, [], `a garbage link logged: ${errors.map(String).join('; ')}`);
+  } finally {
+    await page.close();
+  }
+});
+
+test('the Delete button removes whatever is selected, and Undo puts it back', async () => {
+  // Driven entirely by clicks: no key is pressed anywhere in this test, which
+  // is the whole point of the button. A phone has no Delete key, so before
+  // this existed a marker put down by mistake could only be taken off by
+  // undoing every change made since — and a preset's two dozen tokens could
+  // not be taken off at all.
+  const { page, errors } = await openPage();
+  try {
+    await page.goto(`${base}/draw/`);
+    await page.waitForFunction(() => document.querySelectorAll('#board .sl').length === 2, null, { timeout: 5000 });
+
+    const del = page.locator('[data-delete]');
+    assert.equal(await del.isDisabled(), true, 'nothing is selected on a cold board, so Delete must be disabled');
+
+    await page.click('button[data-add-official="R"]');
+    await page.waitForFunction(() => document.querySelectorAll('.draw-token').length === 1, null, { timeout: 5000 });
+    assert.equal(await del.isDisabled(), false, 'adding a marker selects it, so Delete must be live');
+    // The name, not just the state: "Delete" alone tells a screen-reader user
+    // nothing about which of the things on the board is about to go.
+    assert.equal(await del.getAttribute('aria-label'), 'Delete Referee');
+
+    await del.click();
+    await page.waitForFunction(() => document.querySelectorAll('.draw-token').length === 0, null, { timeout: 5000 });
+    assert.equal(await del.isDisabled(), true, 'with nothing left selected the button must say so again');
+
+    await page.click('[data-undo]');
+    await page.waitForFunction(() => document.querySelectorAll('.draw-token').length === 1, null, { timeout: 5000 });
+
+    // An arrow is removed by the same button, through the other of the two
+    // functions the Delete key uses.
+    await page.click('button[data-mode="arrow"]');
+    const box = await page.locator('#board').boundingBox();
+    assert.ok(box, 'the board has no bounding box to draw on');
+    await page.mouse.move(box.x + box.width * 0.3, box.y + box.height * 0.3);
+    await page.mouse.down();
+    await page.mouse.move(box.x + box.width * 0.7, box.y + box.height * 0.6, { steps: 6 });
+    await page.mouse.up();
+    await page.waitForFunction(() => document.querySelectorAll('.draw-arrow').length === 1, null, { timeout: 5000 });
+    assert.equal(await del.getAttribute('aria-label'), 'Delete the selected arrow');
+
+    await del.click();
+    await page.waitForFunction(() => document.querySelectorAll('.draw-arrow').length === 0, null, { timeout: 5000 });
+    await page.click('[data-undo]');
+    await page.waitForFunction(() => document.querySelectorAll('.draw-arrow').length === 1, null, { timeout: 5000 });
+
+    assert.deepEqual(errors, []);
+  } finally {
+    await page.close();
+  }
+});
+
+test('a caption size is typeable digit by digit, and settles to the maximum on blur', async () => {
+  // The defect this guards against: every keystroke in the Size field was
+  // clamped by state.js and the clamped number written back into the field
+  // being typed in. Since the minimum is 6, the "1" of a 12 came back as a
+  // "6" before the "2" was pressed, so 12 became 62 -> 36 and only the
+  // single-digit sizes 6-9 could be typed at all.
+  //
+  // It has to be two separate key presses. An atomic fill sets the whole
+  // value in one input event and never reproduces it, which is exactly why
+  // this defect survived to a human reviewer in the first place.
+  const { page, errors } = await openPage();
+  try {
+    await page.goto(`${base}/draw/`);
+    await page.waitForFunction(() => document.querySelectorAll('#board .sl').length === 2, null, { timeout: 5000 });
+
+    await page.click('button[data-mode="text"]');
+    const box = await page.locator('#board').boundingBox();
+    assert.ok(box, 'the board has no bounding box to place a caption on');
+    await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+    await page.waitForSelector('#draw-caption-text', { state: 'visible', timeout: 5000 });
+    await page.fill('#draw-caption-text', 'Blitz');
+    await page.waitForFunction(
+      () => document.querySelector('.draw-caption text')?.textContent === 'Blitz',
+      null,
+      { timeout: 5000 },
+    );
+
+    const size = page.locator('#draw-caption-size');
+    await size.fill('');
+    await page.keyboard.press('1');
+    assert.equal(
+      await size.inputValue(),
+      '1',
+      'the first digit of a two-digit size was overwritten with the clamped value',
+    );
+    await page.keyboard.press('2');
+    assert.equal(await size.inputValue(), '12', 'the second digit did not land on the first');
+    await page.waitForFunction(
+      () => document.querySelector('.draw-caption text')?.getAttribute('font-size') === '12',
+      null,
+      { timeout: 5000 },
+    );
+
+    // The other half of the same guard: the field is left alone while it is
+    // being typed in, so it has to be settled against the board on the way
+    // out — 99 is not a size, and 36 is what the caption is actually drawn at.
+    await size.fill('');
+    await page.keyboard.press('9');
+    await page.keyboard.press('9');
+    assert.equal(await size.inputValue(), '99', 'the field was overwritten mid-typing');
+    // Enter finishes whichever control it is pressed in (app.js), which is
+    // what takes the focus out and settles the field.
+    await page.keyboard.press('Enter');
+    await page.waitForFunction(
+      () => document.querySelector('#draw-caption-size').value === '36',
+      null,
+      { timeout: 5000 },
+    );
+    assert.equal(
+      await page.locator('.draw-caption text').getAttribute('font-size'),
+      '36',
+      'the caption is not drawn at the size its own field settled on',
+    );
+
+    assert.deepEqual(errors, []);
   } finally {
     await page.close();
   }
