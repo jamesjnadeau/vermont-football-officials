@@ -80,8 +80,9 @@ Sass), following the architecture of
   hands that to every page as `editLink`, which the footer in
   `content/_includes/layouts/main.pug` renders. Rename or move a collection in
   `.pages.yml` and `npm test` fails until `lib/pages-cms.js` agrees.
-- `/draw` is a play-drawing tool, built and tested but deliberately unlinked
-  from the rest of the site — see [docs/draw/README.md](docs/draw/README.md).
+- `/draw` is a play-drawing tool, linked from the main navigation as "Play
+  Draw" — see [docs/draw/README.md](docs/draw/README.md). It stays out of the
+  article collections: it is a tool, not an article.
   `lib/field/` and `lib/draw/` are passthrough-copied to `/js/field/` and
   `/js/draw/` so the browser runs the same files `node --test` does, which
   means neither directory may use a Node-only API (`node:fs`, `process`) —

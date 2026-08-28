@@ -221,35 +221,40 @@ test('the build ships a CNAME for the custom domain', () => {
   assert.equal(read(cname).trim(), 'www.vermont-football-officials.org');
 });
 
-// --- /draw: built, and deliberately unlisted ----------------------------
-// The drawing page exists and works, but the plan requires it stay out of
-// the site's own navigation — reachable by a direct link or a shared one,
-// never by browsing. `eleventyExcludeFromCollections` in content/draw/
-// index.pug is what keeps it out of Eleventy's own collections; these three
-// checks are the surfaces a stray tag or a stray link could still put it on.
+// --- /draw: built, and in the navigation --------------------------------
+// The drawing page was originally unlisted, reachable only by a direct or
+// shared link. It is now in the main nav as "Play Draw", so the check that
+// used to assert nothing linked it is inverted: the nav lives in the shared
+// layout, so a page that does not carry the link means the layout broke.
+// It stays out of the article collections either way — it is a tool, not an
+// article, and `eleventyExcludeFromCollections` in content/draw/index.pug is
+// what keeps it out of them.
 test('the build wrote /draw', () => {
   assert.ok(existsSync(path.join(SITE, 'draw', 'index.html')), 'missing _site/draw/index.html');
 });
 
-test('no built page links to /draw', () => {
-  const bad = html.filter((f) => /href="\/draw\/?"/.test(read(f)));
-  assert.deepEqual(
-    bad,
-    [],
-    '/draw is deliberately absent from the site navigation — see content/draw/index.pug',
-  );
+test('every page links /draw from the main navigation', () => {
+  const bad = html.filter((f) => {
+    const nav = read(f).match(/<nav [^>]*id="header"[^>]*>[\s\S]*?<\/nav>/);
+    return !nav || !/href="\/draw\/"/.test(nav[0]);
+  });
+  assert.deepEqual(bad, [], '/draw is linked from the nav in layouts/main.pug');
 });
 
-// A stray topic tag on content/draw/index.pug would slip it into a topic
-// page regardless of eleventyExcludeFromCollections, which only keeps
-// Eleventy's own collections clean — the Information index and every topic
-// page are exactly where that would surface.
+// A stray topic tag on content/draw/index.pug would slip it into a topic page
+// regardless of eleventyExcludeFromCollections, which only keeps Eleventy's own
+// collections clean — the Information index and every topic page are exactly
+// where that would surface. The nav now names /draw on every page, so this
+// looks only at the article listing itself, not the whole document.
 test('/draw appears in no collection listing', () => {
   const listings = [
     path.join(SITE, 'information', 'index.html'),
     ...TOPICS.map((t) => path.join(SITE, 'tags', t.slug, 'index.html')),
   ];
-  const bad = listings.filter((f) => read(f).includes('/draw'));
+  const bad = listings.filter((f) => {
+    const main = read(f).match(/<main [^>]*id="content"[^>]*>[\s\S]*?<\/main>/);
+    return !main || main[0].includes('/draw');
+  });
   assert.deepEqual(bad, []);
 });
 
