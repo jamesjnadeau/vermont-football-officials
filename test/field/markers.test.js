@@ -86,9 +86,20 @@ test('no emitted coordinate carries more than two decimals', () => {
   }
 });
 
-test('label() emits size, colour, weight and decoration only when set, and omits the defaults', () => {
+test('label() omits an attribute at its default — except the one that cannot be omitted', () => {
+  // This test used to assert that `font-size` was dropped at the default of
+  // 12 along with everything else. That assertion was wrong and it hid a
+  // real defect for two tasks: omitting an attribute is only safe when what
+  // SVG falls back to *is* the stated default, and for size it is not. A
+  // label carries no class by design (its size and colour are an unbounded
+  // vocabulary that the shared `STYLE` block cannot hold), so with no
+  // `font-size` written nothing supplies one and the text renders at the SVG
+  // default of 16 — every unresized caption a third too big while claiming
+  // to be 12. Emitting it always is the fix; this asserts the fix, and the
+  // rest of the omission rule is asserted below exactly as before. Do not
+  // "restore" the old assertion.
   const plain = label({ text: 'Blitz', at }, view);
-  assert.ok(!plain.includes('font-size'));
+  assert.ok(plain.includes('font-size="12"'), plain);
   assert.ok(!plain.includes('fill='));
   assert.ok(!plain.includes('font-weight'));
   assert.ok(!plain.includes('text-decoration'));
@@ -104,9 +115,10 @@ test('label() emits size, colour, weight and decoration only when set, and omits
   assert.ok(styled.includes('text-decoration="underline"'));
   assert.ok(styled.includes('transform="rotate(90'));
 
-  // Explicitly re-stating the defaults (black, size 12) is still the default.
+  // Stating a default explicitly is indistinguishable from leaving it out:
+  // the size is written either way, and the colour is written neither way.
   const restated = label({ text: 'Blitz', at, size: 12, color: 'black' }, view);
-  assert.ok(!restated.includes('font-size'));
+  assert.equal(restated, plain);
   assert.ok(!restated.includes('fill='));
 });
 
