@@ -118,3 +118,35 @@ body {
 .draw-layer-overlay {
   pointer-events: none;
 }
+
+// A token on the board: an official's disc or a player's mark, wrapped so it
+// can be dragged. The cursor is the only thing telling a mouse user these
+// move at all, since a marker that can be picked up looks exactly like one on
+// a printed diagram — which is the point, and why the affordance has to come
+// from the chrome instead of from the mark.
+.draw-token {
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+// The invisible disc under each token. `pointer-events: all` is what does the
+// work: a defense player is an unfilled circle and an offense player two
+// crossed lines, so without a target that answers over its whole interior a
+// click only counts when it lands on a stroke a yard and a half wide.
+.draw-hit {
+  fill: none;
+  pointer-events: all;
+}
+
+// Selection. Colour is allowed here and nowhere else on the board: this lives
+// in the overlay layer, which is never printed and never shared, so it can say
+// "this one" the way the rest of the field deliberately can't.
+.draw-selection {
+  fill: none;
+  stroke: #0d6efd;
+  stroke-width: 1.6;
+  stroke-dasharray: 4 3;
+}
