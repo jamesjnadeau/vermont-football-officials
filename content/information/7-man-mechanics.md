@@ -13,21 +13,6 @@ each.
 **[Download the 2022 7-man mechanics manual (PDF, 12 slides)](/uploads/7-man-mechanics-2022.pdf)** —
 the original slide deck. Everything on it is written out below.
 
-## Who's who
-
-The deck uses single letters on most slides and the longer forms in the keys
-diagrams at the end.
-
-| On most slides | In the keys diagrams | Position |
-| --- | --- | --- |
-| **R** | R | Referee |
-| **U** | U | Umpire |
-| **H** | HL | Head Linesman |
-| **L** | LJ | Line Judge |
-| **F** | FJ | Field Judge |
-| **S** | SJ | Side Judge |
-| **B** | BJ | Back Judge |
-
 ---
 
 ## Coin toss
