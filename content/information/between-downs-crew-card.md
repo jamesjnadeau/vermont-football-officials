@@ -17,16 +17,6 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.
 
-## Who's who
-
-| | Position |
-| --- | --- |
-| **R** | Referee (white hat) |
-| **U** | Umpire |
-| **LM** | Linesman (H/DJ) |
-| **LJ** | Line Judge |
-| **BJ** | Back Judge (5-man only) |
-
 In every diagram below the white marker is the Referee, and the press box is on
 the right. What is the Referee's alone appears under "Referee — white hat only."
 

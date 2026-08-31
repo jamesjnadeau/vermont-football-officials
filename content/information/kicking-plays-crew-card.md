@@ -18,18 +18,6 @@ print at 100% on Letter, two-sided, flip on the long edge.
 **Associations amend these** — the 4-man punt and the good/no-good call move
 most; check Vermont's guidance before teaching it.
 
-## Who's who
-
-| | Position |
-| --- | --- |
-| **R** | Referee (white hat) |
-| **U** | Umpire |
-| **LM** | Linesman (H/DJ) |
-| **LJ** | Line Judge |
-| **BJ** | Back Judge (5-man only) |
-| **✕** | Kicking team |
-| **○** | Receiving team |
-
 In every diagram below the white marker is the Referee, and the press box is on
 the right.
 

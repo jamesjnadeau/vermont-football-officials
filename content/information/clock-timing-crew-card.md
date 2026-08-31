@@ -21,16 +21,6 @@ print at 100% on Letter, two-sided, flip on the long edge.
 This card is the crew's timing mechanics. For the scoreboard operator's own
 reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-cheat-sheet/).
 
-## Who's who
-
-| | Position |
-| --- | --- |
-| **R** | Referee (white hat) |
-| **U** | Umpire |
-| **LM** | Linesman (H/DJ) |
-| **LJ** | Line Judge |
-| **BJ** | Back Judge (5-man only) |
-
 ---
 
 ## Wind or stop
