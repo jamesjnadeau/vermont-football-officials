@@ -18,16 +18,6 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 **Associations amend these** — check Vermont's guidance before teaching it.
 
-## Who's who
-
-| | Position |
-| --- | --- |
-| **R** | Referee (white hat) |
-| **U** | Umpire |
-| **LM** | Linesman (H/DJ) — you |
-| **LJ** | Line Judge |
-| **BJ** | Back Judge |
-
 ---
 
 ## Run and pass
