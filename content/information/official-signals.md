@@ -146,7 +146,7 @@ Roughing the passer and roughing the kicker carry the full chain — umbrella, s
 3. The next down, or the new-series signal
 4. Ready-for-play, or start-the-clock — whistle at the same time
 
-**Dead-ball foul — five steps:**
+**Dead-ball foul — four or five steps:**
 
 1. `S7`, the dead-ball signal
 2. The foul
@@ -154,7 +154,11 @@ Roughing the passer and roughing the kicker carry the full chain — umbrella, s
 4. The next down, or the new-series signal
 5. Ready-for-play, or start-the-clock
 
-Add loss of down (`S9`), automatic first down (`S8`), or disqualification (`S47`) where the chain calls for it. A declination is signaled after the point to the offending team.
+Four when the penalty is declined: dead ball, the foul, the team, the declination, then the ready — no down signal, because the down has not changed. The officials' manual works the example: Team R is flagged for encroachment before a try and Team K declines because the kicker likes the distance he has.
+
+**The dead-ball signal is not optional on a false start or encroachment.** Those two are always preceded by it (§2.2).
+
+Add loss of down (`S9`), automatic first down (`S8`), or disqualification (`S47`) where the chain calls for it. Disqualification goes after the point to the offending team and before the down.
 
 Self-evident fouls — false start, delay of game, encroachment — don't need a preliminary signal and then a second one after enforcement.
 

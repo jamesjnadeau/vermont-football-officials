@@ -44,12 +44,18 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 
 ### Everyone on this
 
+- **Tell two people, at once: the Referee and the Head Line Judge** — so the
+  chains and the down box freeze where they are. Three short whistle blasts
+  after the ball is dead if you can't reach them any other way.
 - No spot: throw it high in the air. Spot matters: throw it to the yard line.
-  Passer beyond the line: drop it at the spot. Never throw a flag at a player.
-- A dead-ball personal foul or an unsportsmanlike foul goes straight up in the
-  air.
-- Two flags on one foul: move them to the same spot, confirm the foul and the
-  number, then one official gives the preliminary.
+  Off target — pick it up and move it definitively, now. The longer you wait the
+  more it looks like you are manipulating it. Never throw a flag at a player,
+  slam-dunk it or wave it.
+- Dead-ball foul before the snap: **jog toward the middle of the field to report
+  it**, still watching the players you just flagged — retaliation is coming.
+- **Two flags on one snap: get together and agree before any signal.** Never
+  signal a foul from the wing; your crewmate may have a different one on the
+  same play.
 
 ### Referee — white hat only
 
@@ -67,7 +73,8 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 | **Calling official** | Timeout twice, the preliminary to the Referee, then point at the offending team. Describe it to the wing — "#88 held" won't sell it. | — |
 | **R** | — | Same, and half distance and loss of down are yours. |
 | **U** | Turn to the calling official on the whistle. Enforcement is yours from there. | Same as a crew of 5. |
-| **HL / LJ** | Cover a spot foul. Keep the sideline clear. | Same, and the Line Judge picks up clock status to the Referee. |
+| **HL** | Cover a spot foul. Keep the sideline clear, and freeze the chains and box the moment a flag is down — nothing moves until you say so. | Same. |
+| **LJ** | Cover a spot foul. Keep the sideline clear. | Same, and you pick up clock status to the Referee. |
 | **BJ** | Half distance, automatic first down, loss of down. | — |
 
 *Flag in front, tucked in — one or two, centre weighted, black ball.*
@@ -80,10 +87,14 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 
 ### Everyone on this
 
-- Both wings walk off the yardage — one will get pulled into a coach's question,
-  so two sets of feet keep it honest.
-- The wing gives the head coach the down and distance both ways: taking it, and
-  declining it.
+- **The two wings do different things.** The Head Line Judge walks the yardage
+  off on his sideline while the Umpire walks it off in the field; the Line Judge
+  **holds the enforcement spot** until he is certain it was done correctly.
+- The wing on the penalized team's sideline tells the head coach the offending
+  player's number and explains the foul in plain words — "the man in motion cut
+  downfield too soon", not "illegal motion". **Never guess a number.** One
+  invented number and the crew's credibility is gone.
+- Identify teams as **offence and defence**, not by jersey colour.
 - Ask your question now. A wrong enforcement gets fixed on the field, not in the
   locker room.
 
@@ -101,7 +112,8 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 | --- | --- | --- |
 | **R** | — | Half distance, automatic first down and loss of down are yours. |
 | **U** | 98% of the time you already know it. On the other 2%, look to the head coach with the wing beside him. Walk it or jog it, but get it right. | Same as a crew of 5. |
-| **HL / LJ** | Both walk it off. Don't look at the Umpire until you reach the succeeding spot. Five-yard walk-off near a first down: check the chain tape. | Same as a crew of 5. |
+| **HL** | Walk the yardage off on your sideline as the Umpire walks it in the field. Five-yard walk-off near a first down: check the chain tape. | Same as a crew of 5. |
+| **LJ** | **Hold the enforcement spot** until you are certain the enforcement was done correctly. Don't leave it to walk with anybody. | Same as a crew of 5. |
 | **BJ** | Half distance, automatic first down, loss of down — say it out loud, it gets missed. | — |
 
 ---
@@ -119,10 +131,12 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 
 ### Referee — white hat only
 
-- Stand still, face the press box, be concise. Think before you talk and pause
-  for effect.
-- Announce the player's number. Keep unique rulings short and skip the technical
-  language.
+- Move clear of the players, **face the press box, stand stationary**, then
+  signal. Think before you talk and pause for effect.
+- **Preliminary without the mic; final signal with it.** You control the on/off
+  switch, and you turn it off the moment you finish.
+- Short phrases, pauses between them, normal voice — the speakers lag. Announce
+  the player's number and skip the technical language.
 - No microphone tonight? Verbalize the foul as you signal to the press box.
 
 ### Say it like this
