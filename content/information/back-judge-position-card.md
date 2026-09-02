@@ -27,13 +27,13 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/run.svg" alt="Run — the whole crew of five, with the Back Judge highlighted as the white marker seventeen yards off the line between the uprights." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/run.svg" alt="Run — the whole crew of five, with the Back Judge highlighted as the white marker twenty to twenty-five yards beyond the line, favouring the strong side and deeper than the deepest defender." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Run</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/pass.svg" alt="Pass — the whole crew of five, with the Back Judge highlighted as the white marker seventeen yards off the line, taking the inside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/pass.svg" alt="Pass — the whole crew of five, with the Back Judge highlighted as the white marker twenty to twenty-five yards beyond the line on the strong side, taking the inside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Pass</figcaption>
     </figure>
   </div>
@@ -41,8 +41,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Seventeen yards off the line, between the uprights. Stay at 17 until the snap
-  is on or inside the +10.
+- Favouring the **strong side** of the formation, 20 to 25 yards beyond the line
+  and deeper than the deepest defender. Hold that until the snap is on or inside
+  B's 10 — then start on the end line.
 - Count B's eleven and hold it two seconds. B's substitutions in and out of the
   huddle are yours.
 - You own the play clock: five fingers at five seconds, then count down four,

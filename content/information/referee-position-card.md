@@ -27,13 +27,13 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/referee/run.svg" alt="Run — the whole crew of five, with the Referee highlighted as the white marker 15 yards behind the line and 8 wide of the quarterback on the wide side." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/referee/run.svg" alt="Run — the whole crew of five, with the Referee highlighted as the white marker ten to twelve yards behind the line on the quarterback's passing-arm side, at least as wide as the tight end." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Run</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/referee/pass.svg" alt="Pass — the whole crew of five, with the Referee highlighted as the white marker 15 back and 8 wide, holding a five-yard cushion on the passer." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/referee/pass.svg" alt="Pass — the whole crew of five, with the Referee highlighted as the white marker ten to twelve back on the passing-arm side, holding a ten-yard buffer if the quarterback rolls." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Pass</figcaption>
     </figure>
   </div>
@@ -41,8 +41,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- 15 yards behind the line, 8 wide of the quarterback at 45°, always on the wide
-  side. You decide which side that is.
+- **Passing-arm side** of the quarterback, 10 to 12 yards deep, at least as wide
+  as the tight end. While A is in the huddle, 10–15 from the line and 5 wide of
+  it, where the clock operator can see you.
 - Count A with the Umpire — 11, held two seconds. A's substitutions in and out of
   the huddle are yours.
 - Mark the ball ready after A is behind their line, and on a first down only
@@ -52,8 +53,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 - Run — snap · QB · handoff · QB · line play at the point of attack.
 - Pass — snap · QB · the opposite tackle · the passer.
-- Five-yard cushion on the passer, ten on a rolling quarterback. Yell "ball's
-  away."
+- Wide and deep enough that a pocket drop doesn't move you. If he rolls, move
+  with him and keep **at least a 10-yard buffer**. Yell "ball's away."
 - Passer near the line: memorize the spot of release and check beyond-or-behind
   with the Umpire.
 
@@ -61,8 +62,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Run** | 15 back, 8 wide, wide side. |
-| **Pass** | Same. Keep the cushion if he rolls. |
+| **Run** | 10–12 back, passing-arm side, at least as wide as the tight end. |
+| **Pass** | Same. 10-yard buffer if he rolls. |
 | **Backed up** | 8 wide of the QB at 45° on the end line. From the –10 to the –15, 10 wide on the goal line. |
 | **Hurry-up** | Don't move in as far. Tell the centre and QB to wait for your whistle. |
 
@@ -144,7 +145,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/referee/goal-line.svg" alt="Goal line — the whole crew of five, with the Referee highlighted as the white marker 15 back and 8 wide on the wide side, the same as any run or pass." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/referee/goal-line.svg" alt="Goal line — the whole crew of five, with the Referee highlighted as the white marker ten to twelve back on the passing-arm side, the same as any run or pass." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Goal line</figcaption>
     </figure>
   </div>
@@ -158,7 +159,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Goal line: same position as a run or pass — 15 back, 8 wide, wide side.
+- Goal line: same position as a run or pass — 10–12 back, passing-arm side.
 - Field goal and try: 2 to 3 yards to the rear and 3 to 5 to the side of the
   kicker, **facing the holder**.
 - Call the tee and the kicker out loud the second they come on the field, and
@@ -180,7 +181,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Goal line** | 15 back, 8 wide, wide side. |
+| **Goal line** | 10–12 back, passing-arm side. |
 | **FG / try** | 2–3 to the rear, 3–5 to the side of the kicker, facing the holder. |
 | **Backed up** | Point at both wings, then at the goal line, and get them to point back. |
 | **Ball reaches the 10** | No longer backed up — point at yourself, then at the goal line. |

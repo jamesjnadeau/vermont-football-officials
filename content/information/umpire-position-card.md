@@ -61,10 +61,10 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Run / pass** | 7 off the line inside the ends, regardless of the Referee. |
+| **Run / pass** | 5–7 yds behind B's line, between the defensive ends. You must see the ball from the snapper's first touch until the snap. |
 | **Punt** | 4–7 yds deep, favouring the Line Judge's sideline. |
-| **Goal line** | 7 off the line. Vary laterally. |
-| **Backed up** | 7 off the line, unchanged. |
+| **Goal line** | 5–7 behind B's line. Vary laterally. |
+| **Backed up** | 5–7 behind B's line, unchanged. |
 
 *Turn immediately when the pass is thrown, then jog to the dead-ball spot.*
 
@@ -181,7 +181,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Goal line** | 7 off the line inside the ends. |
+| **Goal line** | 5–7 behind B's line, between the defensive ends. |
 | **FG / try** | Beyond the end line, behind the press box upright. Your upright is yours to rule. |
 | **Muddle huddle** | Stand on the end line. |
 

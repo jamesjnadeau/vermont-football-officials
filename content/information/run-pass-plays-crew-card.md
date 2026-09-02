@@ -31,7 +31,7 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/run-pass-plays/every-down-crew-of-5.svg" alt="Initial positions for a crew of 5: Referee 15 yards behind the line and 8 wide of the quarterback on the wide side, Umpire 7 yards off the line, both wings on the line of scrimmage outside the widest receiver, and the Back Judge 17 yards off the line in the middle." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/run-pass-plays/every-down-crew-of-5.svg" alt="Initial positions for a crew of 5: Referee ten to twelve yards behind the line on the quarterback's passing-arm side, Umpire five to seven yards behind the defensive line, both wings straddling the line of scrimmage on their sidelines, and the Back Judge twenty to twenty-five yards beyond the line favouring the strong side." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 5</figcaption>
     </figure>
   </div>
@@ -60,21 +60,23 @@ the right. What is the Referee's alone appears under "Referee — white hat only
   after the down box is set.
 - If A is at the line or moving to it, back-pedal to your position before marking
   it ready.
-- You set the wide side, and your position is always on it. In a crew of 4 you
-  also announce the play clock: five, then 4–3–2–1.
+- **Your side is the quarterback's passing arm, not the wide side.** Ask the head
+  coach in pregame which arm he throws with. In a crew of 4 you also announce the
+  play clock: five, then 4–3–2–1.
 
 ### Initial position
 
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
-| **R** | 15 yards behind the line, 8 wide of the QB at 45°, wide side. | Same. Plus the play clock: five seconds, then 4–3–2–1 out loud. |
-| **U** | 7 yards off the line inside the tight ends, wherever the Referee is. Counts A's five ineligible linemen and checks their numbers. | Same. Plus counts B's 11 and owns B's substitutions. |
-| **HL / LJ** | 10 yards outside the widest A player, never inside the numbers. Line to gain, substitutes, motion on your side of center. | Same. |
-| **BJ** | 17 yards off the line between the uprights. Counts B, owns B's substitutions and the play clock. | — |
+| **R** | While A huddles: 10–15 from the line, 5 wide of the huddle, where the clock operator can see you. Once A is at the line: **passing-arm side** of the QB, 10–12 deep, at least as wide as the tight end. | Same. Plus the play clock: five seconds, then 4–3–2–1 out loud. |
+| **U** | 5–7 yards behind B's line, between the defensive ends. You must see the ball from the snapper's first touch until the snap. Counts A's five ineligible linemen and checks their numbers. | 5–10 yards behind B's line. Plus counts B's 11 and owns B's substitutions. |
+| **HL / LJ** | Straddling the line of scrimmage, **on the sideline** — working the sideline is strongly encouraged. Line to gain, substitutes, motion on your side of centre. | Same. |
+| **BJ** | Favouring the **strong side**, 20–25 yards beyond the line and deeper than the deepest defender. Counts B, owns B's substitutions and the play clock. | — |
 
-Wings show A the line with the backfield foot, then set their feet parallel. In a
-crew of 4 there is no deep official — say out loud who has the deep middle before
-the game starts.
+Wings show A the line with the backfield foot, then set their feet parallel.
+**Legality of motion belongs to the official the player is moving away from**,
+even if he reverses and comes back. In a crew of 4 there is no deep official —
+say out loud who has the deep middle before the game starts.
 
 ---
 
@@ -120,8 +122,8 @@ the game starts.
 
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
-| **R** | Snap · QB · handoff · QB · line play at the point of attack. | Same as a crew of 5. |
-| **U** | Snap · linemen · blocking at the point of attack · the runner. Spot the ball shoulders parallel to the sideline, then move off it quickly. | Same, and you are the only one in the middle. Blocks beyond the point of attack are yours. |
+| **R** | Snap · QB · handoff · QB · line play at the point of attack. You key the **opposite-side tackle**. | Same as a crew of 5. |
+| **U** | Snap · linemen · blocking at the point of attack · the runner. You key the **centre and both guards**. Spot the ball shoulders parallel to the sideline, then move off it quickly. | Same, and you are the only one in the middle. Blocks beyond the point of attack are yours. |
 | **HL / LJ** | Snap · line play · blocks downfield · the runner. Line play at the point of attack and receivers ahead of it. The sideline is yours. | Same, but you get downfield blocks on your half with no help behind you. |
 | **BJ** | Snap · tight end and tackle · receivers · line play beyond the point of attack · the runner. Watch for crackbacks. | — |
 
@@ -138,13 +140,13 @@ before coming in to clean up.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/run-pass-plays/passing-crew-of-5.svg" alt="Passing play coverage for a crew of 5: the Referee holding a five-yard cushion on the passer, each wing taking the outside receivers on their side, and the Back Judge taking the inside receivers and backing off slowly." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/run-pass-plays/passing-crew-of-5.svg" alt="Passing play coverage for a crew of 5: the Referee holding a ten-yard buffer on a rolling passer, each wing taking the outside receivers on their side, and the Back Judge taking the inside receivers and backing off slowly." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 5</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/run-pass-plays/passing-crew-of-4.svg" alt="Passing play coverage for a crew of 4: the Referee holding a five-yard cushion on the passer, each wing taking every receiver on their own side, and a note that the middle of the field is shared dual coverage." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/run-pass-plays/passing-crew-of-4.svg" alt="Passing play coverage for a crew of 4: the Referee holding a ten-yard buffer on a rolling passer, each wing taking every receiver on their own side, and a note that the middle of the field is shared dual coverage." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 4</figcaption>
     </figure>
   </div>
@@ -161,7 +163,8 @@ before coming in to clean up.
 
 ### Referee — white hat only
 
-- Keys: snap · QB · the opposite tackle · the passer. Hold a five-yard cushion,
+- Keys: snap · QB · the opposite tackle · the passer. Be wide and deep enough
+  that a pocket drop does not move you; 10-yard buffer if he rolls,
   and keep it if he rolls.
 - Yell "ball's away." On a backward pass, signal and yell "back."
 - Eyes stay on the passer after the ball is gone. Don't be a head wagger.
@@ -213,7 +216,7 @@ usually where it goes.
 
 ### Referee — white hat only
 
-- Same position as a run or pass: 15 behind, 8 wide of the QB at 45°, wide side.
+- Same position as a run or pass: 10–12 behind, passing-arm side of the QB.
 - After a touchdown, watch the players moving toward the sideline. You do not
   signal the score to the press box.
 - Ask the captain where he wants the ball spotted for the try before anyone spots
@@ -225,8 +228,8 @@ usually where it goes.
 
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
-| **R** | 15 behind the line, 8 wide of the QB at 45°. | Same as a crew of 5. |
-| **U** | 7 yards off the line inside the tight ends. | Same as a crew of 5. |
+| **R** | Passing-arm side of the QB, 10–12 deep, at least as wide as the tight end. | Same as a crew of 5. |
+| **U** | 5–7 yards behind B's line, between the defensive ends. | 5–10 yards behind B's line. |
 | **HL / LJ** | Two yards outside the sideline, on the goal line. | Two yards outside the sideline on the goal line. Step into the end zone to see a catch near the end line. |
 | **BJ** | On the end line between the uprights. Stay there while the ball is live; straddle the end line on a tight catch. | — |
 
@@ -239,12 +242,13 @@ there is no Back Judge, so the end line is uncovered until a wing gets there.
 
 *Snap inside A's own 10.*
 
-1. **The Referee moves to the end line** — 8 wide of the QB at 45°, wide side, so
+1. **The Referee moves to the end line** — 8 wide of the QB at 45° on his passing-arm side, so
    an errant snap stays in front of him. Snap between the –10 and –15: 10 wide on
    the goal line instead.
-2. **Everyone else holds their normal spot** — Umpire 7 off the line, wings 10
-   outside the widest receiver, Back Judge 17 off. A punt overrides all of this:
-   the Line Judge stays on the line until the kick crosses.
+2. **Everyone else holds their normal spot** — Umpire 5–7 behind B's line, wings
+   straddling the line on their sidelines, Back Judge 20–25 beyond it. A punt
+   overrides all of this: the Head Line Judge stays on the line until the kick
+   crosses.
 3. **The goal line belongs to the wings.** The Referee points at them, then at it;
    they point back. Inside the –2 they go to the goal line at the snap; from the
    –5 to the –2 they slide and read the QB and back; from the –10 to the –5 they
@@ -252,3 +256,27 @@ there is no Back Judge, so the end line is uncovered until a wing gets there.
 4. **Once the ball reaches the 10 it is no longer backed up.** The Referee takes
    the goal line back and signals it. If the QB rolls at him he backs up and
    straddles the line — never open the door.
+
+---
+
+## Positional keys
+
+**Crew of 4** is one sentence: each wing keys the eligible receivers on his own
+side, and where there is more than one, the **primary key is the receiver on the
+end of the line** — the tight end or split end. Flankers, slot backs and motion
+men are secondary. The Referee keys the opposite-side tackle; the Umpire keys the
+centre and both guards.
+
+**Crew of 5** works off strength. In a balanced formation, strength is **always**
+declared to the Line Judge's side.
+
+| Formation | HL | LJ | BJ |
+| --- | --- | --- | --- |
+| **Balanced**, strength to LJ | Inside receiver on your side (the tight end) | The back | The flanker |
+| **Double tight ends**, strength to HL | The halfback | The back on your side | Inside receiver on the line (the tight end) |
+| **Trips** | The nearest back | The two inside receivers of the trips | Third receiver in on the trips side |
+| **Motion changes strength** | Watch the motion man does not cut upfield before the snap; then the nearest back | The nearest running back | Shift and key the motion man |
+
+**Legality of motion always belongs to the official the motion man is moving
+away from**, even if he reverses and comes back to where he started. That is
+stated four times in the manual and it is the one keying rule crews get wrong.

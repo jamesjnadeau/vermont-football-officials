@@ -27,13 +27,13 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/head-line-judge/run.svg" alt="Run — the whole crew of five, with the Head Line Judge highlighted as the white marker ten yards outside the widest offensive player on the sideline opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/head-line-judge/run.svg" alt="Run — the whole crew of five, with the Head Line Judge highlighted as the white marker straddling the line of scrimmage on the sideline opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Run</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/head-line-judge/pass.svg" alt="Pass — the whole crew of five, with the Head Line Judge highlighted as the white marker ten yards outside the widest offensive player, taking the outside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/head-line-judge/pass.svg" alt="Pass — the whole crew of five, with the Head Line Judge highlighted as the white marker straddling the line of scrimmage on his own sideline, taking the outside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Pass</figcaption>
     </figure>
   </div>
@@ -41,8 +41,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Ten yards outside the widest A player, never inside the numbers. If A is near
-  the sideline, take steps out of bounds.
+- Straddling the line of scrimmage, **on the sideline** — the manual strongly
+  encourages working the sideline. Come off it once the play develops, but no
+  further in than the numbers.
 - Know the line to gain before the snap. Count the players on the line on your
   side of centre and signal the Line Judge.
 - Show A where the line is with your backfield foot, then set your feet parallel
