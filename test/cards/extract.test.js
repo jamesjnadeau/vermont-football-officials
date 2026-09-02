@@ -30,6 +30,7 @@ test('every article tagged Printable that is a generated card was found', () => 
       'head-line-judge-position-card',
       'kicking-plays-crew-card',
       'line-judge-position-card',
+      'pregame-conference',
       'referee-position-card',
       'run-pass-plays-crew-card',
       'umpire-position-card',
