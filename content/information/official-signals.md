@@ -32,6 +32,8 @@ Only the referee signals fouls to the press box. Everyone else *reports* — the
 
 Other officials do give the administrative signals in their own areas: stop-the-clock, touchdown, incomplete pass, and so on.
 
+The signals a crew gives *each other* are a different chart entirely — eleven players, double sticks, unbalanced line, snapper protection, the five-second visible count. Those are on [Crew Communication and When in Question](/information/crew-communication-signals/).
+
 **Mechanics for the white hat:**
 
 - Come to a complete stop before you start. Don't walk through your signals.

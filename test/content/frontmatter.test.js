@@ -60,6 +60,7 @@ test('all expected articles exist as markdown', () => {
     'between-downs-crew-card.md',
     'clock-officials-cheat-sheet.md',
     'clock-timing-crew-card.md',
+    'crew-communication-signals.md',
     'football-rules-summary.md',
     'foul-weather-procedures.md',
     'fouls-enforcement-crew-card.md',
