@@ -28,12 +28,17 @@ signal — no lag, no anticipating.
 
 ## Before the game — meet the Line Judge 30 minutes out
 
-The **Line Judge** is your contact for the whole game. Meet at the timing table
-at least 30 minutes before kickoff and cover:
+The **Line Judge** is your contact for the whole game, and he is also the crew's
+on-field backup clock — if the scoreboard fails, he is the one running the time.
+(If you are running the *play* clock instead, your contact is the **Back Judge**,
+or the Referee in a crew of four. Two clocks, two operators, two contacts.) Meet
+at the timing table at least 30 minutes before kickoff and cover:
 
 - Set the scoreboard clock to the correct time and sync it with the Line Judge's
   watch. Inside 30 minutes, put the countdown to kickoff on the clock.
 - Test the clock. Prove it starts, stops, and resets.
+- **Turn the auto horn off.** If the scoreboard sounds a horn at the end of a
+  period it must never fire while a play is in progress.
 - Tell the officials where you will be — press box or sideline — and agree on how
   they will reach you. Test that too.
 - Walk through starting, stopping, and adjusting the clock, and the plan if the

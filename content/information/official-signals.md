@@ -434,7 +434,7 @@ These are the signals you'll give most often, and the rules book doesn't referen
 | **S13** | Disregard flag | |
 | **S14** | End of period | |
 | **S16** | First touching | The same signal as illegal touching, which is why `S16-9` is the illegal-touching code |
-| **S17** | Reset the play clock to 25 seconds | One hand for 25, both hands for 40 |
+| **S17** | Reset the play clock to 25 seconds | Right arm straight up, palm up, pumped three times — "pushing the sky". One hand for 25, **both hands for 40**. An interrupted play clock is always reset to 25, never resumed. |
 
 Two of these carry rules weight worth knowing cold:
 

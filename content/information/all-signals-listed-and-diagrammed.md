@@ -116,8 +116,8 @@ rules book.
   </div>
   <div class="col">
     <figure class="figure d-block text-center">
-      <img src="/images/official-signals/17-reset-play-clock-to-25-seconds.svg" alt="Signal 17, reset play clock to 25 seconds: one hand pumped up and down. Use both hands to reset to 40." class="figure-img img-fluid border rounded bg-white">
-      <figcaption class="figure-caption">S17 — Reset play clock</figcaption>
+      <img src="/images/official-signals/17-reset-play-clock-to-25-seconds.svg" alt="Signal 17, reset play clock to 25 seconds: right arm extended straight up with the palm facing up, pumped three times as if pushing the sky. Use both hands to reset to 40." class="figure-img img-fluid border rounded bg-white">
+      <figcaption class="figure-caption">S17 — Reset play clock (25; both hands for 40)</figcaption>
     </figure>
   </div>
   <div class="col">
