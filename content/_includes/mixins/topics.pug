@@ -31,10 +31,5 @@ mixin articleList(items, topics)
   div.list-group
     each item in items
       a.list-group-item.list-group-item-action(href=item.url)
-        .row
-          .col
-            div= item.data.title
-            +topicBadges(item.data.tags, topics)
-          .col-auto.text-secondary.text-nowrap
-            time(datetime=new Date(item.date).toISOString())
-              | #{new Date(item.date).toLocaleDateString('en-US', { timeZone: 'UTC' })}
+        div= item.data.title
+        +topicBadges(item.data.tags, topics)

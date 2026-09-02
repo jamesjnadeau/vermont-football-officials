@@ -6,10 +6,11 @@ include ../mixins/topics.pug
 
 article
   h1= title
-  if date
-    p.text-secondary.mb-2
-      time(datetime=new Date(date).toISOString())
-        | #{new Date(date).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}
+  //- No publish date here. `date:` exists in front matter to order the
+  //- article lists, and for most pages it records when the file was added
+  //- rather than anything a reader can use. The provenance line below is
+  //- the date that means something: what the article was built from and
+  //- when that was last checked.
   +topicLinks(tags, topics)
   //- Provenance. Renders only for articles that declare a `source`, so the
   //- pages that don't claim rules authority are untouched. A test requires

@@ -33,6 +33,7 @@ content:
         required: true
         options:
           time: false
+        description: Only orders the Information and topic lists — newest first. It is not shown on the page, so it does not need to be accurate to the day.
       # Provenance. Optional, and only meaningful on rules content — the
       # article layout renders these as a footnote when `source` is filled in.
       # A test requires `verified` whenever `source` is set, and fails once a
@@ -108,6 +109,7 @@ content:
         required: true
         options:
           time: false
+        description: Not shown anywhere — the quiz list is ordered by title. Any date will do.
       - name: description
         label: Focus
         type: string
