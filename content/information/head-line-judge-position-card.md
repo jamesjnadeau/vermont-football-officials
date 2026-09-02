@@ -118,8 +118,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Kickoff** | Goal line, sideline opposite the press box. |
-| **Onside** | Up to the 50, your sideline. Officiate it as a plane. |
+| **Kickoff** | R's goal line extended, your sideline — same yard line as the Line Judge. |
+| **Onside** | R's free-kick line (the 50), your sideline. Bag in hand, line as a plane. |
 | **Punt** | Your sideline at the line of scrimmage. |
 | **Short kick** | Starting at the 10 and it goes toward the goal line? Hustle back outside the pylon. |
 
@@ -240,8 +240,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 *What changes for you.*
 
-1. **Kickoff:** you're at the receivers' 10 opposite the press box, not on the
-   goal line — and the Referee mirrors you at the 10 on the press box side.
+1. **Kickoff:** you're on K's free-kick line, moving toward the middle once the
+   players are on. You hand the kicker the ball — not before K has 11 — and you
+   have nobody but the kicker more than 5 yards off that line.
 2. **Pass:** every receiver on your side is yours, and the middle of the field is
    dual coverage with the Line Judge. Talk across before the snap.
 3. **Goal line:** step into the end zone to see a catch near the end line. There

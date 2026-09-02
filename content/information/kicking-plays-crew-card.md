@@ -30,13 +30,13 @@ the right.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/kickoff-crew-of-5.svg" alt="Kickoff alignment for a crew of 5: Referee straddling the receiving team's goal line in the middle, Umpire out of bounds at the 50, Back Judge at K's 40 on the press box side, and both wings on the goal line." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/kickoff-crew-of-5.svg" alt="Kickoff alignment for a crew of 5: Referee straddling the receiving team's goal line in the middle, Umpire out of bounds at the 50 on the press box side, Back Judge out of bounds at K's 40 opposite the press box, and both wings on the goal line at their own sidelines." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 5</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/kickoff-crew-of-4.svg" alt="Kickoff alignment for a crew of 4: Referee at the receiving team's 10 on the press box side, Umpire at K's 40 opposite the press box, Line Judge at the 50, and Head Line Judge at the receiving team's 10." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/kickoff-crew-of-4.svg" alt="Kickoff alignment for a crew of 4: Referee at the top of the numbers at the receiving team's 10 on the Line Judge's side, Line Judge at the top of the numbers on the 50, Umpire on the sideline at the receiving team's 20, and the Head Line Judge on K's 40 moving toward the middle of the field." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 4</figcaption>
     </figure>
   </div>
@@ -52,27 +52,42 @@ the right.
 - Trail the runner by at least five yards. Blocks ahead of him matter more than
   the dead-ball spot.
 
+### Who has whom
+
+The widest **two** players on each side of the kicking formation belong to the
+deepest official on that sideline. Stay put — do not drift — until the kick is
+possessed, and watch them all the way down. Everyone else on Team K belongs to
+the officials on the two restraining lines, each taking his own side. The
+official on **K's** restraining line also has action against the kicker.
+
 ### Referee — white hat only
 
-- Straddle R's goal line, middle of the field. In a crew of 4, R's 10 on the
-  press box side.
+- Straddle R's goal line, middle of the field. In a crew of 4, the top of the
+  numbers at R's 5 or 10, on the Line Judge's side.
+- **Count four players on each side of the kicker.** Fewer than four either
+  side and you flag it and shut the kick down.
 - Collect every raised arm, then sound the ready.
 - Five-yard cushion; hold the goal line until it is no longer threatened. Rule
-  the touchback, bag momentum inside the 5.
+  the touchback, bag momentum inside the 5. When in doubt on a kick possessed
+  inside the 5, touchback.
 - On a touchback, signal it and jog upfield sounding your whistle repeatedly.
 
 ### Positions
 
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
-| **R** | Straddles R's goal line, middle. Wide side of a single returner; splits two. | R's 10, press box side. |
-| **U** | R's restraining line (the 50), 2 yds out of bounds, opposite press box. | K's 40, opposite the press box — Team K and K's line, alone. |
-| **HL** | Goal line, sideline opposite the press box. | R's 10, opposite the press box. |
-| **LJ** | Goal line, press box sideline. | The 50 (R's restraining line), press box sideline. |
-| **BJ** | K's 40, 2 yds out of bounds, press box side. Hands the kicker the ball, then clears. | — |
+| **R** | Straddles R's goal line, middle of the field. Four on each side of the kicker before you sound the ready. | Top of the numbers at R's 5 or 10, Line Judge's side. Same four-on-each-side check. |
+| **U** | R's free-kick line (the 50), 2 yds out of bounds, **press box side** — the side opposite the chains. | Sideline at R's 20. |
+| **HL** | R's goal line extended, own sideline. | K's free-kick line, moving toward the middle once the players are on. You hand the kicker the ball — not before K has 11 — and you have nobody but the kicker more than 5 yds off K's line. |
+| **LJ** | R's goal line extended, own sideline, **same yard line as the HL**. | R's free-kick line, coming to the top of the numbers. |
+| **BJ** | K's free-kick line, 2 yds out of bounds, **HL's side**. Check the tee, hold the ball until K has 11, remind the kicker to wait for the whistle, and note nobody but the kicker more than 5 yds off K's line. | — |
 
-Crew of 5: wings move up to the 10 if that team's first kick fell short of the
-15. Crew of 4: no Back Judge — Referee and both wings count Team R.
+Both wings must be on the **same yard line**, and deeper than the deepest
+receiver if they move up — that is the adjustment when a team's first kick
+falls short. Crew of 4: no Back Judge — Referee and both wings count Team R.
+
+Ball falls or blows off the tee before the kick? Whistle to prevent action,
+then go to the kicker with instructions.
 
 ---
 
@@ -83,13 +98,13 @@ Crew of 5: wings move up to the 10 if that team's first kick fell short of the
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/onside-crew-of-5.svg" alt="Onside kick alignment for a crew of 5: Referee in the middle on the goal line, Umpire and Back Judge on K's 40, and both wings up to the 50 on their own sidelines." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/onside-crew-of-5.svg" alt="Onside kick alignment for a crew of 5: Referee in the middle of the field deeper than the deepest receiver, Back Judge and Line Judge on K's 40 at opposite sidelines, and Umpire and Head Line Judge on the 50 at opposite sidelines — two officials on each restraining line." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 5</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/onside-crew-of-4.svg" alt="Onside kick alignment for a crew of 4: Referee in the middle on the goal line, Umpire alone on K's 40 opposite the press box, and both wings up to the 50 on their own sidelines." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/onside-crew-of-4.svg" alt="Onside kick alignment for a crew of 4: Referee in the middle of the field at the receiving team's 10, Head Line Judge on K's 40, and Umpire and Line Judge on the 50 at opposite sidelines." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 4</figcaption>
     </figure>
   </div>
@@ -99,6 +114,10 @@ Crew of 5: wings move up to the 10 if that team's first kick fell short of the
 
 - Officiate your restraining line as a plane. Bag in hand, restricted area
   cleared before you raise your arm.
+- **Bag the spot if K touches it first.** The Umpire and both wings all carry
+  one for exactly this.
+- **Kill it if a prone player from either team recovers** — whether or not the
+  kick has gone ten yards.
 - Never signal that a short kick is expected — be ready for one every time.
 - Know first touching and exactly where it happened. K cannot recover before the
   ball goes ten yards or is touched by R.
@@ -107,8 +126,8 @@ Crew of 5: wings move up to the 10 if that team's first kick fell short of the
 
 ### Referee — white hat only
 
-- Middle of the field on the goal line, both crew sizes. Stay until the ball can
-  no longer reach it.
+- Middle of the field, **deeper than the deepest receiver** — not on the goal
+  line. In a crew of 4, about R's 10.
 - The call to go to short alignment is yours if the crew disagrees. When in
   doubt, use it.
 - If a coach says in pregame that his team kicks short, use it every time they
@@ -118,14 +137,15 @@ Crew of 5: wings move up to the 10 if that team's first kick fell short of the
 
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
-| **R** | Middle of the field, on the goal line. | Middle of the field, on the goal line. |
-| **U** | K's 40, opposite the press box. | K's 40, opposite the press box — alone on that line. |
-| **HL / LJ** | Up to the 50 (R's line) on their own sidelines. | Up to the 50 on their own sidelines. |
-| **BJ** | K's 40, press box side. | — |
+| **R** | Middle of the field, deeper than the deepest receiver. | About R's 10. |
+| **U** | R's free-kick line (the 50), Line Judge's side. Bag in hand. | R's free-kick line. Bag in hand. |
+| **HL** | R's free-kick line, own sideline. Bag in hand. | Your regular free-kick spot — K's line. Bag in hand. |
+| **LJ** | K's free-kick line, own sideline. Bag in hand. | Your regular free-kick spot — R's line. Bag in hand. |
+| **BJ** | K's free-kick line, HL's side. | — |
 
-Crew of 5: U and BJ hold at the 40 for first touching, early blocks and
-possession. Crew of 4: nobody has K's line on the press box side — say it out
-loud so that wing helps.
+Crew of 5 makes a box: two officials on each restraining line, one per
+sideline. Crew of 4: the wings do not move for this — they hold the same spots
+they take on any free kick, and only the Referee and Umpire adjust.
 
 ---
 

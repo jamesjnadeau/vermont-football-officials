@@ -122,10 +122,10 @@ sideline — never into the field.*
 
 | | |
 | --- | --- |
-| **Kickoff** | Goal line, press box sideline. |
-| **Onside** | Up to the 50, your sideline. Officiate it as a plane. |
+| **Kickoff** | R's goal line extended, press box sideline — same yard line as the Head Line Judge. |
+| **Onside** | K's free-kick line (the 40), your sideline. Bag in hand, line as a plane. |
 | **Punt** | Straddling the line until the kick crosses it. |
-| **Safety kick** | The receivers' 30. |
+| **Safety kick** | Adjust off the others: Back Judge at K's 20, Umpire and Head Line Judge at K's 30. |
 
 ### After the punt
 

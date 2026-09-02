@@ -84,7 +84,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/kickoff.svg" alt="Kickoff — the whole crew of five, with the Back Judge highlighted as the white marker on the kicking team's 40, two yards out of bounds on the press box side." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/kickoff.svg" alt="Kickoff — the whole crew of five, with the Back Judge highlighted as the white marker on the kicking team's free-kick line at the 40, two yards out of bounds on the sideline opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Kickoff</figcaption>
     </figure>
   </div>
@@ -98,7 +98,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Kickoff: K's restraining line — the 40 — two yards out of bounds on the press
+- Kickoff: K's free-kick line — the 40 — two yards out of bounds on the Head Line
+  Judge's sideline, opposite the press
   box side, bean bag in hand.
 - After the try, get a new ball near the upright, start your 60 seconds and jog
   up the press box sideline. Out to the kicker at 30 seconds.
@@ -120,10 +121,10 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Kickoff** | K's 40, 2 yds out of bounds, press box side. |
-| **Onside** | K's 40, press box side. Officiate it as a plane. |
+| **Kickoff** | K's free-kick line (the 40), 2 yds out of bounds, opposite the press box. |
+| **Onside** | K's free-kick line, Head Line Judge's side. Line as a plane. |
 | **Punt** | 8 wide, 5 deep of one returner. Favour the wide side; in the middle with one returner, favour the Line Judge. |
-| **Safety kick** | The kicking team's 20. |
+| **Safety kick** | Team K's 20 — the Umpire and Head Line Judge take K's 30. |
 | **Off the tee** | Two whistle blasts and jog to the kicker. |
 
 ### After the kick

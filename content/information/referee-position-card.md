@@ -101,6 +101,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
   single returner, split two.
 - Collect a raised arm from every wing and the Back Judge before you sound the
   ready. Nobody kicks without 11 and 11.
+- **Count four players on each side of the kicker.** Fewer either side and you
+  flag it and shut the kick down immediately.
 - Punt: five deep and ten wide of the punter at 45°, wide side. If he's in his
   own end zone, you're on the end line. Onside alignment is your call if the crew
   disagrees.
@@ -120,7 +122,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | | |
 | --- | --- |
 | **Kickoff** | Straddle the goal line, middle of the field. |
-| **Onside** | Middle of the field, on the goal line. Stay until the ball can't reach it. |
+| **Onside** | Middle of the field, deeper than the deepest receiver. |
 | **Punt** | Five deep, ten wide of the punter at 45°. |
 | **Safety kick** | Receivers' 20. |
 | **Touchback** | Signal it, then jog upfield sounding your whistle repeatedly. |
@@ -243,8 +245,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
    one.
 2. **Half distance, automatic first down and loss of down come to you** — that's
    the Back Judge's job in a crew of 5.
-3. **Kickoff:** you're at the receivers' 10 on the press box side, not the goal
-   line in the middle. Your Head Line Judge mirrors you at the 10 opposite.
+3. **Kickoff:** you're at the top of the numbers at the receivers' 5 or 10 on the
+   Line Judge's side, not the goal line in the middle. Your Head Line Judge is on
+   K's free-kick line and your Line Judge on R's.
 4. **Punt:** the Umpire goes deep with the returners, so the interior is empty.
    Widen your own clean-up behind the kick.
 5. **Field goal and try:** the wing on your side releases to an upright, so you

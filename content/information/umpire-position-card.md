@@ -86,7 +86,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/umpire/kickoff.svg" alt="Kickoff — the whole crew of five, with the Umpire highlighted as the white marker on the receiving team's restraining line at the 50, two yards out of bounds opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/umpire/kickoff.svg" alt="Kickoff — the whole crew of five, with the Umpire highlighted as the white marker on the receiving team's free-kick line at the 50, two yards out of bounds on the press box side." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Kickoff</figcaption>
     </figure>
   </div>
@@ -100,7 +100,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Kickoff: the receivers' restraining line — the 50 — two yards out of bounds,
+- Kickoff: the receivers' free-kick line — the 50 — two yards out of bounds on the
+  **press box side**, the side opposite the chains,
   opposite the press box, bean bag in hand.
 - Jog up the far sideline and clear the restricted area, then raise your arm to
   the Back Judge when you're ready.
@@ -115,16 +116,18 @@ print at 100% on Letter, two-sided, flip on the long edge.
   front line.
 - Punt — snap · snapper · line play · turn and watch.
 - Think onside on every kick. Bag in hand.
-- Onside: hold at K's 40 for first touching, early blocks and possession.
+- Onside: R's free-kick line on the Line Judge's side, bag in hand for K's first
+  touching. Kill it if a prone player from either team recovers, ten yards or
+  not.
 
 ### Your spot
 
 | | |
 | --- | --- |
-| **Kickoff** | The 50, 2 yds out of bounds, opposite the press box. |
-| **Onside** | K's 40, opposite the press box. Officiate the line as a plane. |
+| **Kickoff** | R's free-kick line (the 50), 2 yds out of bounds, press box side. |
+| **Onside** | R's free-kick line, Line Judge's side. Bag in hand, line as a plane. |
 | **Punt** | 7 off the line inside the ends, opposite the Referee. |
-| **Safety kick** | The 30. |
+| **Safety kick** | Team K's 30. |
 
 ### Pre-kick
 
@@ -245,7 +248,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
    wide and five deep of the returner, the goal line, the PSK bag and first
    touching.
 3. **Field goal and try:** you take one upright and a wing takes the other.
-4. **Kickoff:** you're alone on K's 40 opposite the press box, and you have Team
+4. **Kickoff:** you're on the sideline at the receivers' 20, and you have Team
    K and K's restraining line by yourself.
 5. **Run and pass:** you're the only official in the middle. Blocks beyond the
    point of attack are yours.
