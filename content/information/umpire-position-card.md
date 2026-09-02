@@ -1,8 +1,10 @@
 ---
 title: Umpire Position Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for a crew of 5 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §4.7 Positioning (pp. 136–141), §4.8 Coverage (pp. 142–150) and §1.9 Snap Location After Kick or Penalty (pp. 32–34)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Position Cards

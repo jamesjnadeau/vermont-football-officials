@@ -1,8 +1,10 @@
 ---
 title: Line Judge Position Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for a crew of 5 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §4.7 Positioning (pp. 136–141) and §4.8 Coverage (pp. 142–150), with the crew-of-four deep-official duties from §3.7–3.8 (pp. 72–79)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Position Cards

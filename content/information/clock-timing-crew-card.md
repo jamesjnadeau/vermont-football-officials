@@ -1,8 +1,10 @@
 ---
 title: Clock & Timing Crew Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §1.6 Timers (pp. 26–28), §4.2 Coin Toss (pp. 108–110) and §4.5 Time-outs (pp. 128–130)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Crew Cards

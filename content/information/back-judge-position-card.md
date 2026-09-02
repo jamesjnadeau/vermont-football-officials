@@ -1,8 +1,10 @@
 ---
 title: Back Judge Position Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for a crew of 5 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §4.4–4.8 (pp. 127–150) and §1.6 Play Clock Timer (pp. 27–28)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Position Cards

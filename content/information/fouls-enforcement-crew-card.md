@@ -1,8 +1,10 @@
 ---
 title: Fouls & Enforcement Crew Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §1.3 Flags and Penalties (pp. 20–22), §2.2 Penalty Signaling Sequences (pp. 48–51) and the 2026 Points of Emphasis on Penalty Communication (p. 5)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Crew Cards

@@ -1,8 +1,10 @@
 ---
 title: Running & Passing Plays Crew Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §3.3 and §3.7–3.8 (pp. 55–79) for crews of four, §4.3 and §4.7–4.8 (pp. 110–150) for crews of five
+verified: 2026-09-02
 tags:
   - Mechanics
   - Crew Cards

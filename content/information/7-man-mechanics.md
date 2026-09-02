@@ -1,17 +1,30 @@
 ---
 title: 7 Man Mechanics
 date: 2023-11-01
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual, Part 5 — Crew of Seven
+  (pp. 183–216). The linked PDF is the VFOA's 2022 slide deck, kept as the
+  association's own record; it is not the source for the text
+verified: 2026-09-02
 tags:
   - Mechanics
   - Printable
 ---
 
-The VFOA's 7-man mechanics presentation by Justin Fortier — who has what on free
-kicks, goal line, punts, measurements and pass keys, with the field diagrams for
-each.
+Crew-of-seven mechanics, corrected against the 2026 NFHS Game Officials Manual.
+
+**Vermont crews work four and five.** This page exists because the VFOA has a
+7-man deck and officials working out of state ask about it — the current
+reference material is the
+[crew cards](/tags/crew-cards/) and the
+[position cards](/tags/position-cards/), which are for crews of five and four.
 
 **[Download the 2022 7-man mechanics manual (PDF, 12 slides)](/uploads/7-man-mechanics-2022.pdf)** —
-the original slide deck. Everything on it is written out below.
+the VFOA's original slide deck, kept as the association's own record. **Where
+the deck and this page disagree, this page is the manual and the deck is four
+years old.** The photographs below are from the deck, so a diagram may still
+show the older alignment; the text under each one is what the manual says.
 
 ---
 
@@ -31,15 +44,27 @@ the original slide deck. Everything on it is written out below.
   <figcaption class="figure-caption">Free kick alignment.</figcaption>
 </figure>
 
-- **L, H and R** — Own blocking in front of the receiver, and the initial wave
-  through the blocks. Progress to the 2 yard line.
-- **F and S** — Follow K2 and K3 on your side of the field, as far as you can. If
-  they separate, stay on the key that is most likely to be fouled, i.e. closest
-  to the ball or first through the line of blockers. You have goal line
-  responsibility.
-- **B and U** — Follow K4 and K5. If unbalanced and K5 is really the 6th man on
-  the other side of the kicker, he's yours. Same as F and S — stay on the man
-  most likely to be fouled if they separate.
+**Positions (§5.7, p. 205).**
+
+- **R** — Centre of the field, on the goal line.
+- **U** — K's restraining line (usually the 40), sideline opposite the press box.
+  Count K and help manage the 5-yard belt.
+- **H and L** — Your own pylon on the goal line, or at least 10 yards deeper than
+  the deepest receiver if you move up. Count R.
+- **F and S** — R's restraining line (usually the 50).
+- **B** — Count K. Don't give the kicker the ball until K has 11 on the field.
+  Manage the 5-yard belt, hand him the ball with the instructions, then take K's
+  restraining line on the press box side.
+
+**Who has whom (2026 Point of Emphasis, p. 8).** This replaces the K2/K3/K4/K5
+keying in the deck. The **widest two players on each side** of the kicking
+formation belong to the **deepest official on that sideline**, who stays
+stationary unless forced to move until the kick is possessed. **Everyone else on
+Team K** belongs to the officials on the two restraining lines, each taking the
+players on his own side. The official on **K's** restraining line also has action
+against the kicker. The Referee checks that **at least four players are on each
+side of the kicker** at the kick, and rules momentum or safety inside the 5 —
+when in doubt, touchback.
 
 ---
 
@@ -50,36 +75,62 @@ the original slide deck. Everything on it is written out below.
   <figcaption class="figure-caption">Onside kick alignment.</figcaption>
 </figure>
 
-- **F and S** — You have the ball crossing, possession, and if kicked deep,
-  progress.
-- **L and H** — You have early blocks, and help on any touches.
-- **B and U** — Kicking team restraining line, "pane of glass" philosophy. Help
-  with early touching as well. Rule on pop-up kicks, and the goal line if R
-  returns it.
-- **R** — You own blocking and the runner on deep kicks. Formation at the time of
-  the kick as well.
-- **All** — Be cognizant of the clock and its status. Wind it on legal touching,
-  not on illegal touching. If the returner is not grounded when recovering the
-  kick, time should come off the clock.
+**§5.7, p. 207.** The deck has H/L and F/S the wrong way round.
+
+- **R** — Centre of the field, deeper than the deepest receiver. Keep your
+  distance, watch for low blocks, and you have the goal line.
+- **U and B** — K's restraining line (usually the 40) — U opposite the press box,
+  B on the press box side. You have K staying behind its free-kick line and
+  whether the ball was "topped" off the tee. **That restraining line is a true
+  line and must not be broken before the kick.**
+- **H and L** — **K's 45.** Rule whether K blocks before it is eligible to touch
+  the ball, watch the ball immediately after it is kicked, and rule a topped kick
+  that hits the ground. Be ready for a pop-up kick, first touching, a muff, and
+  illegal or low blocks.
+- **F and S** — R's restraining line. **Primary responsibility for whether the
+  ball goes 10 yards**, whether it is touched or muffed, and a low block within 2
+  yards of the line.
+- **All** — **Nobody moves** until the ball is beyond R's restraining line or is
+  recovered. The officials on the side the ball is kicked take the ball —
+  touched when, where and by whom; the officials on the opposite side take the
+  blocks. Team K may not initiate a block until it can possess the ball, the
+  ball has gone 10 yards, R has touched it, or R has already initiated a block.
+- **Clock** — Wind on legal touching, not on illegal touching. If the returner is
+  not grounded when he recovers, time comes off.
 
 ---
 
 ## Goal line
 
-- **R and U** — Cover as you would any other play.
-- **B** — Goal line coverage responsibility for any play snapped outside the 25
-  yard line.
-- **S and F** — Responsible for goal line coverage on any play snapped outside
-  the 7 yard line. Take forward progress only on plays that end between the 2
-  yard line and the goal line. Align off the back corner pylons from the 7 and
-  in.
-- **H and L** — Have goal line coverage for plays snapped from the 7 yard line
-  and in. For plays snapped outside the 7 yard line, you own forward progress
-  down to the 2 yard line.
+**§5.7, p. 211 and §5.8, p. 214.** The deck gives the Back Judge the goal line
+outside the 25; the manual gives him the **end line**.
+
+- **R** — Normal position. You have the direction of a pass, forward or backward.
+  Signal only once you are positive every requirement for a score is met and
+  dead-ball action is over.
+- **U** — Normal scrimmage responsibility. **Do not signal a touchdown** — let
+  the wings and the deep officials rule it.
+- **H and L** — Goal line from the **7 and in**; be *on* it. Outside the 7 you
+  own forward progress to the 2. Tell your downfield partner on every play that
+  you are taking all goal line rulings. Signal only if you saw the ball cross,
+  and never mirror.
+- **F and S** — Normal position outside the 25. **From the 25 to the 7, on the
+  goal line at the pylon.** From the 7 and in, at the **pylon on the end line**.
+  When a play ends on or near the goal line you must be on it. The goal line and
+  your sideline are yours.
+- **B** — Normal position outside the 25. **From the 25 and in, on the end line**
+  — you have primary end line coverage. In a tight power run formation with no
+  split receivers, you have low blocks by linebackers and lead blockers.
 
 ---
 
 ## Reverse goal line
+
+The manual states this as **reverse fade mechanics** (§5.8, p. 216): on a change
+of possession with a defensive return, **H and L become responsible for the goal
+line** and **F and S become responsible for forward progress** — the exact
+reverse of the normal division. Everything below is the VFOA deck's own backed-up
+mechanic and is not in the manual:
 
 - **R, S, F and B** — Cover plays as you normally would.
 - **U** — Line of scrimmage responsibilities for plays inside the 10 yard line.
@@ -109,18 +160,23 @@ the original slide deck. Everything on it is written out below.
 
 ## Measurements
 
-- **R** — Remain over the ball and rule if the line to gain was reached.
-- **L** — Mark the line spot for H to spot the clip.
-- **H** — Grab the clip and have the chain crew move onto the field for the
-  measurement. Place the clip at L's spot.
-- **S** — Move the down box to the front stake. Obtain a game ball from the
-  sideline.
-- **U** — Take the front stake from the chain crew; once the clip is in position
-  and firmly held by H, stretch the chains.
-- **B** — Place a beanbag below the foremost point of the ball. Hold the ball in
-  place throughout the measurement.
-- **F** — Obtain a game ball from the sideline. Clear players out of the way so
-  the chains and crew can work efficiently.
+**§5.6, p. 203.** The deck gives the down box to S and the spare ball to F; the
+manual gives the box to H and the spare ball to B or L.
+
+- **R** — Rule whether the ball is beyond the front rod.
+- **H** — Have the box moved **behind the lead rod** first, then bring the chain
+  in from the sideline with the crew. Keep a hand on the links either side of the
+  clip so the right link survives if the clip falls off. **Clip goes on the back
+  edge of the line.** Say out loud what the next down will be either way — "it
+  will either be first or fourth."
+- **L** — Mark with your foot the intersection of the 5-yard line where the chain
+  is clipped and a line through the ball parallel to the sideline. That is where
+  H puts the clip.
+- **U** — Take the front rod from the crew once H says he has the chain on the
+  proper mark, then pull it taut.
+- **B** — Hold the ball in place **from the downfield side**, facing Team A's goal
+  line. Either you or L gets the spare ball from A's ball helper; if you have it,
+  toss it to L before the measurement.
 
 ---
 
@@ -131,16 +187,48 @@ the original slide deck. Everything on it is written out below.
   <figcaption class="figure-caption">Scrimmage play alignment.</figcaption>
 </figure>
 
+**Positions (§5.7, p. 209).**
+
+- **R** — 13 to 15 yards deep on the quarterback's **passing-arm side**, at least
+  a yard outside the tight end position. Count the offence before every play and
+  have the Umpire acknowledge it.
+- **U** — 5 to 10 yards deep, **not outside the tackle**. Vary your position. Key
+  the centre and the two guards, and be alert for false starts. Count the offence
+  and signal it to the Referee every play.
+- **H and L** — Read the formation and identify your eligible receiver. Shut the
+  play down on a false start or encroachment. L has the tackle on his side unless
+  there are trips; H has the near-side tackle when there are trips to L's side.
+- **F and S** — 20 to 22 yards deep. Count the defence every play and
+  acknowledge with B. You have the game clock.
+- **B** — 25 to 30 yards deep. Count the defence, signal, and acknowledge with F
+  and S. You have the play clock.
+
 ---
 
 ## Pass keys
 
-- **F and S** — Widest eligible receivers to your side.
-- **B** — Second widest receiver to the strong side (L's side in balanced
-  formations), or the third eligible receiver in trips.
-- **H** — Second wide receiver in balanced or trips, otherwise key on the closest
-  back releasing to your side.
-- **L** — Second wide receiver in trips, otherwise the backs in the backfield.
+**§5.3, pp. 186–199.** In a **balanced formation, strength is always declared to
+the Line Judge's side.**
+
+- **F and S** — Widest receiver on your side.
+- **B** — Balanced: the flanker on the strong side. Trips: the third receiver in
+  on the trips side. Double tight ends: the inside receiver on the line.
+- **H** — Balanced: the inside receiver on your side (usually the tight end).
+  Trips to L's side: the fullback. Double tight ends: the halfback.
+- **L** — Balanced: the back. Trips to your side: the motion or inside receiver.
+- **All** — **Legality of motion always belongs to the official the player is
+  moving away from**, even if he reverses and comes back. The official *keying*
+  the motion man after the snap and the official responsible for whether he cut
+  upfield before it are often two different people.
+
+**Fade mechanics (§5.8, p. 215)** are what makes a crew of seven work. F, S and B
+fade back on every pass and own the goal line except in short goal line
+situations; **H and L own forward progress on every play**. F and S are not
+responsible for progress, so they must not creep in to get it — the best sideline
+ruling comes from 10 to 15 yards away. Don't move in until the play is over,
+short runs included, then angle in five to seven yards. A fast receiver closes a
+20-yard cushion in two seconds. In a two-minute or hurry-up situation the deep
+officials may stop the accordion to keep pace.
 
 ---
 

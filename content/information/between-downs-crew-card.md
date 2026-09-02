@@ -1,8 +1,10 @@
 ---
 title: Between Downs Crew Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §1.4 Whistle Mechanics (pp. 22–23), §4.4 Before and After the Snap (p. 127), §4.6 Measurements (pp. 130–135) and the 2026 Points of Emphasis on Forward Progress (p. 6)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Crew Cards
@@ -66,12 +68,35 @@ signals with both arms.*
 ### Everyone on this
 
 - Downfield foot in front of the backfield foot. Square off. No angling in.
-- Wings mark most spots. The Referee takes it behind the line; the Back Judge
-  takes it deep.
+- **The spot belongs to whoever can actually see the ball when the play is
+  declared dead** — not to whoever's side of the field it ended on. Usually that
+  means hash to hash.
+- Move into the field until you approach players, then stop. **Close to the line
+  to gain?** Come all the way to the spot; wait for players to clear rather than
+  going round or over them.
 - Driven back between the numbers and the sideline: wind twice and move in — not
   past the players.
 - Trapped pass: go slow. Squaring off and moving in says catch, so don't move
   until you know it is one.
+
+### Where the ball was
+
+Two things at once: **where the runner is down by rule, and where the
+forward-most point of the ball was when that happened.**
+
+| | |
+| --- | --- |
+| **Knocked forward** | Usually the spot is where the ball meets the turf. But if he was grabbed so his knee touched before he fell forward, the spot is where the ball was **when the knee went down**. |
+| **Sacked** | There is often 3 to 5 yards between where the quarterback was contacted and where he goes down. Spot it where the ball landed and you got it wrong. |
+| **Out of bounds** | The spot is the foremost point of the ball when he touches the ground out of bounds — **not where his foot hit the line.** Ball in his outside arm and the foot is about the rear point; ball in his inside arm and the foot is ahead of it. It rarely matters, except at the stake. |
+| **Airborne** | Where the forward-most part of the ball **crosses the plane of the sideline**, not where the ball is when he first touches out of bounds. |
+| **Pushed back** | He is entitled to his farthest advance. If he breaks free and renews the charge, he gets the farthest point of the *subsequent* advance. If he then staggers down untouched and you judge it was the original contact that did it, he is entitled to the spot where that contact occurred. |
+| **Stopped** | Give him a chance to escape if one exists. If he is controlled and held, or carried back and put down, blow it. |
+
+The rule benefits the offence except once: intercept in the end zone near the
+goal line, get tackled from behind, and the runner is "entitled" to a progress
+spot in the field of play — well behind the 20 he would have had on a
+touchback.
 
 ### Referee — white hat only
 

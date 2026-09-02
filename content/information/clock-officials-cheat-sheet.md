@@ -1,6 +1,12 @@
 ---
 title: Clock Officials Cheat Sheet
 date: 2026-08-26
+ruleYear: 2026
+source: >-
+  the San Diego County Football Officials Association's Clock Administration
+  page, reconciled against the 2026 and 2027 NFHS Football Game Officials
+  Manual §1.6 Timers (pp. 26–28)
+verified: 2026-09-02
 tags:
   - Game Management
   - Printable

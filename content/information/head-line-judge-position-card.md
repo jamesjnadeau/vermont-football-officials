@@ -1,8 +1,10 @@
 ---
 title: Head Line Judge Position Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for a crew of 5 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §1.3 Flags and Penalties (pp. 20–22), §1.6 Line-to-Gain Crew (p. 25), §4.6 Measurements (pp. 130–135), §4.7 Positioning (pp. 136–141) and §4.8 Coverage (pp. 142–150)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Position Cards

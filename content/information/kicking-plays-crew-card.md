@@ -1,8 +1,12 @@
 ---
 title: Kicking Plays Crew Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §3.7–3.8 (crews of
+  four, pp. 67–79), §4.7–4.8 (crews of five, pp. 136–150) and the 2026 Points
+  of Emphasis on Free-Kick Coverage (p. 8)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Crew Cards
@@ -103,14 +107,12 @@ the kick — whistle to prevent action, then go to the kicker.
 
 ### Everyone on this play
 
-- Officiate your restraining line as a plane. Bag in hand, restricted area
-  cleared before you raise your arm.
+- Officiate your restraining line as a plane, bag in hand.
 - **Bag K's first touching**, and **kill it if a prone player from either team
   recovers** — ten yards or not.
 - Never signal that a short kick is expected. K cannot recover before the ball
   goes ten yards or is touched by R.
-- On the pile, the restraining-line officials dig it out. Find the ball before
-  anyone signals.
+- On the pile, the restraining-line officials dig it out.
 
 ### Referee — white hat only
 
@@ -218,9 +220,9 @@ middle he gives the runner up to the Umpire.
 
 - Call the tee and kicker out loud the moment they come on.
 - **Wings rule whether the kick crossed the neutral zone**, and help on
-  ineligibles downfield on a fake.
-- The snapper gets two seconds of protection. A blocked try is dead at once; a
-  blocked field goal stays alive unless it breaks the goal line plane.
+  ineligibles downfield on a fake. The snapper gets two seconds of protection. A
+  blocked try is dead at once; a blocked field goal stays alive unless it breaks
+  the goal line plane.
 
 ### Referee — white hat only
 
