@@ -18,7 +18,7 @@ the original slide deck. Everything on it is written out below.
 ## Coin toss
 
 <figure class="figure d-block my-4">
-  <img src="/images/7-man-mechanics/coin-toss.jpg" alt="Coin toss alignment: the Referee and Umpire walk the captains to the middle of the field, the Line Judge and Back Judge remain on their sidelines, and the Head Linesman and Field Judge stay on the sidelines with the game ball. The press box is on the left." class="figure-img img-fluid border rounded">
+  <img src="/images/7-man-mechanics/coin-toss.jpg" alt="Coin toss alignment: the Referee and Umpire walk the captains to the middle of the field, the Line Judge and Back Judge remain on their sidelines, and the Head Head Line Judge and Field Judge stay on the sidelines with the game ball. The press box is on the left." class="figure-img img-fluid border rounded">
   <figcaption class="figure-caption">Coin toss positions. L and H remain on the sideline with the game ball; B remains on the sideline.</figcaption>
 </figure>
 

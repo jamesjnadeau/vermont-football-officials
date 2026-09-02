@@ -30,7 +30,7 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/fouls-enforcement/flag-down-crew-of-5.svg" alt="Flag down with a crew of 5: the Umpire at the enforcement spot holding the ball, the flag at the foul spot ahead of the dead-ball spot, the Line Judge as calling official moving in, the Linesman walking off the yardage, the Referee in open space facing the press box, and the Back Judge carrying half distance and loss of down." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/fouls-enforcement/flag-down-crew-of-5.svg" alt="Flag down with a crew of 5: the Umpire at the enforcement spot holding the ball, the flag at the foul spot ahead of the dead-ball spot, the Line Judge as calling official moving in, the Head Line Judge walking off the yardage, the Referee in open space facing the press box, and the Back Judge carrying half distance and loss of down." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 5</figcaption>
     </figure>
   </div>
@@ -67,7 +67,7 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 | **Calling official** | Timeout twice, the preliminary to the Referee, then point at the offending team. Describe it to the wing — "#88 held" won't sell it. | — |
 | **R** | — | Same, and half distance and loss of down are yours. |
 | **U** | Turn to the calling official on the whistle. Enforcement is yours from there. | Same as a crew of 5. |
-| **LM / LJ** | Cover a spot foul. Keep the sideline clear. | Same, and the Line Judge picks up clock status to the Referee. |
+| **HL / LJ** | Cover a spot foul. Keep the sideline clear. | Same, and the Line Judge picks up clock status to the Referee. |
 | **BJ** | Half distance, automatic first down, loss of down. | — |
 
 *Flag in front, tucked in — one or two, centre weighted, black ball.*
@@ -101,7 +101,7 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 | --- | --- | --- |
 | **R** | — | Half distance, automatic first down and loss of down are yours. |
 | **U** | 98% of the time you already know it. On the other 2%, look to the head coach with the wing beside him. Walk it or jog it, but get it right. | Same as a crew of 5. |
-| **LM / LJ** | Both walk it off. Don't look at the Umpire until you reach the succeeding spot. Five-yard walk-off near a first down: check the chain tape. | Same as a crew of 5. |
+| **HL / LJ** | Both walk it off. Don't look at the Umpire until you reach the succeeding spot. Five-yard walk-off near a first down: check the chain tape. | Same as a crew of 5. |
 | **BJ** | Half distance, automatic first down, loss of down — say it out loud, it gets missed. | — |
 
 ---
@@ -170,7 +170,7 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
 | **R** | Runs the conference and gives the ruling. Facilitates the crew discussion. | Same as a crew of 5. |
-| **LM / LJ** | Stay with the Referee at the sideline. Keep the coach in his box and everyone else out of it. | One stays with the Referee, the other watches both teams. |
+| **HL / LJ** | Stay with the Referee at the sideline. Keep the coach in his box and everyone else out of it. | One stays with the Referee, the other watches both teams. |
 | **U / BJ** | Get the books, and watch the field — the players are unsupervised while this happens. | The Umpire gets the books. |
 
 ---

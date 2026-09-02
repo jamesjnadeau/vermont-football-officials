@@ -61,7 +61,7 @@ const caption = (style, text = 'Caption') =>
 
 const board = () => {
   let state = emptyBoard('punt');
-  state = addToken(state, { type: 'official', mark: 'LM', across: -30.7, down: 12.5 });
+  state = addToken(state, { type: 'official', mark: 'HL', across: -30.7, down: 12.5 });
   state = addToken(state, { type: 'player', kind: 'k', across: 0, down: 0 });
   state = addToken(state, { type: 'player', kind: 'r', across: 4.5, down: -3.2 });
   state = addToken(state, {
@@ -646,3 +646,19 @@ test('the warning fires exactly where the decoder would lose something', () => {
 
 /** A path of `count` points, each a tenth of a yard further down the field. */
 const straight = (count) => Array.from({ length: count }, (unused, i) => ({ across: 0, down: i * 0.1 }));
+
+// --- The Head Line Judge rename ------------------------------------------
+// The 2026 NFHS manual renamed the Head Linesman to Head Line Judge and
+// letters him HL. Links written before that carry the old mark, and one an
+// official already texted to a crewmate has to keep opening the same board.
+test('a share link written before the Head Line Judge rename still decodes', () => {
+  const state = decode(wire({ v: VERSION, w: 'runPass', t: [['o', 'LM', -30.7, 12.5]] }));
+  assert.equal(state.tokens.length, 1, 'the old mark was dropped as an unknown official');
+  assert.equal(state.tokens[0].mark, 'HL');
+});
+
+test('a link written after the rename round-trips as HL', () => {
+  const state = decode(wire({ v: VERSION, w: 'runPass', t: [['o', 'HL', -30.7, 12.5]] }));
+  assert.equal(state.tokens[0].mark, 'HL');
+  assert.equal(decode(encode(state)).tokens[0].mark, 'HL');
+});

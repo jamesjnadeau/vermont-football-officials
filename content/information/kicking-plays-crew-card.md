@@ -36,7 +36,7 @@ the right.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/kickoff-crew-of-4.svg" alt="Kickoff alignment for a crew of 4: Referee at the receiving team's 10 on the press box side, Umpire at K's 40 opposite the press box, Line Judge at the 50, and Linesman at the receiving team's 10." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/kickoff-crew-of-4.svg" alt="Kickoff alignment for a crew of 4: Referee at the receiving team's 10 on the press box side, Umpire at K's 40 opposite the press box, Line Judge at the 50, and Head Line Judge at the receiving team's 10." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 4</figcaption>
     </figure>
   </div>
@@ -67,7 +67,7 @@ the right.
 | --- | --- | --- |
 | **R** | Straddles R's goal line, middle. Wide side of a single returner; splits two. | R's 10, press box side. |
 | **U** | R's restraining line (the 50), 2 yds out of bounds, opposite press box. | K's 40, opposite the press box — Team K and K's line, alone. |
-| **LM** | Goal line, sideline opposite the press box. | R's 10, opposite the press box. |
+| **HL** | Goal line, sideline opposite the press box. | R's 10, opposite the press box. |
 | **LJ** | Goal line, press box sideline. | The 50 (R's restraining line), press box sideline. |
 | **BJ** | K's 40, 2 yds out of bounds, press box side. Hands the kicker the ball, then clears. | — |
 
@@ -120,7 +120,7 @@ Crew of 5: wings move up to the 10 if that team's first kick fell short of the
 | --- | --- | --- |
 | **R** | Middle of the field, on the goal line. | Middle of the field, on the goal line. |
 | **U** | K's 40, opposite the press box. | K's 40, opposite the press box — alone on that line. |
-| **LM / LJ** | Up to the 50 (R's line) on their own sidelines. | Up to the 50 on their own sidelines. |
+| **HL / LJ** | Up to the 50 (R's line) on their own sidelines. | Up to the 50 on their own sidelines. |
 | **BJ** | K's 40, press box side. | — |
 
 Crew of 5: U and BJ hold at the 40 for first touching, early blocks and
@@ -174,7 +174,7 @@ loud so that wing helps.
 | --- | --- | --- |
 | **R** | Five deep, ten wide of the punter at 45°, wide side of the field. | Same as a crew of 5. |
 | **U** | Seven yards off the line inside the ends, opposite the Referee. | Takes the deep spot — everything the 5-man Back Judge does, PSK bag and goal line included. |
-| **LM / LJ** | LM: sideline at the line, pauses first, reading a possible block. LJ: sideline, straddling the line until the kick crosses. | Both hold their own sidelines at the line of scrimmage. |
+| **HL / LJ** | HL: sideline at the line, pauses first, reading a possible block. LJ: sideline, straddling the line until the kick crosses. | Both hold their own sidelines at the line of scrimmage. |
 | **BJ** | Eight wide, five deep of one returner; splits two at five. Goal line if the returner is on or inside R's 10. | — |
 
 Punts are the only play where the Umpire mirrors the Referee. In a crew of 4
@@ -195,7 +195,7 @@ nobody is in the interior, and the Referee widens his clean-up behind the kick.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/field-goal-crew-of-4.svg" alt="Field goal alignment for a crew of 4: Referee on the plant-leg side of the kicker, the Line Judge on the numbers at the line, and the Umpire and Linesman each under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/field-goal-crew-of-4.svg" alt="Field goal alignment for a crew of 4: Referee on the plant-leg side of the kicker, the Line Judge on the numbers at the line, and the Umpire and Head Line Judge each under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 4</figcaption>
     </figure>
   </div>
@@ -226,7 +226,7 @@ nobody is in the interior, and the Referee widens his clean-up behind the kick.
 | --- | --- | --- |
 | **R** | Plant-leg side of the kicker, five deeper and ten wide of the holder. | Same as a crew of 5. |
 | **U** | Under the upright opposite the press box. | Takes one upright. |
-| **LM / LJ** | On the field numbers at the line of scrimmage. | The wing looking at the Referee's back releases to the end line, takes the other upright. |
+| **HL / LJ** | On the field numbers at the line of scrimmage. | The wing looking at the Referee's back releases to the end line, takes the other upright. |
 | **BJ** | Under the press box upright. | — |
 
 Crew of 5 muddle huddle: the two under the posts move to the end line, wings go

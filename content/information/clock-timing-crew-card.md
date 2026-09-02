@@ -64,7 +64,7 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 | --- | --- |
 | **LJ** | Primary on the game clock. Talks with the timer before the game, and times halftime, weather delays and the interval before overtime. |
 | **BJ** | Signals the Referee whether the clock starts on the ready or the snap — the Line Judge is often busy with a coach or walking off yardage. |
-| **LM / LJ** | Timeout signal the moment the runner goes out of bounds — not when you reach the spot. |
+| **HL / LJ** | Timeout signal the moment the runner goes out of bounds — not when you reach the spot. |
 
 *Crew of 4: the Referee picks up the Back Judge's clock-status duty.*
 
@@ -79,7 +79,7 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 - Five seconds left gets an arm up with five fingers, counted down four, three,
   two, one.
 - Reset is an arm over the head, pushed upward twice.
-- Wrong down box? The Line Judge points above the Linesman's head, repeatedly.
+- Wrong down box? The Line Judge points above the Head Line Judge's head, repeatedly.
   Use a soft whistle only if you have to, and don't draw attention to it.
 - The play clock is not a race. Hustle, but don't hurry — the crew goal is that
   the offense never waits on us.
@@ -99,7 +99,7 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 | --- | --- | --- |
 | **R** | Marks the ball ready. Back-pedal to your position first if they're already at the line. | The play clock is yours as well as the ready. Say it out loud — five, four, three, two, one. |
 | **U** | — | Counts B and owns B's substitutions. |
-| **LM / LJ** | Substitutes off on your sideline before the snap. | Same as a crew of 5. |
+| **HL / LJ** | Substitutes off on your sideline before the snap. | Same as a crew of 5. |
 | **BJ** | Owns the play clock, with or without a visible one. Resets it when needed. | — |
 
 ---
@@ -131,7 +131,7 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 | --- | --- | --- |
 | **R / crew** | Every official mirrors the timeout signal twice, every time. | Same, and you keep the count yourself. |
 | **U** | Stay over the ball until the Referee is ready. | Same as a crew of 5. |
-| **LM / LJ** | Tell the head coach when his team is out of timeouts. | Same as a crew of 5. |
+| **HL / LJ** | Tell the head coach when his team is out of timeouts. | Same as a crew of 5. |
 | **BJ** | Record them, and help the Referee keep the count honest. | — |
 
 *TV game: the Line Judge holds the Referee and Umpire with a stop sign until the
@@ -175,7 +175,7 @@ coordinator says they're ready. The Umpire stays over the ball.*
 
 - **LJ** — Same as a crew of 5, and you are the only clock specialist.
 - **R** — You and the Line Judge carry the scoreboard between you.
-- **U / LM** — Announce the time to the near bench.
+- **U / HL** — Announce the time to the near bench.
 
 ---
 
@@ -183,7 +183,7 @@ coordinator says they're ready. The Umpire stays over the ball.*
 
 *Twenty minutes before kickoff.*
 
-1. **Positions.** Referee faces the scoreboard at the 50. Linesman and Umpire
+1. **Positions.** Referee faces the scoreboard at the 50. Head Line Judge and Umpire
    opposite the press box; Line Judge and Back Judge on the press box side. The
    other four then move to the 45 with their backs to the scoreboard.
 2. **Escorts.** Wings bring the captains out and introduce them to the Referee.

@@ -244,7 +244,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 2. **Half distance, automatic first down and loss of down come to you** — that's
    the Back Judge's job in a crew of 5.
 3. **Kickoff:** you're at the receivers' 10 on the press box side, not the goal
-   line in the middle. Your Linesman mirrors you at the 10 opposite.
+   line in the middle. Your Head Line Judge mirrors you at the 10 opposite.
 4. **Punt:** the Umpire goes deep with the returners, so the interior is empty.
    Widen your own clean-up behind the kick.
 5. **Field goal and try:** the wing on your side releases to an upright, so you

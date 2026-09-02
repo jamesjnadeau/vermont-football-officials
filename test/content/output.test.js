@@ -17,6 +17,19 @@ const html = readdirSync(SITE, { recursive: true })
 
 const read = (f) => readFileSync(f, 'utf8');
 
+// Pages under /information/ that are not articles: a redirect stub holding a
+// URL that moved. It is in no collection, so it has no topics to link back to
+// and carries none of an article's furniture. Read from the source rather than
+// sniffed out of the built HTML, so adding another stub needs no edit here.
+const NOT_ARTICLES = new Set(
+  readdirSync('content/information')
+    .filter((f) => f.endsWith('.md'))
+    .filter((f) => /^eleventyExcludeFromCollections:\s*true$/m.test(
+      readFileSync(path.join('content/information', f), 'utf8'),
+    ))
+    .map((f) => path.join(SITE, 'information', f.replace(/\.md$/, ''), 'index.html')),
+);
+
 test('build produced a home page', () => {
   assert.ok(existsSync(path.join(SITE, 'index.html')), 'missing _site/index.html');
 });
@@ -120,7 +133,8 @@ test('every article page links back to its topics', () => {
   const pages = readdirSync(path.join(SITE, 'information'), { recursive: true })
     .map(String)
     .filter((f) => f.endsWith('index.html') && f !== 'index.html')
-    .map((f) => path.join(SITE, 'information', f));
+    .map((f) => path.join(SITE, 'information', f))
+    .filter((f) => !NOT_ARTICLES.has(f));
   assert.ok(pages.length > 0, 'no article pages were built');
   const bad = pages.filter((f) => !/href="\/tags\/[a-z0-9-]+\/"/.test(read(f)));
   assert.deepEqual(bad, []);

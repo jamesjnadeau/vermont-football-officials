@@ -24,13 +24,32 @@ test('every file in information/ has a known extension', () => {
   assert.deepEqual(bad, []);
 });
 
-const articles = files
+const allFiles = files
   .filter((f) => f.endsWith('.md'))
   .map((f) => ({
     name: f,
     raw: readFileSync(path.join(DIR, f), 'utf8'),
     ...matter(readFileSync(path.join(DIR, f), 'utf8')),
   }));
+
+// A page that sets `eleventyExcludeFromCollections` is not an article: it is
+// in no collection, on no topic page and in no listing, so the rules below
+// about topics and provenance have nothing to bind to. The only ones here are
+// redirect stubs holding a URL that moved — `linesman-position-card.md` keeps
+// the pre-2026 name alive after the NFHS renamed the position.
+const articles = allFiles.filter((a) => !a.data.eleventyExcludeFromCollections);
+const redirects = allFiles.filter((a) => a.data.eleventyExcludeFromCollections);
+
+test('every redirect stub sends the reader somewhere that exists', () => {
+  const broken = redirects.flatMap((r) => {
+    const links = [...r.content.matchAll(/\]\(\/information\/([a-z0-9-]+)\/\)/g)].map((m) => m[1]);
+    if (!links.length) return [`${r.name}: redirects nowhere`];
+    return links
+      .filter((slug) => !allFiles.some((a) => a.name === `${slug}.md`))
+      .map((slug) => `${r.name}: points at /information/${slug}/, which has no page`);
+  });
+  assert.deepEqual(broken, []);
+});
 
 test('all expected articles exist as markdown', () => {
   const want = [
@@ -45,6 +64,7 @@ test('all expected articles exist as markdown', () => {
     'foul-weather-procedures.md',
     'fouls-enforcement-crew-card.md',
     'getting-assigned.md',
+    'head-line-judge-position-card.md',
     'information-for-new-folks.md',
     'kicking-plays-crew-card.md',
     'line-judge-position-card.md',
@@ -59,7 +79,7 @@ test('all expected articles exist as markdown', () => {
     'umpire-position-card.md',
     'your-first-season.md',
   ];
-  assert.deepEqual(articles.map((a) => a.name).sort(), want);
+  assert.deepEqual(allFiles.map((a) => a.name).sort(), want);
 });
 
 test('every article has a title', () => {

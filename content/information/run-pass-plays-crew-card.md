@@ -69,7 +69,7 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 | --- | --- | --- |
 | **R** | 15 yards behind the line, 8 wide of the QB at 45°, wide side. | Same. Plus the play clock: five seconds, then 4–3–2–1 out loud. |
 | **U** | 7 yards off the line inside the tight ends, wherever the Referee is. Counts A's five ineligible linemen and checks their numbers. | Same. Plus counts B's 11 and owns B's substitutions. |
-| **LM / LJ** | 10 yards outside the widest A player, never inside the numbers. Line to gain, substitutes, motion on your side of center. | Same. |
+| **HL / LJ** | 10 yards outside the widest A player, never inside the numbers. Line to gain, substitutes, motion on your side of center. | Same. |
 | **BJ** | 17 yards off the line between the uprights. Counts B, owns B's substitutions and the play clock. | — |
 
 Wings show A the line with the backfield foot, then set their feet parallel. In a
@@ -122,7 +122,7 @@ the game starts.
 | --- | --- | --- |
 | **R** | Snap · QB · handoff · QB · line play at the point of attack. | Same as a crew of 5. |
 | **U** | Snap · linemen · blocking at the point of attack · the runner. Spot the ball shoulders parallel to the sideline, then move off it quickly. | Same, and you are the only one in the middle. Blocks beyond the point of attack are yours. |
-| **LM / LJ** | Snap · line play · blocks downfield · the runner. Line play at the point of attack and receivers ahead of it. The sideline is yours. | Same, but you get downfield blocks on your half with no help behind you. |
+| **HL / LJ** | Snap · line play · blocks downfield · the runner. Line play at the point of attack and receivers ahead of it. The sideline is yours. | Same, but you get downfield blocks on your half with no help behind you. |
 | **BJ** | Snap · tight end and tackle · receivers · line play beyond the point of attack · the runner. Watch for crackbacks. | — |
 
 The Back Judge stays home on a run read — move back only once the runner breaks
@@ -174,7 +174,7 @@ before coming in to clean up.
 | --- | --- | --- |
 | **R** | Snap · QB · opposite tackle · passer. | Same as a crew of 5. |
 | **U** | Snap · linemen · QB · the pass · the catch. Quick pass, no time to reach the line; delayed pass, read the crossing end or the screen. Rules the trapped pass. | Same as a crew of 5. |
-| **LM / LJ** | Snap · player(s) · QB · zone · ball. Outside receivers. Three reads in order — flat or bubble: stay home. Short/medium: down five and stop. Long: turn and burn. | Every receiver on your side is yours, and the middle of the field is dual coverage with your partner. |
+| **HL / LJ** | Snap · player(s) · QB · zone · ball. Outside receivers. Three reads in order — flat or bubble: stay home. Short/medium: down five and stop. Long: turn and burn. | Every receiver on your side is yours, and the middle of the field is dual coverage with your partner. |
 | **BJ** | Snap · player(s) · QB · zone · ball. Inside receivers. Back off slowly; lock on once you know where the ball is going. | — |
 
 Over 75% of passes travel 15 yards or less, and the passer's first look is
@@ -227,7 +227,7 @@ usually where it goes.
 | --- | --- | --- |
 | **R** | 15 behind the line, 8 wide of the QB at 45°. | Same as a crew of 5. |
 | **U** | 7 yards off the line inside the tight ends. | Same as a crew of 5. |
-| **LM / LJ** | Two yards outside the sideline, on the goal line. | Two yards outside the sideline on the goal line. Step into the end zone to see a catch near the end line. |
+| **HL / LJ** | Two yards outside the sideline, on the goal line. | Two yards outside the sideline on the goal line. Step into the end zone to see a catch near the end line. |
 | **BJ** | On the end line between the uprights. Stay there while the ball is live; straddle the end line on a tight catch. | — |
 
 Only the Back Judge signals an incomplete pass on the end line. In a crew of 4

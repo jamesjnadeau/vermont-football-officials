@@ -211,7 +211,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 - Walk it or jog it — your choice — but get it right.
 - Don't look at the wings until they reach the succeeding spot.
-- Five-yard walk-off close to a first down: ask the Linesman to check the tape on
+- Five-yard walk-off close to a first down: ask the Head Line Judge to check the tape on
   the chain.
 - Crew goal on a simple five-yard dead-ball foul: ball ready inside ten seconds.
 

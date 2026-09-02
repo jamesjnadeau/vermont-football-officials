@@ -45,7 +45,7 @@ where things live, not learning the rules yet. Come back to it constantly.
 
 **2. Your position — this is the one that matters most.**
 Most new officials work as a wing, so start with
-[Linesman](/information/linesman-position-card/) and
+[Head Line Judge](/information/head-line-judge-position-card/) and
 [Line Judge](/information/line-judge-position-card/). Learn your pre-snap
 position, your keys, and what you have on each kind of play. Read the card for
 whichever spot you are actually assigned. The others —

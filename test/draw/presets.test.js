@@ -100,7 +100,7 @@ test('a formation carries no officials — Situations is the group that does', (
  * The plan's original crew-of-4 derivation — take a crew-of-5 preset and
  * drop the Back Judge — is false against the committed art (Task 4 Step 1):
  * on kickoff the Line Judge alone moves 50 yards downfield, and on field
- * goal the Linesman moves into the Back Judge's old spot. No preset may be
+ * goal the Head Line Judge moves into the Back Judge's old spot. No preset may be
  * built that way, so this asserts the derivation actually fails rather than
  * merely that nobody happened to call it.
  */

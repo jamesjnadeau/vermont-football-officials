@@ -45,9 +45,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
   the sideline, take steps out of bounds.
 - You have primary responsibility for the game clock. Talk to the timer before
   the game.
-- Know the line to gain before the snap and point it out to the Linesman on third
+- Know the line to gain before the snap and point it out to the Head Line Judge on third
   and fourth down.
-- Count the players on the line on your side of centre and signal the Linesman.
+- Count the players on the line on your side of centre and signal the Head Line Judge.
   Punch off the nearest player who's off it.
 
 ### Your keys
@@ -74,7 +74,7 @@ sideline — never into the field.*
 | --- | --- |
 | **Before the game** | Talk with the timer. You time halftime, weather delays and the interval before overtime. |
 | **Restart** | Make sure the scoreboard actually starts after the signal. If it doesn't, everyone signals. |
-| **Down box wrong** | Point above the Linesman's head repeatedly. Soft whistle only if you must. |
+| **Down box wrong** | Point above the Head Line Judge's head repeatedly. Soft whistle only if you must. |
 | **With the Referee** | Signal clock status while he faces the press box. |
 
 ---
@@ -163,7 +163,7 @@ sideline — never into the field.*
   before the ball arrives.
 - You have primary responsibility for deciding a close first down. If it's close,
   stop the clock and look; if it isn't, start it.
-- Close means measure. Secure a new ball after you mark the spot for the Linesman
+- Close means measure. Secure a new ball after you mark the spot for the Head Line Judge
   and the chains.
 - Field goal and try: stand on the field numbers at the line of scrimmage.
 
@@ -244,7 +244,7 @@ sideline — never into the field.*
    or the snap. That's the Back Judge's job in a crew of 5.
 2. **Kickoff:** you're at the 50 on the press box sideline, not the goal line.
 3. **Pass:** every receiver on your side is yours, and the middle is dual
-   coverage with the Linesman.
+   coverage with the Head Line Judge.
 4. **Punt:** you still hold the line until the kick crosses it, but the Umpire is
    deep instead of a Back Judge.
 5. **Goal line:** step into the end zone to see a catch near the end line —

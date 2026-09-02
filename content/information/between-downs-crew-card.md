@@ -51,7 +51,7 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 | --- | --- | --- |
 | **R** | Whistle discipline for the crew. Wind the clock when a crewmate signals it. | Same, plus the play clock. |
 | **U** | Strong voice after the whistle — it prevents more fouls than a flag does. | Same, and you cover the middle alone. |
-| **LM / LJ** | Runner out of bounds: stop the clock twice immediately, then turn and watch. Swivel and watch them come back in. | Same as a crew of 5. One of you takes the opponent's bench area. |
+| **HL / LJ** | Runner out of bounds: stop the clock twice immediately, then turn and watch. Swivel and watch them come back in. | Same as a crew of 5. One of you takes the opponent's bench area. |
 | **BJ** | A player in the opponent's bench area: go into the team box and escort him back. | — |
 
 *Plastic whistle only. A finger whistle is fine, but you still owe approved
@@ -88,7 +88,7 @@ signals with both arms.*
 | --- | --- | --- |
 | **R** | — | Behind the line only. |
 | **U** | Dig for the ball when the wings need it, and hand it over — never throw or toss it. | Same, plus deep progress in the middle. |
-| **LM / LJ** | Cross-field help on passes and on a runner driven back near the sideline. The backside wing moves into the field toward the hash so your partner can actually see you. | Same as a crew of 5, with no help behind you. |
+| **HL / LJ** | Cross-field help on passes and on a runner driven back near the sideline. The backside wing moves into the field toward the hash so your partner can actually see you. | Same as a crew of 5, with no help behind you. |
 | **BJ** | Mark progress downfield, and relay the new ball as part of the triangle. | — |
 
 ---
@@ -137,7 +137,7 @@ signals with both arms.*
 | --- | --- | --- |
 | **R** | — | You are the relay on every play, then you mark it ready. |
 | **U** | The sprinter between downs. Grab it, spot it off the backside wing, shoulders parallel to the sideline, then move off quickly. | Same as a crew of 5. |
-| **LM / LJ** | Hold the dead-ball spot. Do not spot it in the side zone. | Same as a crew of 5. |
+| **HL / LJ** | Hold the dead-ball spot. Do not spot it in the side zone. | Same as a crew of 5. |
 | **BJ** | Relay on gains of about ten yards or more. On a deep incomplete pass, hustle it off the field while the wings get a new one. | — |
 
 *Change of possession: relay the old ball out once there's no threat of a
@@ -171,7 +171,7 @@ over the ball at the spot.*
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
 | **LJ** | Primary on the first down — best look from across the field, and usually downfield. Secure a new ball after marking the spot for the chains. | Same as a crew of 5. |
-| **LM** | Do not look over your shoulder. Hold your spot and let the Line Judge rule it. | Same as a crew of 5. |
+| **HL** | Do not look over your shoulder. Hold your spot and let the Line Judge rule it. | Same as a crew of 5. |
 | **U** | Dig for the ball and hand it to the wing. | Same as a crew of 5. |
 
 *On a synthetic or well-marked grass field, if the forward stake is beyond a hash

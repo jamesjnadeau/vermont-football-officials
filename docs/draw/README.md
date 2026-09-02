@@ -132,7 +132,7 @@ five with the Back Judge removed. Extracting the real crew-of-4 diagrams
 disproved that: measured against "crew-of-5 minus the Back Judge," the actual
 crew-of-4 positions move the Line Judge 50 yards downfield on a kickoff, the
 Umpire 10 yards, the Referee 12.8 yards across and 10 back, and put the
-Linesman into the Back Judge's old spot on a field goal. A crew that works
+Head Line Judge into the Back Judge's old spot on a field goal. A crew that works
 with four redistributes coverage — that is real mechanics, and the formula
 this plan first assumed would have taught four officials to stand in the
 wrong places. If crew-of-4 presets are wanted, they need their own extraction

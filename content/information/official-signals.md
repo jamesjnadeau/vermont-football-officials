@@ -158,7 +158,7 @@ Add loss of down (`S9`), automatic first down (`S8`), or disqualification (`S47`
 
 Self-evident fouls — false start, delay of game, encroachment — don't need a preliminary signal and then a second one after enforcement.
 
-Wait for the linesman to confirm the chains are set before the ready-for-play.
+Wait for the head line judge to confirm the chains are set before the ready-for-play.
 
 ---
 
