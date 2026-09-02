@@ -39,29 +39,34 @@ it is blocked.
 | --- | --- | --- | --- |
 | NFHS Football Rules Book (2025) | Via [nfhs-rules-converter](https://github.com/jamesjnadeau/nfhs-rules-converter) | 2026-07-26 | Baseline rules; cliff notes; quizzes 001–007 |
 | NFHS Football Case Book (2025) | Same repository | 2026-07-26 | Quiz rulings 001–005 |
-| NFHS Football Officials Manual | Not held directly — reached secondhand through the OHSAA Gold Book | | Baseline mechanics |
+| **NFHS Football Game Officials Manual (2026 and 2027)** | Via [nfhs-rules-converter](https://github.com/jamesjnadeau/nfhs-rules-converter/tree/main/2026-nfhs-football-game-officials-manual) — one markdown file per chapter, MechaniGrams rendered to `images/` | 2026-09-02 | **All mechanics.** Positions, coverage and keys for crews of four, five and seven; signals and signalling sequences; pregame and postgame; the line-to-gain crew; both timers; jurisdiction |
 | **VPA Football Guide** | [vpaonline.org/athletics/football/](https://vpaonline.org/athletics/football/) | **needed** | Vermont amendments, fees, calendar, playoffs, points of emphasis |
 | **VFOA bylaws / member handbook** | | **needed** | Dues, membership, discipline |
 | **VFOA assignment process** | Currently oral only — the officer answers in the tables below | 2026-08-27 | Assignor, availability, turnbacks |
-| OHSAA Gold Book "Brief & Concise" (2026) | [ohsaafb.com — Gold Book handbook](https://www.ohsaafb.com/mechanics/2018-07-15-ohsaa-goldbook-approved-football-officiating-mechanics-regulations-standards-handbook/) | 2026-08-27 | Crew and position mechanics, crews of 4 and 5 |
+| OHSAA Gold Book "Brief & Concise" (2026) | [ohsaafb.com — Gold Book handbook](https://www.ohsaafb.com/mechanics/2018-07-15-ohsaa-goldbook-approved-football-officiating-mechanics-regulations-standards-handbook/) | 2026-08-27 | **Superseded 2026-09-02** by the NFHS manual row above. Was: crew and position mechanics, crews of 4 and 5 |
 | NVYFL 5/6 Tackle Rules (2026) | League PDF, supplied by James Nadeau; published at `/uploads/nvyfl-5-6-tackle-rules-2026.pdf` | 2026-08-27 | Youth 5/6 game rules |
 | NVYFL 7/8 Tackle Rules (2026) | League PDF, supplied by James Nadeau; published at `/uploads/nvyfl-7-8-tackle-rules-2026.pdf` | 2026-08-27 | Youth 7/8 game rules |
 | NVYFL 5/6 and 7/8 Tackle Rules (2025) | League PDFs, supplied by James Nadeau; published at `/uploads/nvyfl-{5-6,7-8}-tackle-rules-2025.pdf` | 2026-08-27 | Superseded; kept for the archived 2025 page |
 | SDCFOA Clock Administration | [sdcfoa.org/clock-administration](https://www.sdcfoa.org/clock-administration) | | Clock operator reference |
-| VFOA 7-man mechanics deck (Justin Fortier) | `/uploads/7-man-mechanics-2022.pdf` | 2022 | 7-man mechanics |
+| VFOA 7-man mechanics deck (Justin Fortier) | `/uploads/7-man-mechanics-2022.pdf` | 2022 | **Superseded 2026-09-02** for the text of `7-man-mechanics.md`, which now follows Part 5 of the NFHS manual. Kept as the association's own record, and still the source of that page's photographs |
 | NFHS Official Football Signals chart (2026) | Redrawn as stick figures in `tools/signal-svgs/`, supplied by James Nadeau | 2026-08-28 | Signal numbers 1–47, chart captions, the timing and administrative numbers |
 
 The three rows in bold are what the Vermont rules and policies plan is waiting
 on. Until the VPA guide row has an edition and a date, no page may state a
 Vermont fee, date, or rule amendment.
 
-**On the Gold Book row:** the URL's slug carries a 2018 date because that is
-when OHSAA first published the page, not the edition it serves — James supplied
-it as the 2026 source. The ten cards now carry that edition in their `source`
-front matter on the strength of that identification, not a check against the
-document: the cards were written on 2026-08-26 from "the OHSAA Gold Book Brief &
-Concise" with no edition recorded at the time. Confirm the edition string
-printed on the document and, if it is not 2026, correct all ten.
+**On the Gold Book row:** this is settled and no longer needs chasing. The ten
+cards were written from the Gold Book, which follows the NFHS manual but is not
+it, and where it paraphrased it sometimes paraphrased a previous edition — the
+audit in `docs/superpowers/plans/2026-09-02-nfhs-2026-manual-audit.md` lists
+what that cost. The cards now cite the manual by section and page instead, so
+the open question about which Gold Book edition James supplied no longer
+governs any published claim.
+
+**On the NFHS manual row:** the conversion preserves the print pagination as
+`<!-- page N -->` markers, so a page number in a `source:` line can be checked
+directly. The MechaniGrams in `images/` are copyright Referee Enterprises —
+read them to get positions right; never reproduce, trace or re-host one.
 
 **On the NVYFL rows:** these are league documents, not VPA or NFHS ones, and
 they say so on the page — both rule sets supplement the NFHS book rather than
@@ -171,12 +176,16 @@ footnote; the rest state it in prose in the page body.
 | `becoming-an-official.md` | VFOA officers, recorded below | — | 2026-08-27 |
 | `getting-assigned.md` | VFOA officers, recorded below | — | 2026-08-27 |
 | `your-first-season.md` | VFOA officers, recorded below | — | 2026-08-27 |
-| Crew cards (5) and position cards (5) | OHSAA Gold Book "Brief & Concise" (2026), following the NFHS Officials Manual | — | 2026-08-26 |
+| Crew cards (5) and position cards (5) | 2026 and 2027 NFHS Football Game Officials Manual, cited by section and page in each page's own front matter. Previously the OHSAA Gold Book | 2026 | 2026-09-02 |
+| `pregame-conference.md` | NFHS manual — Pregame Conference pp. 12–16, §1.5 pp. 23–24, Jurisdiction p. 217, Postgame pp. 217–219 | 2026 | 2026-09-02 |
+| `line-to-gain-crew-card.md` | NFHS manual — §1.6 pp. 25–28, §4.6 pp. 130–135 | 2026 | 2026-09-02 |
+| `crew-communication-signals.md` | NFHS manual — §1.7–1.11 pp. 29–38 and §2.1 pp. 46–47 | 2026 | 2026-09-02 |
+| `penalty-enforcement-guide.md` | 2025 NFHS Football Rules Book for enforcement; NFHS manual §1.3 pp. 20–22 and the 2026 Points of Emphasis p. 5 for crew roles | 2026 | 2026-09-02 |
 | `nvyfl-youth-football-rules-2026.md` | 2026 NVYFL 5/6 Rulebook and 7/8 Game Rules | 2026 | 2026-08-27 |
 | `nvyfl-youth-football-rules-2025.md` | 2025 NVYFL 5/6 and 7/8 Game Rules — archived, superseded | 2025 | 2026-08-27 |
-| `official-signals.md` | 2025 NFHS Football Rules Book — penalty summary pp. 94–95 and the PENALTY statements in Rules 3–10. The drawings, their captions and the Section 5 timing numbers follow the 2026 signal chart | 2025 | 2026-08-28 |
-| `clock-officials-cheat-sheet.md` | SDCFOA Clock Administration — stated in prose, no front matter | | |
-| `7-man-mechanics.md` | VFOA 7-man deck, 2022 | | |
+| `official-signals.md` | 2025 NFHS Football Rules Book — penalty summary pp. 94–95 and the PENALTY statements in Rules 3–10. The drawings, their captions and the Section 5 timing numbers follow the 2026 signal chart; the signalling sequences follow NFHS manual §2.2 pp. 48–51 | 2025 | 2026-09-02 |
+| `clock-officials-cheat-sheet.md` | SDCFOA Clock Administration, reconciled against NFHS manual §1.6 pp. 26–28 | 2026 | 2026-09-02 |
+| `7-man-mechanics.md` | NFHS manual Part 5, pp. 183–216. The linked PDF and the photographs remain the VFOA's 2022 deck | 2026 | 2026-09-02 |
 | `football-rules-summary.md` (Cliff Notes) | 2025 NFHS Football Rules Book — named in the page title, no front matter | 2025 | 2026-07-26 |
 | `information-for-new-folks.md` | Email from Bryan Fortier, 2022 — not re-checked since | | |
 | `foul-weather-procedures.md` | **No source stated** — states a 30-minute lightning pause; check it against the VPA guide when that lands | | |

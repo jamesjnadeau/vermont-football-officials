@@ -32,6 +32,8 @@ Only the referee signals fouls to the press box. Everyone else *reports* — the
 
 Other officials do give the administrative signals in their own areas: stop-the-clock, touchdown, incomplete pass, and so on.
 
+The signals a crew gives *each other* are a different chart entirely — eleven players, double sticks, unbalanced line, snapper protection, the five-second visible count. Those are on [Crew Communication and When in Question](/information/crew-communication-signals/).
+
 **Mechanics for the white hat:**
 
 - Come to a complete stop before you start. Don't walk through your signals.
@@ -146,7 +148,7 @@ Roughing the passer and roughing the kicker carry the full chain — umbrella, s
 3. The next down, or the new-series signal
 4. Ready-for-play, or start-the-clock — whistle at the same time
 
-**Dead-ball foul — five steps:**
+**Dead-ball foul — four or five steps:**
 
 1. `S7`, the dead-ball signal
 2. The foul
@@ -154,11 +156,15 @@ Roughing the passer and roughing the kicker carry the full chain — umbrella, s
 4. The next down, or the new-series signal
 5. Ready-for-play, or start-the-clock
 
-Add loss of down (`S9`), automatic first down (`S8`), or disqualification (`S47`) where the chain calls for it. A declination is signaled after the point to the offending team.
+Four when the penalty is declined: dead ball, the foul, the team, the declination, then the ready — no down signal, because the down has not changed. The officials' manual works the example: Team R is flagged for encroachment before a try and Team K declines because the kicker likes the distance he has.
+
+**The dead-ball signal is not optional on a false start or encroachment.** Those two are always preceded by it (§2.2).
+
+Add loss of down (`S9`), automatic first down (`S8`), or disqualification (`S47`) where the chain calls for it. Disqualification goes after the point to the offending team and before the down.
 
 Self-evident fouls — false start, delay of game, encroachment — don't need a preliminary signal and then a second one after enforcement.
 
-Wait for the linesman to confirm the chains are set before the ready-for-play.
+Wait for the head line judge to confirm the chains are set before the ready-for-play.
 
 ---
 
@@ -430,7 +436,7 @@ These are the signals you'll give most often, and the rules book doesn't referen
 | **S13** | Disregard flag | |
 | **S14** | End of period | |
 | **S16** | First touching | The same signal as illegal touching, which is why `S16-9` is the illegal-touching code |
-| **S17** | Reset the play clock to 25 seconds | One hand for 25, both hands for 40 |
+| **S17** | Reset the play clock to 25 seconds | Right arm straight up, palm up, pumped three times — "pushing the sky". One hand for 25, **both hands for 40**. An interrupted play clock is always reset to 25, never resumed. |
 
 Two of these carry rules weight worth knowing cold:
 

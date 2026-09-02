@@ -26,7 +26,7 @@ This guide is organized the way the decision actually gets made on the field:
 5. **Crew mechanics** — flag, report, signal, enforce.
 6. **Penalty distances** — the 5/10/15-yard groupings.
 
-Enforcement is a crew responsibility, not a referee responsibility. When a penalty gets administered wrong, everyone wearing stripes owns it. The umpire has to know the spot and the distance. The linesman has to know the down and control the chains. The wings have to know what to tell their coaches. Every one of those people needs this material.
+Enforcement is a crew responsibility, not a referee responsibility. When a penalty gets administered wrong, everyone wearing stripes owns it. The umpire has to know the spot and the distance. The head line judge has to know the down and control the chains. The wings have to know what to tell their coaches. Every one of those people needs this material.
 
 ---
 
@@ -343,15 +343,17 @@ Techniques to avoid: slam-dunking the flag, throwing it at a player, waving it i
 
 Every foul goes to the press box, both coaches, and the entire crew.
 
-The covering official gets the report to the referee and the linesman as fast as the play allows — the linesman so the chains and box freeze, the referee so he can start the enforcement sequence.
+The covering official gets the report to the referee and the head line judge as fast as the play allows — the head line judge so the chains and box freeze, the referee so he can start the enforcement sequence.
 
-**Don't signal from your position.** It's standard at higher levels and wrong at this one, because another official may have a different foul on the same snap. If the line judge signals defensive encroachment from the wing and the crew ultimately penalizes the offense for a snap infraction, the offensive coach has a legitimate grievance. Get together, decide, report to the referee, then go explain to your coach.
+**Don't signal from your position.** It's standard at higher levels and wrong at this one, because another official may have a different foul on the same snap. When two flags are down, the officials who threw them get together and agree before anything goes to the press box. If the line judge signals defensive encroachment from the wing and the crew ultimately penalizes the offense for a snap infraction, the offensive coach has a legitimate grievance. Get together, decide, report to the referee, then go explain to your coach.
 
 Keep conferences short and keep your hands off each other. An arm around a partner's waist looks like conspiracy from the sideline.
 
 **Depth of the report** is a pregame item. Some referees want "Number 49, offense, illegal motion." Others want "Number 49 cut upfield too soon." Getting the fuller version from a newer official lets the referee confirm there actually was a foul. Be especially careful with movement fouls, where the order of events decides the call, and with players on the end of the line, whose movement is less restricted than an interior lineman's.
 
-The referee also needs to know the status of the ball at the time of the foul, and whether an involved player was an eligible receiver, on the fouls where that changes enforcement.
+The referee also needs to know the status of the ball at the time of the foul, and whether an involved player was an eligible receiver, on the fouls where that changes enforcement. Identify teams as offence and defence rather than by jersey colour.
+
+**A dead-ball foul before the snap** is reported differently: the wing jogs slowly toward the middle of the field to report it, still watching the players he just flagged, because the player who was contacted may try to retaliate.
 
 ### Explaining to coaches
 
@@ -363,13 +365,13 @@ If you didn't get the number, say so. Never guess. A number that turns out not t
 
 **Umpire.** For previous-spot enforcement, return to the exact previous spot — the right yardline *and* the right lateral position between the hashes. Calculate the destination and walk directly to it; marching off a yard at a time looks amateurish.
 
-**Linesman.** Own the down number. Remember that acceptance of a penalty carrying loss of down, or declination, does not produce a replay of the previous down. As a cross-check, move to the succeeding spot while the referee signals — if the umpire's spot and yours disagree, resolve it before the ball goes down. Then have the box and chains moved. In pregame, make clear to the chain crew that nothing moves until you tell them.
+**Head Line Judge.** Walk the penalty yardage off on your sideline while the umpire walks it off in the field — two independent counts that have to agree. Own the down number, and remember that acceptance of a penalty carrying loss of down, or declination, does not produce a replay of the previous down. If the umpire's spot and yours disagree, resolve it before the ball goes down. Then have the box and chains moved. In pregame, make clear to the chain crew that nothing moves until you tell them.
 
-**Line judge.** Hold the previous line of scrimmage until the ball is marked ready — a backup in case the chains move prematurely.
+**Line judge.** Hold the **enforcement spot** until you are certain the enforcement was done correctly. Don't leave it to walk with anybody — you are the backup if the chains move prematurely or the umpire's count drifts.
 
 Everyone not directly involved in enforcement watches players from the whistle until the ready.
 
-**A useful pregame convention:** tape at the halfway point of the chain. If the box is beyond the tape, a 5-yard defensive penalty produces a first down — "five will get you one." The linesman can flash this to the referee with a flat palm against the chest, so the referee already knows a new series is coming if the defense encroaches.
+**A useful pregame convention:** tape at the halfway point of the chain. If the box is beyond the tape, a 5-yard defensive penalty produces a first down — "five will get you one." The head line judge can flash this to the referee with a flat palm against the chest, so the referee already knows a new series is coming if the defense encroaches.
 
 **Sideline management.** When the referee has a foul in front of the offending team's bench, the wing should come mark the flag so the referee can move away from the sideline rather than stand there arguing. The opposite wing can casually pace off the penalty as a backup for the umpire; the two should end up in the same place. Afterward, the wing picks up the flag and returns it to the referee in the middle of the field — again keeping the referee away from an angry bench.
 
@@ -402,9 +404,9 @@ Add signals as the situation requires — loss of down, disqualification. Disqua
 
 Self-evident fouls — false start, delay of game, encroachment — don't need both a preliminary and a post-enforcement signal.
 
-**Clock help.** The line judge can remind the referee whether the clock starts on the ready or the snap, since the referee is already facing that way to signal the press box. A rotating index finger for ready, a finger snap for snap, or whatever the crew agrees on in pregame. When the clock starts on the ready, the downward stroke of the start-the-clock signal can serve as the ready.
+**Clock help.** The covering official tells the referee whether the clock starts on the ready or the snap, since the referee is already facing that way to signal the press box. The two approved signals are a **rotated index finger** for "wind on the ready" and **wrists crossed at waist level** for "don't wind". When the clock starts on the ready, the downward stroke of the start-the-clock signal can serve as the ready.
 
-Wait for the linesman to confirm the chains are set and the crew is in position before the ready-for-play.
+Wait for the head line judge to confirm the chains are set and the crew is in position before the ready-for-play.
 
 ### Unsportsmanlike fouls and disqualifications
 

@@ -240,7 +240,7 @@ test('the bound never reaches in far enough to pull an official onto the field',
 test('the marks on the palette are the ones the position cards already draw', () => {
   assert.deepEqual(
     OFFICIALS.map((o) => o.mark),
-    ['R', 'U', 'LM', 'LJ', 'BJ'],
+    ['R', 'U', 'HL', 'LJ', 'BJ'],
   );
   assert.deepEqual(
     PLAYERS.map((p) => p.kind),
@@ -284,7 +284,7 @@ test('a second token added to the same spot steps off the first', () => {
   // as broken while it is working.
   let board = emptyBoard();
   const spots = [];
-  for (const mark of ['R', 'U', 'LM', 'LJ', 'BJ']) {
+  for (const mark of ['R', 'U', 'HL', 'LJ', 'BJ']) {
     const spot = openSpot(board);
     spots.push(spot);
     board = addToken(board, { type: 'official', mark, ...spot });

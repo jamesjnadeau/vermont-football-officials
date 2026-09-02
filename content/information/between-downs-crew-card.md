@@ -1,8 +1,10 @@
 ---
 title: Between Downs Crew Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §1.4 Whistle Mechanics (pp. 22–23), §4.4 Before and After the Snap (p. 127), §4.6 Measurements (pp. 130–135) and the 2026 Points of Emphasis on Forward Progress (p. 6)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Crew Cards
@@ -51,7 +53,7 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 | --- | --- | --- |
 | **R** | Whistle discipline for the crew. Wind the clock when a crewmate signals it. | Same, plus the play clock. |
 | **U** | Strong voice after the whistle — it prevents more fouls than a flag does. | Same, and you cover the middle alone. |
-| **LM / LJ** | Runner out of bounds: stop the clock twice immediately, then turn and watch. Swivel and watch them come back in. | Same as a crew of 5. One of you takes the opponent's bench area. |
+| **HL / LJ** | Runner out of bounds: stop the clock twice immediately, then turn and watch. Swivel and watch them come back in. | Same as a crew of 5. One of you takes the opponent's bench area. |
 | **BJ** | A player in the opponent's bench area: go into the team box and escort him back. | — |
 
 *Plastic whistle only. A finger whistle is fine, but you still owe approved
@@ -66,12 +68,35 @@ signals with both arms.*
 ### Everyone on this
 
 - Downfield foot in front of the backfield foot. Square off. No angling in.
-- Wings mark most spots. The Referee takes it behind the line; the Back Judge
-  takes it deep.
+- **The spot belongs to whoever can actually see the ball when the play is
+  declared dead** — not to whoever's side of the field it ended on. Usually that
+  means hash to hash.
+- Move into the field until you approach players, then stop. **Close to the line
+  to gain?** Come all the way to the spot; wait for players to clear rather than
+  going round or over them.
 - Driven back between the numbers and the sideline: wind twice and move in — not
   past the players.
 - Trapped pass: go slow. Squaring off and moving in says catch, so don't move
   until you know it is one.
+
+### Where the ball was
+
+Two things at once: **where the runner is down by rule, and where the
+forward-most point of the ball was when that happened.**
+
+| | |
+| --- | --- |
+| **Knocked forward** | Usually the spot is where the ball meets the turf. But if he was grabbed so his knee touched before he fell forward, the spot is where the ball was **when the knee went down**. |
+| **Sacked** | There is often 3 to 5 yards between where the quarterback was contacted and where he goes down. Spot it where the ball landed and you got it wrong. |
+| **Out of bounds** | The spot is the foremost point of the ball when he touches the ground out of bounds — **not where his foot hit the line.** Ball in his outside arm and the foot is about the rear point; ball in his inside arm and the foot is ahead of it. It rarely matters, except at the stake. |
+| **Airborne** | Where the forward-most part of the ball **crosses the plane of the sideline**, not where the ball is when he first touches out of bounds. |
+| **Pushed back** | He is entitled to his farthest advance. If he breaks free and renews the charge, he gets the farthest point of the *subsequent* advance. If he then staggers down untouched and you judge it was the original contact that did it, he is entitled to the spot where that contact occurred. |
+| **Stopped** | Give him a chance to escape if one exists. If he is controlled and held, or carried back and put down, blow it. |
+
+The rule benefits the offence except once: intercept in the end zone near the
+goal line, get tackled from behind, and the runner is "entitled" to a progress
+spot in the field of play — well behind the 20 he would have had on a
+touchback.
 
 ### Referee — white hat only
 
@@ -88,7 +113,7 @@ signals with both arms.*
 | --- | --- | --- |
 | **R** | — | Behind the line only. |
 | **U** | Dig for the ball when the wings need it, and hand it over — never throw or toss it. | Same, plus deep progress in the middle. |
-| **LM / LJ** | Cross-field help on passes and on a runner driven back near the sideline. The backside wing moves into the field toward the hash so your partner can actually see you. | Same as a crew of 5, with no help behind you. |
+| **HL / LJ** | Cross-field help on passes and on a runner driven back near the sideline. The backside wing moves into the field toward the hash so your partner can actually see you. | Same as a crew of 5, with no help behind you. |
 | **BJ** | Mark progress downfield, and relay the new ball as part of the triangle. | — |
 
 ---
@@ -137,7 +162,7 @@ signals with both arms.*
 | --- | --- | --- |
 | **R** | — | You are the relay on every play, then you mark it ready. |
 | **U** | The sprinter between downs. Grab it, spot it off the backside wing, shoulders parallel to the sideline, then move off quickly. | Same as a crew of 5. |
-| **LM / LJ** | Hold the dead-ball spot. Do not spot it in the side zone. | Same as a crew of 5. |
+| **HL / LJ** | Hold the dead-ball spot. Do not spot it in the side zone. | Same as a crew of 5. |
 | **BJ** | Relay on gains of about ten yards or more. On a deep incomplete pass, hustle it off the field while the wings get a new one. | — |
 
 *Change of possession: relay the old ball out once there's no threat of a
@@ -171,7 +196,7 @@ over the ball at the spot.*
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
 | **LJ** | Primary on the first down — best look from across the field, and usually downfield. Secure a new ball after marking the spot for the chains. | Same as a crew of 5. |
-| **LM** | Do not look over your shoulder. Hold your spot and let the Line Judge rule it. | Same as a crew of 5. |
+| **HL** | Do not look over your shoulder. Hold your spot and let the Line Judge rule it. | Same as a crew of 5. |
 | **U** | Dig for the ball and hand it to the wing. | Same as a crew of 5. |
 
 *On a synthetic or well-marked grass field, if the forward stake is beyond a hash

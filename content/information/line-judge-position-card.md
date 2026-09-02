@@ -1,8 +1,10 @@
 ---
 title: Line Judge Position Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for a crew of 5 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §4.7 Positioning (pp. 136–141) and §4.8 Coverage (pp. 142–150), with the crew-of-four deep-official duties from §3.7–3.8 (pp. 72–79)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Position Cards
@@ -27,13 +29,13 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/line-judge/run.svg" alt="Run — the whole crew of five, with the Line Judge highlighted as the white marker ten yards outside the widest offensive player on the press box sideline." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/line-judge/run.svg" alt="Run — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage on the press box sideline." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Run</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/line-judge/pass.svg" alt="Pass — the whole crew of five, with the Line Judge highlighted as the white marker ten yards outside the widest offensive player, taking the outside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/line-judge/pass.svg" alt="Pass — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage on his own sideline, taking the outside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Pass</figcaption>
     </figure>
   </div>
@@ -41,13 +43,14 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Ten yards outside the widest A player, never inside the numbers. If A is near
-  the sideline, take steps out of bounds.
+- Straddling the line of scrimmage, **on the sideline** — the manual strongly
+  encourages working the sideline. Come off it once the play develops, but no
+  further in than the numbers.
 - You have primary responsibility for the game clock. Talk to the timer before
   the game.
-- Know the line to gain before the snap and point it out to the Linesman on third
+- Know the line to gain before the snap and point it out to the Head Line Judge on third
   and fourth down.
-- Count the players on the line on your side of centre and signal the Linesman.
+- Count the players on the line on your side of centre and signal the Head Line Judge.
   Punch off the nearest player who's off it.
 
 ### Your keys
@@ -74,7 +77,7 @@ sideline — never into the field.*
 | --- | --- |
 | **Before the game** | Talk with the timer. You time halftime, weather delays and the interval before overtime. |
 | **Restart** | Make sure the scoreboard actually starts after the signal. If it doesn't, everyone signals. |
-| **Down box wrong** | Point above the Linesman's head repeatedly. Soft whistle only if you must. |
+| **Down box wrong** | Point above the Head Line Judge's head repeatedly. Soft whistle only if you must. |
 | **With the Referee** | Signal clock status while he faces the press box. |
 
 ---
@@ -92,7 +95,7 @@ sideline — never into the field.*
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/line-judge/punt.svg" alt="Punt — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage until the kick crosses it." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/line-judge/punt.svg" alt="Punt — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage, with an arrow showing he releases downfield at the snap." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Punt</figcaption>
     </figure>
   </div>
@@ -100,20 +103,22 @@ sideline — never into the field.*
 
 ### What you do
 
-- Kickoff: the goal line on the press box sideline. Stand at the field numbers
-  with a stop signal to the Referee until the clock reads 12:00.
-- Move up to the 10 if that team's first kick fell short of the 15. Trail the
-  runner by at least five yards.
-- Punt: straddle the line of scrimmage until the kick crosses it — use the down
-  box as your reference.
-- Stay on your sideline on a punt; an out-of-bounds kick is live for you.
+- Kickoff: R's goal line extended on the press box sideline — the same yard line
+  as the Head Line Judge. Stand at the field numbers with a stop signal to the
+  Referee until the clock reads 12:00.
+- Move up if that team's first kick fell short, but stay level with your partner
+  and deeper than the deepest receiver. Trail the runner by at least five yards.
+- Punt: straddle the line, then **release on the snap** and work the space
+  between the neutral zone and the receivers. Your partner holds the line.
+- Your sideline is yours end line to end line; an out-of-bounds kick is live for
+  you.
 
 ### Your keys
 
 - Kickoff — R touching the kick · wind · K out of bounds · blocks immediately
   ahead of the returner.
-- Punt — snap · line play · blocking backs · the kick crossing the line ·
-  blocking.
+- Punt — snap · line play · blocking backs · your receivers · blocking. The
+  Head Line Judge rules whether the kick crossed.
 - Wind the clock only if the kick is caught or touched in your side zone.
 - Kick out of bounds: flag at the spot, then hustle to the head coach for his
   choice.
@@ -122,10 +127,10 @@ sideline — never into the field.*
 
 | | |
 | --- | --- |
-| **Kickoff** | Goal line, press box sideline. |
-| **Onside** | Up to the 50, your sideline. Officiate it as a plane. |
-| **Punt** | Straddling the line until the kick crosses it. |
-| **Safety kick** | The receivers' 30. |
+| **Kickoff** | R's goal line extended, press box sideline — same yard line as the Head Line Judge. |
+| **Onside** | K's free-kick line (the 40), your sideline. Bag in hand, line as a plane. |
+| **Punt** | Straddling the line on your sideline — **release at the snap**. Your sideline is yours end line to end line. |
+| **Safety kick** | Adjust off the others: Back Judge at K's 20, Umpire and Head Line Judge at K's 30. |
 
 ### After the punt
 
@@ -151,7 +156,7 @@ sideline — never into the field.*
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/line-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Line Judge highlighted as the white marker on the field numbers at the line of scrimmage." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/line-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage on his own sideline." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Field goal &amp; try</figcaption>
     </figure>
   </div>
@@ -163,9 +168,10 @@ sideline — never into the field.*
   before the ball arrives.
 - You have primary responsibility for deciding a close first down. If it's close,
   stop the clock and look; if it isn't, start it.
-- Close means measure. Secure a new ball after you mark the spot for the Linesman
+- Close means measure. Secure a new ball after you mark the spot for the Head Line Judge
   and the chains.
-- Field goal and try: stand on the field numbers at the line of scrimmage.
+- Field goal and try: straddle the line of scrimmage. You rule whether the kick
+  crossed the neutral zone.
 
 ### Your keys
 
@@ -179,7 +185,7 @@ sideline — never into the field.*
 | | |
 | --- | --- |
 | **Goal line** | 2 yds outside the sideline, on the goal line. |
-| **FG / try** | On the field numbers at the line. |
+| **FG / try** | Straddling the line of scrimmage. |
 | **Muddle huddle** | 2 yds out of bounds, then hustle to the numbers if they shift to a kick. |
 | **Fake** | Move immediately to the goal line, 2 yds outside the pylon. |
 
@@ -242,10 +248,13 @@ sideline — never into the field.*
 
 1. **You pick up clock status to the Referee** — whether it starts on the ready
    or the snap. That's the Back Judge's job in a crew of 5.
-2. **Kickoff:** you're at the 50 on the press box sideline, not the goal line.
+2. **Kickoff:** you're on R's free-kick line at the top of the numbers, not the
+   goal line.
 3. **Pass:** every receiver on your side is yours, and the middle is dual
-   coverage with the Linesman.
-4. **Punt:** you still hold the line until the kick crosses it, but the Umpire is
-   deep instead of a Back Judge.
+   coverage with the Head Line Judge.
+4. **Punt: you are the deep official.** 7 to 10 yards wider than and in front of
+   the deepest receiver. Every deep receiver is yours, along with kicks down the
+   middle, your side zone and getting to R's goal line for momentum and
+   touchback.
 5. **Goal line:** step into the end zone to see a catch near the end line —
    nobody is on it.

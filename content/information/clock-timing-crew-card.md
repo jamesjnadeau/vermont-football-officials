@@ -1,8 +1,10 @@
 ---
 title: Clock & Timing Crew Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for crews of 5 and 4 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §1.6 Timers (pp. 26–28), §4.2 Coin Toss (pp. 108–110) and §4.5 Time-outs (pp. 128–130)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Crew Cards
@@ -62,9 +64,9 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 
 | | |
 | --- | --- |
-| **LJ** | Primary on the game clock. Talks with the timer before the game, and times halftime, weather delays and the interval before overtime. |
+| **LJ** | Primary on the **game** clock, and the on-field backup for it in crews of four and five. Talks with the game-clock timer before the game, and times halftime, weather delays and the interval before overtime. The **play**-clock operator is the Back Judge's contact — or the Referee's in a crew of four. |
 | **BJ** | Signals the Referee whether the clock starts on the ready or the snap — the Line Judge is often busy with a coach or walking off yardage. |
-| **LM / LJ** | Timeout signal the moment the runner goes out of bounds — not when you reach the spot. |
+| **HL / LJ** | Timeout signal the moment the runner goes out of bounds — not when you reach the spot. |
 
 *Crew of 4: the Referee picks up the Back Judge's clock-status duty.*
 
@@ -78,8 +80,17 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 
 - Five seconds left gets an arm up with five fingers, counted down four, three,
   two, one.
-- Reset is an arm over the head, pushed upward twice.
-- Wrong down box? The Line Judge points above the Linesman's head, repeatedly.
+- **Reset is signal 17** — right arm straight up, palm up, pumped three times as
+  if pushing the sky. **Both hands** to reset to 40.
+- **An interrupted play clock is never resumed — it is reset to 25.**
+  Malfunction, official's time-out, or an appreciable delay with the clock down
+  to 20: all 25. When the play clock is interrupted the game clock stops too, and
+  restarts on the snap or on the ready if it had been running. When in doubt,
+  reset.
+- The play clock is **turned off** once the ready is whistled with less than 25
+  (or 40) seconds left in the quarter and the game clock is running, so the
+  quarterback isn't reading a number that means nothing.
+- Wrong down box? The Line Judge points above the Head Line Judge's head, repeatedly.
   Use a soft whistle only if you have to, and don't draw attention to it.
 - The play clock is not a race. Hustle, but don't hurry — the crew goal is that
   the offense never waits on us.
@@ -87,7 +98,15 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 ### Referee — white hat only
 
 - In a crew of 5 the Back Judge has it. In a crew of 4 it is yours: announce
-  five, then verbalize four, three, two, one.
+  five, then verbalize four, three, two, one. **Whoever has it also meets the
+  play clock operator before the game** — Back Judge in a crew of 5, Referee in
+  a crew of 4. The Line Judge's timer is the *game* clock operator; they are two
+  different people and two different meetings.
+- **First down gained inbounds:** the game clock stops for the new series but the
+  40-second play clock starts at the dead ball, so the ball cannot be snapped
+  until you restart the game clock. **The Umpire stands over the ball** until you
+  wind it and he has seen it start. No response from the operator: whistle — it
+  does not reset the play clock. Still nothing: signal time-out and reset to 25.
 - Mark the ball ready only when you're clear of all players, and on a first down
   only after the down box is set.
 - Any official can give you the stop sign for an unusual delay in marking it
@@ -99,8 +118,8 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 | --- | --- | --- |
 | **R** | Marks the ball ready. Back-pedal to your position first if they're already at the line. | The play clock is yours as well as the ready. Say it out loud — five, four, three, two, one. |
 | **U** | — | Counts B and owns B's substitutions. |
-| **LM / LJ** | Substitutes off on your sideline before the snap. | Same as a crew of 5. |
-| **BJ** | Owns the play clock, with or without a visible one. Resets it when needed. | — |
+| **HL / LJ** | Substitutes off on your sideline before the snap. | Same as a crew of 5. |
+| **BJ** | Owns the play clock, with or without a visible one, and meets its operator before the game. Carries a backup count when there is a visible clock. Resets it when needed. | — |
 
 ---
 
@@ -131,7 +150,7 @@ reference, see the [Clock Officials Cheat Sheet](/information/clock-officials-ch
 | --- | --- | --- |
 | **R / crew** | Every official mirrors the timeout signal twice, every time. | Same, and you keep the count yourself. |
 | **U** | Stay over the ball until the Referee is ready. | Same as a crew of 5. |
-| **LM / LJ** | Tell the head coach when his team is out of timeouts. | Same as a crew of 5. |
+| **HL / LJ** | Tell the head coach when his team is out of timeouts. | Same as a crew of 5. |
 | **BJ** | Record them, and help the Referee keep the count honest. | — |
 
 *TV game: the Line Judge holds the Referee and Umpire with a stop sign until the
@@ -175,7 +194,7 @@ coordinator says they're ready. The Umpire stays over the ball.*
 
 - **LJ** — Same as a crew of 5, and you are the only clock specialist.
 - **R** — You and the Line Judge carry the scoreboard between you.
-- **U / LM** — Announce the time to the near bench.
+- **U / HL** — Announce the time to the near bench.
 
 ---
 
@@ -183,7 +202,7 @@ coordinator says they're ready. The Umpire stays over the ball.*
 
 *Twenty minutes before kickoff.*
 
-1. **Positions.** Referee faces the scoreboard at the 50. Linesman and Umpire
+1. **Positions.** Referee faces the scoreboard at the 50. Head Line Judge and Umpire
    opposite the press box; Line Judge and Back Judge on the press box side. The
    other four then move to the 45 with their backs to the scoreboard.
 2. **Escorts.** Wings bring the captains out and introduce them to the Referee.

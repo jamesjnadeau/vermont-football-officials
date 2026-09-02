@@ -1,8 +1,10 @@
 ---
 title: Back Judge Position Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for a crew of 5 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §4.4–4.8 (pp. 127–150) and §1.6 Play Clock Timer (pp. 27–28)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Position Cards
@@ -27,13 +29,13 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/run.svg" alt="Run — the whole crew of five, with the Back Judge highlighted as the white marker seventeen yards off the line between the uprights." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/run.svg" alt="Run — the whole crew of five, with the Back Judge highlighted as the white marker twenty to twenty-five yards beyond the line, favouring the strong side and deeper than the deepest defender." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Run</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/pass.svg" alt="Pass — the whole crew of five, with the Back Judge highlighted as the white marker seventeen yards off the line, taking the inside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/pass.svg" alt="Pass — the whole crew of five, with the Back Judge highlighted as the white marker twenty to twenty-five yards beyond the line on the strong side, taking the inside receivers." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Pass</figcaption>
     </figure>
   </div>
@@ -41,8 +43,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Seventeen yards off the line, between the uprights. Stay at 17 until the snap
-  is on or inside the +10.
+- Favouring the **strong side** of the formation, 20 to 25 yards beyond the line
+  and deeper than the deepest defender. Hold that until the snap is on or inside
+  B's 10 — then start on the end line.
 - Count B's eleven and hold it two seconds. B's substitutions in and out of the
   huddle are yours.
 - You own the play clock: five fingers at five seconds, then count down four,
@@ -84,13 +87,13 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/kickoff.svg" alt="Kickoff — the whole crew of five, with the Back Judge highlighted as the white marker on the kicking team's 40, two yards out of bounds on the press box side." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/kickoff.svg" alt="Kickoff — the whole crew of five, with the Back Judge highlighted as the white marker on the kicking team's free-kick line at the 40, two yards out of bounds on the sideline opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Kickoff</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/punt.svg" alt="Punt — the whole crew of five, with the Back Judge highlighted as the white marker eight wide and five deep of the returner." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/punt.svg" alt="Punt — the whole crew of five, with the Back Judge highlighted as the white marker ten to twelve yards wider than and two to three yards behind the deepest receiver, on the Head Line Judge's side." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Punt</figcaption>
     </figure>
   </div>
@@ -98,7 +101,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Kickoff: K's restraining line — the 40 — two yards out of bounds on the press
+- Kickoff: K's free-kick line — the 40 — two yards out of bounds on the Head Line
+  Judge's sideline, opposite the press
   box side, bean bag in hand.
 - After the try, get a new ball near the upright, start your 60 seconds and jog
   up the press box sideline. Out to the kicker at 30 seconds.
@@ -120,10 +124,10 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Kickoff** | K's 40, 2 yds out of bounds, press box side. |
-| **Onside** | K's 40, press box side. Officiate it as a plane. |
-| **Punt** | 8 wide, 5 deep of one returner. Favour the wide side; in the middle with one returner, favour the Line Judge. |
-| **Safety kick** | The kicking team's 20. |
+| **Kickoff** | K's free-kick line (the 40), 2 yds out of bounds, opposite the press box. |
+| **Onside** | K's free-kick line, Head Line Judge's side. Line as a plane. |
+| **Punt** | 10–12 wider than and 2–3 behind the deepest receiver, on the Head Line Judge's side. Up on a short kick, back if he retreats. |
+| **Safety kick** | Team K's 20 — the Umpire and Head Line Judge take K's 30. |
 | **Off the tee** | Two whistle blasts and jog to the kicker. |
 
 ### After the kick
@@ -150,7 +154,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Back Judge highlighted as the white marker under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Back Judge highlighted as the white marker beyond the end line, behind the upright opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Field goal &amp; try</figcaption>
     </figure>
   </div>
@@ -163,7 +167,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 - Hustle down the end line keeping a five-yard cushion with the receiver, and
   straddle it on a tight catch.
 - Only you signal an incomplete pass on the end line — not the wings.
-- Field goal and try: take an upright, the press box side on a try.
+- Field goal and try: **beyond the end line**, behind the upright opposite the
+  press box. You rule your own upright **and the crossbar**, and you sound the
+  whistle and give the signal.
 
 ### Your keys
 
@@ -177,16 +183,15 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | | |
 | --- | --- |
 | **Goal line** | End line, between the uprights. |
-| **Field goal** | Under an upright — your choice of post. |
-| **Try** | The press box upright. Muddle huddle: stand on the end line. |
+| **FG / try** | Beyond the end line, behind the upright opposite the press box. Your upright, and the crossbar. |
 | **Bench** | A player in the opponent's team box: go in and escort him back. |
 
 ### Signalling
 
 | | |
 | --- | --- |
-| **Good** | Both of you signal, then step two yards into the end zone. |
-| **No good, in the end zone** | Both step in, signal no score only, then touchback. |
+| **Good** | Whistle, then signal. The Umpire confirms his upright to you. |
+| **No good, in the end zone** | Signal no score, then touchback. |
 | **End zone corner** | Eye contact with the wing before any touchdown signal. |
 | **On a pass** | Wait several seconds before signalling a touchdown. Better late and right. |
 

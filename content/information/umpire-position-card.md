@@ -1,8 +1,10 @@
 ---
 title: Umpire Position Card
 date: 2026-08-26
-source: 'the OHSAA Gold Book "Brief & Concise" mechanics for a crew of 5 (2026 edition), which follow the NFHS Officials Manual'
-verified: 2026-08-26
+ruleYear: 2026
+source: >-
+  the 2026 and 2027 NFHS Football Game Officials Manual — §4.7 Positioning (pp. 136–141), §4.8 Coverage (pp. 142–150) and §1.9 Snap Location After Kick or Penalty (pp. 32–34)
+verified: 2026-09-02
 tags:
   - Mechanics
   - Position Cards
@@ -61,10 +63,10 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Run / pass** | 7 off the line inside the ends, regardless of the Referee. |
-| **Punt** | 7 off the line inside the ends, opposite the Referee — the only play you mirror him. |
-| **Goal line** | 7 off the line. Vary laterally. |
-| **Backed up** | 7 off the line, unchanged. |
+| **Run / pass** | 5–7 yds behind B's line, between the defensive ends. You must see the ball from the snapper's first touch until the snap. |
+| **Punt** | 4–7 yds deep, favouring the Line Judge's sideline. |
+| **Goal line** | 5–7 behind B's line. Vary laterally. |
+| **Backed up** | 5–7 behind B's line, unchanged. |
 
 *Turn immediately when the pass is thrown, then jog to the dead-ball spot.*
 
@@ -86,13 +88,13 @@ print at 100% on Letter, two-sided, flip on the long edge.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/umpire/kickoff.svg" alt="Kickoff — the whole crew of five, with the Umpire highlighted as the white marker on the receiving team's restraining line at the 50, two yards out of bounds opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/umpire/kickoff.svg" alt="Kickoff — the whole crew of five, with the Umpire highlighted as the white marker on the receiving team's free-kick line at the 50, two yards out of bounds on the press box side." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Kickoff</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/umpire/punt.svg" alt="Punt — the whole crew of five, with the Umpire highlighted as the white marker seven yards off the line inside the ends, opposite the Referee." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/umpire/punt.svg" alt="Punt — the whole crew of five, with the Umpire highlighted as the white marker five or six yards downfield of the line, favouring the Line Judge's sideline." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Punt</figcaption>
     </figure>
   </div>
@@ -100,7 +102,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Kickoff: the receivers' restraining line — the 50 — two yards out of bounds,
+- Kickoff: the receivers' free-kick line — the 50 — two yards out of bounds on the
+  **press box side**, the side opposite the chains,
   opposite the press box, bean bag in hand.
 - Jog up the far sideline and clear the restricted area, then raise your arm to
   the Back Judge when you're ready.
@@ -115,16 +118,18 @@ print at 100% on Letter, two-sided, flip on the long edge.
   front line.
 - Punt — snap · snapper · line play · turn and watch.
 - Think onside on every kick. Bag in hand.
-- Onside: hold at K's 40 for first touching, early blocks and possession.
+- Onside: R's free-kick line on the Line Judge's side, bag in hand for K's first
+  touching. Kill it if a prone player from either team recovers, ten yards or
+  not.
 
 ### Your spot
 
 | | |
 | --- | --- |
-| **Kickoff** | The 50, 2 yds out of bounds, opposite the press box. |
-| **Onside** | K's 40, opposite the press box. Officiate the line as a plane. |
-| **Punt** | 7 off the line inside the ends, opposite the Referee. |
-| **Safety kick** | The 30. |
+| **Kickoff** | R's free-kick line (the 50), 2 yds out of bounds, press box side. |
+| **Onside** | R's free-kick line, Line Judge's side. Bag in hand, line as a plane. |
+| **Punt** | 4–7 yds deep, favouring the Line Judge's sideline — he releases at the snap. |
+| **Safety kick** | Team K's 30. |
 
 ### Pre-kick
 
@@ -149,7 +154,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/umpire/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Umpire highlighted as the white marker under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/umpire/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Umpire highlighted as the white marker beyond the end line, behind the press box upright." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Field goal &amp; try</figcaption>
     </figure>
   </div>
@@ -160,7 +165,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 - Goal line: seven off the line inside the ends, same as any scrimmage play.
 - You never signal a touchdown. If you are certain and the wing hasn't signalled,
   go tell him — the call is his.
-- Field goal and try: take an upright, opposite the press box on a try. Tell the
+- Field goal and try: **beyond the end line**, behind the press box upright. You
+  rule inside or outside your own upright. Tell the
   crew: no whistle.
 - Do not spot the ball for the try until the captain tells the Referee where he
   wants it.
@@ -177,17 +183,16 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 | | |
 | --- | --- |
-| **Goal line** | 7 off the line inside the ends. |
-| **Field goal** | Under an upright — your choice of post. |
-| **Try** | The upright opposite the press box. |
+| **Goal line** | 5–7 behind B's line, between the defensive ends. |
+| **FG / try** | Beyond the end line, behind the press box upright. Your upright is yours to rule. |
 | **Muddle huddle** | Stand on the end line. |
 
 ### Signalling
 
 | | |
 | --- | --- |
-| **Good** | Both of you signal, then step two yards into the end zone. |
-| **No good, in the end zone** | Both step in, signal no score only, then touchback. |
+| **Good** | The Back Judge whistles and signals; you confirm your upright to him. |
+| **No good** | Same — he signals, you confirm. In the end zone: no score, then touchback. |
 | **Whistle** | Sound it when the kick is good or crosses the goal line. |
 | **Never** | You do not signal a touchdown. Ever. |
 
@@ -211,7 +216,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 - Walk it or jog it — your choice — but get it right.
 - Don't look at the wings until they reach the succeeding spot.
-- Five-yard walk-off close to a first down: ask the Linesman to check the tape on
+- Five-yard walk-off close to a first down: ask the Head Line Judge to check the tape on
   the chain.
 - Crew goal on a simple five-yard dead-ball foul: ball ready inside ten seconds.
 
@@ -244,8 +249,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 2. **Punt: you take the deep spot.** Everything a 5-man Back Judge does — eight
    wide and five deep of the returner, the goal line, the PSK bag and first
    touching.
-3. **Field goal and try:** you take one upright and a wing takes the other.
-4. **Kickoff:** you're alone on K's 40 opposite the press box, and you have Team
+3. **Field goal and try:** nobody goes under a post. You're 10 yds off the line
+   favouring the Line Judge's side; the Line Judge rules the kick.
+4. **Kickoff:** you're on the sideline at the receivers' 20, and you have Team
    K and K's restraining line by yourself.
 5. **Run and pass:** you're the only official in the middle. Blocks beyond the
    point of attack are yours.
