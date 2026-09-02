@@ -220,7 +220,20 @@ box and still runs the chains.
 Vermont crews work four and five, so this page was corrected rather than
 expanded, and its provenance made honest: the text now follows Part 5 of the
 manual (pp. 183–216), and the linked PDF is labelled as the VFOA's 2022 deck
-kept as the association's record. Corrected: free-kick positions and the new
+kept as the association's record.
+
+**Its seven diagrams were redrawn.** They were JPEG screenshots of the deck —
+green turf, yellow annotations, ~100 KB each, showing the alignments the text
+had just been corrected away from. They are now ten scenes drawn from Part 5,
+rendered through the same pipeline and stylesheet as every other diagram on the
+site, and the JPEGs are deleted. `keys.jpg`, six formations in one screenshot
+with its bottom row running off the edge of the original slide, becomes four
+separate diagrams with a dotted line from each official to the player he keys.
+The page's prose also used single-letter marks (H, L, F, S, B) where every
+diagram on the site letters them HL, LJ, FJ, SJ and BJ; that is now consistent,
+with a key naming all seven.
+
+Corrected: free-kick positions and the new
 keying scheme; onside duties (H and L go to **K's 45**, F and S rule the 10
 yards, U and B rule K's line and the topped kick, and **nobody moves** until the
 ball passes R's restraining line); goal line (F and S at the pylon from the 25 to
@@ -229,8 +242,10 @@ gave B the goal line outside the 25); measurements (the box goes to H and the
 spare ball to B or L, not to S and F); scrimmage-play depths; and **fade and
 reverse fade mechanics**, which were absent.
 
-The page's photographs are still the deck's, so a diagram may show an older
-alignment — the page now says so, and says the text wins.
+**Also corrected after review:** the crew-of-four free kick now starts the Head
+Line Judge and Line Judge on their own sidelines, with arrows showing him moving
+toward the middle once the players are on and the Line Judge coming to the top
+of the numbers — which is how the MechaniGram on p. 67 draws it.
 
 ---
 
@@ -286,8 +301,6 @@ S8/S9 suffixes.
 
 ## Still open
 
-- **The 7-man page's diagrams** are still JPEG screenshots from the 2022 deck.
-  Replacing them is Task 5 of `2026-08-27-field-diagrams-svg.md`, not this work.
 - **Vermont amendments** remain blocked on the VPA Football Guide, exactly as
   before. Nothing in this change states a Vermont-specific rule, fee or date.
 - **Print proofing.** The two-page gate, the dropped-content gate and the

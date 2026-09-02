@@ -366,6 +366,12 @@ git commit -am "Fail the build when a committed diagram drifts from its scene"
 
 ### Task 5: The seven 7-man diagrams
 
+> **Done, 2026-09-02.** Redrawn from Part 5 of the 2026–27 NFHS manual rather
+> than from the 2022 deck's screenshots, as ten scenes in
+> `lib/field/scenes/crew-of-seven.js` — the keys screenshot became four
+> separate diagrams. The JPEGs are deleted. See
+> `2026-09-02-nfhs-2026-manual-changelog.md`.
+
 The actual raster-to-vector migration. Held until last because it's the only
 task that creates new artwork, and it should be drawn with a renderer that has
 already been proved against 50 known-good diagrams.
