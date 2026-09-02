@@ -150,7 +150,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/referee/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Referee highlighted as the white marker on the plant-leg side, five yards deeper than the holder and ten wide." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/referee/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Referee highlighted as the white marker two to three yards behind and three to five yards to the side of the kicker, facing the holder." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Field goal &amp; try</figcaption>
     </figure>
   </div>
@@ -159,11 +159,13 @@ print at 100% on Letter, two-sided, flip on the long edge.
 ### What you do
 
 - Goal line: same position as a run or pass — 15 back, 8 wide, wide side.
-- Field goal and try: plant-leg side of the kicker, five yards deeper than the
-  holder, ten wide, shoulders at 45°.
+- Field goal and try: 2 to 3 yards to the rear and 3 to 5 to the side of the
+  kicker, **facing the holder**.
 - Call the tee and the kicker out loud the second they come on the field, and
   don't mark the ball ready until the Umpire reaches the end line.
-- You do not signal a touchdown or a successful try to the press box.
+- Stay with the kicker and holder until neither is threatened, then look to your
+  deep officials for the result and **relay their signal to the press box**. What
+  you never do is mirror a touchdown a wing has already signalled.
 
 ### Your keys
 
@@ -179,7 +181,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | | |
 | --- | --- |
 | **Goal line** | 15 back, 8 wide, wide side. |
-| **FG / try** | Plant-leg side: 5 deeper than the holder, 10 wide, 45°. |
+| **FG / try** | 2–3 to the rear, 3–5 to the side of the kicker, facing the holder. |
 | **Backed up** | Point at both wings, then at the goal line, and get them to point back. |
 | **Ball reaches the 10** | No longer backed up — point at yourself, then at the goal line. |
 
@@ -251,5 +253,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 4. **Punt:** the **Line Judge** goes deep with the returners and the Umpire sits
    10 yards off the line, so the interior is thin. Widen your own clean-up behind
    the kick, and be ready to take the runner on a long return.
-5. **Field goal and try:** the wing on your side releases to an upright, so you
-   have less help on the line of scrimmage.
+5. **Field goal and try:** the Line Judge rules the kick — between the uprights
+   from outside R's 15, on the crossbar from the end line inside it — so on a
+   short try you rule whether it went through, and you echo his call either
+   way.

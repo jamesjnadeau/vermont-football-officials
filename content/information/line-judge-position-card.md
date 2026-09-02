@@ -153,7 +153,7 @@ sideline — never into the field.*
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/line-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Line Judge highlighted as the white marker on the field numbers at the line of scrimmage." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/line-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage on his own sideline." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Field goal &amp; try</figcaption>
     </figure>
   </div>
@@ -167,7 +167,8 @@ sideline — never into the field.*
   stop the clock and look; if it isn't, start it.
 - Close means measure. Secure a new ball after you mark the spot for the Head Line Judge
   and the chains.
-- Field goal and try: stand on the field numbers at the line of scrimmage.
+- Field goal and try: straddle the line of scrimmage. You rule whether the kick
+  crossed the neutral zone.
 
 ### Your keys
 
@@ -181,7 +182,7 @@ sideline — never into the field.*
 | | |
 | --- | --- |
 | **Goal line** | 2 yds outside the sideline, on the goal line. |
-| **FG / try** | On the field numbers at the line. |
+| **FG / try** | Straddling the line of scrimmage. |
 | **Muddle huddle** | 2 yds out of bounds, then hustle to the numbers if they shift to a kick. |
 | **Fake** | Move immediately to the goal line, 2 yds outside the pylon. |
 

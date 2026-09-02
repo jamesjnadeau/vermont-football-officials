@@ -152,7 +152,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/umpire/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Umpire highlighted as the white marker under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/umpire/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Umpire highlighted as the white marker beyond the end line, behind the press box upright." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Field goal &amp; try</figcaption>
     </figure>
   </div>
@@ -163,7 +163,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 - Goal line: seven off the line inside the ends, same as any scrimmage play.
 - You never signal a touchdown. If you are certain and the wing hasn't signalled,
   go tell him — the call is his.
-- Field goal and try: take an upright, opposite the press box on a try. Tell the
+- Field goal and try: **beyond the end line**, behind the press box upright. You
+  rule inside or outside your own upright. Tell the
   crew: no whistle.
 - Do not spot the ball for the try until the captain tells the Referee where he
   wants it.
@@ -181,16 +182,15 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | | |
 | --- | --- |
 | **Goal line** | 7 off the line inside the ends. |
-| **Field goal** | Under an upright — your choice of post. |
-| **Try** | The upright opposite the press box. |
+| **FG / try** | Beyond the end line, behind the press box upright. Your upright is yours to rule. |
 | **Muddle huddle** | Stand on the end line. |
 
 ### Signalling
 
 | | |
 | --- | --- |
-| **Good** | Both of you signal, then step two yards into the end zone. |
-| **No good, in the end zone** | Both step in, signal no score only, then touchback. |
+| **Good** | The Back Judge whistles and signals; you confirm your upright to him. |
+| **No good** | Same — he signals, you confirm. In the end zone: no score, then touchback. |
 | **Whistle** | Sound it when the kick is good or crosses the goal line. |
 | **Never** | You do not signal a touchdown. Ever. |
 
@@ -247,7 +247,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 2. **Punt: you take the deep spot.** Everything a 5-man Back Judge does — eight
    wide and five deep of the returner, the goal line, the PSK bag and first
    touching.
-3. **Field goal and try:** you take one upright and a wing takes the other.
+3. **Field goal and try:** nobody goes under a post. You're 10 yds off the line
+   favouring the Line Judge's side; the Line Judge rules the kick.
 4. **Kickoff:** you're on the sideline at the receivers' 20, and you have Team
    K and K's restraining line by yourself.
 5. **Run and pass:** you're the only official in the middle. Blocks beyond the

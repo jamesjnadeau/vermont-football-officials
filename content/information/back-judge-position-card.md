@@ -151,7 +151,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Back Judge highlighted as the white marker under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Back Judge highlighted as the white marker beyond the end line, behind the upright opposite the press box." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Field goal &amp; try</figcaption>
     </figure>
   </div>
@@ -164,7 +164,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 - Hustle down the end line keeping a five-yard cushion with the receiver, and
   straddle it on a tight catch.
 - Only you signal an incomplete pass on the end line — not the wings.
-- Field goal and try: take an upright, the press box side on a try.
+- Field goal and try: **beyond the end line**, behind the upright opposite the
+  press box. You rule your own upright **and the crossbar**, and you sound the
+  whistle and give the signal.
 
 ### Your keys
 
@@ -178,16 +180,15 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | | |
 | --- | --- |
 | **Goal line** | End line, between the uprights. |
-| **Field goal** | Under an upright — your choice of post. |
-| **Try** | The press box upright. Muddle huddle: stand on the end line. |
+| **FG / try** | Beyond the end line, behind the upright opposite the press box. Your upright, and the crossbar. |
 | **Bench** | A player in the opponent's team box: go in and escort him back. |
 
 ### Signalling
 
 | | |
 | --- | --- |
-| **Good** | Both of you signal, then step two yards into the end zone. |
-| **No good, in the end zone** | Both step in, signal no score only, then touchback. |
+| **Good** | Whistle, then signal. The Umpire confirms his upright to you. |
+| **No good, in the end zone** | Signal no score, then touchback. |
 | **End zone corner** | Eye contact with the wing before any touchdown signal. |
 | **On a pass** | Wait several seconds before signalling a touchdown. Better late and right. |
 

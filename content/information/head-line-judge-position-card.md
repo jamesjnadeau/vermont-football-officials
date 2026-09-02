@@ -149,7 +149,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/head-line-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Head Line Judge highlighted as the white marker on the field numbers at the line of scrimmage." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/head-line-judge/field-goal.svg" alt="Field goal and try — the whole crew of five, with the Head Line Judge highlighted as the white marker straddling the line of scrimmage on his own sideline." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Field goal &amp; try</figcaption>
     </figure>
   </div>
@@ -163,7 +163,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
   straight there, two yards outside the pylon.
 - Runner dives at the pylon: back out so you can see the whole play. Never mirror
   a touchdown signal.
-- Field goal and try: stand on the field numbers at the line of scrimmage.
+- Field goal and try: straddle the line of scrimmage. You rule whether the kick
+  crossed the neutral zone.
 
 ### Your keys
 
@@ -179,8 +180,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | | |
 | --- | --- |
 | **Goal line** | 2 yds outside the sideline, on the goal line. |
-| **Field goal** | On the field numbers at the line. |
-| **Try** | Same. Muddle huddle: 2 yds out of bounds, then hustle to the numbers if they shift. |
+| **FG / try** | Straddling the line of scrimmage. |
 | **Fake** | Move immediately to the goal line, 2 yds outside the pylon. |
 
 ### Selling it
@@ -249,7 +249,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
    dual coverage with the Line Judge. Talk across before the snap.
 3. **Goal line:** step into the end zone to see a catch near the end line. There
    is no Back Judge on it.
-4. **Field goal and try:** if you're the wing looking at the Referee's back, you
-   release to the end line and take an upright with the Umpire.
+4. **Field goal and try:** you stay on the line, not closer than 9 yds outside
+   the widest A player, and you have roughing the holder and kicker. The Line
+   Judge rules the kick.
 5. **Run:** you get downfield blocks on your half with nobody behind you. Stay
    wider and longer before coming in to clean up.

@@ -44,13 +44,11 @@ the right.
 
 ### Everyone on this play
 
-- Think onside first, every single kick. Bean bag in hand outside the line.
-- Nobody kicks without 11 and 11. Raise an arm to the Referee when your count is
-  good and your area is clear.
-- Only the covering official winds the clock — between the hashes that is the
-  Referee alone; in a side zone it is the Referee and the near wing.
-- Trail the runner by at least five yards. Blocks ahead of him matter more than
-  the dead-ball spot.
+- Think onside first, every kick. Bag in hand outside the line.
+- Raise an arm to the Referee when your count is good and your area is clear.
+- Only the covering official winds the clock — between the hashes that's the
+  Referee alone; in a side zone, him and the near wing.
+- Trail the runner by five yards. Blocks ahead of him matter more than the spot.
 
 ### Who has whom
 
@@ -61,14 +59,11 @@ the right.
 
 ### Referee — white hat only
 
-- Straddle R's goal line, middle of the field. In a crew of 4, the top of the
-  numbers at R's 5 or 10, on the Line Judge's side.
-- **Count four players on each side of the kicker.** Fewer than four either
-  side and you flag it and shut the kick down.
+- **Count four players on each side of the kicker.** Fewer either side and you
+  flag it and shut the kick down.
 - Collect every raised arm, then sound the ready.
-- Five-yard cushion; hold the goal line until it is no longer threatened. Rule
-  the touchback, bag momentum inside the 5. When in doubt on a kick possessed
-  inside the 5, touchback.
+- Five-yard cushion; hold the goal line until it's no longer threatened. Rule
+  the touchback, bag momentum inside the 5 — and when in doubt, touchback.
 - On a touchback, signal it and jog upfield sounding your whistle repeatedly.
 
 ### Positions
@@ -121,10 +116,8 @@ the kick — whistle to prevent action, then go to the kicker.
 
 - Middle of the field, **deeper than the deepest receiver** — not on the goal
   line. In a crew of 4, about R's 10.
-- The call to go to short alignment is yours if the crew disagrees. When in
-  doubt, use it.
-- If a coach says in pregame that his team kicks short, use it every time they
-  kick.
+- Short alignment is your call if the crew disagrees, and if a coach says in
+  pregame his team kicks short, use it every time they kick.
 
 ### Positions
 
@@ -172,7 +165,7 @@ Crew of 4: the wings do not move — only the Referee and Umpire adjust.
   the goal line, momentum and touchbacks.
 - K is exempt from the 50–79 numbering rule; note the numbers in case they throw.
   Officiate the fake all the way through.
-- Once the kick is away, cover blocks ahead of the returner, not the ball.
+- Cover blocks ahead of the returner, not the ball.
 
 ### Referee — white hat only
 
@@ -209,13 +202,13 @@ middle he gives the runner up to the Umpire.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/field-goal-crew-of-5.svg" alt="Field goal alignment for a crew of 5: Referee on the plant-leg side of the kicker, both wings on the field numbers at the line of scrimmage, and the Umpire and Back Judge each under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/field-goal-crew-of-5.svg" alt="Field goal alignment for a crew of 5: Referee two to three yards behind and three to five yards to the side of the kicker facing the holder, both wings straddling the line of scrimmage on their sidelines, and the Umpire and Back Judge beyond the end line each behind his own upright." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 5</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/field-goal-crew-of-4.svg" alt="Field goal alignment for a crew of 4: Referee on the plant-leg side of the kicker, the Line Judge on the numbers at the line, and the Umpire and Head Line Judge each under an upright." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/field-goal-crew-of-4.svg" alt="Field goal alignment for a crew of 4 with the snap inside the fifteen: Referee behind and to the side of the kicker facing the holder, Head Line Judge straddling the line of scrimmage, Umpire ten yards off the line in the end zone favouring the Line Judge's side, and the Line Judge on the line with an arrow showing him moving to the end line at the snap.") class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 4</figcaption>
     </figure>
   </div>
@@ -223,35 +216,49 @@ middle he gives the runner up to the Umpire.
 
 ### Everyone on this play
 
-- Call the tee and kicker out loud the moment they come on the field.
-- The two under the posts signal together, then step two yards into the end zone.
-  Miss landing in the end zone: no score, then touchback.
-- Wings on the field numbers: snap, fake, near tight end or wingback block. On a
-  fake short of the goal line they mark progress only.
-- The snapper gets two seconds of protection — direct contact inside that is a
-  foul. A blocked kick stays alive.
+- Call the tee and kicker out loud the moment they come on.
+- **Wings rule whether the kick crossed the neutral zone**, and help on
+  ineligibles downfield on a fake.
+- The snapper gets two seconds of protection. A blocked try is dead at once; a
+  blocked field goal stays alive unless it breaks the goal line plane.
 
 ### Referee — white hat only
 
-- Plant-leg side of the kicker: five deeper than the holder, ten wide, shoulders
-  at 45°. Do not mark the ball ready until the Umpire reaches the end line.
+- 2 to 3 yards to the rear, 3 to 5 to the side of the kicker, **facing the
+  holder**. Don't mark it ready until your deep officials are set.
 - Keys: eligible backs and holder's number · snap · snapper · holder · catch · no
   fake · rushers · kicker and holder.
-- Ask the captain where he wants it spotted for the try. You do not signal the
-  score.
+- Stay with the kicker and holder until neither is threatened, then look to the
+  deep officials and **relay their signal to the press box**.
 
 ### Positions
 
-| | Crew of 5 | Crew of 4 |
-| --- | --- | --- |
-| **R** | Plant-leg side of the kicker, five deeper and ten wide of the holder. | Same as a crew of 5. |
-| **U** | Under the upright opposite the press box. | Takes one upright. |
-| **HL / LJ** | On the field numbers at the line of scrimmage. | The wing looking at the Referee's back releases to the end line, takes the other upright. |
-| **BJ** | Under the press box upright. | — |
+**Crew of 5**
 
-Crew of 5 muddle huddle: the two under the posts move to the end line, wings go
-2 yds out of bounds. Crew of 4: the other wing stays on the numbers at the line,
-alone — settle who rules the kick good or no good.
+| | |
+| --- | --- |
+| **R** | 2–3 yds to the rear, 3–5 yds to the side of the kicker, facing the holder. Relays the result to the press box. |
+| **U** | Beyond the end line, behind the **press box** upright. Rules inside or outside **your** upright. |
+| **HL / LJ** | Straddling the line of scrimmage. |
+| **BJ** | Beyond the end line, behind the other upright. Rules your upright **and the crossbar** — and you sound the whistle and give the signal. |
+
+**Crew of 4** — nobody stands under a post. **R** is 1 yd behind and 2–3 to the
+side of the kicker, facing the holder; **U** is 10 yds off the line favouring the
+Line Judge's side, checking numbers and moving to the line at the snap; **HL**
+straddles the line not closer than 9 yds outside the widest A player. Both R and
+HL have roughing the holder and kicker. What changes is the **LJ**, and it turns
+on where the snap is:
+
+- **Outside R's 15** — LJ is 5 yds behind and directly between the uprights, and
+  is the **sole judge of good or no good**. R echoes it to the press box.
+- **On or inside R's 15** — LJ starts on the line 5–7 yds outside the offensive
+  end, then goes hard to the end line at the snap and rules the **crossbar**:
+  thumbs-up to R if it clears, signal no good himself if it doesn't, then
+  touchback. **R** rules whether it went through the uprights.
+
+Field goal by free kick: chains set the 10-yard neutral zone; Referee and Umpire
+go behind the upright, the Umpire rules the crossbar, both judge the kick.
+Everyone else works it as a kickoff.
 
 ---
 
@@ -259,13 +266,9 @@ alone — settle who rules the kick good or no good.
 
 The white hat runs it; everyone answers.
 
-1. **Who goes deep on a 4-man punt.** This card sends the Umpire. Some
-   associations send the Line Judge and keep the Umpire inside.
-2. **Who rules the kick good or no good** — the officials under the posts, or the
-   Referee from behind on a short try.
-3. **Kickoff details.** Wings at the goal line or up to the 10; which sideline the
-   Referee takes in a crew of 4; who has the opposite pylon.
-4. **Free kick after a safety, and after a fair catch.** Both rare, both a
+1. **Which foot the punter and the place kicker use.** The Referee's spot on
+   both kicks depends on it.
+2. **Free kick after a safety, and after a fair catch.** Both rare, both a
    different alignment.
-5. **Counting.** Referee and both wings count Team R; Umpire and Back Judge count
-   Team K. No kick without 11 and 11.
+3. **Counting.** Referee and both wings count Team R; Umpire and Back Judge count
+   Team K. No kick without 11 and 11 — and four on each side of the kicker.
