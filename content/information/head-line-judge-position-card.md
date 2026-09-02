@@ -90,7 +90,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/head-line-judge/punt.svg" alt="Punt — the whole crew of five, with the Head Line Judge highlighted as the white marker on his own sideline at the line of scrimmage." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/head-line-judge/punt.svg" alt="Punt — the whole crew of five, with the Head Line Judge highlighted as the white marker on his own sideline at the line of scrimmage, holding it until the kick crosses." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Punt</figcaption>
     </figure>
   </div>
@@ -98,13 +98,15 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Kickoff: the goal line on your sideline. Move up to the 10 if that team's first
-  kick fell short of the 15.
+- Kickoff: R's goal line extended on your sideline — the same yard line as the
+  Line Judge. Move up together if that team's first kick fell short, and stay
+  deeper than the deepest receiver.
 - Stay on the sideline until the kick ends, and watch for a fair catch signal.
 - Trail the runner by at least five yards and watch the blocks. Do not hurry to
   the dead-ball spot.
-- Punt: stay on your sideline. Pause before moving downfield and read whether the
-  kick could be blocked.
+- Punt: **hold the line until the kick crosses the neutral zone** — you rule
+  whether it crossed, and you have the fake. Your sideline is yours end line to
+  end line.
 
 ### Your keys
 
@@ -120,7 +122,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | --- | --- |
 | **Kickoff** | R's goal line extended, your sideline — same yard line as the Line Judge. |
 | **Onside** | R's free-kick line (the 50), your sideline. Bag in hand, line as a plane. |
-| **Punt** | Your sideline at the line of scrimmage. |
+| **Punt** | Your sideline at the line — **hold it until the kick crosses the neutral zone**. You rule whether it crossed. |
 | **Short kick** | Starting at the 10 and it goes toward the goal line? Hustle back outside the pylon. |
 
 ### After the punt

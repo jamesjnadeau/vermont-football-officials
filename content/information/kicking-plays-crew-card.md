@@ -54,11 +54,10 @@ the right.
 
 ### Who has whom
 
-The widest **two** players on each side of the kicking formation belong to the
-deepest official on that sideline. Stay put — do not drift — until the kick is
-possessed, and watch them all the way down. Everyone else on Team K belongs to
-the officials on the two restraining lines, each taking his own side. The
-official on **K's** restraining line also has action against the kicker.
+- Widest **two** on each side of K's formation → the deepest official on that
+  sideline. Hold your spot until the kick is possessed.
+- Everyone else on K → the two restraining-line officials, each his own side.
+  The one on **K's** line also has action against the kicker.
 
 ### Referee — white hat only
 
@@ -82,12 +81,9 @@ official on **K's** restraining line also has action against the kicker.
 | **LJ** | R's goal line extended, own sideline, **same yard line as the HL**. | R's free-kick line, coming to the top of the numbers. |
 | **BJ** | K's free-kick line, 2 yds out of bounds, **HL's side**. Check the tee, hold the ball until K has 11, remind the kicker to wait for the whistle, and note nobody but the kicker more than 5 yds off K's line. | — |
 
-Both wings must be on the **same yard line**, and deeper than the deepest
-receiver if they move up — that is the adjustment when a team's first kick
-falls short. Crew of 4: no Back Judge — Referee and both wings count Team R.
-
-Ball falls or blows off the tee before the kick? Whistle to prevent action,
-then go to the kicker with instructions.
+Both wings on the **same yard line**, deeper than the deepest receiver if they
+move up. Crew of 4: Referee and both wings count Team R. Ball off the tee before
+the kick — whistle to prevent action, then go to the kicker.
 
 ---
 
@@ -114,15 +110,12 @@ then go to the kicker with instructions.
 
 - Officiate your restraining line as a plane. Bag in hand, restricted area
   cleared before you raise your arm.
-- **Bag the spot if K touches it first.** The Umpire and both wings all carry
-  one for exactly this.
-- **Kill it if a prone player from either team recovers** — whether or not the
-  kick has gone ten yards.
-- Never signal that a short kick is expected — be ready for one every time.
-- Know first touching and exactly where it happened. K cannot recover before the
-  ball goes ten yards or is touched by R.
-- On the pile, the officials at the restraining lines dig it out. Find the ball
-  before anyone signals.
+- **Bag K's first touching**, and **kill it if a prone player from either team
+  recovers** — ten yards or not.
+- Never signal that a short kick is expected. K cannot recover before the ball
+  goes ten yards or is touched by R.
+- On the pile, the restraining-line officials dig it out. Find the ball before
+  anyone signals.
 
 ### Referee — white hat only
 
@@ -143,9 +136,8 @@ then go to the kicker with instructions.
 | **LJ** | K's free-kick line, own sideline. Bag in hand. | Your regular free-kick spot — R's line. Bag in hand. |
 | **BJ** | K's free-kick line, HL's side. | — |
 
-Crew of 5 makes a box: two officials on each restraining line, one per
-sideline. Crew of 4: the wings do not move for this — they hold the same spots
-they take on any free kick, and only the Referee and Umpire adjust.
+Crew of 5 makes a box: two officials on each restraining line, one per sideline.
+Crew of 4: the wings do not move — only the Referee and Umpire adjust.
 
 ---
 
@@ -156,13 +148,13 @@ they take on any free kick, and only the Referee and Umpire adjust.
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/punt-crew-of-5.svg" alt="Punt alignment for a crew of 5: Referee five deep and ten wide of the punter, Umpire seven yards off the line, both wings on the line of scrimmage, and the Back Judge deep near the returner." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/punt-crew-of-5.svg" alt="Punt alignment for a crew of 5: Referee behind the punter on his kicking-leg side, Umpire five or six yards downfield favouring the Line Judge's sideline, the Head Line Judge holding the line of scrimmage and the Line Judge releasing downfield at the snap, and the Back Judge deep and wide of the returner on the Head Line Judge's side." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 5</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/punt-crew-of-4.svg" alt="Punt alignment for a crew of 4: Referee five deep and ten wide of the punter, both wings on the line of scrimmage, and the Umpire taking the deep spot near the returner." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/punt-crew-of-4.svg" alt="Punt alignment for a crew of 4: Referee behind the punter on the Line Judge's side, the Head Line Judge holding the line of scrimmage, the Umpire ten yards downfield favouring the Line Judge's sideline, and the Line Judge deep and wide of the returner." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 4</figcaption>
     </figure>
   </div>
@@ -170,18 +162,23 @@ they take on any free kick, and only the Referee and Umpire adjust.
 
 ### Everyone on this play
 
-- Wings hold the line of scrimmage until the kick crosses it — use the down box
-  as your reference.
-- The deep official bags the post-scrimmage-kick spot and first touching, and
-  owns the goal line and touchbacks.
+- **The two wings do different things at the snap.** The Head Line Judge stays
+  on the line until the kick crosses the neutral zone — he rules whether it
+  crossed. The Line Judge releases on the snap and works the space between the
+  neutral zone and the receivers.
+- Whoever covers it, **beanbag the spot where the kick ends.** That spot is what
+  post-scrimmage-kick enforcement is measured from.
+- The deep official has all the deep receivers, judges the fair catch, and owns
+  the goal line, momentum and touchbacks.
 - K is exempt from the 50–79 numbering rule; note the numbers in case they throw.
   Officiate the fake all the way through.
 - Once the kick is away, cover blocks ahead of the returner, not the ball.
 
 ### Referee — white hat only
 
-- Five yards deep, ten wide of the punter at 45°, wide side. Punter in his own
-  end zone — you're on the end line.
+- Behind the kicker on his **kicking-leg side** — 2 to 3 back, 3 to 5 to the
+  side. Not in front of him, and not off the wide side; ask in the pregame which
+  foot he kicks with. Punter in his own end zone — you're on the end line.
 - Tell R: stay off the center, stay off the punter. Watch for a low snap and the
   kicker's knee.
 - Yell "ball's away." Roughing or running into — stay with the kicker until there
@@ -192,13 +189,16 @@ they take on any free kick, and only the Referee and Umpire adjust.
 
 | | Crew of 5 | Crew of 4 |
 | --- | --- | --- |
-| **R** | Five deep, ten wide of the punter at 45°, wide side of the field. | Same as a crew of 5. |
-| **U** | Seven yards off the line inside the ends, opposite the Referee. | Takes the deep spot — everything the 5-man Back Judge does, PSK bag and goal line included. |
-| **HL / LJ** | HL: sideline at the line, pauses first, reading a possible block. LJ: sideline, straddling the line until the kick crosses. | Both hold their own sidelines at the line of scrimmage. |
-| **BJ** | Eight wide, five deep of one returner; splits two at five. Goal line if the returner is on or inside R's 10. | — |
+| **R** | 3–5 yds outside the tight end, 2–3 yds behind the kicker, kicking-leg side. | 2–3 yds behind and 3–5 yds outside the punter, Line Judge's side. |
+| **U** | 4–7 yds deep, favouring the **Line Judge's** sideline — he leaves at the snap and you cover for it. Move to the line at the snap, pivot to his side once both teams have run past. | 10 yds deep, favouring the Line Judge's sideline. Same pivot. |
+| **HL** | Straddling the line on your sideline. **Hold it until the kick crosses the neutral zone** — you rule whether it crossed. Your sideline is yours end line to end line. | Same, and not closer than 9 yds outside the widest A player. |
+| **LJ** | Straddling the line on your sideline. **Release at the snap** and work between the neutral zone and the receivers. Your sideline is yours end line to end line. | 7–10 yds wider than and in front of the deepest receiver — **you are the deep official**. |
+| **BJ** | 10–12 yds wider than and 2–3 yds behind the deepest receiver, on the **HL's** side. Move up on a short kick, back if he retreats. | — |
 
-Punts are the only play where the Umpire mirrors the Referee. In a crew of 4
-nobody is in the interior, and the Referee widens his clean-up behind the kick.
+**In a crew of 4 the deep official is the Line Judge, not the Umpire.** Every
+deep receiver is his, along with kicks down the middle and into his side zone,
+and getting to R's goal line for momentum and touchback. On a return up the
+middle he gives the runner up to the Umpire.
 
 ---
 

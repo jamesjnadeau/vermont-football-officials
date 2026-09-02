@@ -92,7 +92,7 @@ sideline — never into the field.*
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/line-judge/punt.svg" alt="Punt — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage until the kick crosses it." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/line-judge/punt.svg" alt="Punt — the whole crew of five, with the Line Judge highlighted as the white marker straddling the line of scrimmage, with an arrow showing he releases downfield at the snap." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Punt</figcaption>
     </figure>
   </div>
@@ -100,20 +100,22 @@ sideline — never into the field.*
 
 ### What you do
 
-- Kickoff: the goal line on the press box sideline. Stand at the field numbers
-  with a stop signal to the Referee until the clock reads 12:00.
-- Move up to the 10 if that team's first kick fell short of the 15. Trail the
-  runner by at least five yards.
-- Punt: straddle the line of scrimmage until the kick crosses it — use the down
-  box as your reference.
-- Stay on your sideline on a punt; an out-of-bounds kick is live for you.
+- Kickoff: R's goal line extended on the press box sideline — the same yard line
+  as the Head Line Judge. Stand at the field numbers with a stop signal to the
+  Referee until the clock reads 12:00.
+- Move up if that team's first kick fell short, but stay level with your partner
+  and deeper than the deepest receiver. Trail the runner by at least five yards.
+- Punt: straddle the line, then **release on the snap** and work the space
+  between the neutral zone and the receivers. Your partner holds the line.
+- Your sideline is yours end line to end line; an out-of-bounds kick is live for
+  you.
 
 ### Your keys
 
 - Kickoff — R touching the kick · wind · K out of bounds · blocks immediately
   ahead of the returner.
-- Punt — snap · line play · blocking backs · the kick crossing the line ·
-  blocking.
+- Punt — snap · line play · blocking backs · your receivers · blocking. The
+  Head Line Judge rules whether the kick crossed.
 - Wind the clock only if the kick is caught or touched in your side zone.
 - Kick out of bounds: flag at the spot, then hustle to the head coach for his
   choice.
@@ -124,7 +126,7 @@ sideline — never into the field.*
 | --- | --- |
 | **Kickoff** | R's goal line extended, press box sideline — same yard line as the Head Line Judge. |
 | **Onside** | K's free-kick line (the 40), your sideline. Bag in hand, line as a plane. |
-| **Punt** | Straddling the line until the kick crosses it. |
+| **Punt** | Straddling the line on your sideline — **release at the snap**. Your sideline is yours end line to end line. |
 | **Safety kick** | Adjust off the others: Back Judge at K's 20, Umpire and Head Line Judge at K's 30. |
 
 ### After the punt
@@ -242,10 +244,13 @@ sideline — never into the field.*
 
 1. **You pick up clock status to the Referee** — whether it starts on the ready
    or the snap. That's the Back Judge's job in a crew of 5.
-2. **Kickoff:** you're at the 50 on the press box sideline, not the goal line.
+2. **Kickoff:** you're on R's free-kick line at the top of the numbers, not the
+   goal line.
 3. **Pass:** every receiver on your side is yours, and the middle is dual
    coverage with the Head Line Judge.
-4. **Punt:** you still hold the line until the kick crosses it, but the Umpire is
-   deep instead of a Back Judge.
+4. **Punt: you are the deep official.** 7 to 10 yards wider than and in front of
+   the deepest receiver. Every deep receiver is yours, along with kicks down the
+   middle, your side zone and getting to R's goal line for momentum and
+   touchback.
 5. **Goal line:** step into the end zone to see a catch near the end line —
    nobody is on it.

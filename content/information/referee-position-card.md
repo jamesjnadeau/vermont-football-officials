@@ -89,7 +89,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/referee/punt.svg" alt="Punt — the whole crew of five, with the Referee highlighted as the white marker five deep and ten wide of the punter at 45 degrees." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/referee/punt.svg" alt="Punt — the whole crew of five, with the Referee highlighted as the white marker two to three yards behind the punter and three to five yards to his kicking-leg side." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Punt</figcaption>
     </figure>
   </div>
@@ -103,9 +103,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
   ready. Nobody kicks without 11 and 11.
 - **Count four players on each side of the kicker.** Fewer either side and you
   flag it and shut the kick down immediately.
-- Punt: five deep and ten wide of the punter at 45°, wide side. If he's in his
-  own end zone, you're on the end line. Onside alignment is your call if the crew
-  disagrees.
+- Punt: behind the kicker on his **kicking-leg side** — 2 to 3 yards back, 3 to
+  5 to the side. If he's in his own end zone, you're on the end line. Onside
+  alignment is your call if the crew disagrees.
 
 ### Your keys
 
@@ -123,7 +123,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | --- | --- |
 | **Kickoff** | Straddle the goal line, middle of the field. |
 | **Onside** | Middle of the field, deeper than the deepest receiver. |
-| **Punt** | Five deep, ten wide of the punter at 45°. |
+| **Punt** | 2–3 behind, 3–5 outside the kicker, kicking-leg side. |
 | **Safety kick** | Receivers' 20. |
 | **Touchback** | Signal it, then jog upfield sounding your whistle repeatedly. |
 
@@ -248,7 +248,8 @@ print at 100% on Letter, two-sided, flip on the long edge.
 3. **Kickoff:** you're at the top of the numbers at the receivers' 5 or 10 on the
    Line Judge's side, not the goal line in the middle. Your Head Line Judge is on
    K's free-kick line and your Line Judge on R's.
-4. **Punt:** the Umpire goes deep with the returners, so the interior is empty.
-   Widen your own clean-up behind the kick.
+4. **Punt:** the **Line Judge** goes deep with the returners and the Umpire sits
+   10 yards off the line, so the interior is thin. Widen your own clean-up behind
+   the kick, and be ready to take the runner on a long return.
 5. **Field goal and try:** the wing on your side releases to an upright, so you
    have less help on the line of scrimmage.

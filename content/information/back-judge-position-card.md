@@ -90,7 +90,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/back-judge/punt.svg" alt="Punt — the whole crew of five, with the Back Judge highlighted as the white marker eight wide and five deep of the returner." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/back-judge/punt.svg" alt="Punt — the whole crew of five, with the Back Judge highlighted as the white marker ten to twelve yards wider than and two to three yards behind the deepest receiver, on the Head Line Judge's side." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Punt</figcaption>
     </figure>
   </div>
@@ -123,7 +123,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | --- | --- |
 | **Kickoff** | K's free-kick line (the 40), 2 yds out of bounds, opposite the press box. |
 | **Onside** | K's free-kick line, Head Line Judge's side. Line as a plane. |
-| **Punt** | 8 wide, 5 deep of one returner. Favour the wide side; in the middle with one returner, favour the Line Judge. |
+| **Punt** | 10–12 wider than and 2–3 behind the deepest receiver, on the Head Line Judge's side. Up on a short kick, back if he retreats. |
 | **Safety kick** | Team K's 20 — the Umpire and Head Line Judge take K's 30. |
 | **Off the tee** | Two whistle blasts and jog to the kicker. |
 

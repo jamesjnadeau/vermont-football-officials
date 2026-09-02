@@ -62,7 +62,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | | |
 | --- | --- |
 | **Run / pass** | 7 off the line inside the ends, regardless of the Referee. |
-| **Punt** | 7 off the line inside the ends, opposite the Referee — the only play you mirror him. |
+| **Punt** | 4–7 yds deep, favouring the Line Judge's sideline. |
 | **Goal line** | 7 off the line. Vary laterally. |
 | **Backed up** | 7 off the line, unchanged. |
 
@@ -92,7 +92,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/position-cards/umpire/punt.svg" alt="Punt — the whole crew of five, with the Umpire highlighted as the white marker seven yards off the line inside the ends, opposite the Referee." class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/position-cards/umpire/punt.svg" alt="Punt — the whole crew of five, with the Umpire highlighted as the white marker five or six yards downfield of the line, favouring the Line Judge's sideline." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Punt</figcaption>
     </figure>
   </div>
@@ -126,7 +126,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | --- | --- |
 | **Kickoff** | R's free-kick line (the 50), 2 yds out of bounds, press box side. |
 | **Onside** | R's free-kick line, Line Judge's side. Bag in hand, line as a plane. |
-| **Punt** | 7 off the line inside the ends, opposite the Referee. |
+| **Punt** | 4–7 yds deep, favouring the Line Judge's sideline — he releases at the snap. |
 | **Safety kick** | Team K's 30. |
 
 ### Pre-kick
