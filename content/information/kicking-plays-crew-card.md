@@ -210,7 +210,7 @@ middle he gives the runner up to the Umpire.
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
-      <img src="/images/kicking-plays/field-goal-crew-of-4.svg" alt="Field goal alignment for a crew of 4 with the snap inside the fifteen: Referee behind and to the side of the kicker facing the holder, Head Line Judge straddling the line of scrimmage, Umpire ten yards off the line in the end zone favouring the Line Judge's side, and the Line Judge on the line with an arrow showing him moving to the end line at the snap.") class="figure-img img-fluid border rounded p-2 bg-white">
+      <img src="/images/kicking-plays/field-goal-crew-of-4.svg" alt="Field goal alignment for a crew of 4 with the snap inside the fifteen: Referee behind and to the side of the kicker facing the holder, Head Line Judge straddling the line of scrimmage, Umpire ten yards off the line in the end zone favouring the Line Judge's side, and the Line Judge on the line with an arrow showing him moving to the end line at the snap." class="figure-img img-fluid border rounded p-2 bg-white">
       <figcaption class="figure-caption">Crew of 4</figcaption>
     </figure>
   </div>
