@@ -242,7 +242,13 @@ there is no Back Judge, so the end line is uncovered until a wing gets there.
 
 ## Backed up — reverse mechanics
 
-*Snap inside A's own 10.*
+*Snap inside A's own 10 · association practice, not the manual.*
+
+The NFHS manual does **not** move the Referee when Team A is backed up — §3.7
+p. 71 gives him the same spot coming out as on any other scrimmage down, and
+§4.8 p. 149 changes only the wings, who go quickly to the goal line when the
+snap is at or inside A's 5. What follows is the reverse mechanic many
+associations teach. Confirm it in pregame before you use it.
 
 1. **The Referee moves to the end line** — 8 wide of the QB at 45° on his passing-arm side, so
    an errant snap stays in front of him. Snap between the –10 and –15: 10 wide on

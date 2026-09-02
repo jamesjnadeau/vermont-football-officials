@@ -66,7 +66,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
 | --- | --- |
 | **Run** | 10–12 back, passing-arm side, at least as wide as the tight end. |
 | **Pass** | Same. 10-yard buffer if he rolls. |
-| **Backed up** | 8 wide of the QB at 45° on the end line. From the –10 to the –15, 10 wide on the goal line. |
+| **Backed up** | Association practice, not the manual: 8 wide of the QB at 45° on the end line; from the –10 to the –15, 10 wide on the goal line. The manual keeps you at your normal spot. |
 | **Hurry-up** | Don't move in as far. Tell the centre and QB to wait for your whistle. |
 
 ### Say it out loud
