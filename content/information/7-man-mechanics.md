@@ -20,19 +20,25 @@ reference material is the
 [crew cards](/tags/crew-cards/) and the
 [position cards](/tags/position-cards/), which are for crews of five and four.
 
+**The marks on the diagrams:** **R** referee, **U** umpire, **HL** head line
+judge, **LJ** line judge, **SJ** side judge, **FJ** field judge, **BJ** back
+judge. The press box is on the right of every diagram, which is where the Line
+Judge, Field Judge and Back Judge work; the manual's own MechaniGrams draw it on
+the left.
+
 **[Download the 2022 7-man mechanics manual (PDF, 12 slides)](/uploads/7-man-mechanics-2022.pdf)** —
 the VFOA's original slide deck, kept as the association's own record. **Where
 the deck and this page disagree, this page is the manual and the deck is four
-years old.** The photographs below are from the deck, so a diagram may still
-show the older alignment; the text under each one is what the manual says.
+years old.** The diagrams here are drawn from the manual's Part 5, not taken
+from the deck.
 
 ---
 
 ## Coin toss
 
 <figure class="figure d-block my-4">
-  <img src="/images/7-man-mechanics/coin-toss.jpg" alt="Coin toss alignment: the Referee and Umpire walk the captains to the middle of the field, the Line Judge and Back Judge remain on their sidelines, and the Head Head Line Judge and Field Judge stay on the sidelines with the game ball. The press box is on the left." class="figure-img img-fluid border rounded">
-  <figcaption class="figure-caption">Coin toss positions. L and H remain on the sideline with the game ball; B remains on the sideline.</figcaption>
+  <img src="/images/7-man-mechanics/coin-toss.svg" alt="Coin toss, crew of 7: the Referee and Umpire face each other in the centre of the field with the four captains between them, the Field Judge and Side Judge at the hash marks having released the captains, the Head Line Judge on his sideline with the line-to-gain crew, and the Line Judge and Back Judge on the press box sideline." class="figure-img img-fluid border rounded p-2 bg-white">
+  <figcaption class="figure-caption">Coin toss. R and U stand across from each other with their backs to their own sidelines; the captains face the goal line they will defend.</figcaption>
 </figure>
 
 ---
@@ -40,8 +46,8 @@ show the older alignment; the text under each one is what the manual says.
 ## Free kicks
 
 <figure class="figure d-block my-4">
-  <img src="/images/7-man-mechanics/free-kicks.jpg" alt="Free kick alignment showing the kicking team's five players either side of the kicker, R's free-kick line and K's free-kick line, with L and H on the receivers' goal line, F and S at the 50, B and U deep, and R behind the receiving team's end zone." class="figure-img img-fluid border rounded">
-  <figcaption class="figure-caption">Free kick alignment.</figcaption>
+  <img src="/images/7-man-mechanics/free-kick.svg" alt="Free kick alignment for a crew of 7: the Umpire and Back Judge outside the sidelines on the kicking team's restraining line, the Side Judge and Field Judge on the receiving team's restraining line, the Referee in the centre of the receivers' goal line, and both wings at their own pylons on that goal line." class="figure-img img-fluid border rounded p-2 bg-white">
+  <figcaption class="figure-caption">Free kick. U opposite the press box and BJ on it; SJ and FJ on R's restraining line; the wings at their own pylons.</figcaption>
 </figure>
 
 **Positions (§5.7, p. 205).**
@@ -49,10 +55,10 @@ show the older alignment; the text under each one is what the manual says.
 - **R** — Centre of the field, on the goal line.
 - **U** — K's restraining line (usually the 40), sideline opposite the press box.
   Count K and help manage the 5-yard belt.
-- **H and L** — Your own pylon on the goal line, or at least 10 yards deeper than
+- **HL and LJ** — Your own pylon on the goal line, or at least 10 yards deeper than
   the deepest receiver if you move up. Count R.
-- **F and S** — R's restraining line (usually the 50).
-- **B** — Count K. Don't give the kicker the ball until K has 11 on the field.
+- **FJ and SJ** — R's restraining line (usually the 50).
+- **BJ** — Count K. Don't give the kicker the ball until K has 11 on the field.
   Manage the 5-yard belt, hand him the ball with the instructions, then take K's
   restraining line on the press box side.
 
@@ -71,23 +77,23 @@ when in doubt, touchback.
 ## Onside kicks
 
 <figure class="figure d-block my-4">
-  <img src="/images/7-man-mechanics/onside-kicks.jpg" alt="Onside kick alignment with the officials positioned around the kicking team's restraining line to rule on the ball crossing, early blocks and first touching." class="figure-img img-fluid border rounded">
-  <figcaption class="figure-caption">Onside kick alignment.</figcaption>
+  <img src="/images/7-man-mechanics/onside-kick.svg" alt="Onside kick alignment for a crew of 7: the Umpire and Back Judge on the kicking team's restraining line, the Head Line Judge and Line Judge up on the kicking team's 45, the Side Judge and Field Judge on the receiving team's restraining line, and the Referee alone in the middle of the field deeper than the deepest receiver." class="figure-img img-fluid border rounded p-2 bg-white">
+  <figcaption class="figure-caption">Onside kick. Three lines: K's restraining line, K's 45, and R's restraining line. Nobody moves until the ball passes R's line or is recovered.</figcaption>
 </figure>
 
 **§5.7, p. 207.** The deck has H/L and F/S the wrong way round.
 
 - **R** — Centre of the field, deeper than the deepest receiver. Keep your
   distance, watch for low blocks, and you have the goal line.
-- **U and B** — K's restraining line (usually the 40) — U opposite the press box,
-  B on the press box side. You have K staying behind its free-kick line and
+- **U and BJ** — K's restraining line (usually the 40) — U opposite the press box,
+  BJ on the press box side. You have K staying behind its free-kick line and
   whether the ball was "topped" off the tee. **That restraining line is a true
   line and must not be broken before the kick.**
-- **H and L** — **K's 45.** Rule whether K blocks before it is eligible to touch
+- **HL and LJ** — **K's 45.** Rule whether K blocks before it is eligible to touch
   the ball, watch the ball immediately after it is kicked, and rule a topped kick
   that hits the ground. Be ready for a pop-up kick, first touching, a muff, and
   illegal or low blocks.
-- **F and S** — R's restraining line. **Primary responsibility for whether the
+- **FJ and SJ** — R's restraining line. **Primary responsibility for whether the
   ball goes 10 yards**, whether it is touched or muffed, and a low block within 2
   yards of the line.
 - **All** — **Nobody moves** until the ball is beyond R's restraining line or is
@@ -110,15 +116,15 @@ outside the 25; the manual gives him the **end line**.
   dead-ball action is over.
 - **U** — Normal scrimmage responsibility. **Do not signal a touchdown** — let
   the wings and the deep officials rule it.
-- **H and L** — Goal line from the **7 and in**; be *on* it. Outside the 7 you
+- **HL and LJ** — Goal line from the **7 and in**; be *on* it. Outside the 7 you
   own forward progress to the 2. Tell your downfield partner on every play that
   you are taking all goal line rulings. Signal only if you saw the ball cross,
   and never mirror.
-- **F and S** — Normal position outside the 25. **From the 25 to the 7, on the
+- **FJ and SJ** — Normal position outside the 25. **From the 25 to the 7, on the
   goal line at the pylon.** From the 7 and in, at the **pylon on the end line**.
   When a play ends on or near the goal line you must be on it. The goal line and
   your sideline are yours.
-- **B** — Normal position outside the 25. **From the 25 and in, on the end line**
+- **BJ** — Normal position outside the 25. **From the 25 and in, on the end line**
   — you have primary end line coverage. In a tight power run formation with no
   split receivers, you have low blocks by linebackers and lead blockers.
 
@@ -127,24 +133,24 @@ outside the 25; the manual gives him the **end line**.
 ## Reverse goal line
 
 The manual states this as **reverse fade mechanics** (§5.8, p. 216): on a change
-of possession with a defensive return, **H and L become responsible for the goal
-line** and **F and S become responsible for forward progress** — the exact
+of possession with a defensive return, **HL and LJ become responsible for the goal
+line** and **FJ and SJ become responsible for forward progress** — the exact
 reverse of the normal division. Everything below is the VFOA deck's own backed-up
 mechanic and is not in the manual:
 
-- **R, S, F and B** — Cover plays as you normally would.
+- **R, SJ, FJ and BJ** — Cover plays as you normally would.
 - **U** — Line of scrimmage responsibilities for plays inside the 10 yard line.
-- **H and L** — Move immediately to the goal line for plays snapped from the 3
-  and in. If snapped from the 3 to the 7, H should hold the line of scrimmage and
-  L should move back to the goal line with R to help with forward progress.
+- **HL and LJ** — Move immediately to the goal line for plays snapped from the 3
+  and in. If snapped from the 3 to the 7, HL should hold the line of scrimmage and
+  LJ should move back to the goal line with R to help with forward progress.
 
 ---
 
 ## Punts
 
 <figure class="figure d-block my-4">
-  <img src="/images/7-man-mechanics/punts.jpg" alt="Punt alignment: B on the receivers' goal line, R behind the kicker, U in the middle of the field, F and S on the goal line at either sideline, and L and H at the line of scrimmage with arrows showing they move upfield after the kick." class="figure-img img-fluid border rounded">
-  <figcaption class="figure-caption">Punt alignment, with L and H moving upfield after the kick.</figcaption>
+  <img src="/images/7-man-mechanics/scrimmage-kick.svg" alt="Scrimmage kick alignment for a crew of 7: the Referee behind the punter on his kicking-leg side, the Umpire ten yards beyond the line, both wings on their sidelines at the line of scrimmage, the Back Judge between the hash marks deeper than the returner, and the Side Judge and Field Judge wide and level with him." class="figure-img img-fluid border rounded p-2 bg-white">
+  <figcaption class="figure-caption">Scrimmage kick. The wings hold the line until the kick crosses it; BJ is between the hashes 8–10 deeper than the returner, SJ and FJ ten behind him.</figcaption>
 </figure>
 
 ---
@@ -152,8 +158,8 @@ mechanic and is not in the manual:
 ## Field goals and trys
 
 <figure class="figure d-block my-4">
-  <img src="/images/7-man-mechanics/field-goals-and-trys.jpg" alt="Field goal and try alignment with officials under the uprights and on the line of scrimmage." class="figure-img img-fluid border rounded">
-  <figcaption class="figure-caption">Field goal and try alignment.</figcaption>
+  <img src="/images/7-man-mechanics/scoring-kick.svg" alt="Scoring kick alignment for a crew of 7: the Field Judge and Back Judge beyond the end line under the goal post, the Referee behind and to the side of the kicker facing the holder, both wings straddling the line of scrimmage, the Umpire beyond the line, and the Side Judge beside him as a second umpire on the defensive strength side." class="figure-img img-fluid border rounded p-2 bg-white">
+  <figcaption class="figure-caption">Scoring kick. FJ and BJ take the goal post and both signal; BJ has the crossbar. SJ works as a second umpire on the defensive strength side.</figcaption>
 </figure>
 
 ---
@@ -161,20 +167,20 @@ mechanic and is not in the manual:
 ## Measurements
 
 **§5.6, p. 203.** The deck gives the down box to S and the spare ball to F; the
-manual gives the box to H and the spare ball to B or L.
+manual gives the box to HL and the spare ball to BJ or LJ.
 
 - **R** — Rule whether the ball is beyond the front rod.
-- **H** — Have the box moved **behind the lead rod** first, then bring the chain
+- **HL** — Have the box moved **behind the lead rod** first, then bring the chain
   in from the sideline with the crew. Keep a hand on the links either side of the
   clip so the right link survives if the clip falls off. **Clip goes on the back
   edge of the line.** Say out loud what the next down will be either way — "it
   will either be first or fourth."
-- **L** — Mark with your foot the intersection of the 5-yard line where the chain
+- **LJ** — Mark with your foot the intersection of the 5-yard line where the chain
   is clipped and a line through the ball parallel to the sideline. That is where
   H puts the clip.
 - **U** — Take the front rod from the crew once H says he has the chain on the
   proper mark, then pull it taut.
-- **B** — Hold the ball in place **from the downfield side**, facing Team A's goal
+- **BJ** — Hold the ball in place **from the downfield side**, facing Team A's goal
   line. Either you or L gets the spare ball from A's ball helper; if you have it,
   toss it to L before the measurement.
 
@@ -183,8 +189,8 @@ manual gives the box to H and the spare ball to B or L.
 ## Scrimmage plays
 
 <figure class="figure d-block my-4">
-  <img src="/images/7-man-mechanics/scrimmage-plays.jpg" alt="Scrimmage play alignment showing the starting position of all seven officials around the line of scrimmage and downfield." class="figure-img img-fluid border rounded">
-  <figcaption class="figure-caption">Scrimmage play alignment.</figcaption>
+  <img src="/images/7-man-mechanics/scrimmage-play.svg" alt="Scrimmage play alignment for a crew of 7: the Referee thirteen to fifteen yards deep on the quarterback's passing-arm side, the Umpire five to ten yards beyond the line inside the tackle, both wings straddling the line on their sidelines, the Side Judge and Field Judge twenty to twenty-two yards deep, and the Back Judge twenty-five to thirty." class="figure-img img-fluid border rounded p-2 bg-white">
+  <figcaption class="figure-caption">Scrimmage play. Four officials deeper than the line of scrimmage is what makes fade mechanics work.</figcaption>
 </figure>
 
 **Positions (§5.7, p. 209).**
@@ -195,12 +201,12 @@ manual gives the box to H and the spare ball to B or L.
 - **U** — 5 to 10 yards deep, **not outside the tackle**. Vary your position. Key
   the centre and the two guards, and be alert for false starts. Count the offence
   and signal it to the Referee every play.
-- **H and L** — Read the formation and identify your eligible receiver. Shut the
+- **HL and LJ** — Read the formation and identify your eligible receiver. Shut the
   play down on a false start or encroachment. L has the tackle on his side unless
   there are trips; H has the near-side tackle when there are trips to L's side.
-- **F and S** — 20 to 22 yards deep. Count the defence every play and
+- **FJ and SJ** — 20 to 22 yards deep. Count the defence every play and
   acknowledge with B. You have the game clock.
-- **B** — 25 to 30 yards deep. Count the defence, signal, and acknowledge with F
+- **BJ** — 25 to 30 yards deep. Count the defence, signal, and acknowledge with F
   and S. You have the play clock.
 
 ---
@@ -210,12 +216,12 @@ manual gives the box to H and the spare ball to B or L.
 **§5.3, pp. 186–199.** In a **balanced formation, strength is always declared to
 the Line Judge's side.**
 
-- **F and S** — Widest receiver on your side.
-- **B** — Balanced: the flanker on the strong side. Trips: the third receiver in
+- **FJ and SJ** — Widest receiver on your side.
+- **BJ** — Balanced: the flanker on the strong side. Trips: the third receiver in
   on the trips side. Double tight ends: the inside receiver on the line.
-- **H** — Balanced: the inside receiver on your side (usually the tight end).
+- **HL** — Balanced: the inside receiver on your side (usually the tight end).
   Trips to L's side: the fullback. Double tight ends: the halfback.
-- **L** — Balanced: the back. Trips to your side: the motion or inside receiver.
+- **LJ** — Balanced: the back. Trips to your side: the motion or inside receiver.
 - **All** — **Legality of motion always belongs to the official the player is
   moving away from**, even if he reverses and comes back. The official *keying*
   the motion man after the snap and the official responsible for whether he cut
@@ -223,7 +229,7 @@ the Line Judge's side.**
 
 **Fade mechanics (§5.8, p. 215)** are what makes a crew of seven work. F, S and B
 fade back on every pass and own the goal line except in short goal line
-situations; **H and L own forward progress on every play**. F and S are not
+situations; **HL and LJ own forward progress on every play**. FJ and SJ are not
 responsible for progress, so they must not creep in to get it — the best sideline
 ruling comes from 10 to 15 yards away. Don't move in until the play is over,
 short runs included, then angle in five to seven yards. A fast receiver closes a
@@ -234,7 +240,29 @@ officials may stop the accordion to keep pace.
 
 ## Keys by formation
 
-<figure class="figure d-block my-4">
-  <img src="/images/7-man-mechanics/keys.jpg" alt="Six field diagrams showing each official's key by formation: pro set with strength to the Line Judge's side, double wing balanced, double tight end balanced, motion man inside tackle at the snap, motion into trips, and trips with an empty backfield." class="figure-img img-fluid border rounded">
-  <figcaption class="figure-caption">Keys for six formations. The bottom row runs off the edge of the original slide.</figcaption>
-</figure>
+<div class="row g-3 my-4">
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/7-man-mechanics/keys-balanced.svg" alt="Balanced formation with strength to the Line Judge: dotted lines show the Field Judge keying the split end, the Back Judge the flanker, the Line Judge the back, the Head Line Judge the tight end and the Side Judge the widest receiver on his side." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Balanced, strength to the Line Judge</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/7-man-mechanics/keys-double-tight-ends.svg" alt="Double tight ends with strength to the Head Line Judge: dotted lines show the Side Judge keying the wingback, the Head Line Judge the halfback, the Back Judge the tight end on the line, the Line Judge the back on his side and the Field Judge the tight end on his." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Double tight ends, strength to the Head Line Judge</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/7-man-mechanics/keys-trips.svg" alt="Trips to the Line Judge: dotted lines show the Field Judge keying the outside receiver, the Line Judge the middle one, the Back Judge the third receiver in, the Head Line Judge the back and the Side Judge the tight end on the weak side." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Trips to the Line Judge</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6">
+    <figure class="figure d-block">
+      <img src="/images/7-man-mechanics/keys-motion-changes-strength.svg" alt="Motion changing the strength from the Head Line Judge's side to the Line Judge's: an arrow shows the flanker crossing the formation, and dotted lines show the Back Judge picking him up while the Head Line Judge keeps the nearest back." class="figure-img img-fluid border rounded p-2 bg-white">
+      <figcaption class="figure-caption">Motion changes strength</figcaption>
+    </figure>
+  </div>
+</div>

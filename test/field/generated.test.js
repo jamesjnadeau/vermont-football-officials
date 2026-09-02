@@ -67,6 +67,7 @@ test('no field diagram is committed without a scene', () => {
     'run-pass-plays',
     'between-downs',
     'fouls-enforcement',
+    '7-man-mechanics',
   ];
   const onDisk = [];
   for (const family of FAMILIES) {

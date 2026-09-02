@@ -61,9 +61,26 @@ test('every view is exactly ten yards of end zone, or none at all', () => {
   }
 });
 
-test('the six committed viewBox heights are all still reachable', () => {
-  const heights = viewNames.map((n) => views[n].height).sort((a, b) => a - b);
-  assert.deepEqual(heights, [178, 186, 206, 237.8, 339, 394]);
+// The six views reverse-engineered from the fifty committed SVGs. Changing one
+// of these heights moves every diagram that uses it, so they are pinned; views
+// added later (the crew-of-seven crops) are free to be whatever they need.
+test('the six original viewBox heights are unchanged', () => {
+  assert.deepEqual(
+    ['spot', 'runPass', 'goalLine', 'fieldGoal', 'punt', 'kickoff'].map((n) => views[n].height),
+    [178, 186, 206, 237.8, 339, 394],
+  );
+});
+
+// A frame shorter than the field it draws silently clips the end line, and the
+// only way anyone finds out is by looking at all of them.
+test('every view is tall enough for the field it draws', () => {
+  for (const name of viewNames) {
+    const v = views[name];
+    assert.ok(
+      v.height >= y(v, v.bottomYard),
+      `${name}: height ${v.height} clips the field, which ends at ${y(v, v.bottomYard)}`,
+    );
+  }
 });
 
 test('hash marks fall on a five-yard grid and never enter the end zone', () => {

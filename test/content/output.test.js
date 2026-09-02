@@ -166,8 +166,8 @@ test('kept static assets are copied through', () => {
     // The 2022 slide deck is an artefact someone else produced, not a card the
     // build could render from article text, so it stays a committed upload.
     'uploads/7-man-mechanics-2022.pdf',
-    'images/7-man-mechanics/coin-toss.jpg',
-    'images/7-man-mechanics/keys.jpg',
+    'images/7-man-mechanics/coin-toss.svg',
+    'images/7-man-mechanics/keys-balanced.svg',
     'uploads/first-year-officials-quiz-1.docx',
     'uploads/first-year-officials-quiz-2.docx',
     'images/kicking-plays/kickoff-crew-of-5.svg',
