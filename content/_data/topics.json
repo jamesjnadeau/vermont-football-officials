@@ -10,6 +10,11 @@
     "description": "The NFHS rules themselves — summaries, study aids and where to read the real thing."
   },
   {
+    "name": "Flag Football",
+    "slug": "flag-football",
+    "description": "Youth flag football — the rule set these games are worked by, and where it parts company with tackle football."
+  },
+  {
     "name": "Mechanics",
     "slug": "mechanics",
     "description": "Where to stand, what to key on and who has what, play by play."
