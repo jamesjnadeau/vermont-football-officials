@@ -60,10 +60,10 @@ That is a real offer. Ask.
 
 
 | Game | Fee |
-| -------------- | ---------- |
+| ------------------------- | ---------- |
 | Varsity | **$97.50** |
 | Junior varsity | **$75.00** |
-| Youth(5/6 & 7/8, 2 games) | **$125** | 
+| Youth(5/6 & 7/8, 2 games) | **$125** |
 
 
 Plus mileage, reimbursed at the standard IRS rate at the end of the season — you
@@ -89,24 +89,14 @@ Your rule book comes with your membership, in print and digital.
 
 ## How to start
 
-1. **Get in touch.** Reach out to the current acting director through the
+**Get in touch.** Reach out to the current acting director through the [contact page](/contact/). That is the first step and there is no form to find or window to wait for.
 
-  [contact page](/contact/). That is the first step and there is no form to
-   find or window to wait for.
-2. **Register**, which runs the background check and sets up your assignment
-
-  account.
-3. **Do the concussion training** on NFHS Learn.
-4. **Come to the preseason meetings.** This is where you will meet the people
-
-  you will be working with.
-5. **Get your equipment** — see the [equipment page](/information/information-for-new-folks/),
-
-  and say something if the cost is a problem.
-6. **Put your availability in Arbiter**, ideally a week before the season
-
-  starts.
-7. **Work your first games**, which will be at the level you are ready for.
+1. **Register**, which runs the background check and sets up your assignment account.
+1. **Do the concussion training** on NFHS Learn.
+2. **Come to the preseason meetings.** This is where you will meet the people  you will be working with.
+3. **Get your equipment** — see the [equipment page](/information/information-for-new-folks/), and say something if the cost is a problem.
+4. **Put your availability in Arbiter**, ideally a week before the season starts.
+5. **Work your first games**, which will be at the level you are ready for.
 
 [Your First Season](/information/your-first-season/) covers what happens after
 that — what to study, in what order, and what your first game is actually like.
