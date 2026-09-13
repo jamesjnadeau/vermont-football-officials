@@ -75,6 +75,7 @@ test('all expected articles exist as markdown', () => {
     'nvyfl-youth-football-rules-2025.md',
     'nvyfl-youth-football-rules-2026.md',
     'official-signals.md',
+    'overtime-rules-and-procedure.md',
     'penalty-enforcement-guide.md',
     'pregame-conference.md',
     'recommend-reading.md',
