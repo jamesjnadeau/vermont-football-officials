@@ -77,7 +77,28 @@ That's the shape of it: nothing about the rules changes between periods 1 and 11
 
 ---
 
-## 3. Things that trip up a crew mid-overtime
+## 3. Scenario: roughing the kicker on a game-deciding field goal
+
+Kicking fouls get extra scrutiny in overtime because there's no "next series" to push a penalty into — every series is winner-take-all, so where the crew enforces the foul changes who gets another set of downs, or whether the game is over at all.
+
+**Missed kick, roughing called.** Visitor lines up for a game-winning field goal, 4th-and-goal from the 8. The kick sails wide, but as the kicker plants his foot, a Home lineman who was blocked into him keeps driving and rides him to the ground well after the ball is gone — **roughing the kicker**, not the lesser running-into-the-kicker foul, because the contact was forcible rather than incidental.
+
+- A missed kick would end Visitor's series with nothing. Accepting the penalty is obviously better, so Visitor takes it.
+- Roughing the kicker is 15 yards **and an automatic first down**, enforced from the **previous spot** — the spot of the snap.
+- Because the line to gain in overtime is always the goal line, the automatic first down doesn't add any distance to cover — it simply means Visitor's series isn't over. They get a fresh set of downs at the enforced spot instead of the ball going over on downs.
+- Had the contact been the lesser **running into the kicker** foul instead (5 yards, no automatic first down), the same result-of-the-play comparison still favors taking the penalty over the missed kick — but Visitor only gains 5 yards and is still facing a numbered down, not a fresh series, since that foul carries no automatic first down.
+
+**Successful kick, roughing called anyway.** Same play, different outcome: the kick is good, and it's the go-ahead score. Home still gets flagged for roughing the kicker on the follow-through.
+
+- The successful kick is the better outcome for Visitor, so the score counts — a team never has to give up a good result to take a penalty.
+- Roughing on a successful kick is enforced like a foul on a try: from the **succeeding spot**. If the game isn't over, the *other* team's next series starts 15 yards further back than it otherwise would have.
+- If that field goal was the second team's series of the period and it broke the tie, the game ends the instant the ball is dead. The roughing foul becomes a note for the game report and for the disqualification/ejection review, not something with anywhere left to be enforced — there's no more football left to play.
+
+None of this is a special "overtime rule." It's the same result-of-the-play test that governs every foul on a kick in regulation — it just matters more here, because the down it happens on might be the last one of the game.
+
+---
+
+## 4. Things that trip up a crew mid-overtime
 
 - **Timeouts don't carry over.** A team that used all three of its second-half timeouts still gets one full timeout in the first overtime, another fresh one in the second, and so on.
 - **Fouls between the periods** (dead-ball or unsportsmanlike fouls in the intermission) are enforced on the next series under the same succeeding-spot logic as any other dead-ball foul — see the enforcement guide for the general rule; overtime doesn't have a special exception.
@@ -88,7 +109,7 @@ That's the shape of it: nothing about the rules changes between periods 1 and 11
 
 ---
 
-## 4. Quick reference
+## 5. Quick reference
 
 | | |
 |---|---|
