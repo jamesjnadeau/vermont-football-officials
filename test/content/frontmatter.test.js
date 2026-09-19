@@ -62,6 +62,7 @@ test('all expected articles exist as markdown', () => {
     'clock-timing-crew-card.md',
     'crew-communication-signals.md',
     'flag-football-rules.md',
+    'flag-football-vs-high-school.md',
     'football-rules-summary.md',
     'foul-weather-procedures.md',
     'fouls-enforcement-crew-card.md',

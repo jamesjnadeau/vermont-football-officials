@@ -1,0 +1,88 @@
+/*
+ * The index-card geometry, loaded on top of card.css for an article that sets
+ * `cardSize: index`.
+ *
+ * Two sides of a 4x6in index card, printed landscape: 6in across, 4in down.
+ * The whole point of this size is that the card lives in a shirt pocket, so
+ * there is roughly a quarter of a Letter card's room on it. That is a content
+ * constraint, not a typography one — the type stays at the same readable size
+ * and the card says less, rather than saying the same amount smaller.
+ *
+ * ---------------------------------------------------------------------------
+ * THE THREE KNOBS, at this size
+ *
+ * Same three as card.css and the same order to reach for them, with less slack
+ * in every one: two columns of about 68mm, 7.2pt type, and figures that have
+ * to fit half of that. A card that comes out at three pages here almost always
+ * wants content cut, not type shrunk.
+ * ---------------------------------------------------------------------------
+ */
+:root {
+  /* 1. Columns per page. One column at 140mm is far too wide a measure for
+     7pt type; two keeps the line length where the Letter cards have it. */
+  --card-columns: 2;
+
+  /* 2. Body type. At the floor: 7pt is as small as either size goes, because
+     below it the card stops being readable at arm's length and becomes
+     decoration. There is nothing left to turn here. */
+  --card-font-size: 7pt;
+  --card-line-height: 1.2;
+
+  /* 3. Figure width. Half of a 68mm column, less the gap. No card at this size
+     carries a field diagram today; one that did would be the first thing to
+     cut when it ran to three pages. */
+  --card-figure-width: 31mm;
+
+  /* Page geometry. 5mm of margin rather than 11mm: an index card has no room
+     to give away, and it is not going through a three-hole punch. */
+  --card-margin: 5mm;
+  --card-gap: 3.5mm;
+}
+
+@page {
+  /* 6in by 4in, written in millimetres so the two numbers are the page box
+     exactly and not a paper name Chromium has its own opinion about. */
+  size: 152.4mm 101.6mm;
+  margin: 5mm;
+}
+
+/* The masthead spans both columns and so costs double what it measures. Pull
+   it in — at this size the title, the subtitle and the rule under them are
+   worth about three bullets. */
+.card-head {
+  padding-bottom: 0.8mm;
+  margin-bottom: 1.6mm;
+}
+
+.card-head h1 {
+  font-size: calc(var(--card-font-size) * 1.6);
+}
+
+.card-sub {
+  margin-top: 0.5mm;
+  font-size: var(--card-font-size);
+}
+
+.card-section {
+  margin-bottom: 1.2mm;
+}
+
+.card-section > h2 {
+  margin-bottom: 0.7mm;
+  padding-bottom: 0.3mm;
+}
+
+/* The gap between bullets is the one piece of whitespace there is a lot of at
+   this size — forty bullets at half a millimetre each is two more of them. */
+ul,
+ol {
+  margin-bottom: 0.9mm;
+}
+
+li {
+  margin-bottom: 0.25mm;
+}
+
+.card-prov {
+  margin-top: 1.2mm;
+}

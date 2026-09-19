@@ -44,6 +44,8 @@ tags:
 </tbody>
 </table>
 
+<p>Working a flag game after a season of high school football? The differences are the whole job, and there are more of them than this table holds. <strong><a href="/information/flag-football-vs-high-school/">Flag vs. High School</a></strong> is a two-sided index card of them — clock, scoring, contact, alignment, kicks and the penalties that read differently — small enough to keep in a shirt pocket.</p>
+
 <h2 id="terms">Terms</h2>
 
 <dl>

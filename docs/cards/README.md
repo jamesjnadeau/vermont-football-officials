@@ -1,9 +1,9 @@
 # The printable cards
 
-Eleven articles double as printed reference cards, carried in a pocket and read
-on a sideline. **The article is the card.** There is no second document: the
-build renders each one to a two-page PDF at `/cards/<slug>.pdf`, so an editor
-who fixes a mechanic in Pages CMS has fixed the card too, with nothing to
+Fourteen articles double as printed reference cards, carried in a pocket and
+read on a sideline. **The article is the card.** There is no second document:
+the build renders each one to a two-page PDF at `/cards/<slug>.pdf`, so an
+editor who fixes a mechanic in Pages CMS has fixed the card too, with nothing to
 rebuild.
 
 **An article is a card when it links its own card** — a `/cards/<slug>.pdf`
@@ -16,9 +16,10 @@ fail a build the editor had no way to know about.
 
 ## The rules
 
-- **Two pages, Letter, two-sided, flip on the long edge.** Not a convention
-  someone has to remember — `test/cards/output.test.js` reads the page count
-  back out of the rendered PDF and fails the build on anything else.
+- **Two pages, two-sided, flip on the long edge.** Not a convention someone has
+  to remember — `test/cards/output.test.js` reads the page count back out of the
+  rendered PDF and fails the build on anything else. Letter unless the article
+  says otherwise; see **Card sizes** below.
 - **No heading is left at the foot of a column.** Also checked in the rendered
   PDF: a heading must have at least two lines of its own content under it in
   the same column. Chromium honours `break-after: avoid` for the one box that
@@ -47,7 +48,33 @@ Worked out in `lib/cards/extract.js`, by convention rather than markup:
 
 The escape hatch, for the exception this does not cover: `class="card-omit"` on
 a block keeps it off the card, and `class="card-only"` keeps it off the web
-page. Nothing in `content/` needs either today.
+page. One article uses `card-omit` today: *Flag vs. High School* carries a
+paragraph of framing that the page wants and a card with no room has to do
+without.
+
+## Card sizes
+
+An article picks the paper its card is printed on with `cardSize` front matter.
+Two are defined, in `CARD_SIZES` in `lib/cards/extract.js`:
+
+| `cardSize` | Page | Stylesheet |
+| --- | --- | --- |
+| `letter` (the default) | 8½ × 11in | `card.css` alone |
+| `index` | 6 × 4in — a 4 × 6in index card, landscape | `card.css`, then `card-index.css` |
+
+A size sheet is loaded **after** the base sheet and only says what differs: the
+`@page` box and the three knobs. Adding a third size means an entry in
+`CARD_SIZES` and a sheet beside the others; everything downstream — the cache
+key, the renderer, the gate — reads the table.
+
+Two pages is the constraint at every size, so the smaller card is the harder
+one: an index card holds roughly a quarter of what a Letter card does, at type
+that is a shade smaller and already at the 7pt floor. There is no third knob to
+turn there. Cut content.
+
+The size is checked where it matters, in the rendered PDF: the output gate reads
+each page's box back out of the file and fails a card that did not come out at
+the size it asked for.
 
 ## Building
 
@@ -68,7 +95,8 @@ browser binary.
 ## When a card comes out at three pages
 
 The build fails and names the card. Three knobs decide whether a card fits, and
-they are at the top of `lib/cards/card.css` with the same list in a comment:
+they are at the top of `lib/cards/card.css` — and again, with less slack in
+every one, at the top of `lib/cards/card-index.css`:
 
 1. `--card-columns` — two is the densest that stays readable at this size.
 2. `--card-font-size` — 7pt is the floor. Below that the card is decoration.

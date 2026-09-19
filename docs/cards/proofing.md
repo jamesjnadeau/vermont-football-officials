@@ -10,10 +10,15 @@ object.
 
 ## The print
 
-Print **all eleven**, on the black-and-white laser the association actually
+Print **all fourteen**, on the black-and-white laser the association actually
 uses, **two-sided, flipped on the long edge, at 100%** — no "fit to page", which
 silently rescales the diagrams and makes the type smaller than it was designed
 to be.
+
+Thirteen are Letter. *Flag vs. High School* is a 6 × 4in card (`cardSize:
+index`): print it on index stock if the printer takes it, or on Letter and cut
+to the page box. Either way, **at 100%** — that card is at the 7pt floor
+already, and a printer that scales it to fit has taken it below readable.
 
 ```bash
 npm run build     # cards land in _site/cards/
@@ -42,6 +47,7 @@ Do not spend the proof re-checking these; they fail the deploy on their own
 (`test/cards/output.test.js`):
 
 - exactly two pages
+- each page at the size the article declared
 - every bullet, table cell and caption from the article present in the PDF
 - every diagram the article references actually rendered
 - no heading stranded at the foot of a column, away from its content

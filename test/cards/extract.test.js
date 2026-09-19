@@ -7,8 +7,11 @@ import { fileURLToPath } from 'node:url';
 import { readdirSync } from 'node:fs';
 import path from 'node:path';
 import {
+  CARD_SIZES,
+  DEFAULT_CARD_SIZE,
   cardImages,
   cardModel,
+  cardSizeOf,
   cardText,
   declaresCard,
   printableArticles,
@@ -26,6 +29,7 @@ test('every article tagged Printable that is a generated card was found', () => 
       'between-downs-crew-card',
       'clock-officials-cheat-sheet',
       'clock-timing-crew-card',
+      'flag-football-vs-high-school',
       'fouls-enforcement-crew-card',
       'head-line-judge-position-card',
       'kicking-plays-crew-card',
@@ -37,6 +41,41 @@ test('every article tagged Printable that is a generated card was found', () => 
       'umpire-position-card',
     ],
   );
+});
+
+// --- Card size ---------------------------------------------------------
+// The size is front matter an editor types, so the failure mode to design
+// against is a typo. A card that quietly fell back to Letter would look right
+// on screen and come out of the printer wrong.
+
+test('an article that says nothing about size gets the default', () => {
+  assert.equal(cardSizeOf({}), DEFAULT_CARD_SIZE);
+  assert.equal(cardSizeOf(undefined), DEFAULT_CARD_SIZE);
+  assert.equal(cardModel({ slug: 'x', file: 'x.md', data: { title: 'X' }, body: '## A\n\nB\n' }).size, 'letter');
+});
+
+test('a cardSize that is not a known size is a build failure, not a fallback', () => {
+  assert.throws(() => cardSizeOf({ cardSize: 'a4' }), /unknown cardSize "a4"/);
+  assert.throws(() => cardSizeOf({ cardSize: 'Index' }), /unknown cardSize/);
+});
+
+test('every size names a page box, and one is the printed card', () => {
+  for (const [name, size] of Object.entries(CARD_SIZES)) {
+    assert.ok(size.label, `${name} has no label to name it in a failure`);
+    assert.ok(size.width > 0 && size.height > 0, `${name} has no page box`);
+  }
+  assert.deepEqual(
+    Object.entries(CARD_SIZES)
+      .filter(([name]) => name !== DEFAULT_CARD_SIZE)
+      .filter(([, size]) => !size.stylesheet)
+      .map(([name]) => name),
+    [],
+    'a non-default size with no stylesheet would render at the default size',
+  );
+});
+
+test('the articles ask only for sizes that exist', () => {
+  for (const a of articles) assert.ok(CARD_SIZES[cardModel(a).size], a.slug);
 });
 
 // `Printable` marks "there is something here to print", which is not the same
