@@ -10,7 +10,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { cardImages, cardModel, printableArticles } from '../../lib/cards/extract.js';
+import { CARD_SIZES, cardImages, cardModel, printableArticles } from '../../lib/cards/extract.js';
 import {
   droppedContent,
   figureLabels,
@@ -42,10 +42,10 @@ const cards = await Promise.all(
 );
 
 test('the build wrote a card for every printable article', () => {
-  assert.ok(cards.length >= 11, `only ${cards.length} cards were built`);
+  assert.ok(cards.length >= 14, `only ${cards.length} cards were built`);
 });
 
-for (const { model, pageCount, text, items } of cards) {
+for (const { model, pageCount, pageSizes, text, items } of cards) {
   // The gate that makes the whole design safe. Two pages, printed two-sided
   // and flipped on the long edge, is the constraint the cards exist under, and
   // a third page is the failure a CMS editor is most likely to cause and least
@@ -56,6 +56,23 @@ for (const { model, pageCount, text, items } of cards) {
       2,
       `${named(model)} came out at ${pageCount} pages. Two pages is the constraint; ` +
         'see docs/cards/README.md for the three knobs to turn before cutting content.',
+    );
+  });
+
+  // A card printed at the wrong page box is the failure nobody sees on screen:
+  // the PDF looks right in a viewer and comes out of the printer scaled, or on
+  // the wrong stock. `cardSize` is front matter an editor can set, so the size
+  // it asked for is checked in the file the printer gets.
+  test(`${model.slug}: is printed at its declared size`, () => {
+    const want = CARD_SIZES[model.size];
+    const wrong = pageSizes
+      .map((got, i) => ({ got, page: i + 1 }))
+      .filter(({ got }) => got.width !== want.width || got.height !== want.height);
+    assert.deepEqual(
+      wrong.map(({ got, page }) => `page ${page} is ${got.width}x${got.height}pt`),
+      [],
+      `${named(model)} declares cardSize "${model.size}" (${want.label}, ` +
+        `${want.width}x${want.height}pt) and did not come out at it.`,
     );
   });
 
@@ -165,6 +182,19 @@ test('a heading stranded at the foot of a column is caught', () => {
   assert.ok(
     strandedHeadings(model, mangled).some((s) => s.heading === first),
     `emptying the column under "${first}" did not fail the stranding check`,
+  );
+});
+
+// The size gate is worth having only if it reads the file rather than echoing
+// the declaration back. Two cards that declare different sizes and come back
+// the same size would mean it is reading a constant.
+test('the size gate reads the real page box', () => {
+  const declared = new Set(cards.map((c) => c.model.size));
+  const measured = new Set(cards.flatMap((c) => c.pageSizes).map((s) => `${s.width}x${s.height}`));
+  assert.equal(
+    measured.size,
+    declared.size,
+    `${declared.size} card size(s) declared but ${measured.size} measured in the PDFs`,
   );
 });
 

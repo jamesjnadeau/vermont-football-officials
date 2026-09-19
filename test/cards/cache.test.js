@@ -67,8 +67,22 @@ test('changing the bytes of a referenced figure, path unchanged, invalidates it'
   );
 });
 
+// The page box is front matter, and a card rendered at the old size is a card
+// that comes out of the printer wrong with nothing on screen to show for it.
+test('changing the card size invalidates the card', () => {
+  const changed = { ...article, data: { ...article.data, cardSize: 'index' } };
+  assert.notEqual(keyFor({ article: changed }), base);
+  assert.deepEqual(
+    changedParts(
+      cacheKeyParts({ article, assets, sources, chromium }),
+      cacheKeyParts({ article: changed, assets, sources, chromium }),
+    ),
+    ['article:frontmatter'],
+  );
+});
+
 test('changing the stylesheet or the template invalidates every card', () => {
-  for (const name of ['card.css', 'card-template.js']) {
+  for (const name of ['card.css', 'card-index.css', 'card-template.js']) {
     const edited = { ...sources, [name]: `${sources[name]}\n/* nudge */\n` };
     assert.notEqual(keyFor({ sources: edited }), base, `${name} is not in the key`);
   }

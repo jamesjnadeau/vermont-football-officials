@@ -52,6 +52,14 @@ content:
         options:
           time: false
         description: The date a human last read this page against the source above. Update it every time you re-check, even if nothing changed.
+      # Only read on a page the build renders a card for, i.e. one that links
+      # its own /cards/<slug>.pdf. Everything else ignores it.
+      - name: cardSize
+        label: Printed card size
+        type: select
+        options:
+          values: [letter, index]
+        description: 'The paper the printable card is rendered at: "letter" (the default, and what the crew and position cards use) or "index", a 4 x 6in index card. An index card holds about a quarter as much, and a card that no longer fits two sides fails the build.'
       # Groups the article on the Information page and lists it on its topic
       # page at /tags/<topic>/. The values here must match the names in
       # content/_data/topics.json — a test asserts the two lists agree.
