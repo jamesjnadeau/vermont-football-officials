@@ -426,6 +426,33 @@ test('the visibility buttons switch a paragraph between web-only, card-only and 
   await page.close();
 });
 
+// A card note is written back as raw HTML and only reopens as an editable
+// paragraph if its contents are plain inline markup, so the buttons only
+// offer to mark a paragraph that will survive the trip. A paragraph already
+// marked can always be unmarked.
+test('the visibility buttons only mark a paragraph that can stay a card note', async () => {
+  const { page } = await openPage();
+  const out = await page.evaluate(async () => {
+    const { LIBRARY: { ContentTools, ContentEdit } } = await import('/cms/site/vendor.js');
+    const { installTools } = await import('/cms/site/tools.js');
+    const { TOOL_GROUP } = await import('/cms/site/names.js');
+    installTools();
+    const webOnly = ContentTools.ToolShelf.fetch(TOOL_GROUP[2]);
+    const cardOnly = ContentTools.ToolShelf.fetch(TOOL_GROUP[3]);
+    const host = document.getElementById('region');
+    host.innerHTML = [
+      '<p>Plain <b>bold</b> <a href="/x/">link</a><br>line</p>',
+      '<p>Has <span class="x">a span</span></p>',
+      '<p>Has <u>underline</u></p>',
+      '<p class="card-omit">Marked <span>already</span></p>',
+      '<h2>Heading</h2>',
+    ].join('');
+    return new ContentEdit.Region(host).children.map((el) => [webOnly.canApply(el), cardOnly.canApply(el)]);
+  });
+  assert.deepEqual(out, [[true, true], [false, false], [false, false], [true, true], [false, false]]);
+  await page.close();
+});
+
 // The one end-to-end check: the real <content-tools-editor> element, set
 // up from siteExtension the way edit.js sets it up (profile, tools and
 // styles before it is connected), a real click on a paragraph and on the

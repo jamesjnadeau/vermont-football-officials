@@ -7,6 +7,7 @@
 import { LIBRARY } from './vendor.js';
 import { TOOL_GROUP } from './names.js';
 import { VISIBILITY } from './card-note.js';
+import { safeInlineMarkup } from './document.js';
 import { SignalDialog, FigureDialog } from './dialogs.js';
 
 const { ContentTools, ContentEdit } = LIBRARY;
@@ -89,12 +90,17 @@ export function toggleVisibility(element, className) {
 class VisibilityTool extends ContentTools.Tool {
   static requiresElement = true;
 
+  // A marked paragraph is saved as raw HTML and only reopens as an editable
+  // paragraph if its contents are a card note's plain inline markup (see
+  // document.js), so only offer to mark one that will. Unmarking is always
+  // allowed.
   static canApply(element) {
-    return !!element && element.type() === 'Text' && element.tagName() === 'p';
+    if (!element || element.type() !== 'Text' || element.tagName() !== 'p') return false;
+    return VISIBILITY.some((c) => element.hasCSSClass(c)) || safeInlineMarkup(element.content.html());
   }
 
   static isApplied(element) {
-    return this.canApply(element) && element.hasCSSClass(this.className);
+    return !!element && element.type() === 'Text' && element.tagName() === 'p' && element.hasCSSClass(this.className);
   }
 
   static apply(element, selection, callback) {

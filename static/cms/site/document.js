@@ -76,7 +76,7 @@ function safeHref(raw) {
 // anywhere is `href` on `<a>`, restricted to a safe scheme, a relative
 // reference, or `#`. Anything else means the note isn't shown as an editable
 // paragraph at all — it falls through to the sanitized, read-only preview.
-function safeInlineMarkup(html) {
+export function safeInlineMarkup(html) {
   const template = document.createElement('template');
   template.innerHTML = html;
   for (const el of template.content.querySelectorAll('*')) {

@@ -49,15 +49,18 @@ own at the end:
 
 - **SIG** inserts a grid of official signal drawings, or, with a signal grid
   selected, changes which signals it shows and whether they have captions.
-- **FIG** inserts a grid of figures (image, alt text, caption), or edits the
-  selected one. Upload a new picture first with the **Media** section of Pages
-  CMS, or with the image button, and paste its `/images/…` path in.
+- **FIG** inserts a grid of figures (image, alt text, optional caption), or
+  edits the selected one. Upload a new picture first with the **Media**
+  section of Pages CMS, or with the image button, and paste its `/images/…`
+  path in.
 - **WEB** marks the selected paragraph *web only*: it shows on the page but
   is left off the printed card.
 - **CARD** marks it *card only*: it is on the printed card and hidden on the
   web page.
 
-Press either WEB or CARD again to turn it off.
+Press either WEB or CARD again to turn it off. Both are greyed out for a
+paragraph with formatting other than bold, italic, code, links and line
+breaks, which a marked paragraph can't keep.
 
 While you are editing, these are outlined with a label saying what they are.
 Other special blocks, such as alerts and single figures, show as they look on
