@@ -190,6 +190,42 @@ test('a card note href with a hidden control character is never editable', async
   await page.close();
 });
 
+// A card note's inner markup is spliced straight into the region. Checked
+// on its own it can look fine, but in the region the HTML parser carries an
+// unclosed <a> or <b> on into every following block, and an unclosed comment
+// swallows the rest of the region — so a no-edit save would link, bolden or
+// delete paragraphs nobody touched. Even a well-formed comment is lost,
+// because ContentEdit drops comments. Each of these must fall through to the
+// static preview, leave the blocks after it alone, and round-trip exactly.
+test('a malformed card note never leaks into the blocks after it', async () => {
+  const { page } = await openPage();
+  const notes = [
+    '<p class="card-omit">see <a href="/x/">here</p>',
+    '<p class="card-omit">see <b>bold</p>',
+    '<p class="card-omit">note <!-- todo</p>',
+    '<p class="card-omit">note <!-- todo --> end</p>',
+  ];
+  const cases = notes.map((note) => `Intro paragraph.\n\n${note}\n\nNext paragraph stays plain.\n\n## Heading\n\nLast paragraph.\n`);
+  const results = await page.evaluate(async (sources) => {
+    const h = await import('/__test/harness.js');
+    (await import('/cms/site/document.js')).installDocument();
+    return sources.map((source) => {
+      const doc = h.MarkdownDocument.parse(source);
+      const html = doc.toHTML();
+      const saved = h.regionHTML(html);
+      const after = [...document.querySelectorAll('#region > p, #region > h2')].slice(-3).map((el) => el.innerHTML.trim());
+      return { html, after, updated: doc.update(saved) };
+    });
+  }, cases);
+  for (const [i, { html, after, updated }] of results.entries()) {
+    assert.match(html, /<div data-ce-tag="static" class="ct-md-static ct-site-preview" data-ct-md="\d+">/, `case ${i} should render as the static preview`);
+    assert.doesNotMatch(html, /<p class="card-omit" data-ct-md/, `case ${i} should not be an editable card note`);
+    assert.deepEqual(after, ['Next paragraph stays plain.', 'Heading', 'Last paragraph.'], `case ${i} should leave the following blocks alone`);
+    assert.equal(updated, cases[i], `case ${i} should round-trip byte for byte`);
+  }
+  await page.close();
+});
+
 // The one real card note in the site's content, with ordinary relative
 // hrefs, must still come through as an editable paragraph — the new
 // protocol-based check must not reject what it used to accept.

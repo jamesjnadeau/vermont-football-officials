@@ -88,13 +88,33 @@ function safeInlineMarkup(html) {
   return true;
 }
 
+// A note's inner markup goes into the region spliced between the other
+// blocks, not parsed on its own, and the HTML parser doesn't stop at the
+// note's </p>: an unclosed <a> or <b> is reopened in every block after it,
+// and an unclosed comment swallows the rest of the region — so a save with
+// no edits would link, bolden or delete paragraphs nobody touched. Even a
+// well-formed comment is lost, because ContentEdit drops comments. So the
+// note is parsed here followed by a sentinel paragraph, exactly as the region
+// would see it, and it is only editable if the sentinel comes through as
+// bare text. Anything else is left to the static preview, which the
+// sanitizer re-serializes and so is always balanced.
+function selfContained(inner) {
+  if (inner.includes('<!')) return false;
+  const template = document.createElement('template');
+  template.innerHTML = `<p>${inner}</p><p>z</p>`;
+  const blocks = template.content.childNodes;
+  if (blocks.length !== 2) return false;
+  const sentinel = blocks[1].childNodes;
+  return sentinel.length === 1 && sentinel[0].nodeType === Node.TEXT_NODE && sentinel[0].data === 'z';
+}
+
 export function renderBlock(entry, source) {
   if (entry.editable || entry.node.type !== 'html') return null;
   const raw = source.slice(entry.start, entry.end);
   const grid = parseGrid(raw);
   if (grid) return componentHTML(grid, entry.index);
   const note = parseCardNote(raw);
-  if (note && safeInlineMarkup(note.inner)) return `<p class="${note.visibility}" ${MARKER}="${entry.index}">${note.inner}</p>`;
+  if (note && selfContained(note.inner) && safeInlineMarkup(note.inner)) return `<p class="${note.visibility}" ${MARKER}="${entry.index}">${note.inner}</p>`;
   return `<div data-ce-tag="static" class="ct-md-static ct-site-preview" ${MARKER}="${entry.index}">${sanitize(raw)}</div>`;
 }
 
