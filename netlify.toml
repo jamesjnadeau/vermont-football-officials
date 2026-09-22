@@ -1,5 +1,11 @@
 [build]
-  command = "npm run build"
+  # Chromium renders the printable cards (lib/cards/render.js) and isn't
+  # bundled with Netlify's build image, unlike the GitHub Actions runner this
+  # replaced — so it has to be installed before `npm run build` runs. No
+  # --with-deps: that shells out to `sudo apt-get`, which Netlify's build
+  # sandbox refuses (no root password); its image already carries the shared
+  # libraries headless Chromium needs.
+  command = "npx playwright install chromium && npm run build"
   publish = "_site"
 
 [build.environment]
