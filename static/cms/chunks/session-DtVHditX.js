@@ -312,7 +312,7 @@ async function loadConfig(url, options = {}) {
   try {
     data = JSON.parse(text);
   } catch {
-    const { parse } = await import("./index-BNtVnYoY.js").then((n) => n.a);
+    const { parse } = await import("./index-DsHjQCH9.js").then((n) => n.a);
     try {
       data = parse(text);
     } catch (error) {

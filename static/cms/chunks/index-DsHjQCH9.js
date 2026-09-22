@@ -15053,7 +15053,7 @@ function normalise(nodes) {
     }
     node2.value = value2;
   }
-  return nodes;
+  return nodes.filter((node2) => node2.type !== "text" || node2.value !== "");
 }
 function mergeText(nodes) {
   const out = [];

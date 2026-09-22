@@ -1,5 +1,5 @@
-import { E as EntrySession, m as mediaUploader, R as REGION, h, b as buildFields, f as fieldsNeeded, d as describeError, N as NOTHING_TO_SAVE, l as loadConfig, a as declaredEntry, e as entryForUrl, c as adapterFor, C as CmsRepo, M as MediaStore, g as formState, i as findCollection, j as ConfigError, k as bodySelector } from "./session-BRRA5z-z.js";
-import { M as MarkdownDocument } from "./index-BNtVnYoY.js";
+import { E as EntrySession, m as mediaUploader, R as REGION, h, b as buildFields, f as fieldsNeeded, d as describeError, N as NOTHING_TO_SAVE, l as loadConfig, a as declaredEntry, e as entryForUrl, c as adapterFor, C as CmsRepo, M as MediaStore, g as formState, i as findCollection, j as ConfigError, k as bodySelector } from "./session-DtVHditX.js";
+import { M as MarkdownDocument } from "./index-DsHjQCH9.js";
 import { T as TAG_NAME, C as ContentToolsEditor } from "./content-tools-editor-wKXO4w5c.js";
 import { s as sheetFactory } from "./constructed-styles-BEftmh6P.js";
 const EDITOR_REGIONS = "[data-editable]";
@@ -252,32 +252,30 @@ function describe(state) {
       return { title: "Not an editable page", hint: state.hint };
     case "no-body":
       return { title: entryName(state.entry), hint: state.hint };
+    /* NONE of the four below names the element the `body` selector
+       matched, and they used to. `Found article#post-1.post, matched
+       by article.post.` is a deployment check written where an
+       author reads it, so every one of them paid for a line that
+       answered a question they had not asked -- on every page, every
+       time. The check itself is not lost: `no-body` still says
+       exactly what was looked for when nothing matched, which is the
+       arrangement that actually breaks. What went is the reassurance
+       in the case where it worked. */
     case "ready":
-      return {
-        title: entryName(state.entry),
-        hint: `Found ${found(state)}.`
-      };
+      return { title: entryName(state.entry), hint: "Ready to edit." };
     case "editing":
       return {
         title: entryName(state.entry),
-        /* Two sentences rather than one, and which one is first
-           is the point: with the switch off the page is still
-           the site's own, so the honest lead is what was found
-           -- the same words `signed-out` and `ready` use, for
-           the same reason. "Editing" is claimed only once
-           something is. */
-        hint: state.started ? `Editing ${found(state)}.` : `Found ${found(state)}. Press the pencil, top left of the page, to edit it.`
+        /* "Editing" is claimed only once something is. With the
+           switch off the page is still the site's own, and a bar
+           saying otherwise over the reader's markup is the one
+           thing this state must not do. */
+        hint: state.started ? "Editing this page." : "Press the pencil, top left of the page, to edit it."
       };
     case "signed-out":
       return {
         title: entryName(state.entry),
-        /* The element is named HERE TOO, and that is the point of
-           saying it in two states rather than one: checking a
-           `body` selector is a deployment job, and asking somebody
-           to obtain a token before they can see whether they
-           pointed it at the right element makes the check cost an
-           afternoon instead of a page load. */
-        hint: `Found ${found(state)}. Sign in through the admin screens in this tab, then come back to edit it.`
+        hint: "Sign in through the admin screens in this tab, then come back to edit it."
       };
     case "loading":
       return {
@@ -292,16 +290,8 @@ function describe(state) {
       return { title: entryName(state.entry), hint: state.hint };
   }
 }
-function found(state) {
-  return `${describeElement(state.body)}, matched by ${state.selector}`;
-}
 function entryName(entry) {
   return `${entry.collection}/${entry.slug}`;
-}
-function describeElement(el) {
-  const id = el.id === "" ? "" : `#${el.id}`;
-  const classes = [...el.classList].map((name) => `.${name}`).join("");
-  return `${el.tagName.toLowerCase()}${id}${classes}`;
 }
 class PageEdit {
   constructor(options) {

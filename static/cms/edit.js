@@ -31,7 +31,7 @@ async function boot(where) {
   if (!handed && !wanted(where)) {
     return;
   }
-  const { open } = await import("./chunks/surface-C6Z230f3.js");
+  const { open } = await import("./chunks/surface-DWOt341E.js");
   await open(where, { contentStyles: CONTENT_STYLES });
 }
 const CONTENT_STYLES = new URL("./content-tools-content.min.css", import.meta.url).href;
