@@ -16,8 +16,10 @@
 # are content-hashed, so static/cms/ is emptied first — copying a new build
 # over an old one leaves stale chunks behind.
 #
-# static/cms/netlify.js and static/cms/boot.js are the site's own glue and are
-# kept.
+# static/cms/netlify.js, static/cms/boot.js and static/cms/site/ are the
+# site's own glue and are kept. static/cms/site/vendor.js is regenerated
+# against the new chunks, and fails the vendor run if the new build no longer
+# exports something the site's editor additions need.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
@@ -35,10 +37,13 @@ SHA="$(git -C "$WORK/ContentTools" rev-parse HEAD)"
 (cd "$WORK/ContentTools" && npm ci --ignore-scripts --no-audit --no-fund >/dev/null && npm run build >/dev/null)
 
 DIST="$WORK/ContentTools/dist"
-find "$DEST" -mindepth 1 -not -name netlify.js -not -name boot.js -delete
+find "$DEST" -mindepth 1 -not -name netlify.js -not -name boot.js \
+  -not -path "$DEST/site" -not -path "$DEST/site/*" -delete
 cp "$DIST/edit.js" "$DIST/shell.js" "$DIST/content-tools-content.min.css" "$DEST/"
 cp -r "$DIST/chunks" "$DIST/images" "$DEST/"
 cp "$WORK/ContentTools/LICENSE" "$DEST/LICENSE"
 echo "$SHA" > "$DEST/VERSION"
+
+node "$ROOT/tools/content-tools/link-site.mjs"
 
 echo "Vendored ContentTools $SHA into static/cms/"
