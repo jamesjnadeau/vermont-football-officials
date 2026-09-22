@@ -27,17 +27,43 @@ import { sanitize } from './sanitize.js';
 const INSTALLED = Symbol.for('vfo.site-document');
 const SLOTS = Symbol('vfo.site-slots');
 const MARKER = 'data-ct-md';
-// Schemes an `<a href>` inside a card note may use, once the browser has
-// already decoded it. Everything else — including a scheme spelled out with
-// entities, which the regex checks in parseCardNote never see decoded — has
-// to fall through to the sanitized, read-only preview instead.
-const SAFE_HREF_SCHEMES = new Set(['http', 'https', 'mailto']);
+// Protocols an `<a href>` inside a card note may use, read back from a real
+// anchor element rather than matched with a regex. A relative, fragment-only
+// or query-only href resolves against the page's own URL, so it always comes
+// back as one of these — there is no separate "looks relative" case to
+// special-case here.
+const SAFE_HREF_PROTOCOLS = new Set(['http:', 'https:', 'mailto:']);
+// A C0 control character (NUL through the character before space) anywhere
+// in a raw href — including one spelled out as a numeric character
+// reference, which arrives here already decoded — is the same thing
+// sanitize.js's unsafeURL strips before it looks at a URL's scheme. A plain
+// interior space is not flagged: it isn't a control character. This is a
+// second, independent check on top of the protocol check below, and not
+// merely because a control character can hide a scheme from a naive regex.
+// The browser's own URL parser silently drops a leading control character
+// (and strips tab/newline anywhere), so el.protocol below already reads
+// `javascript:` correctly for e.g. `\x01javascript:...` — but ContentEdit's
+// own editing surface does its *own*, different, incidental rewriting of
+// such bytes (e.g. a raw tab typed into a link often comes back as a plain
+// space), and relying on that rewriting to "fix" the href would silently
+// change the saved bytes of a note nobody edited. So any control character
+// disqualifies the note as an editable paragraph at all, regardless of what
+// the protocol resolves to, and it falls through to the static preview
+// instead, which is untouched by ContentEdit and round-trips byte for byte.
+const RAW_CONTROL_CHARS = /[\u0000-\u001f]/;
 
-function safeHref(value) {
-  const url = value.trim();
-  if (url === '' || url.startsWith('#') || url.startsWith('/') || url.startsWith('.')) return true;
-  const scheme = /^([a-zA-Z][a-zA-Z0-9+.-]*):/.exec(url)?.[1].toLowerCase();
-  return !scheme || SAFE_HREF_SCHEMES.has(scheme);
+// A fresh, plain anchor — never one pulled out of a <template>'s content,
+// whose fragment belongs to a separate "template contents owner document"
+// with no URL of its own, so a relative href inside a template resolves
+// against about:blank instead of the page. This one is a normal element of
+// the current document, so `.protocol` resolves a relative, fragment-only or
+// query-only href exactly as a real click on the page would.
+const HREF_PROBE = document.createElement('a');
+
+function safeHref(raw) {
+  if (RAW_CONTROL_CHARS.test(raw)) return false;
+  HREF_PROBE.href = raw;
+  return SAFE_HREF_PROTOCOLS.has(HREF_PROBE.protocol);
 }
 
 // parseCardNote's tag and `on`-attribute checks are regex over the raw

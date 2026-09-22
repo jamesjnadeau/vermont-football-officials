@@ -133,6 +133,12 @@ test('a live preview never runs what the file contains', async () => {
       '',
       '<div><svg><a href="#"><set attributeName="href" to="javascript:window.__pwned=9" begin="0s"/>z</a></svg></div>',
       '',
+      '<p class="card-omit"><a href="&#1;&#106;avascript:window.__pwned=10">c0</a></p>',
+      '',
+      '<p class="card-omit"><a href="&#27;javascript:window.__pwned=11">esc</a></p>',
+      '',
+      '<p class="card-omit"><a href="java&#9;script:window.__pwned=12">tab</a></p>',
+      '',
     ].join('\n');
     const out = h.regionHTML(h.MarkdownDocument.parse(hostile).toHTML());
     await new Promise((r) => setTimeout(r, 200));
@@ -145,5 +151,56 @@ test('a live preview never runs what the file contains', async () => {
   assert.doesNotMatch(html, /onerror|onmouseover|<script|javascript:|srcdoc|data:text|attributename/i);
   assert.match(html, /class="ct-md-static ct-site-preview"/);
   assert.deepEqual(errors, []);
+  await page.close();
+});
+
+// A leading or embedded C0 control character (a raw control byte, or the
+// same thing spelled as a numeric character reference — `&#1;`, `&#27;`,
+// `&#9;`) stops a plain `^scheme:` regex from ever matching a scheme, so a
+// naive check reads the href as scheme-less and therefore "relative, safe".
+// The browser disagrees: its URL parser strips a leading C0 control (and any
+// tab or newline anywhere) before it looks at the scheme, so the same href
+// resolves to a real `javascript:` URL when clicked. Each case below must be
+// rejected outright — falling through to the sanitized static preview — and
+// must still round-trip the source file byte for byte, rather than being
+// "fixed" implicitly by ContentEdit rewriting the control character during
+// editing (which would silently change the saved bytes of an untouched note).
+test('a card note href with a hidden control character is never editable', async () => {
+  const { page } = await openPage();
+  const cases = [
+    '<p class="card-omit"><a href="&#1;&#106;avascript:window.__pwned=13">c0</a></p>',
+    '<p class="card-omit"><a href="&#27;javascript:window.__pwned=14">esc</a></p>',
+    '<p class="card-omit"><a href="java&#9;script:window.__pwned=15">tab</a></p>',
+  ];
+  const results = await page.evaluate(async (sources) => {
+    const h = await import('/__test/harness.js');
+    (await import('/cms/site/document.js')).installDocument();
+    return sources.map((source) => {
+      const doc = h.MarkdownDocument.parse(source);
+      const html = doc.toHTML();
+      const updated = doc.update(h.regionHTML(html));
+      return { html, updated };
+    });
+  }, cases);
+  for (const [i, { html, updated }] of results.entries()) {
+    assert.match(html, /^<div data-ce-tag="static" class="ct-md-static ct-site-preview"/, `case ${i} should render as the static preview, not an editable card note`);
+    assert.doesNotMatch(html, /href/, `case ${i}'s hostile href should be stripped from the static preview`);
+    assert.equal(updated, cases[i], `case ${i} should round-trip byte for byte`);
+  }
+  await page.close();
+});
+
+// The one real card note in the site's content, with ordinary relative
+// hrefs, must still come through as an editable paragraph — the new
+// protocol-based check must not reject what it used to accept.
+test('a real card note with relative hrefs is still editable', async () => {
+  const { page } = await openPage();
+  const html = await page.evaluate(async () => {
+    const h = await import('/__test/harness.js');
+    (await import('/cms/site/document.js')).installDocument();
+    const doc = h.MarkdownDocument.parse(await h.markdown('flag-football-vs-high-school.md'));
+    return doc.toHTML();
+  });
+  assert.match(html, /<p class="card-omit" data-ct-md="\d+">This card is a summary.*<a href="\/information\/flag-football-rules\/">/s);
   await page.close();
 });
