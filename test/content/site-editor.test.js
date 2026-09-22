@@ -149,3 +149,42 @@ test('the signal manifest covers every signal drawing, once', () => {
     assert.ok(s.alt && s.caption, s.src);
   }
 });
+
+import { signalModel, figureModel, moveRow } from '../../static/cms/site/models.js';
+
+const S = (n) => SIGNALS[n - 1];
+
+test('signalModel: new grids take the manifest wording, in the order ticked on the list', () => {
+  const model = signalModel(null, new Set([S(9).src, S(1).src]), true, SIGNALS);
+  assert.deepEqual(model, { kind: 'signal-grid', captioned: true, items: [S(1), S(9)] });
+});
+
+test('signalModel: an existing grid keeps its own alt text, order and foreign images', () => {
+  const current = { kind: 'signal-grid', captioned: false, items: [
+    { src: S(7).src, alt: 'our own words' },
+    { src: '/images/other/not-a-signal.svg', alt: 'kept' },
+    { src: S(18).src, alt: 'unticked' },
+  ] };
+  const model = signalModel(current, new Set([S(7).src, S(2).src]), false, SIGNALS);
+  assert.deepEqual(model.items.map((i) => i.alt), ['our own words', 'kept', S(2).alt]);
+});
+
+test('signalModel: captions come from the manifest when a bare grid gains them', () => {
+  const current = { kind: 'signal-grid', captioned: false, items: [{ src: S(7).src, alt: 'a' }] };
+  assert.equal(signalModel(current, new Set([S(7).src]), true, SIGNALS).items[0].caption, S(7).caption);
+});
+
+test('signalModel: nothing ticked is no grid', () => {
+  assert.equal(signalModel(null, new Set(), false, SIGNALS), null);
+});
+
+test('figureModel requires a path and alt text for every figure', () => {
+  assert.deepEqual(figureModel([{ src: ' /a.svg ', alt: 'A', caption: ' Cap ' }]), { model: { kind: 'figure-grid', items: [{ src: '/a.svg', alt: 'A', caption: 'Cap' }] }, errors: [] });
+  assert.deepEqual(figureModel([{ src: '', alt: '', caption: '' }]).errors, ['Figure 1 needs an image path.', 'Figure 1 needs alt text.']);
+  assert.deepEqual(figureModel([]).errors, ['Add at least one figure.']);
+});
+
+test('moveRow', () => {
+  assert.deepEqual(moveRow(['a', 'b', 'c'], 0, 2), ['b', 'c', 'a']);
+  assert.deepEqual(moveRow(['a', 'b', 'c'], 0, -1), ['a', 'b', 'c']);
+});

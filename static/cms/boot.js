@@ -12,6 +12,7 @@
 // its GitHub calls through Netlify's Git Gateway (see netlify.js).
 
 import { TOKEN_KEY, gatewayFetch, hasSession, identity } from './netlify.js';
+import { siteExtension } from './site/extension.js';
 
 // edit.js builds its GitHub client with the global `fetch`, so the gateway
 // has to be installed there. It only reroutes calls for this site's own
@@ -29,5 +30,10 @@ if (hasSession()) {
     }
   }
 }
+
+// The site's own tools (static/cms/site/): grids, card notes and the toolbox
+// buttons for them. edit.js reads this when it opens the editor, and says on
+// its bar if they fail to install.
+window.contentToolsEdit = siteExtension;
 
 await import('./edit.js');

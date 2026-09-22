@@ -1,0 +1,22 @@
+/* The site's tools and dialogs, inside the editor's shadow root. Linked by
+   the editor itself from window.contentToolsEdit.styles (extension.js). */
+.ct-tool--site-signals:before, .ct-tool--site-figures:before, .ct-tool--site-web-only:before, .ct-tool--site-card-only:before {
+  font-family: arial, sans-serif; font-size: 10px; font-weight: bold; letter-spacing: 0;
+}
+.ct-tool--site-signals:before { content: "SIG"; }
+.ct-tool--site-figures:before { content: "FIG"; }
+.ct-tool--site-web-only:before { content: "WEB"; }
+.ct-tool--site-card-only:before { content: "CARD"; }
+.ct-site-dialog .ct-dialog__view { overflow-y: auto; }
+.ct-site-signals { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; padding: 8px; }
+.ct-site-signal { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 4px; border: 1px solid #d0d0d0; border-radius: 3px; font: 11px/1.3 arial, sans-serif; text-align: center; cursor: pointer; }
+.ct-site-signal:has(input:checked) { border-color: #2980b9; background: #eaf3fa; }
+.ct-site-signal img { width: 72px; height: 72px; object-fit: contain; background: #fff; }
+.ct-site-option { font: 12px arial, sans-serif; margin-right: 12px; }
+.ct-site-rows { display: grid; gap: 8px; padding: 8px; }
+.ct-site-row { display: grid; grid-template-columns: 90px 1fr; gap: 4px 8px; align-items: center; border: 1px solid #d0d0d0; padding: 8px; font: 12px arial, sans-serif; }
+.ct-site-row legend { font-weight: bold; }
+.ct-site-row input { padding: 4px 6px; border: 1px solid #d0d0d0; font: 12px arial, sans-serif; }
+.ct-site-row__actions { grid-column: 2; display: flex; gap: 4px; }
+.ct-site-errors { color: #e74c3c; font: 12px arial, sans-serif; margin: 0 8px; }
+.ct-site-errors:empty { display: none; }

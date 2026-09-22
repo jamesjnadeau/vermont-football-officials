@@ -310,3 +310,126 @@ test('the card note is an editable paragraph that keeps its class and links', as
   assert.deepEqual(errors, []);
   await page.close();
 });
+
+// What edit.js does with window.contentToolsEdit, step by step (the fork's
+// extend(), which isn't exported): await setup, check every allowed name is
+// stowed, then widen the markdown profile and append the group.
+test('siteExtension sets up everything the editor will ask for', async () => {
+  const { page, errors } = await openPage();
+  const out = await page.evaluate(async () => {
+    const { siteExtension } = await import('/cms/site/extension.js');
+    const { LIBRARY, MARKDOWN_PROFILE, allowTools, filterToolGroups } = await import('/cms/site/vendor.js');
+    const { ContentTools } = LIBRARY;
+    await siteExtension.setup(LIBRARY);
+    await siteExtension.setup(LIBRARY);             // a second editor on the page must not break the first
+    const unstowed = siteExtension.allowTools.filter((name) => {
+      try { ContentTools.ToolShelf.fetch(name); return false; } catch { return true; }
+    });
+    const profile = allowTools(MARKDOWN_PROFILE, siteExtension.allowTools);
+    const groups = filterToolGroups(profile, [...ContentTools.DEFAULT_TOOLS, siteExtension.allowTools]);
+    const css = await (await fetch(siteExtension.styles)).text();
+    return {
+      unstowed,
+      last: groups.at(-1),
+      untouchedProfile: !MARKDOWN_PROFILE.tools.has('site-signals'),
+      untouchedDefaults: !ContentTools.DEFAULT_TOOLS.flat().includes('site-signals'),
+      styles: siteExtension.styles,
+      css,
+      component: typeof LIBRARY.ContentEdit.SiteComponent,
+    };
+  });
+  assert.deepEqual(out.unstowed, []);
+  assert.deepEqual(out.last, ['site-signals', 'site-figures', 'site-web-only', 'site-card-only']);
+  assert.ok(out.untouchedProfile, 'the shared MARKDOWN_PROFILE is not mutated');
+  assert.ok(out.untouchedDefaults, 'ContentTools.DEFAULT_TOOLS is not mutated');
+  assert.match(out.styles, /\/cms\/site\/chrome\.css$/);
+  assert.doesNotMatch(out.styles, /\{/);           // adoptStyles reads a string with `{` as CSS text, not a URL
+  assert.match(out.css, /\.ct-tool--site-signals:before/);
+  assert.equal(out.component, 'function');
+  assert.deepEqual(errors, []);
+  await page.close();
+});
+
+test('install refuses a library that is not the one vendor.js imports', async () => {
+  const { page } = await openPage();
+  const message = await page.evaluate(async () => {
+    const { install } = await import('/cms/site/index.js');
+    const { LIBRARY } = await import('/cms/site/vendor.js');
+    try {
+      install({ ...LIBRARY });
+      return null;
+    } catch (error) {
+      return error.message;
+    }
+  });
+  assert.match(message, /different ContentTools/);
+  await page.close();
+});
+
+test('the visibility buttons switch a paragraph between web-only, card-only and plain', async () => {
+  const { page } = await openPage();
+  const out = await page.evaluate(async () => {
+    const { LIBRARY: { ContentEdit } } = await import('/cms/site/vendor.js');
+    const { toggleVisibility } = await import('/cms/site/tools.js');
+    const host = document.getElementById('region');
+    host.innerHTML = '<p>Hello</p>';
+    const p = new ContentEdit.Region(host).children[0];
+    const steps = [];
+    steps.push([toggleVisibility(p, 'card-omit'), p.attr('class')]);
+    steps.push([toggleVisibility(p, 'card-only'), p.attr('class')]);
+    steps.push([toggleVisibility(p, 'card-only'), p.attr('class') ?? '']);
+    return steps;
+  });
+  assert.deepEqual(out.map(([on]) => on), [true, true, false]);
+  assert.match(out[0][1], /\bcard-omit\b/);
+  assert.match(out[1][1], /\bcard-only\b/);
+  assert.doesNotMatch(out[1][1], /card-omit/);
+  assert.doesNotMatch(out[2][1], /card-/);
+  await page.close();
+});
+
+// The one end-to-end check: the real <content-tools-editor> element, set
+// up from siteExtension the way edit.js sets it up (profile, tools and
+// styles before it is connected), a real click on a paragraph and on the
+// toolbox button, and the HTML the editor saves.
+test('in the real editor, Web only marks the paragraph and the save carries it', async () => {
+  const { page, errors } = await openPage();
+  await page.evaluate(async () => {
+    const { siteExtension } = await import('/cms/site/extension.js');
+    const { LIBRARY, MARKDOWN_PROFILE, allowTools, ContentToolsEditor, EDITOR_TAG } = await import('/cms/site/vendor.js');
+    if (!customElements.get(EDITOR_TAG)) customElements.define(EDITOR_TAG, ContentToolsEditor);
+    await siteExtension.setup(LIBRARY);
+    document.getElementById('region').innerHTML = '<p>First paragraph.</p><p>Second paragraph.</p>';
+    const editor = document.createElement(EDITOR_TAG);
+    editor.setAttribute('mode', 'markdown');
+    // A selector on `regions` is queried against the editor's own light DOM
+    // (see the fork's ShadowRootContext, Mode A), which this harness's
+    // `#region` sits outside of. `regionElements` is what edit.js's real
+    // surface uses for the same reason: a DOM reference works regardless of
+    // where the region lives.
+    editor.regionElements = [document.getElementById('region')];
+    editor.profile = allowTools(MARKDOWN_PROFILE, siteExtension.allowTools);
+    editor.tools = [...LIBRARY.ContentTools.DEFAULT_TOOLS, siteExtension.allowTools];
+    editor.adoptStyles(siteExtension.styles);
+    editor.addEventListener('ct-saved', (ev) => { window.__saved = Object.values(ev.detail.regions)[0]; });
+    document.body.append(editor);
+    window.__editor = editor;
+    editor.start();
+  });
+  await page.locator('#region p').nth(1).click();
+  // The toolbox re-checks canApply() on a 100ms poll (ContentTools.ToolShelf),
+  // so the button starts out `ct-tool--disabled` right after the paragraph is
+  // clicked. Waiting for the class to clear is what a real author's next
+  // click would find true anyway; without it Playwright's click can land
+  // before the poll has caught up and do nothing.
+  await page.locator('.ct-tool--site-web-only:not(.ct-tool--disabled)').click();
+  await page.evaluate(() => window.__editor.stop(true));
+  await page.waitForFunction(() => typeof window.__saved === 'string');
+  const saved = await page.evaluate(() => window.__saved);
+  assert.match(saved, /<p class="card-omit"[^>]*>\s*Second paragraph\.\s*<\/p>/);
+  assert.doesNotMatch(saved, /<p class="card-omit"[^>]*>\s*First/);
+  const linked = await page.evaluate(() => [...window.__editor.shadowRoot.querySelectorAll('link[data-content-tools="adopted"]')].map((l) => l.href));
+  assert.deepEqual(linked.filter((href) => href.endsWith('/cms/site/chrome.css')).length, 1, 'the toolbox stylesheet was linked into the shadow root');
+  assert.deepEqual(errors, []);
+  await page.close();
+});
