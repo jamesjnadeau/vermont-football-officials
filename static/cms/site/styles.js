@@ -21,9 +21,12 @@ export const PAGE_CSS = `
   font: 600 11px/1.4 system-ui, sans-serif; color: #fff; background: #198754; pointer-events: none;
 }
 .ct-site-component.ce-element--focused { outline-style: solid; }
-.ct-site-preview { position: relative; outline: 1px dotted #adb5bd; outline-offset: 6px; margin-top: 2em; }
+/* Paint containment keeps a preview's position:fixed content (a fixed-top
+   banner, say) inside the preview instead of over the editor's controls. It
+   clips the label too, so the label sits in the top padding, not above. */
+.ct-site-preview { position: relative; contain: paint; outline: 1px dotted #adb5bd; outline-offset: 6px; margin-top: 0.5em; padding-top: 1.9em; }
 .ct-site-preview::before {
-  content: "Shown as it appears on the page — change it in /admin/"; position: absolute; top: -1.9em; left: -6px;
+  content: "Shown as it appears on the page — change it in /admin/"; position: absolute; top: 0; left: 0;
   font: 11px/1.4 system-ui, sans-serif; color: #6c757d; pointer-events: none;
 }
 `;
