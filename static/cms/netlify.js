@@ -72,6 +72,32 @@ export function hasSession() {
   }
 }
 
+// Set beside TOKEN_KEY when the token there is this origin's Identity
+// session's rather than one handed across from /admin/, so that when the
+// session ends the token goes with it.
+const FROM_SESSION = 'vfo:token-from-identity';
+
+// Files the signed-in author's JWT where edit.js looks for one, or, with
+// nobody signed in any more, takes back the one a session filed. Signing out
+// reloads the page, and a token left behind would bring the editor straight
+// back up. A token handed across from /admin/ (a deploy preview has no
+// session of its own) is left alone.
+export async function fileSessionToken() {
+  const user = hasSession() ? (await identity()).currentUser() : null;
+  try {
+    if (user) {
+      sessionStorage.setItem(TOKEN_KEY, await user.jwt());
+      sessionStorage.setItem(FROM_SESSION, '');
+    } else if (sessionStorage.getItem(FROM_SESSION) !== null) {
+      sessionStorage.removeItem(TOKEN_KEY);
+      sessionStorage.removeItem(FROM_SESSION);
+    }
+  } catch {
+    // Storage refused (a sandboxed frame, some private modes): edit.js
+    // will say nobody is signed in, which is true as far as it can tell.
+  }
+}
+
 // A current JWT for the signed-in user, refreshed if it has expired; null if
 // nobody is signed in.
 async function freshToken() {

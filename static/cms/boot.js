@@ -8,10 +8,11 @@
 //
 // edit.js decides for itself whether to put its bar up, by asking whether
 // this tab holds a ContentTools token, and talks to api.github.com. Before
-// it loads, this files the author's Identity JWT where it looks and routes
-// its GitHub calls through Netlify's Git Gateway (see netlify.js).
+// it loads, this files the author's Identity JWT where it looks (or takes
+// back one left from a session that has since ended) and routes its GitHub
+// calls through Netlify's Git Gateway (see netlify.js).
 
-import { TOKEN_KEY, gatewayFetch, hasSession, identity } from './netlify.js';
+import { fileSessionToken, gatewayFetch } from './netlify.js';
 import { siteExtension } from './site/extension.js';
 
 // edit.js builds its GitHub client with the global `fetch`, so the gateway
@@ -19,17 +20,7 @@ import { siteExtension } from './site/extension.js';
 // repository; every other request goes out exactly as it would have.
 window.fetch = gatewayFetch();
 
-if (hasSession()) {
-  const user = (await identity()).currentUser();
-  if (user) {
-    try {
-      sessionStorage.setItem(TOKEN_KEY, await user.jwt());
-    } catch {
-      // Storage refused (a sandboxed frame, some private modes): edit.js
-      // will say nobody is signed in, which is true as far as it can tell.
-    }
-  }
-}
+await fileSessionToken();
 
 // The site's own tools (static/cms/site/): grids, card notes and the toolbox
 // buttons for them. edit.js reads this when it opens the editor, and says on

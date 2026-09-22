@@ -150,3 +150,57 @@ test('pull requests and commits name the signed-in editor', async () => {
     delete globalThis.localStorage;
   }
 });
+
+// --- fileSessionToken ----------------------------------------------------
+
+function storage(entries = {}) {
+  const map = new Map(Object.entries(entries));
+  return {
+    getItem: (k) => (map.has(k) ? map.get(k) : null),
+    setItem: (k, v) => map.set(k, String(v)),
+    removeItem: (k) => map.delete(k),
+    has: (k) => map.has(k),
+  };
+}
+
+async function fileWith({ user, session }) {
+  globalThis.window ??= {};
+  globalThis.window.netlifyIdentity ??= {};
+  const { identity, fileSessionToken } = await import('../../static/cms/netlify.js');
+  // The widget is loaded once and kept, so it is the kept one that answers.
+  (await identity()).currentUser = () => user;
+  globalThis.localStorage = storage(user ? { 'gotrue.user': '{}' } : {});
+  globalThis.sessionStorage = session;
+  try {
+    await fileSessionToken();
+  } finally {
+    delete globalThis.localStorage;
+    delete globalThis.sessionStorage;
+  }
+}
+
+test('a signed-in author has their JWT filed for the in-page editor', async () => {
+  const { TOKEN_KEY } = await import('../../static/cms/netlify.js');
+  const session = storage();
+  await fileWith({ user: { jwt: async () => 'jwt' }, session });
+  assert.equal(session.getItem(TOKEN_KEY), 'jwt');
+});
+
+// Signing out reloads the page; a JWT still filed from the session that
+// ended would bring the editor straight back up.
+test('signing out takes back the token the session filed', async () => {
+  const { TOKEN_KEY } = await import('../../static/cms/netlify.js');
+  const session = storage();
+  await fileWith({ user: { jwt: async () => 'jwt' }, session });
+  await fileWith({ user: null, session });
+  assert.equal(session.has(TOKEN_KEY), false);
+});
+
+// A deploy preview opened from /admin/ has no session of its own; the token
+// handed across is the only one it has, and must stay.
+test('a token handed over from /admin/ outlives having no session', async () => {
+  const { TOKEN_KEY } = await import('../../static/cms/netlify.js');
+  const session = storage({ [TOKEN_KEY]: 'handed-over' });
+  await fileWith({ user: null, session });
+  assert.equal(session.getItem(TOKEN_KEY), 'handed-over');
+});
