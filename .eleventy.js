@@ -33,6 +33,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ static: "/" });
   eleventyConfig.addPassthroughCopy({
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js": "js/bootstrap.bundle.min.js",
+    "node_modules/netlify-identity-widget/build/netlify-identity-widget.js": "js/netlify-identity-widget.js",
   });
 
   // Serve lib/field/ and lib/draw/ to the browser at matching subpaths. The
