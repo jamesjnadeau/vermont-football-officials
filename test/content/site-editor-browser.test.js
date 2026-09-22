@@ -204,3 +204,109 @@ test('a real card note with relative hrefs is still editable', async () => {
   assert.match(html, /<p class="card-omit" data-ct-md="\d+">This card is a summary.*<a href="\/information\/flag-football-rules\/">/s);
   await page.close();
 });
+
+// The helpers below run inside the page; `setup` gives each test a patched
+// document and a mounted region for one markdown file.
+const SETUP = `
+  const h = await import('/__test/harness.js');
+  const { installDocument } = await import('/cms/site/document.js');
+  const { defineComponent } = await import('/cms/site/component.js');
+  installDocument();
+  const SiteComponent = defineComponent(h.ContentEdit);
+  const source = await h.markdown(NAME);
+  const doc = h.MarkdownDocument.parse(source);
+  const host = document.getElementById('region');
+  host.innerHTML = doc.toHTML();
+  const region = new h.ContentEdit.Region(host);
+  const blocks = () => region.children;
+`;
+
+async function inPage(page, name, body) {
+  return page.evaluate(new Function('NAME', `return (async () => { ${SETUP} ${body} })();`), name);
+}
+
+test('grids come into the editor as components, with their models', async () => {
+  const { page, errors } = await openPage();
+  const result = await inPage(page, 'official-signals.md', `
+    const grids = blocks().filter((b) => b.type() === 'SiteComponent');
+    return { count: grids.length, first: grids[0].model(), label: grids[0].domElement().getAttribute('data-ct-site-label'), same: doc.update(region.html()) === source };
+  `);
+  assert.equal(result.count, 11);
+  assert.equal(result.first.kind, 'signal-grid');
+  assert.equal(result.first.items[0].src, '/images/official-signals/07-dead-ball-foul.svg');
+  assert.equal(result.label, 'Signal grid');
+  assert.ok(result.same);
+  assert.deepEqual(errors, []);
+  await page.close();
+});
+
+test('changing one grid rewrites that grid and nothing else', async () => {
+  const { page } = await openPage();
+  const { before, after } = await inPage(page, '7-man-mechanics.md', `
+    const grid = blocks().find((b) => b.type() === 'SiteComponent');
+    const model = grid.model();
+    grid.model({ ...model, items: [...model.items].reverse() });
+    return { before: source, after: doc.update(region.html()) };
+  `);
+  const changed = (a, b) => a.split('\n').filter((line, i) => line !== b.split('\n')[i]);
+  assert.notEqual(after, before);
+  assert.equal(after.length, before.length);
+  for (const line of changed(after, before)) assert.match(line, /<img |<figcaption /, line);
+  await page.close();
+});
+
+test('a component survives the session feeding its HTML back in', async () => {
+  const { page } = await openPage();
+  const out = await inPage(page, 'official-signals.md', `
+    const grid = blocks().find((b) => b.type() === 'SiteComponent');
+    grid.model({ ...grid.model(), captioned: true, items: grid.model().items.map((i) => ({ ...i, caption: 'Edited' })) });
+    const saved = region.html();
+    host.innerHTML = saved;                              // what EditingSession._dress() does on resume
+    const again = new h.ContentEdit.Region(host);
+    return { again: again.html() === saved, text: doc.update(again.html()) };
+  `);
+  assert.ok(out.again);
+  assert.match(out.text, /<figcaption class="figure-caption">Edited<\/figcaption>/);
+  await page.close();
+});
+
+test('removing a grid removes it from the file; a new one is written in house style', async () => {
+  const { page } = await openPage();
+  const { removed, inserted } = await inPage(page, 'official-signals.md', `
+    const grid = blocks().find((b) => b.type() === 'SiteComponent');
+    const index = region.children.indexOf(grid);
+    region.detach(grid);
+    const removed = doc.update(region.html());
+    region.attach(new SiteComponent('div', {}, { kind: 'figure-grid', items: [{ src: '/images/x.svg', alt: 'X', caption: 'Ex' }] }), index);
+    return { removed, inserted: doc.update(region.html()) };
+  `);
+  const grids = (s) => (s.match(/^<div class="row/gm) ?? []).length;
+  const source = readFileSync(path.join(INFO, 'official-signals.md'), 'utf8');
+  assert.equal(grids(removed), grids(source) - 1);
+  assert.match(inserted, /\n\n<div class="row g-3 my-4">\n  <div class="col-sm-6">\n    <figure class="figure d-block">\n      <img src="\/images\/x.svg" alt="X" class="figure-img img-fluid border rounded p-2 bg-white">\n      <figcaption class="figure-caption">Ex<\/figcaption>\n    <\/figure>\n  <\/div>\n<\/div>\n\n/);
+  await page.close();
+});
+
+test('the card note is an editable paragraph that keeps its class and links', async () => {
+  const { page, errors } = await openPage();
+  const out = await inPage(page, 'flag-football-vs-high-school.md', `
+    const note = blocks().find((b) => b.type() === 'Text' && b.hasCSSClass('card-omit'));
+    const untouched = doc.update(region.html());
+    note.content = note.content.concat(new h.HTMLString.String(' Added.'));
+    note.taint();
+    const edited = doc.update(region.html());
+    note.removeCSSClass('card-omit');
+    const plain = doc.update(region.html());
+    return { type: note.type(), untouched, edited, plain };
+  `);
+  const source = readFileSync(path.join(INFO, 'flag-football-vs-high-school.md'), 'utf8');
+  assert.equal(out.untouched, source);
+  const note = out.edited.split('\n').find((l) => l.startsWith('<p class="card-omit">'));
+  assert.ok(note.endsWith(' Added.</p>'), note);
+  assert.match(note, /<a href="\/information\/flag-football-rules\/">Youth Flag Football Rules<\/a>/);
+  assert.equal(out.edited.replace(note, ''), source.replace(source.split('\n').find((l) => l.startsWith('<p class="card-omit">')), ''));
+  assert.doesNotMatch(out.plain, /<p class="card-omit">/);
+  assert.match(out.plain, /^This card is a summary and nothing more\. The rules behind it are on \[Youth Flag Football Rules\]\(\/information\/flag-football-rules\/\)/m);
+  assert.deepEqual(errors, []);
+  await page.close();
+});
