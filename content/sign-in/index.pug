@@ -1,0 +1,25 @@
+---
+title: Sign In | Vermont Football Officials
+description: Sign in with Netlify Identity.
+layout: layouts/main.pug
+eleventyExcludeFromCollections: true
+---
+
+h1 Sign In
+p.lead
+  | Opening the sign-in window now.
+p
+  | Nothing happening?
+  button.btn.btn-dark#open-sign-in(type='button') Open sign in
+
+noscript
+  p Signing in needs JavaScript enabled.
+
+script(src='/js/netlify-identity-widget.js')
+script.
+  if (window.netlifyIdentity) {
+    document.getElementById('open-sign-in').addEventListener('click', function () {
+      netlifyIdentity.open('login');
+    });
+    netlifyIdentity.open('login');
+  }
