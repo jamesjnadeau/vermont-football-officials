@@ -125,20 +125,19 @@ Sass), following the architecture of
   something it needs. The signal dialog's list, `static/cms/site/signals.js`,
   is generated from `all-signals-listed-and-diagrammed.md` with
   `node tools/content-tools/signals.mjs`. `npm run test:editing` fails if
-  either generated file is stale.
-  `static/cms-config.yml` configures
-  the editor and mirrors `.pages.yml`; `npm test` fails if the two disagree on
-  collections or fields. Authors sign in with **Netlify Identity**, and
+  either generated file is stale. `static/cms-config.yml` configures the editor
+  and mirrors `.pages.yml`; `npm test` fails if the two disagree on collections
+  or fields. Authors sign in with **Netlify Identity**, and
   `static/cms/netlify.js` routes ContentTools' GitHub API calls through
   Netlify's **Git Gateway** (`/.netlify/git/github/…`), which holds the GitHub
   token, so editors need no GitHub account. Every save opens a pull request
   against `master`. The layout's inline script loads `static/cms/boot.js` (and
   with it the editor) only for a browser with an Identity session, a token
-  handed over from `/admin/`, or `?cms-edit` on the URL — readers load
-  nothing. The editor replaces the children of the `[data-cms-body]` element
-  in `layouts/article.pug` and `layouts/quiz.pug`, so that element must hold
-  the rendered markdown and nothing else. On `localhost` the Identity widget
-  asks which Netlify site to use before it will sign anyone in.
+  handed over from `/admin/`, or `?cms-edit` on the URL — readers load nothing.
+  The editor replaces the children of the `[data-cms-body]` element in
+  `layouts/article.pug` and `layouts/quiz.pug`, so that element must hold the
+  rendered markdown and nothing else. On `localhost` the Identity widget asks
+  which Netlify site to use before it will sign anyone in.
 - `/draw` is a play-drawing tool, linked from the main navigation as "Play
   Draw" — see [docs/draw/README.md](docs/draw/README.md). It stays out of the
   article collections: it is a tool, not an article.
