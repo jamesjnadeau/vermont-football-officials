@@ -44,6 +44,26 @@ https://www.vermont-football-officials.org/admin/ lists everything you can
 edit, lets you write a new article, and shows the changes still waiting for
 review.
 
+The toolbox has four buttons for this site's own layouts, in a group of their
+own at the end:
+
+- **SIG** inserts a grid of official signal drawings, or, with a signal grid
+  selected, changes which signals it shows and whether they have captions.
+- **FIG** inserts a grid of figures (image, alt text, caption), or edits the
+  selected one. Upload a new picture first with the **Media** section of Pages
+  CMS, or with the image button, and paste its `/images/…` path in.
+- **WEB** marks the selected paragraph *web only*: it shows on the page but
+  is left off the printed card.
+- **CARD** marks it *card only*: it is on the printed card and hidden on the
+  web page.
+
+Press either WEB or CARD again to turn it off.
+
+While you are editing, these are outlined with a label saying what they are.
+Other special blocks, such as alerts and single figures, show as they look on
+the page, with a dotted outline. You can't type in those; change them in
+`/admin/` instead.
+
 ## Developing
 
 Requires Node 24+.
@@ -90,9 +110,24 @@ Sass), following the architecture of
 - `.pages.yml` configures the Pages CMS editing UI.
 - The in-page editor is [ContentTools](https://github.com/jamesjnadeau/ContentTools),
   vendored as built files in `static/cms/` (served at `/cms/`) — it isn't on
-  npm, so `tools/content-tools/vendor.sh [ref]` rebuilds it from GitHub, and
-  `static/cms/VERSION` records the commit. `static/cms-config.yml` configures
-  it and mirrors `.pages.yml`; `npm test` fails if the two disagree on
+  npm, so `tools/content-tools/vendor.sh [ref]` rebuilds it from GitHub, with
+  no ref building the latest `master`, and `static/cms/VERSION` records the
+  commit it vendored. The site's own additions to it, the grid and card-note
+  tools, live in `static/cms/site/`. `boot.js` hands them to the editor as
+  `window.contentToolsEdit` (`static/cms/site/extension.js`), the fork's
+  extension point for the in-page editor, documented in its
+  `docs/custom-tools.md`. The editor loads them only when an author opens it,
+  and shows an error on its bar if they fail. The fork doesn't hand over how
+  markdown blocks become the region's HTML and back, which the grids and card
+  notes need, so that code reaches `MarkdownDocument` through
+  `static/cms/site/vendor.js`. `vendor.sh` regenerates that file
+  (`node tools/content-tools/link-site.mjs`) and fails if a new build drops
+  something it needs. The signal dialog's list, `static/cms/site/signals.js`,
+  is generated from `all-signals-listed-and-diagrammed.md` with
+  `node tools/content-tools/signals.mjs`. `npm run test:editing` fails if
+  either generated file is stale.
+  `static/cms-config.yml` configures
+  the editor and mirrors `.pages.yml`; `npm test` fails if the two disagree on
   collections or fields. Authors sign in with **Netlify Identity**, and
   `static/cms/netlify.js` routes ContentTools' GitHub API calls through
   Netlify's **Git Gateway** (`/.netlify/git/github/…`), which holds the GitHub
