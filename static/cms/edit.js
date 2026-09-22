@@ -31,7 +31,7 @@ async function boot(where, extension) {
   if (!handed && !wanted(where)) {
     return;
   }
-  const { open } = await import("./chunks/surface-Cdn4BeI6.js");
+  const { open } = await import("./chunks/surface-YIXBwW2i.js");
   await open(where, {
     contentStyles: CONTENT_STYLES,
     extension: extension ?? where.contentToolsEdit

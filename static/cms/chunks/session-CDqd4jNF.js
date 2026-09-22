@@ -400,8 +400,14 @@ class ConflictError extends GitHubError {
   }
 }
 function messageFrom(body) {
-  if (body && typeof body === "object" && typeof body.message === "string") {
-    return body.message;
+  if (body && typeof body === "object") {
+    const { message, msg } = body;
+    if (typeof message === "string") {
+      return message;
+    }
+    if (typeof msg === "string") {
+      return msg;
+    }
   }
   return "";
 }

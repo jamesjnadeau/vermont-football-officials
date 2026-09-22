@@ -7,8 +7,12 @@
 # would mean cloning the repo and installing its whole toolchain each time.
 # Run by hand when you want a newer editor:
 #
-#     tools/content-tools/vendor.sh            # the ref in static/cms/VERSION
+#     tools/content-tools/vendor.sh            # the latest on master
 #     tools/content-tools/vendor.sh <ref>      # a branch, tag or commit
+#
+# It follows master rather than a pinned commit while the fork and the site
+# are changing together. static/cms/VERSION still records the commit each
+# run vendored, so pass that back as <ref> to rebuild exactly what shipped.
 #
 # Only what the site serves is copied: edit.js (the in-page editor, on every
 # page), shell.js (the /admin/ screens), the chunks both import, and the
@@ -25,7 +29,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 DEST="$ROOT/static/cms"
 REPO="https://github.com/jamesjnadeau/ContentTools.git"
-REF="${1:-$(cat "$DEST/VERSION")}"
+REF="${1:-master}"
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
