@@ -118,3 +118,35 @@ test('everything else is fetched untouched', async () => {
     'https://api.github.com/repos/someone/else/contents/x',
   ]);
 });
+
+// Every change reaches GitHub as the Git Gateway's one account, so the glue
+// names the signed-in editor on the pull request and as each commit's author.
+test('pull requests and commits name the signed-in editor', async () => {
+  const { fetch, calls } = await gateway();
+  globalThis.window.netlifyIdentity = {
+    currentUser: () => ({
+      email: 'ref@example.com',
+      user_metadata: { full_name: 'Pat Referee' },
+      jwt: async () => 'fresh-jwt',
+    }),
+  };
+  globalThis.localStorage = { getItem: () => '{}' };
+  try {
+    const repo = `https://api.github.com/repos/${CT.backend.repo}`;
+    const post = (rest, body) => fetch(`${repo}${rest}`, { method: 'POST', body: JSON.stringify(body) });
+    await post('/pulls', { title: 'Update information/x', body: '', head: 'cms/x', base: 'master' });
+    await post('/git/commits', { message: 'Update information/x', tree: 't', parents: ['p'] });
+    await post('/git/blobs', { content: 'x' });
+
+    const [pull, commit, blob] = calls.map((c) => JSON.parse(c.init.body));
+    assert.equal(pull.body, 'Submitted by Pat Referee (ref@example.com) through the site editor.');
+    assert.equal(pull.title, 'Update information/x');
+    assert.equal(commit.author.name, 'Pat Referee');
+    assert.equal(commit.author.email, 'ref@example.com');
+    assert.equal(commit.message, 'Update information/x');
+    assert.deepEqual(blob, { content: 'x' });
+    assert.equal(calls[0].init.headers.get('Authorization'), 'Bearer fresh-jwt');
+  } finally {
+    delete globalThis.localStorage;
+  }
+});

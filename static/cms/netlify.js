@@ -8,7 +8,8 @@
 // lives in the Netlify dashboard, so authors need a site login and nothing
 // else — no GitHub account, no personal access token.
 //
-// Two things make that work without changing ContentTools itself:
+// Two things make that work without changing ContentTools itself (and a
+// third makes it say who did it — see `signed`):
 //
 // - `gatewayFetch` rewrites the URLs. ContentTools always asks for
 //   https://api.github.com/repos/<owner>/<repo>/<rest>; the gateway serves
@@ -78,6 +79,36 @@ async function freshToken() {
   return user ? user.jwt() : null;
 }
 
+// Who is signed in, as a name and an email, or null.
+async function author() {
+  const user = hasSession() ? (await identity()).currentUser() : null;
+  if (!user?.email) return null;
+  return { name: user.user_metadata?.full_name?.trim() || user.email, email: user.email };
+}
+
+// Every change reaches GitHub as the one account behind the Git Gateway, so
+// the pull request and its commits would otherwise say nothing about who
+// made it. ContentTools opens one pull request per entry and adds a commit
+// for each later save, so the pull request says who opened it and each
+// commit is authored by whoever saved it — which is what GitHub shows in
+// the pull request's commit list.
+async function signed(method, rest, body) {
+  if (method !== 'POST' || typeof body !== 'string') return body;
+  const path = rest.split('?')[0];
+  if (path !== '/pulls' && path !== '/git/commits') return body;
+  const who = await author();
+  if (!who) return body;
+
+  const payload = JSON.parse(body);
+  if (path === '/pulls') {
+    const line = `Submitted by ${who.name} (${who.email}) through the site editor.`;
+    payload.body = payload.body ? `${payload.body}\n\n${line}` : line;
+  } else {
+    payload.author = { ...who, date: new Date().toISOString() };
+  }
+  return JSON.stringify(payload);
+}
+
 function json(body) {
   return new Response(JSON.stringify(body), {
     status: 200,
@@ -113,7 +144,9 @@ export function gatewayFetch() {
     // Only meaningful to api.github.com; harmless, but not ours to send.
     headers.delete('X-GitHub-Api-Version');
 
-    return http(`${GATEWAY}${rest}`, { ...init, headers });
+    const body = await signed((init.method ?? 'GET').toUpperCase(), rest, init.body);
+
+    return http(`${GATEWAY}${rest}`, { ...init, headers, body });
   };
 }
 
