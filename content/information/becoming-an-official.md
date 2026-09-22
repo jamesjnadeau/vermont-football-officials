@@ -39,11 +39,11 @@ Be aware of this up front, because it is the real barrier and nobody should
 discover it later:
 
 
-|                 |                                                                                                           |
-| --------------- | --------------------------------------------------------------------------------------------------------- |
-| Registration    | &#xNAN;**$25/year** — covers the background check, the assignment system, and your insurance for the year |
-| Membership dues | **around $100/year** — **waived for your first year**                                                     |
-| Equipment       | The one real outlay. Football takes more gear than most sports.                                           |
+|                 |                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------- |
+| Registration    | **$25/year** — covers the background check, the assignment system, and your insurance for the year |
+| Membership dues | **around $100/year** — **waived for your first year**                                              |
+| Equipment       | The one real outlay. Football takes more gear than most sports.                                    |
 
 
 Two things take the edge off that. **First-year officials do not pay dues**,
@@ -59,11 +59,11 @@ That is a real offer. Ask.
 ## What you get paid
 
 
-| Game                      | Fee               |
-| ------------------------- | ----------------- |
-| Varsity                   | &#xNAN;**$97.50** |
-| Junior varsity            | &#xNAN;**$75.00** |
-| Youth(5/6 & 7/8, 2 games) | &#xNAN;**$125**   |
+| Game                      | Fee        |
+| ------------------------- | ---------- |
+| Varsity                   | **$97.50** |
+| Junior varsity            | **$75.00** |
+| Youth(5/6 & 7/8, 2 games) | **$125**   |
 
 
 Plus mileage, reimbursed at the standard IRS rate at the end of the season — you
@@ -118,17 +118,22 @@ ones who asked for help early.
 
 ## Common questions
 
-**Do I need to have played football?** \
+**Do I need to have played football?**
+
 No.
 
-**Can I do this with a full-time job?** \
+**Can I do this with a full-time job?**
+
 Yes — most officials do. Games are mostly evenings and weekends, and in-season meetings are usually virtual.
 
-**What if I can only work some weeks?** \
+**What if I can only work some weeks?**
+
 That is fine. You keep your own availability in Arbiter and you are assigned from what you have marked.
 
-**What if I am not ready for varsity?** \
+**What if I am not ready for varsity?**
+
 You will not be assigned varsity. You are assigned to the level your mechanics, rules knowledge and judgement are ready for, and you move up when you are ready.
 
-**How do I actually start?** \
+**How do I actually start?**
+
 Through the [contact page](/contact/). One email.

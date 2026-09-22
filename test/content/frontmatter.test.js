@@ -280,3 +280,16 @@ test('no editor artifacts in quiz bodies', () => {
     .map((q) => q.name);
   assert.deepEqual(bad, []);
 });
+
+// Pages CMS's editor has written `&#xNAN;` in front of table cells that start
+// with bold text. It is not a real entity, so the page shows it literally.
+// Any `&#` that doesn't open a well-formed numeric reference is that bug.
+const BROKEN_ENTITY = /&#(?!\d+;|x[0-9a-f]+;)/i;
+
+test('no malformed numeric character references in article or quiz bodies', () => {
+  const bad = [
+    ...articles.filter((a) => BROKEN_ENTITY.test(a.content)).map((a) => a.name),
+    ...quizzes.filter((q) => BROKEN_ENTITY.test(q.content)).map((q) => `quizzes/${q.name}`),
+  ];
+  assert.deepEqual(bad, []);
+});
