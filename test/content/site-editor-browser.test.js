@@ -10,6 +10,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { chromiumExecutable } from '../../lib/cards/render.js';
+import { serializeGrid } from '../../static/cms/site/grids.js';
+import { SIGNALS } from '../../static/cms/site/signals.js';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 const STATIC = path.join(ROOT, 'static');
@@ -466,6 +468,99 @@ test('in the real editor, Web only marks the paragraph and the save carries it',
   assert.doesNotMatch(saved, /<p class="card-omit"[^>]*>\s*First/);
   const linked = await page.evaluate(() => [...window.__editor.shadowRoot.querySelectorAll('link[data-content-tools="adopted"]')].map((l) => l.href));
   assert.deepEqual(linked.filter((href) => href.endsWith('/cms/site/chrome.css')).length, 1, 'the toolbox stylesheet was linked into the shadow root');
+  assert.deepEqual(errors, []);
+  await page.close();
+});
+
+// The grid tools lean on ContentTools internals no public API promises —
+// DialogUI's _domView, _domControls and _addDOMEventListeners, Tool's
+// _insertAt, EditorApp.get(), ModalUI — and vendor.sh follows the fork's
+// master, so a re-vendor could quietly break inserting or editing a grid
+// while every model-level test above stays green. This drives both dialogs
+// through real clicks in the real editor and checks the markdown that comes
+// out: the new grid and the edited one in house markup, and every block
+// nobody touched exactly as it was.
+test('in the real editor, the grid dialogs insert and edit grids and the save carries them', async () => {
+  const figureGrid = serializeGrid({ kind: 'figure-grid', items: [{ src: '/images/a.png', alt: 'A', caption: 'Cap A' }] });
+  const blocks = [
+    'Intro paragraph.',
+    '<p class="card-omit">A web-only note with <a href="/x/">a link</a>.</p>',
+    figureGrid,
+    '<div class="alert alert-info">Some raw HTML.</div>',
+    '## Heading',
+    'Last paragraph.',
+  ];
+  const source = blocks.join('\n\n') + '\n';
+  const { page, errors } = await openPage();
+  await page.evaluate(async (src) => {
+    const { siteExtension } = await import('/cms/site/extension.js');
+    const { LIBRARY, MARKDOWN_PROFILE, allowTools, ContentToolsEditor, EDITOR_TAG, MarkdownDocument } = await import('/cms/site/vendor.js');
+    if (!customElements.get(EDITOR_TAG)) customElements.define(EDITOR_TAG, ContentToolsEditor);
+    await siteExtension.setup(LIBRARY);
+    window.__doc = MarkdownDocument.parse(src);
+    document.getElementById('region').innerHTML = window.__doc.toHTML();
+    const editor = document.createElement(EDITOR_TAG);
+    editor.setAttribute('mode', 'markdown');
+    editor.regionElements = [document.getElementById('region')];
+    editor.profile = allowTools(MARKDOWN_PROFILE, siteExtension.allowTools);
+    editor.tools = [...LIBRARY.ContentTools.DEFAULT_TOOLS, siteExtension.allowTools];
+    editor.adoptStyles(siteExtension.styles);
+    editor.addEventListener('ct-saved', (ev) => { window.__saved = Object.values(ev.detail.regions)[0]; });
+    document.body.append(editor);
+    window.__editor = editor;
+    editor.start();
+  }, source);
+  const components = page.locator('#region .ct-site-component');
+  assert.equal(await components.count(), 1);
+
+  // Insert a signal grid after the intro. With nothing ticked, Insert must
+  // do nothing: no grid, and the dialog stays open for the author.
+  await page.locator('#region p').first().click();
+  await page.locator('.ct-tool--site-signals:not(.ct-tool--disabled)').click();
+  const signals = page.locator('.ct-site-dialog');
+  await signals.waitFor();
+  assert.equal(await signals.locator('.ct-dialog__caption').textContent(), 'Insert signal grid');
+  await signals.locator('.ct-control--insert').click();
+  // A hidden dialog loses ct-widget--active at once and is only unmounted
+  // after its fade, so "still open" means still active.
+  assert.equal(await page.locator('.ct-site-dialog.ct-widget--active').count(), 1, 'the dialog stays open when nothing is ticked');
+  assert.equal(await components.count(), 1, 'nothing is inserted when nothing is ticked');
+  const boxes = signals.locator('.ct-site-signals input');
+  await boxes.nth(0).check();
+  await boxes.nth(2).check();
+  await signals.locator('.ct-control--insert').click();
+  await page.waitForFunction(() => document.querySelectorAll('#region .ct-site-component').length === 2);
+  await signals.waitFor({ state: 'detached' });
+
+  // Edit the existing figure grid: a new caption, and a second figure whose
+  // alt text needs escaping in an attribute.
+  await page.locator('#region .ct-site-component[data-ct-site-label="Figure grid"]').click();
+  await page.locator('.ct-tool--site-figures:not(.ct-tool--disabled)').click();
+  const figures = page.locator('.ct-site-dialog');
+  await figures.waitFor();
+  assert.equal(await figures.locator('.ct-dialog__caption').textContent(), 'Edit figure grid');
+  await figures.locator('input[name=caption]').first().fill('New caption');
+  await figures.locator('.ct-control', { hasText: 'Add figure' }).click();
+  await figures.locator('input[name=src]').nth(1).fill('/images/b.png');
+  await figures.locator('input[name=alt]').nth(1).fill('B "quoted" & <x>');
+  await figures.locator('input[name=caption]').nth(1).fill('Cap B');
+  await figures.locator('.ct-control--insert').click();
+  await page.waitForFunction(() => document.querySelector('#region .ct-site-component[data-ct-site-label="Figure grid"]')?.textContent.includes('Cap B'));
+  await figures.waitFor({ state: 'detached' });
+
+  await page.evaluate(() => window.__editor.stop(true));
+  await page.waitForFunction(() => typeof window.__saved === 'string');
+  const markdown = await page.evaluate(() => window.__doc.update(window.__saved));
+
+  const pick = ({ src, alt, caption }) => ({ src, alt, caption });
+  const signalGrid = serializeGrid({ kind: 'signal-grid', captioned: false, items: [pick(SIGNALS[0]), pick(SIGNALS[2])] });
+  const editedFigures = serializeGrid({ kind: 'figure-grid', items: [
+    { src: '/images/a.png', alt: 'A', caption: 'New caption' },
+    { src: '/images/b.png', alt: 'B "quoted" & <x>', caption: 'Cap B' },
+  ] });
+  assert.match(editedFigures, /alt="B &quot;quoted&quot; &amp; <x>"/);
+  const expected = [blocks[0], signalGrid, blocks[1], editedFigures, ...blocks.slice(3)].join('\n\n') + '\n';
+  assert.equal(markdown, expected);
   assert.deepEqual(errors, []);
   await page.close();
 });
