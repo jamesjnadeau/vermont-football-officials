@@ -7,10 +7,7 @@ eleventyExcludeFromCollections: true
 
 h1 Sign In
 p.lead
-  | Opening the sign-in window now.
-p
-  | Nothing happening?
-  button.btn.btn-dark#open-sign-in(type='button') Open sign in
+  button.btn.btn-dark#open-sign-in(type='button') Sign in
 
 noscript
   p Signing in needs JavaScript enabled.
@@ -21,5 +18,4 @@ script.
     document.getElementById('open-sign-in').addEventListener('click', function () {
       netlifyIdentity.open('login');
     });
-    netlifyIdentity.open('login');
   }
