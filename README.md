@@ -14,19 +14,7 @@ One-time setup (James can walk you through it, ~10 minutes):
 2. Tell James your username so he can give you access.
 3. Accept the invitation email from GitHub.
 
-Editing a page you're looking at:
-
-1. Scroll to the bottom of the page and click **Edit this page**.
-2. Click **Sign in with GitHub** if it asks.
-3. Make your change and click **Save**. The site updates itself within a few
-   minutes.
-
-Pages without an **Edit this page** button (the home page, Contact, and the
-lists of articles and quizzes) aren't part of the CMS — their footer button
-says **Edit site content** and drops you at the list of everything you *can*
-edit. Email James if one of those needs changing.
-
-Starting from scratch instead:
+To edit:
 
 1. Go to https://app.pagescms.org and click **Sign in with GitHub**.
 2. Choose **vermont-football-officials**.
@@ -45,8 +33,8 @@ link to it from your article with the editor's link button.
 There is a second editor that lets you change an article right on the page you
 are reading, using a site account instead of a GitHub account:
 
-1. Go to https://www.vermont-football-officials.org/sign-in/ and sign in (James
-   sends the invitation email).
+1. Press **Sign in** at the bottom right of any page and sign in (James sends
+   the invitation email).
 2. Open the article or quiz you want to change and press the **pencil** at the
    top left of the page. Type your changes straight into the page.
 3. Press **Submit for review**. Your change becomes a pull request that James
@@ -99,11 +87,7 @@ Sass), following the architecture of
   are left alone.) `npm run dev` skips cards — a live-reload cycle should not
   wait on a browser — so use `CARDS=1 npm run dev` to see one change. See
   [docs/cards/README.md](docs/cards/README.md).
-- `.pages.yml` configures the Pages CMS editing UI. `lib/pages-cms.js` turns a
-  page's source path into its editor URL; `content/_data/eleventyComputed.js`
-  hands that to every page as `editLink`, which the footer in
-  `content/_includes/layouts/main.pug` renders. Rename or move a collection in
-  `.pages.yml` and `npm test` fails until `lib/pages-cms.js` agrees.
+- `.pages.yml` configures the Pages CMS editing UI.
 - The in-page editor is [ContentTools](https://github.com/jamesjnadeau/ContentTools),
   vendored as built files in `static/cms/` (served at `/cms/`) — it isn't on
   npm, so `tools/content-tools/vendor.sh [ref]` rebuilds it from GitHub, and

@@ -29,19 +29,13 @@ html(lang='en')
       | !{content}
 
     //- The card treatment matches #content so the footer reads as part of the
-    //- page and not as a stripe of background. `editLink` is computed per page
-    //- in content/_data/eleventyComputed.js.
+    //- page and not as a stripe of background.
     footer#footer.container.mb-4.p-4.bg-white.rounded.shadow-sm
       .row.gy-3.align-items-center
         .col-md
-          p.mb-1 Vermont Football Officials
-          p.mb-0.small.text-secondary Spot something out of date? Anyone with access can fix it — no coding needed.
-          p.mb-0.mt-2.small
-            a.link-secondary(href='/sign-in/') Sign in
+          p.mb-0 Vermont Football Officials
         .col-md-auto.text-md-end
-          a.btn.btn-outline-secondary.btn-sm(href=editLink.url)= editLink.label
-          p.mb-0.mt-2.small.text-secondary
-            a.link-secondary(href='https://github.com/jamesjnadeau/vermont-football-officials#editing-the-site-no-coding-needed') How editing works
+          button.btn.btn-outline-secondary.btn-sm#sign-in(type='button') Sign in
 
     script(src='/js/bootstrap.bundle.min.js')
     //- Editing. A reader's browser answers two storage lookups here and loads
@@ -53,14 +47,38 @@ html(lang='en')
     //- confirmations) link to the site root with a token in the fragment, and
     //- only the Identity widget knows what to do with one, so those load it.
     script(type='module').
-      const signedIn = (() => {
+      const stored = (storage, key) => {
         try {
-          return localStorage.getItem('gotrue.user') !== null
-            || sessionStorage.getItem('content-tools:github-token') !== null;
+          return storage.getItem(key) !== null;
         } catch {
           return false;
         }
-      })();
+      };
+      const identityUser = stored(localStorage, 'gotrue.user');
+      const signedIn = identityUser || stored(sessionStorage, 'content-tools:github-token');
+
+      // The footer's button opens the Netlify Identity widget, fetched on the
+      // first click so a reader never downloads it. Signing in or out reloads
+      // the page, so the editor loads (or stops loading) to match.
+      const button = document.getElementById('sign-in');
+      if (identityUser) button.textContent = 'Account';
+      let widget;
+      button.addEventListener('click', async () => {
+        widget ??= new Promise((resolve, reject) => {
+          if (window.netlifyIdentity) return resolve(window.netlifyIdentity);
+          document.head.append(Object.assign(document.createElement('script'), {
+            src: '/js/netlify-identity-widget.js',
+            onload: () => resolve(window.netlifyIdentity),
+            onerror: reject,
+          }));
+        }).then((identity) => {
+          identity.on('login', () => location.reload());
+          identity.on('logout', () => location.reload());
+          return identity;
+        });
+        (await widget).open();
+      });
+
       if (signedIn || new URLSearchParams(location.search).has('cms-edit') || location.hash.includes('cms-token=')) {
         import('/cms/boot.js');
       } else if (/(confirmation|invite|recovery|email_change)_token=/.test(location.hash)) {

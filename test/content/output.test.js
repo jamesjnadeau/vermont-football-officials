@@ -210,28 +210,15 @@ test('no generated card is committed under uploads/', () => {
   assert.deepEqual(stale, []);
 });
 
-// --- Footer / editing link ---------------------------------------------
-// The footer is how a non-technical editor finds the CMS at all, so it has to
-// be on every page, not just the articles.
-test('every page has a footer linking into Pages CMS', () => {
+// --- Footer sign-in -----------------------------------------------------
+// The footer's button is the only way into Netlify Identity for an author, so
+// it has to be on every page, not just the articles.
+test('every page has the sign-in button in its footer', () => {
   const bad = layoutPages.filter((f) => {
     const footer = read(f).match(/<footer[^>]*>[\s\S]*?<\/footer>/);
-    return !footer || !footer[0].includes('href="https://app.pagescms.org/');
+    return !footer || !/<button[^>]*id="sign-in"/.test(footer[0]);
   });
   assert.deepEqual(bad, []);
-});
-
-// An article whose link doesn't name its own file opens the editor on the
-// wrong entry — or on nothing.
-test('article and quiz pages deep-link to their own source file', () => {
-  const bad = [
-    ['information/7-man-mechanics', 'information', 'content/information/7-man-mechanics.md'],
-    ['quizzes/quiz-001-expert-mixed', 'quizzes', 'content/quizzes/quiz-001-expert-mixed.md'],
-  ].filter(([url, collection, source]) => {
-    const want = `/collection/${collection}/edit/${encodeURIComponent(source)}"`;
-    return !read(path.join(SITE, url, 'index.html')).includes(want);
-  });
-  assert.deepEqual(bad.map(([url]) => url), []);
 });
 
 // The in-page editor (static/cms-config.yml `body:`) replaces the children of

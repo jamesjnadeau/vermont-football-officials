@@ -22,7 +22,7 @@
     "test:draw": "node --test \"test/draw/*.test.js\"",
     "test:cards": "node --test \"test/cards/*.test.js\"",
     "test:content": "node --test \"test/content/frontmatter.test.js\"",
-    "test:editing": "node --test \"test/content/editing.test.js\" \"test/content/content-tools.test.js\"",
+    "test:editing": "node --test \"test/content/content-tools.test.js\"",
     "test:output": "node --test \"test/content/output.test.js\"",
     "test:html": "html-validate \"_site/**/*.html\"",
     "test:links": "linkinator . draw --server-root _site --recurse --silent --skip \"^https?://(?!(localhost|127\\\\.0\\\\.0\\\\.1))\""
