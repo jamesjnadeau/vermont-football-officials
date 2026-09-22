@@ -40,6 +40,22 @@ If your change doesn't appear on the site after about 5 minutes, email James so 
 To attach a PDF or document: use the **Media** section to upload it, then
 link to it from your article with the editor's link button.
 
+### Editing on the page itself (ContentTools)
+
+There is a second editor that lets you change an article right on the page you
+are reading, using a site account instead of a GitHub account:
+
+1. Go to https://www.vermont-football-officials.org/sign-in/ and sign in (James
+   sends the invitation email).
+2. Open the article or quiz you want to change and press the **pencil** at the
+   top left of the page. Type your changes straight into the page.
+3. Press **Submit for review**. Your change becomes a pull request that James
+   (or anyone with access) approves before it goes live.
+
+https://www.vermont-football-officials.org/admin/ lists everything you can
+edit, lets you write a new article, and shows the changes still waiting for
+review.
+
 ## Developing
 
 Requires Node 24+.
@@ -88,6 +104,22 @@ Sass), following the architecture of
   hands that to every page as `editLink`, which the footer in
   `content/_includes/layouts/main.pug` renders. Rename or move a collection in
   `.pages.yml` and `npm test` fails until `lib/pages-cms.js` agrees.
+- The in-page editor is [ContentTools](https://github.com/jamesjnadeau/ContentTools),
+  vendored as built files in `static/cms/` (served at `/cms/`) — it isn't on
+  npm, so `tools/content-tools/vendor.sh [ref]` rebuilds it from GitHub, and
+  `static/cms/VERSION` records the commit. `static/cms-config.yml` configures
+  it and mirrors `.pages.yml`; `npm test` fails if the two disagree on
+  collections or fields. Authors sign in with **Netlify Identity**, and
+  `static/cms/netlify.js` routes ContentTools' GitHub API calls through
+  Netlify's **Git Gateway** (`/.netlify/git/github/…`), which holds the GitHub
+  token, so editors need no GitHub account. Every save opens a pull request
+  against `master`. The layout's inline script loads `static/cms/boot.js` (and
+  with it the editor) only for a browser with an Identity session, a token
+  handed over from `/admin/`, or `?cms-edit` on the URL — readers load
+  nothing. The editor replaces the children of the `[data-cms-body]` element
+  in `layouts/article.pug` and `layouts/quiz.pug`, so that element must hold
+  the rendered markdown and nothing else. On `localhost` the Identity widget
+  asks which Netlify site to use before it will sign anyone in.
 - `/draw` is a play-drawing tool, linked from the main navigation as "Play
   Draw" — see [docs/draw/README.md](docs/draw/README.md). It stays out of the
   article collections: it is a tool, not an article.
@@ -103,6 +135,12 @@ Hosted on [Netlify](https://www.netlify.com/), configured by `netlify.toml`
 `master` triggers a Netlify build and deploy; `.github/workflows/test.yml`
 runs `npm test` on every push and pull request as a CI gate, but does not
 deploy anything.
+
+Netlify settings the ContentTools editor needs (Site configuration →
+Identity): **Identity** enabled with registration set to *Invite only*, and
+**Services → Git Gateway** enabled and connected to this repository. Invite
+editors from the Identity tab; the Git Gateway can also be limited to users
+with a given role.
 
 The site is served from its own custom domain (configured in the Netlify
 dashboard), so it builds at the domain root with no path prefix and every URL

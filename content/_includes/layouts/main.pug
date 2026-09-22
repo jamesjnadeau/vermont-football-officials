@@ -44,3 +44,25 @@ html(lang='en')
             a.link-secondary(href='https://github.com/jamesjnadeau/vermont-football-officials#editing-the-site-no-coding-needed') How editing works
 
     script(src='/js/bootstrap.bundle.min.js')
+    //- Editing. A reader's browser answers two storage lookups here and loads
+    //- nothing. An author's — signed in with Netlify Identity, handed a token
+    //- by /admin/, or opening a page with ?cms-edit — loads the ContentTools
+    //- in-page editor (static/cms/boot.js).
+    //-
+    //- The emails Netlify Identity sends (invites, password resets, email
+    //- confirmations) link to the site root with a token in the fragment, and
+    //- only the Identity widget knows what to do with one, so those load it.
+    script(type='module').
+      const signedIn = (() => {
+        try {
+          return localStorage.getItem('gotrue.user') !== null
+            || sessionStorage.getItem('content-tools:github-token') !== null;
+        } catch {
+          return false;
+        }
+      })();
+      if (signedIn || new URLSearchParams(location.search).has('cms-edit') || location.hash.includes('cms-token=')) {
+        import('/cms/boot.js');
+      } else if (/(confirmation|invite|recovery|email_change)_token=/.test(location.hash)) {
+        document.head.append(Object.assign(document.createElement('script'), { src: '/js/netlify-identity-widget.js' }));
+      }

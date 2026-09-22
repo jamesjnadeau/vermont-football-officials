@@ -61,8 +61,12 @@ export default async function (eleventyConfig) {
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addPlugin(purgeCssPlugin, {
       config: {
-        content: ["./_site/**/*.html", "./_site/**/*.js"],
-        css: ["./_site/**/*.css"],
+        // Only the site's own scripts and stylesheet. The ContentTools editor
+        // under /cms/ ships its own CSS, for markup the site never renders,
+        // so purging it would strip it bare — and its 1 MB of scripts would
+        // only keep Bootstrap rules alive by mentioning common words.
+        content: ["./_site/**/*.html", "./_site/js/**/*.js"],
+        css: ["./_site/styles/**/*.css"],
         // `card-only` marks a block that belongs on the printed card and not
         // on the page, so by definition no built HTML uses it until an editor
         // reaches for it — and by then the rule that hides it would be gone.

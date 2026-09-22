@@ -17,6 +17,12 @@ const html = readdirSync(SITE, { recursive: true })
 
 const read = (f) => readFileSync(f, 'utf8');
 
+// Pages built on layouts/main.pug, i.e. every page but /admin/: the
+// ContentTools editor takes the whole viewport, so it has no site nav or
+// footer of its own.
+const ADMIN = path.join(SITE, 'admin', 'index.html');
+const layoutPages = html.filter((f) => f !== ADMIN);
+
 // Pages under /information/ that are not articles: a redirect stub holding a
 // URL that moved. It is in no collection, so it has no topics to link back to
 // and carries none of an article's furniture. Read from the source rather than
@@ -208,7 +214,7 @@ test('no generated card is committed under uploads/', () => {
 // The footer is how a non-technical editor finds the CMS at all, so it has to
 // be on every page, not just the articles.
 test('every page has a footer linking into Pages CMS', () => {
-  const bad = html.filter((f) => {
+  const bad = layoutPages.filter((f) => {
     const footer = read(f).match(/<footer[^>]*>[\s\S]*?<\/footer>/);
     return !footer || !footer[0].includes('href="https://app.pagescms.org/');
   });
@@ -228,6 +234,17 @@ test('article and quiz pages deep-link to their own source file', () => {
   assert.deepEqual(bad.map(([url]) => url), []);
 });
 
+// The in-page editor (static/cms-config.yml `body:`) replaces the children of
+// one element, so every article and quiz needs exactly one, holding the body.
+test('article and quiz pages mark their body for the in-page editor', () => {
+  const pages = [...html]
+    .filter((f) => /^_site\/(information|quizzes)\/[^/]+\/index\.html$/.test(f))
+    .filter((f) => /<article>/.test(read(f)));
+  assert.ok(pages.length > 30, `only ${pages.length} article and quiz pages found`);
+  const bad = pages.filter((f) => (read(f).match(/\sdata-cms-body[\s=>]/g) ?? []).length !== 1);
+  assert.deepEqual(bad, []);
+});
+
 // --- /draw: built, and in the navigation --------------------------------
 // The drawing page was originally unlisted, reachable only by a direct or
 // shared link. It is now in the main nav as "Play Draw", so the check that
@@ -241,7 +258,7 @@ test('the build wrote /draw', () => {
 });
 
 test('every page links /draw from the main navigation', () => {
-  const bad = html.filter((f) => {
+  const bad = layoutPages.filter((f) => {
     const nav = read(f).match(/<nav [^>]*id="header"[^>]*>[\s\S]*?<\/nav>/);
     return !nav || !/href="\/draw\/"/.test(nav[0]);
   });
@@ -268,7 +285,7 @@ test('/draw appears in no collection listing', () => {
 // The site is served from the domain root, so a build that stamped a path
 // prefix onto the CSS and JS URLs would 404 both and leave the page unstyled.
 test('asset URLs are root-relative, with no project path prefix', () => {
-  const bad = html.filter((f) => {
+  const bad = layoutPages.filter((f) => {
     const s = read(f);
     return (
       !s.includes('href="/styles/main.css"') ||

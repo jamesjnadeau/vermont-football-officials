@@ -1,0 +1,44 @@
+---
+title: Edit Content | Vermont Football Officials
+description: Sign in and edit the site's articles and quizzes.
+eleventyExcludeFromCollections: true
+permalink: /admin/
+layout: false
+---
+//- The ContentTools management screens: lists of articles and quizzes,
+//- drafts under review, and new entries. The words themselves are edited on
+//- the published page (static/cms/boot.js); pressing Edit here opens it.
+//-
+//- Its own page rather than the site layout, because the editor takes the
+//- whole viewport. Authors sign in with Netlify Identity, and every change
+//- is saved as a pull request through Netlify's Git Gateway — see
+//- static/cms/netlify.js.
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width,initial-scale=1.0')
+    meta(name='robots' content='noindex')
+    title= title
+    meta(name='description' content=description)
+    link(rel='icon' type='image/svg+xml' href='/images/vermont.svg')
+    style.
+      html, body { height: 100%; }
+      body { margin: 0; }
+      content-tools-cms { display: block; height: 100%; }
+  body
+    noscript
+      p Editing the site needs JavaScript enabled.
+    //- Created from script rather than written as a tag, so `auth` and
+    //- `fetch` are assigned after the element is defined and before it
+    //- loads its config — a property set on a not-yet-upgraded element
+    //- would hide the element's own accessor instead of calling it.
+    script(type='module').
+      import '/cms/shell.js';
+      import { IdentityAdapter, gatewayFetch } from '/cms/netlify.js';
+
+      const cms = document.createElement('content-tools-cms');
+      cms.auth = new IdentityAdapter();
+      cms.fetch = gatewayFetch();
+      cms.setAttribute('config', '/cms-config.yml');
+      document.body.append(cms);

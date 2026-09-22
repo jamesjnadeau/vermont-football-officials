@@ -27,4 +27,6 @@ article
         | Verify against the current rule book and VPA guide before teaching this as authoritative.
       else
         | Association practice and mechanics change. Confirm with the association before relying on this.
-  | !{content}
+  //- The rendered markdown, alone in its own element: the in-page editor
+  //- (static/cms-config.yml `body:`) replaces this element's children.
+  div(data-cms-body) !{content}

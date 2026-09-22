@@ -1,0 +1,71 @@
+# Configuration for ContentTools (https://github.com/jamesjnadeau/ContentTools),
+# the editor at /admin/ and on the site's own pages. Served at /cms-config.yml,
+# which is where the in-page editor looks for it.
+#
+# Authors sign in with Netlify Identity and ContentTools talks to GitHub
+# through Netlify's Git Gateway (static/cms/netlify.js), so `repo` and
+# `branch` here must match the repository the gateway is connected to in the
+# Netlify dashboard. Every save opens a pull request against `branch`;
+# nothing reaches the live site until somebody merges it.
+#
+# The collections mirror .pages.yml, which configures Pages CMS — the other
+# editor, which commits straight to master. Keep the two in step: a test
+# asserts they name the same collections and folders.
+
+backend:
+  repo: jamesjnadeau/vermont-football-officials
+  branch: master
+
+# Where each entry is published, so an entry's Edit button can open its own
+# page and the page can find its body. To make drafts (entries whose pull
+# request is not merged yet) editable on their deploy preview, add the
+# site's Netlify deploy-preview URL here, e.g.
+#   preview: https://deploy-preview-{{pr}}--<netlify-site-name>.netlify.app
+site: {}
+
+media:
+  folder: static/uploads
+  publicPath: /uploads
+
+collections:
+  - name: information
+    label: Information
+    folder: content/information
+    create: true
+    page: /information/{{slug}}/
+    # The element around the rendered markdown in layouts/article.pug. The
+    # editor replaces its children, so it must hold the body and nothing else.
+    body: '[data-cms-body]'
+    fields:
+      - {name: title, label: Title, widget: string, required: true}
+      - {name: date, label: Publish date, widget: date, required: true}
+      - {name: ruleYear, label: NFHS rules year, widget: number}
+      - {name: source, label: Built from, widget: string}
+      - {name: verified, label: Last checked on, widget: date}
+      - name: cardSize
+        label: Printed card size
+        widget: select
+        options: [letter, index]
+      # One topic per line. The names must match content/_data/topics.json
+      # exactly; a pull request with a typo fails its tests.
+      - {name: tags, label: Topics, widget: list, required: true}
+
+  - name: quizzes
+    label: Quizzes
+    folder: content/quizzes
+    create: true
+    # Every quiz file starts `quiz-`, as in .pages.yml.
+    slug: quiz-{{slug}}
+    page: /quizzes/{{slug}}/
+    body: '[data-cms-body]'
+    fields:
+      - {name: title, label: Title, widget: string, required: true}
+      - {name: date, label: Publish date, widget: date, required: true}
+      - {name: description, label: Focus, widget: string, required: true}
+      - {name: source, label: Source, widget: string, required: true}
+      - name: level
+        label: Level
+        widget: select
+        options: [Rookie, Intermediate, Expert]
+      - {name: questions, label: Number of questions, widget: number, required: true}
+      - {name: scope, label: Scope note, widget: string}

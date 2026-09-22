@@ -19,4 +19,5 @@ article
       dd.col-sm-9= scope
   p
     a.btn.btn-outline-secondary.btn-sm(href='/quizzes/') &larr; All quizzes
-  | !{content}
+  //- See layouts/article.pug.
+  div(data-cms-body) !{content}
