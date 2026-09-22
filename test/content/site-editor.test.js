@@ -129,3 +129,23 @@ test('serializeCardNote keeps the note on one line', () => {
   assert.equal(serializeCardNote('card-omit', '\n    Hello\n    <a href="/x">there</a>\n'), '<p class="card-omit">Hello <a href="/x">there</a></p>');
   assert.throws(() => serializeCardNote('card-maybe', 'x'));
 });
+
+import { existsSync } from 'node:fs';
+import { SIGNALS } from '../../static/cms/site/signals.js';
+import { OUT as SIGNALS_OUT, render as renderSignals } from '../../tools/content-tools/signals.mjs';
+
+// The signal dialog offers exactly these, with this wording, so it has to
+// follow all-signals-listed-and-diagrammed.md when that page changes.
+test('static/cms/site/signals.js matches the all-signals page', () => {
+  assert.equal(readFileSync(SIGNALS_OUT, 'utf8'), renderSignals());
+});
+
+test('the signal manifest covers every signal drawing, once', () => {
+  const svgs = readdirSync('static/images/official-signals').filter((f) => f.endsWith('.svg')).map((f) => `/images/official-signals/${f}`).sort();
+  assert.equal(SIGNALS.length, 47);
+  assert.deepEqual(SIGNALS.map((s) => s.src).sort(), svgs);
+  for (const s of SIGNALS) {
+    assert.ok(existsSync(`static${s.src}`), s.src);
+    assert.ok(s.alt && s.caption, s.src);
+  }
+});
