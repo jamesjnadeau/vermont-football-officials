@@ -52,9 +52,9 @@ passthrough-copied (Node-only) — never in `lib/field/` or the rest of
 
 ## No path prefix, anywhere in this page
 
-The site is served from the custom domain named in `static/CNAME`, so it
-builds at the domain root and every URL in the templates is root-relative
-with no prefix — see the top-level README's "Deploying" section.
+The site is served from its own custom domain (configured in Netlify, see the
+top-level README's "Deploying" section), so it builds at the domain root and
+every URL in the templates is root-relative with no prefix.
 `content/draw/index.pug` loads its script as
 `script(src='/js/draw/app.js')`, and every import inside `lib/draw/` and
 `lib/field/` is a relative specifier, not a root-absolute one — so the page
@@ -66,10 +66,9 @@ root-relative URLs Eleventy renders into HTML, such as that `script` tag, if a
 a URL that only ever exists inside a `.js` file, because it works on rendered
 HTML output, not on JavaScript. Nothing under `lib/draw/` or `lib/field/`
 should ever gain one (there is none today), because introducing it would
-silently break this page the day the site moves off its own domain and back
-onto the GitHub Pages project path — and nothing catches that until the
-deploy that does it, since neither `html-validate` nor the link checker reads
-inside a script.
+silently break this page the day the site moves off its own domain and onto a
+project subpath — and nothing catches that until the deploy that does it,
+since neither `html-validate` nor the link checker reads inside a script.
 
 ## The board's data
 
