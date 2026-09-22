@@ -17,8 +17,6 @@ makes a crew look sharp. For crews of five and crews of four.
 **[Download the Between Downs Crew Card (PDF, 2 pages)](/cards/between-downs-crew-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
-**Associations amend these** — check Vermont's guidance before teaching it.
-
 In every diagram below the white marker is the Referee, and the press box is on
 the right. What is the Referee's alone appears under "Referee — white hat only."
 
@@ -30,22 +28,16 @@ the right. What is the Referee's alone appears under "Referee — white hat only
 
 ### Everyone on this
 
-- See leather. One short strong blast — not more than two, rarely three. Whistle
-  on every play, no exceptions.
-- Keep it in your mouth until the threat of a dead-ball foul is gone. Carry it in
-  your hand during the down, not your mouth.
-- Swivel your head twice and watch the players in your area instead of staring at
-  the spot. Then raise an arm immediately for the next down.
-- Repeated blasts mean a foul away from the play, a timeout, a coach who needs
-  you, or opponents talking to each other.
+- See someone down. One short strong blast — not more than two, rarely three. Whistle on if there is a safety concern. See a helmet off, immediate whistle.
+- Keep it in your mouth until the threat of a dead-ball foul is gone. Carry it in your hand during the down, not your mouth.
+- Swivel your head twice and watch the players in your area instead of staring at the spot. Then raise an arm immediately for the next down.
+- Repeated blasts mean a foul away from the play, a timeout, a coach who needs you, or opponents talking to each other.
 
 ### Referee — white hat only
 
-- You rarely need to run to the dead-ball spot at or beyond the line. Stay back,
-  swivel twice, then get to your position.
+- You rarely need to run to the dead-ball spot at or beyond the line. Stay back, look around the whole scene, then get to your position.
 - Mark the ball ready only when you are clear of all players.
-- On a loose ball, stop the clock after two seconds if nobody has signalled
-  possession.
+- On a loose ball, stop the clock after two seconds if nobody has signalled possession.
 
 ### Who does what
 
