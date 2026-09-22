@@ -101,3 +101,31 @@ test('serializeGrid refuses an empty or unknown grid', () => {
   assert.throws(() => serializeGrid({ kind: 'signal-grid', captioned: false, items: [] }));
   assert.throws(() => serializeGrid({ kind: 'carousel', items: [{ src: '/a', alt: 'a' }] }));
 });
+
+import { VISIBILITY, parseCardNote, serializeCardNote } from '../../static/cms/site/card-note.js';
+
+test('the flag football note is a card note, links and all', () => {
+  const line = readFileSync(`${INFO}/flag-football-vs-high-school.md`, 'utf8').split('\n').find((l) => l.startsWith('<p class="card-omit">'));
+  const note = parseCardNote(line);
+  assert.equal(note.visibility, 'card-omit');
+  assert.match(note.inner, /<a href="\/information\/flag-football-rules\/">Youth Flag Football Rules<\/a>/);
+  assert.equal(serializeCardNote(note.visibility, note.inner), line);
+});
+
+test('card notes: both classes, and only simple inline markup', () => {
+  assert.deepEqual(VISIBILITY, ['card-omit', 'card-only']);
+  assert.deepEqual(parseCardNote('<p class="card-only">Only <b>here</b>.</p>'), { visibility: 'card-only', inner: 'Only <b>here</b>.' });
+  for (const raw of [
+    '<p class="lead">Lead</p>',
+    '<p class="card-omit extra">Two classes</p>',
+    '<p class="card-omit">A <div>block</div></p>',
+    '<p class="card-omit"><img src="x" onerror="alert(1)"></p>',
+    '<p class="card-omit"><a href="javascript:alert(1)">x</a></p>',
+    '<p class="card-omit"><a href="/" onclick="x()">x</a></p>',
+  ]) assert.equal(parseCardNote(raw), null, raw);
+});
+
+test('serializeCardNote keeps the note on one line', () => {
+  assert.equal(serializeCardNote('card-omit', '\n    Hello\n    <a href="/x">there</a>\n'), '<p class="card-omit">Hello <a href="/x">there</a></p>');
+  assert.throws(() => serializeCardNote('card-maybe', 'x'));
+});
