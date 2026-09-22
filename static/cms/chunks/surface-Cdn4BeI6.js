@@ -1,7 +1,8 @@
 import { E as EntrySession, m as mediaUploader, R as REGION, h, b as buildFields, f as fieldsNeeded, d as describeError, N as NOTHING_TO_SAVE, l as loadConfig, a as declaredEntry, e as entryForUrl, c as adapterFor, C as CmsRepo, M as MediaStore, g as formState, i as findCollection, j as ConfigError, k as bodySelector } from "./session-DtVHditX.js";
 import { M as MarkdownDocument } from "./index-DsHjQCH9.js";
-import { T as TAG_NAME, C as ContentToolsEditor } from "./content-tools-editor-wKXO4w5c.js";
+import { T as TAG_NAME, L as LIBRARY, C as ContentToolsEditor } from "./content-tools-editor-CbCd3mmt.js";
 import { s as sheetFactory } from "./constructed-styles-BEftmh6P.js";
+import { d as allowTools, P as PROFILES } from "./remove-PhizlUwg.js";
 const EDITOR_REGIONS = "[data-editable]";
 class EditingSession extends EntrySession {
   constructor(options) {
@@ -155,7 +156,7 @@ class EditingSession extends EntrySession {
     }
   }
 }
-const editCSS = "/**\n * Local replacements for the handful of Bourbon mixins this project used.\n *\n * Bourbon existed here only to emit vendor prefixes for transform, transition,\n * animation, @keyframes, box-sizing, user-select and hyphens. All of those are\n * unprefixed standards in every browser this library targets, so the mixins are\n * gone and the properties are written directly -- except where a prefix is still\n * genuinely required (see `user-select` and `hyphens` below).\n */\n/**\n * The one Bourbon *variable* this project used, inlined verbatim from\n * bourbon/addons/_font-family.scss so the `pre` styling is unchanged.\n */\n/**\n * Contain floats. The one Bourbon mixin worth keeping as a mixin, since it\n * expands to a pseudo-element rather than a single declaration.\n */\n/**\n * Safari still requires -webkit-user-select; the -moz- and -ms- forms are long\n * obsolete and are not emitted.\n */\n/**\n * Safari still requires -webkit-hyphens.\n */\n/**\n * All widgets are assigned a z-index equal to or higher than this setting. The\n * base z-index can be adjusted to overcome z-index conflicts with existing page\n * elements.\n */\n/**\n * For UI widgets that appear on the page (as opposed to appearing in front of a\n * modal screen) we define a base background colour.\n */\n/**\n * The colour used when casting shadows for widgets that appear to float.\n */\n/**\n * Confirm, Cancel and Edit actions are common amoung the various ui components.\n * Each action has an associated/common colour.\n */\n/**\n * Tooltips feature for a number of components, their base appearance is\n * configured using a mixin.\n */\n/**\n * The following settings relate to typography. For portability we limit the the\n * use of fonts to:\n *\n * - `type-icon` used for displaying icons (courtesy of http://icomoon.io).\n * - `type-text` used for displaying text.\n *\n */\n:host {\n  all: initial;\n  display: block;\n  position: fixed;\n  right: 12px;\n  top: 12px;\n  z-index: 9998;\n}\n\n.ct-edit {\n  background: white;\n  border: 1px solid #d0d0d0;\n  border-radius: 2px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);\n  box-sizing: border-box;\n  color: #646464;\n  max-width: 320px;\n  padding: 8px 10px;\n  font-family: arial, sans-serif;\n  font-size: 14px;\n  line-height: 18px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-edit__title {\n  color: black;\n  font-weight: bold;\n  margin: 0;\n}\n\n.ct-edit__hint {\n  margin: 4px 0 0;\n}\n\n.ct-edit--broken .ct-edit__title,\n.ct-edit--no-body .ct-edit__title,\n.ct-edit--failed .ct-edit__title {\n  color: #e74c3c;\n}\n\n.ct-edit--loading .ct-edit__hint {\n  font-style: italic;\n}\n\n.ct-edit {\n  max-height: calc(100vh - 24px);\n  overflow-y: auto;\n}\n\n.ct-edit__actions {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n  margin: 8px 0 0;\n}\n.ct-edit__actions[hidden][hidden] {\n  display: none;\n}\n\n.ct-edit__submit,\n.ct-edit__details {\n  background: #f7f7f7;\n  border: 1px solid #d0d0d0;\n  border-radius: 2px;\n  color: #646464;\n  cursor: pointer;\n  padding: 4px 10px;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.ct-edit__submit:focus-visible,\n.ct-edit__details:focus-visible {\n  outline: 2px solid #2980b9;\n  outline-offset: 1px;\n}\n.ct-edit__submit:disabled,\n.ct-edit__details:disabled {\n  color: #646464;\n  cursor: default;\n}\n\n.ct-edit__submit {\n  background: #2980b9;\n  border-color: #2980b9;\n  color: white;\n  font-weight: bold;\n}\n.ct-edit__submit:disabled {\n  background: #f7f7f7;\n  border-color: #d0d0d0;\n}\n\n.ct-edit__pull {\n  color: #2980b9;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-edit__note {\n  margin: 8px 0 0;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.ct-edit__note:empty {\n  display: none;\n}\n\n.ct-edit__note--refused {\n  color: #e74c3c;\n}\n\n.ct-edit__conflict {\n  box-sizing: border-box;\n  border: 1px solid #d0d0d0;\n  display: block;\n  height: 120px;\n  margin: 8px 0 0;\n  resize: vertical;\n  white-space: pre;\n  width: 100%;\n}\n.ct-edit__conflict[hidden][hidden] {\n  display: none;\n}\n\n.ct-fields {\n  border-top: 1px solid #d0d0d0;\n  margin: 8px 0 0;\n  padding: 8px 0 0;\n}\n\n.ct-fields__heading {\n  display: none;\n}\n\n.ct-fields__note {\n  color: #646464;\n  margin: 0 0 8px;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.ct-fields__note:empty {\n  display: none;\n}\n\n.ct-fields__rows {\n  display: grid;\n  gap: 8px;\n}\n\n.ct-field__label {\n  display: block;\n  font-weight: bold;\n  margin: 0 0 2px;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-field__input {\n  border: 1px solid #d0d0d0;\n  box-sizing: border-box;\n  display: block;\n  padding: 4px 6px;\n  width: 100%;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.ct-field__input:focus-visible {\n  outline: 2px solid #2980b9;\n  outline-offset: -1px;\n}\n.ct-field__input[readonly] {\n  background: #f7f7f7;\n  color: #646464;\n}\n\ntextarea.ct-field__input {\n  min-height: 48px;\n  resize: vertical;\n}\n\n.ct-field__check {\n  display: block;\n  margin: 2px 0;\n}\n\n.ct-field__hint {\n  color: #646464;\n  margin: 2px 0 0;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  line-height: 15px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-field__error {\n  color: #e74c3c;\n  margin: 2px 0 0;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  line-height: 15px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-field__preview {\n  border: 1px solid #d0d0d0;\n  display: block;\n  margin: 4px 0 0;\n  max-height: 80px;\n  max-width: 100%;\n}";
+const editCSS = "/**\n * Local replacements for the handful of Bourbon mixins this project used.\n *\n * Bourbon existed here only to emit vendor prefixes for transform, transition,\n * animation, @keyframes, box-sizing, user-select and hyphens. All of those are\n * unprefixed standards in every browser this library targets, so the mixins are\n * gone and the properties are written directly -- except where a prefix is still\n * genuinely required (see `user-select` and `hyphens` below).\n */\n/**\n * The one Bourbon *variable* this project used, inlined verbatim from\n * bourbon/addons/_font-family.scss so the `pre` styling is unchanged.\n */\n/**\n * Contain floats. The one Bourbon mixin worth keeping as a mixin, since it\n * expands to a pseudo-element rather than a single declaration.\n */\n/**\n * Safari still requires -webkit-user-select; the -moz- and -ms- forms are long\n * obsolete and are not emitted.\n */\n/**\n * Safari still requires -webkit-hyphens.\n */\n/**\n * All widgets are assigned a z-index equal to or higher than this setting. The\n * base z-index can be adjusted to overcome z-index conflicts with existing page\n * elements.\n */\n/**\n * For UI widgets that appear on the page (as opposed to appearing in front of a\n * modal screen) we define a base background colour.\n */\n/**\n * The colour used when casting shadows for widgets that appear to float.\n */\n/**\n * Confirm, Cancel and Edit actions are common amoung the various ui components.\n * Each action has an associated/common colour.\n */\n/**\n * Tooltips feature for a number of components, their base appearance is\n * configured using a mixin.\n */\n/**\n * The following settings relate to typography. For portability we limit the the\n * use of fonts to:\n *\n * - `type-icon` used for displaying icons (courtesy of http://icomoon.io).\n * - `type-text` used for displaying text.\n *\n */\n:host {\n  all: initial;\n  display: block;\n  position: fixed;\n  right: 12px;\n  top: 12px;\n  width: max-content;\n  z-index: 9998;\n}\n\n.ct-edit {\n  background: rgba(233, 233, 233, 0.9);\n  border: 1px solid rgba(255, 255, 255, 0.5);\n  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);\n  box-sizing: border-box;\n  color: #646464;\n  display: flex;\n  flex-direction: column;\n  max-width: min(320px, 100vw - 24px);\n  padding: 0 8px 8px;\n  font-family: arial, sans-serif;\n  font-size: 14px;\n  line-height: 18px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-edit--dragging {\n  opacity: 0.5;\n}\n\n.ct-grip {\n  cursor: move;\n  flex: none;\n  font-size: 0;\n  padding: 8px 0;\n  text-align: center;\n  touch-action: none;\n  user-select: none;\n}\n\n.ct-grip__bump {\n  background: rgba(70, 70, 70, 0.15);\n  border-radius: 12px;\n  display: inline-block;\n  height: 12px;\n  margin-left: 12px;\n  width: 12px;\n}\n.ct-grip__bump:first-child {\n  margin-left: 0;\n}\n\n.ct-edit__title {\n  color: black;\n  font-weight: bold;\n  margin: 0;\n}\n\n.ct-edit__hint {\n  margin: 4px 0 0;\n}\n\n.ct-edit--broken .ct-edit__title,\n.ct-edit--no-body .ct-edit__title,\n.ct-edit--failed .ct-edit__title {\n  color: #e74c3c;\n}\n\n.ct-edit--loading .ct-edit__hint {\n  font-style: italic;\n}\n\n.ct-edit {\n  max-height: calc(100vh - 24px);\n}\n\n.ct-edit__body {\n  min-height: 0;\n  overflow-y: auto;\n}\n\n.ct-edit__actions {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n  margin: 8px 0 0;\n}\n.ct-edit__actions[hidden][hidden] {\n  display: none;\n}\n\n.ct-edit__submit,\n.ct-edit__details {\n  background: #f7f7f7;\n  border: 1px solid #d0d0d0;\n  border-radius: 2px;\n  color: #646464;\n  cursor: pointer;\n  padding: 4px 10px;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.ct-edit__submit:focus-visible,\n.ct-edit__details:focus-visible {\n  outline: 2px solid #2980b9;\n  outline-offset: 1px;\n}\n.ct-edit__submit:disabled,\n.ct-edit__details:disabled {\n  color: #646464;\n  cursor: default;\n}\n\n.ct-edit__submit {\n  background: #2980b9;\n  border-color: #2980b9;\n  color: white;\n  font-weight: bold;\n}\n.ct-edit__submit:disabled {\n  background: #f7f7f7;\n  border-color: #d0d0d0;\n}\n\n.ct-edit__pull {\n  color: #2980b9;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-edit__note {\n  margin: 8px 0 0;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.ct-edit__note:empty {\n  display: none;\n}\n\n.ct-edit__note--refused {\n  color: #e74c3c;\n}\n\n.ct-edit__conflict {\n  box-sizing: border-box;\n  border: 1px solid #d0d0d0;\n  display: block;\n  height: 120px;\n  margin: 8px 0 0;\n  resize: vertical;\n  white-space: pre;\n  width: 100%;\n}\n.ct-edit__conflict[hidden][hidden] {\n  display: none;\n}\n\n.ct-fields {\n  border-top: 1px solid #d0d0d0;\n  margin: 8px 0 0;\n  padding: 8px 0 0;\n}\n\n.ct-fields__heading {\n  display: none;\n}\n\n.ct-fields__note {\n  color: #646464;\n  margin: 0 0 8px;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.ct-fields__note:empty {\n  display: none;\n}\n\n.ct-fields__rows {\n  display: grid;\n  gap: 8px;\n}\n\n.ct-field__label {\n  display: block;\n  font-weight: bold;\n  margin: 0 0 2px;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-field__input {\n  border: 1px solid #d0d0d0;\n  box-sizing: border-box;\n  display: block;\n  padding: 4px 6px;\n  width: 100%;\n  font-family: arial, sans-serif;\n  font-size: 12px;\n  line-height: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.ct-field__input:focus-visible {\n  outline: 2px solid #2980b9;\n  outline-offset: -1px;\n}\n.ct-field__input[readonly] {\n  background: #f7f7f7;\n  color: #646464;\n}\n\ntextarea.ct-field__input {\n  min-height: 48px;\n  resize: vertical;\n}\n\n.ct-field__check {\n  display: block;\n  margin: 2px 0;\n}\n\n.ct-field__hint {\n  color: #646464;\n  margin: 2px 0 0;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  line-height: 15px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-field__error {\n  color: #e74c3c;\n  margin: 2px 0 0;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  line-height: 15px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ct-field__preview {\n  border: 1px solid #d0d0d0;\n  display: block;\n  margin: 4px 0 0;\n  max-height: 80px;\n  max-width: 100%;\n}";
 const BAR_TAG = "content-tools-edit-bar";
 const barStyleSheet = sheetFactory(editCSS);
 const FIELDS_ID = "ct-edit-fields";
@@ -196,13 +197,25 @@ function buildBar(doc, handlers) {
   });
   const fields = buildFields(doc);
   fields.node.setAttribute("id", FIELDS_ID);
-  const panel = h(
+  const grip = h(
     doc,
     "div",
-    { class: "ct-edit", role: "status" },
+    { class: "ct-edit__grip ct-grip", "aria-hidden": "true" },
+    [0, 1, 2].map(() => h(doc, "div", { class: "ct-grip__bump" }))
+  );
+  const body = h(
+    doc,
+    "div",
+    { class: "ct-edit__body" },
     [title, hint, actions, note, fields.node, conflict]
   );
+  const panel = h(doc, "div", { class: "ct-edit", role: "status" }, [grip, body]);
   root.appendChild(panel);
+  let held = false;
+  const drag = draggable(node, grip, (dragging) => {
+    held = dragging;
+    panel.classList.toggle("ct-edit--dragging", dragging);
+  });
   return {
     node,
     values: () => fields.values(),
@@ -210,6 +223,7 @@ function buildBar(doc, handlers) {
     update(state) {
       const said2 = describe(state);
       panel.className = `ct-edit ct-edit--${state.kind}`;
+      panel.classList.toggle("ct-edit--dragging", held);
       title.textContent = said2.title;
       hint.textContent = said2.hint;
       const editing = state.kind === "editing" ? state : null;
@@ -240,8 +254,83 @@ function buildBar(doc, handlers) {
       pull.hidden = open_pull === null;
       conflict.value = (save == null ? void 0 : save.conflict) ?? "";
       conflict.hidden = !(save == null ? void 0 : save.conflict);
+      drag.contain();
     }
   };
+}
+const BAR_POSITION_KEY = "ct-edit-bar-position";
+function storage(view) {
+  try {
+    return view ? view.localStorage : null;
+  } catch {
+    return null;
+  }
+}
+function draggable(node, grip, dragging) {
+  var _a;
+  const doc = node.ownerDocument;
+  const view = doc.defaultView;
+  let offset = null;
+  const place = (left, top) => {
+    node.style.left = `${Math.round(left)}px`;
+    node.style.top = `${Math.round(top)}px`;
+    node.style.right = "auto";
+  };
+  const contain = () => {
+    if (!node.isConnected || !node.style.left) {
+      return;
+    }
+    const width = doc.documentElement.clientWidth;
+    const height = doc.documentElement.clientHeight;
+    const rect = node.getBoundingClientRect();
+    place(
+      Math.max(0, Math.min(rect.left, width - rect.width)),
+      Math.max(0, Math.min(rect.top, height - rect.height))
+    );
+  };
+  const onMove = (ev) => {
+    if (offset) {
+      place(ev.clientX - offset.x, ev.clientY - offset.y);
+    }
+  };
+  const onStop = () => {
+    var _a2;
+    if (!offset) {
+      return;
+    }
+    offset = null;
+    doc.removeEventListener("pointermove", onMove);
+    doc.removeEventListener("pointerup", onStop);
+    doc.removeEventListener("pointercancel", onStop);
+    dragging(false);
+    contain();
+    try {
+      (_a2 = storage(view)) == null ? void 0 : _a2.setItem(
+        BAR_POSITION_KEY,
+        `${parseInt(node.style.left)},${parseInt(node.style.top)}`
+      );
+    } catch {
+    }
+  };
+  grip.addEventListener("pointerdown", (ev) => {
+    if (ev.button !== 0 || offset) {
+      return;
+    }
+    ev.preventDefault();
+    const rect = node.getBoundingClientRect();
+    offset = { x: ev.clientX - rect.left, y: ev.clientY - rect.top };
+    doc.addEventListener("pointermove", onMove);
+    doc.addEventListener("pointerup", onStop);
+    doc.addEventListener("pointercancel", onStop);
+    dragging(true);
+  });
+  const saved = (_a = storage(view)) == null ? void 0 : _a.getItem(BAR_POSITION_KEY);
+  if (saved && /^\d+,\d+$/.test(saved)) {
+    const [left, top] = saved.split(",").map(Number);
+    place(left, top);
+  }
+  view == null ? void 0 : view.addEventListener("resize", contain);
+  return { contain };
 }
 const SUBMIT_LABEL = "Submit for review";
 function describe(state) {
@@ -396,6 +485,69 @@ class PageEdit {
     };
   }
 }
+const { ContentTools } = LIBRARY;
+const setUp = /* @__PURE__ */ new WeakSet();
+async function extend(editor, extension) {
+  if (extension === null || extension === void 0) {
+    return;
+  }
+  if (typeof extension !== "object") {
+    throw new Error("contentToolsEdit must be an object.");
+  }
+  if (extension.setup !== void 0) {
+    if (typeof extension.setup !== "function") {
+      throw new Error("contentToolsEdit.setup must be a function.");
+    }
+    if (!setUp.has(extension)) {
+      setUp.add(extension);
+      await extension.setup(LIBRARY);
+    }
+  }
+  const allowed = names(extension.allowTools, "contentToolsEdit.allowTools");
+  if (allowed.length) {
+    editor.profile = allowTools(PROFILES[editor.mode], allowed);
+  }
+  let tools = null;
+  if (extension.tools !== void 0) {
+    if (!Array.isArray(extension.tools)) {
+      throw new Error("contentToolsEdit.tools must be an array of arrays of tool names.");
+    }
+    tools = extension.tools.map(
+      (group, i) => names(group, `contentToolsEdit.tools[${i}]`)
+    );
+  } else if (allowed.length) {
+    tools = [...ContentTools.DEFAULT_TOOLS, allowed];
+  }
+  if (tools) {
+    for (const group of tools) {
+      for (const name of group) {
+        try {
+          ContentTools.ToolShelf.fetch(name);
+        } catch {
+          throw new Error(
+            `\`${name}\` is in the toolbox but nothing stowed it on the tool shelf. Stow it in contentToolsEdit.setup.`
+          );
+        }
+      }
+    }
+    editor.tools = tools;
+  }
+  const styles = extension.styles;
+  for (const sheet of Array.isArray(styles) ? styles : [styles]) {
+    if (sheet !== void 0 && sheet !== null) {
+      editor.adoptStyles(sheet);
+    }
+  }
+}
+function names(value, where) {
+  if (value === void 0) {
+    return [];
+  }
+  if (!Array.isArray(value) || !value.every((name) => typeof name === "string")) {
+    throw new Error(`${where} must be an array of tool names.`);
+  }
+  return [...value];
+}
 const DEFAULT_CONFIG_URL = "/cms-config.yml";
 const CONFIG_META = "cms:config";
 const CONTENT_STYLES_MARK = "ct-edit-content-styles";
@@ -478,6 +630,7 @@ async function start(where, bar, config, seen, options) {
     /* THE site's own element, edited where it stands. */
     region: seen.body
   });
+  await extend(session.editor, options.extension);
   where.document.body.appendChild(session.editor);
   const editing = new PageEdit({
     bar,

@@ -1,4 +1,4 @@
-import { D as DocumentRootContext, C as ContentTools, a as ContentEdit, P as PROFILES, f as filterToolGroups } from "./remove-D_MYgiIV.js";
+import { D as DocumentRootContext, C as ContentTools, a as ContentEdit, P as PROFILES, f as filterToolGroups, H as HTMLString } from "./remove-PhizlUwg.js";
 import { s as setRootContext, r as rootContext } from "./root-context-CaKowcmF.js";
 import { s as sheetFactory, l as layered } from "./constructed-styles-BEftmh6P.js";
 class ShadowRootContext extends DocumentRootContext {
@@ -361,6 +361,7 @@ function restoreGlobals(snapshot) {
 function setStylePalette(styles) {
   ContentTools.StylePalette._styles = styles ? styles.slice() : [];
 }
+const LIBRARY = Object.freeze({ ContentTools, ContentEdit, HTMLString });
 const TAG_NAME = "content-tools-editor";
 const DEFAULT_REGIONS = "[data-editable], [data-fixture]";
 const DEFAULT_NAMING_PROP = "data-name";
@@ -370,7 +371,8 @@ const SETTABLE_PROPERTIES = [
   "fixtureTest",
   "stylePalette",
   "imageUploader",
-  "regionElements"
+  "regionElements",
+  "profile"
 ];
 class ContentToolsEditor extends HTMLElement {
   static get observedAttributes() {
@@ -401,6 +403,7 @@ class ContentToolsEditor extends HTMLElement {
     this._adopted = [];
     this._fallbackStyles = [];
     this._tools = null;
+    this._profile = null;
     this._regionElements = null;
     this._fixtureTest = null;
     this._stylePalette = void 0;
@@ -511,8 +514,25 @@ class ContentToolsEditor extends HTMLElement {
     this._tools = value;
     if (this._booted && value) {
       this._app.toolbox().tools(
-        filterToolGroups(PROFILES[this.mode], value)
+        filterToolGroups(this._activeProfile(), value)
       );
+    }
+  }
+  /**
+   * A profile in place of the one `mode` names; null lets `mode` decide.
+   * How a custom tool gets past markdown mode -- see allowTools(). Read
+   * by init(), so a change reboots the element, as `mode` does.
+   */
+  get profile() {
+    return this._profile;
+  }
+  set profile(value) {
+    if (value === this._profile) {
+      return;
+    }
+    this._profile = value;
+    if (this._booted) {
+      this._reboot("profile");
     }
   }
   /**
@@ -767,7 +787,7 @@ class ContentToolsEditor extends HTMLElement {
       uiLang: this.uiLang
     });
     this._app = ContentTools.EditorApp.get();
-    this._app.profile(PROFILES[this.mode]);
+    this._app.profile(this._activeProfile());
     this._app.init(
       this._regionSource(),
       this.namingProp,
@@ -776,7 +796,7 @@ class ContentToolsEditor extends HTMLElement {
     );
     if (this._tools) {
       this._app.toolbox().tools(
-        filterToolGroups(PROFILES[this.mode], this._tools)
+        filterToolGroups(this._activeProfile(), this._tools)
       );
     }
     this._bridge = createEventBridge(this._app, this);
@@ -826,6 +846,10 @@ class ContentToolsEditor extends HTMLElement {
     releaseLease(this);
     this.removeAttribute("busy");
     this.setAttribute("state", "dormant");
+  }
+  /** The profile in force: the one assigned, or the one `mode` names. */
+  _activeProfile() {
+    return this._profile ?? PROFILES[this.mode];
   }
   _reboot(attribute) {
     if (this._app && this._app.isEditing()) {
@@ -970,6 +994,7 @@ class ContentToolsEditor extends HTMLElement {
 }
 export {
   ContentToolsEditor as C,
+  LIBRARY as L,
   ShadowRootContext as S,
   TAG_NAME as T
 };

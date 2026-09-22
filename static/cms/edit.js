@@ -26,13 +26,16 @@ function claim(where) {
   }
   return true;
 }
-async function boot(where) {
+async function boot(where, extension) {
   const handed = claim(where);
   if (!handed && !wanted(where)) {
     return;
   }
-  const { open } = await import("./chunks/surface-DWOt341E.js");
-  await open(where, { contentStyles: CONTENT_STYLES });
+  const { open } = await import("./chunks/surface-Cdn4BeI6.js");
+  await open(where, {
+    contentStyles: CONTENT_STYLES,
+    extension: extension ?? where.contentToolsEdit
+  });
 }
 const CONTENT_STYLES = new URL("./content-tools-content.min.css", import.meta.url).href;
 if (typeof window !== "undefined") {

@@ -5427,6 +5427,27 @@ function filterToolGroups(profile, groups) {
   }
   return filtered;
 }
+function allowTools(profile, names) {
+  if (!profile.tools) {
+    return profile;
+  }
+  const tools = new Set(profile.tools);
+  const added = [];
+  for (const name of names) {
+    if (!tools.has(name)) {
+      tools.add(name);
+      added.push(name);
+    }
+  }
+  if (!added.length) {
+    return profile;
+  }
+  return Object.freeze({
+    ...profile,
+    name: `${profile.name}+${added.join("+")}`,
+    tools: Object.freeze(tools)
+  });
+}
 function restrictedAttributes(profile, tagName, present, alreadyRestricted) {
   if (!profile.attributes) {
     return alreadyRestricted.slice();
@@ -10186,6 +10207,7 @@ export {
   ContentEdit as a,
   ContentSelect as b,
   HTML_PROFILE as c,
+  allowTools as d,
   filterToolGroups as f,
   restrictedAttributes as r
 };
