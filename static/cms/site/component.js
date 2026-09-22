@@ -79,7 +79,10 @@ export function defineComponent(ContentEdit) {
     static fromDOMElement(domElement) {
       const attributes = this.getDOMElementAttributes(domElement);
       try {
-        return new this('div', attributes, JSON.parse(domElement.getAttribute(MODEL_ATTRIBUTE)));
+        const model = JSON.parse(domElement.getAttribute(MODEL_ATTRIBUTE));
+        // Throws unless the model really describes a grid.
+        serializeGrid(model);
+        return new this('div', attributes, model);
       } catch {
         // Unreadable model: keep the block exactly as it was in the file.
         return new ContentEdit.Static('div', { ...attributes, 'data-ce-tag': 'static' }, domElement.innerHTML);

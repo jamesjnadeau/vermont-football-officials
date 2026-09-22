@@ -453,6 +453,26 @@ test('the visibility buttons only mark a paragraph that can stay a card note', a
   await page.close();
 });
 
+// A grid's model rides along in its HTML; one that doesn't describe a grid
+// (hand-edited, or from an older editor) is kept as the block it was rather
+// than crashing the region.
+test('a grid whose model is unreadable is kept as a static block', async () => {
+  const { page, errors } = await openPage();
+  const out = await page.evaluate(async () => {
+    const { LIBRARY: { ContentEdit } } = await import('/cms/site/vendor.js');
+    const { defineComponent } = await import('/cms/site/component.js');
+    defineComponent(ContentEdit);
+    const host = document.getElementById('region');
+    host.innerHTML = ['null', '{"kind":"carousel","items":[{"src":"/a","alt":"a"}]}', '{"kind":"figure-grid","items":[]}', 'not json']
+      .map((m) => `<div data-ce-tag="site-component" data-site-model="${m.replace(/"/g, '&quot;')}"><p>kept</p></div>`).join('');
+    return new ContentEdit.Region(host).children.map((el) => [el.type(), el.html()]);
+  });
+  assert.deepEqual(out.map(([type]) => type), ['Static', 'Static', 'Static', 'Static']);
+  for (const [, html] of out) assert.match(html, /<p>kept<\/p>/);
+  assert.deepEqual(errors, []);
+  await page.close();
+});
+
 // The one end-to-end check: the real <content-tools-editor> element, set
 // up from siteExtension the way edit.js sets it up (profile, tools and
 // styles before it is connected), a real click on a paragraph and on the
