@@ -42,12 +42,14 @@ function signalItem(item, captioned) {
   ].join('\n');
 }
 
+// A figure's caption is optional: a blank one is left out altogether rather
+// than written as an empty figcaption.
 function figureItem(item) {
   return [
     '  <div class="col-sm-6">',
     '    <figure class="figure d-block">',
     `      ${img(item.src, item.alt, FIGURE_IMG)}`,
-    `      ${caption(item.caption)}`,
+    ...(item.caption ? [`      ${caption(item.caption)}`] : []),
     '    </figure>',
     '  </div>',
   ].join('\n');

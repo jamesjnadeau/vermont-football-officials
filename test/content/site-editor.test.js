@@ -85,6 +85,15 @@ test('a figure grid', () => {
   assert.deepEqual(parseGrid(raw), model);
 });
 
+// The dialog marks a caption "Optional": leaving it blank means no caption
+// at all, not an empty one the page would still lay out.
+test('a figure grid leaves out the caption of a picture that has none', () => {
+  const raw = serializeGrid({ kind: 'figure-grid', items: [{ src: '/r/pass.svg', alt: 'Pass', caption: '' }] });
+  assert.doesNotMatch(raw, /figcaption/);
+  assert.equal(raw.split('\n')[3], '      <img src="/r/pass.svg" alt="Pass" class="figure-img img-fluid border rounded p-2 bg-white">');
+  assert.equal(raw.split('\n')[4], '    </figure>');
+});
+
 test('anything that is not exactly a house grid is left alone', () => {
   const good = serializeGrid({ kind: 'figure-grid', items: [{ src: '/a.svg', alt: 'A', caption: 'A' }] });
   for (const raw of [
