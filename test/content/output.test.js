@@ -228,16 +228,6 @@ test('article and quiz pages deep-link to their own source file', () => {
   assert.deepEqual(bad.map(([url]) => url), []);
 });
 
-// --- Custom domain ------------------------------------------------------
-// GitHub Pages reads the custom domain out of the deployed artifact. Without
-// this file the domain setting can be dropped on a deploy, and the site falls
-// back to the project path — which is what the asset URLs below assume is gone.
-test('the build ships a CNAME for the custom domain', () => {
-  const cname = path.join(SITE, 'CNAME');
-  assert.ok(existsSync(cname), 'missing _site/CNAME');
-  assert.equal(read(cname).trim(), 'www.vermont-football-officials.org');
-});
-
 // --- /draw: built, and in the navigation --------------------------------
 // The drawing page was originally unlisted, reachable only by a direct or
 // shared link. It is now in the main nav as "Play Draw", so the check that

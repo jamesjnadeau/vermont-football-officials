@@ -98,11 +98,12 @@ Sass), following the architecture of
 
 ## Deploying
 
-Every push to `master` runs `.github/workflows/deploy.yml`: `npm test`, then
-an Eleventy build, then a deploy. Nothing manual to do.
+Hosted on [Netlify](https://www.netlify.com/), configured by `netlify.toml`
+(build command `npm run build`, publish directory `_site`). Every push to
+`master` triggers a Netlify build and deploy; `.github/workflows/test.yml`
+runs `npm test` on every push and pull request as a CI gate, but does not
+deploy anything.
 
-The site is served from the custom domain in `static/CNAME`, so it builds at
-the domain root with no path prefix and every URL in the templates stays
-root-relative (`/styles/main.css`). Moving the site back to the GitHub Pages
-project path would mean building with `--pathprefix=/vermont-football-officials/`
-(`HtmlBasePlugin` rewrites the URLs) and dropping the CNAME.
+The site is served from its own custom domain (configured in the Netlify
+dashboard), so it builds at the domain root with no path prefix and every URL
+in the templates stays root-relative (`/styles/main.css`).

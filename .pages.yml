@@ -1,7 +1,7 @@
 # Configuration for Pages CMS (https://pagescms.org) — the editing UI at
 # https://app.pagescms.org. Editors log in with GitHub, pick this repo, and
 # get a simple form + rich-text editor. Saving commits to master, which
-# triggers the GitHub Pages deploy.
+# triggers the Netlify deploy.
 
 media:
   input: static/uploads

@@ -36,9 +36,28 @@ html(lang='en')
         .col-md
           p.mb-1 Vermont Football Officials
           p.mb-0.small.text-secondary Spot something out of date? Anyone with access can fix it — no coding needed.
+          p.mb-0.mt-2.small
+            a.link-secondary#netlify-identity-link(href='#' data-netlify-identity-menu) Sign in
         .col-md-auto.text-md-end
           a.btn.btn-outline-secondary.btn-sm(href=editLink.url)= editLink.label
           p.mb-0.mt-2.small.text-secondary
             a.link-secondary(href='https://github.com/jamesjnadeau/vermont-football-officials#editing-the-site-no-coding-needed') How editing works
 
     script(src='/js/bootstrap.bundle.min.js')
+    script(src='/js/netlify-identity-widget.js')
+    script.
+      // Opens the Netlify Identity modal instead of navigating away — the
+      // widget has no standalone "sign in page" of its own.
+      if (window.netlifyIdentity) {
+        var identityLink = document.getElementById('netlify-identity-link');
+        identityLink.addEventListener('click', function (event) {
+          event.preventDefault();
+          netlifyIdentity.open('login');
+        });
+        netlifyIdentity.on('login', function (user) {
+          identityLink.textContent = 'Signed in as ' + (user.user_metadata.full_name || user.email);
+        });
+        netlifyIdentity.on('logout', function () {
+          identityLink.textContent = 'Sign in';
+        });
+      }

@@ -14,8 +14,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pugPlugin);
 
   // Rewrites root-relative URLs in the output HTML when --pathprefix is set.
-  // CI passes --pathprefix=/vermont-football-officials/ for GitHub Pages;
-  // local builds use the default "/" and are unaffected.
+  // Nothing passes --pathprefix today — the site builds at its custom
+  // domain's root — but this stays available if that ever changes.
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
   // Global default layout + metadata; pages override via front matter.
@@ -33,6 +33,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ static: "/" });
   eleventyConfig.addPassthroughCopy({
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js": "js/bootstrap.bundle.min.js",
+    "node_modules/netlify-identity-widget/build/netlify-identity-widget.js": "js/netlify-identity-widget.js",
   });
 
   // Serve lib/field/ and lib/draw/ to the browser at matching subpaths. The
