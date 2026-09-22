@@ -20,13 +20,47 @@
 // session creates gets this, and nothing in the vendored files changes.
 import { MarkdownDocument, blockToHTML } from './vendor.js';
 import { parseGrid, serializeGrid } from './grids.js';
-import { VISIBILITY, parseCardNote, serializeCardNote } from './card-note.js';
+import { VISIBILITY, INLINE, parseCardNote, serializeCardNote } from './card-note.js';
 import { COMPONENT_TAG, MODEL_ATTRIBUTE, componentHTML } from './component.js';
 import { sanitize } from './sanitize.js';
 
 const INSTALLED = Symbol.for('vfo.site-document');
 const SLOTS = Symbol('vfo.site-slots');
 const MARKER = 'data-ct-md';
+// Schemes an `<a href>` inside a card note may use, once the browser has
+// already decoded it. Everything else — including a scheme spelled out with
+// entities, which the regex checks in parseCardNote never see decoded — has
+// to fall through to the sanitized, read-only preview instead.
+const SAFE_HREF_SCHEMES = new Set(['http', 'https', 'mailto']);
+
+function safeHref(value) {
+  const url = value.trim();
+  if (url === '' || url.startsWith('#') || url.startsWith('/') || url.startsWith('.')) return true;
+  const scheme = /^([a-zA-Z][a-zA-Z0-9+.-]*):/.exec(url)?.[1].toLowerCase();
+  return !scheme || SAFE_HREF_SCHEMES.has(scheme);
+}
+
+// parseCardNote's tag and `on`-attribute checks are regex over the raw
+// source: cheap, but not a security boundary — `<b/onmouseover=x>` slips
+// past a regex that requires whitespace before `on`, and an entity-encoded
+// `&#106;avascript:` slips past a literal string match. This re-parses the
+// same markup with the browser's own HTML parser, whose attribute values
+// come back already decoded, and checks the actual element tree: every tag
+// must be one of card-note.js's inline tags, and the only attribute allowed
+// anywhere is `href` on `<a>`, restricted to a safe scheme, a relative
+// reference, or `#`. Anything else means the note isn't shown as an editable
+// paragraph at all — it falls through to the sanitized, read-only preview.
+function safeInlineMarkup(html) {
+  const template = document.createElement('template');
+  template.innerHTML = html;
+  for (const el of template.content.querySelectorAll('*')) {
+    if (!INLINE.has(el.localName)) return false;
+    for (const { name, value } of el.attributes) {
+      if (!(el.localName === 'a' && name === 'href' && safeHref(value))) return false;
+    }
+  }
+  return true;
+}
 
 export function renderBlock(entry, source) {
   if (entry.editable || entry.node.type !== 'html') return null;
@@ -34,7 +68,7 @@ export function renderBlock(entry, source) {
   const grid = parseGrid(raw);
   if (grid) return componentHTML(grid, entry.index);
   const note = parseCardNote(raw);
-  if (note) return `<p class="${note.visibility}" ${MARKER}="${entry.index}">${note.inner}</p>`;
+  if (note && safeInlineMarkup(note.inner)) return `<p class="${note.visibility}" ${MARKER}="${entry.index}">${note.inner}</p>`;
   return `<div data-ce-tag="static" class="ct-md-static ct-site-preview" ${MARKER}="${entry.index}">${sanitize(raw)}</div>`;
 }
 

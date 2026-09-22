@@ -13,7 +13,10 @@
 
 export const VISIBILITY = ['card-omit', 'card-only'];
 const NOTE = /^<p class="(card-omit|card-only)">([\s\S]*)<\/p>$/;
-const INLINE = new Set(['a', 'b', 'strong', 'i', 'em', 'code', 'br']);
+// Exported so document.js can re-check a note's inner markup with the
+// browser's own HTML parser (see its safeInlineMarkup) — the regex checks
+// below are a cheap first pass, not the security boundary.
+export const INLINE = new Set(['a', 'b', 'strong', 'i', 'em', 'code', 'br']);
 
 export function parseCardNote(raw) {
   const m = NOTE.exec(raw.trim());

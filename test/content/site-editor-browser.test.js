@@ -109,6 +109,14 @@ test('grids, card notes and other HTML render as themselves, not as source', asy
   await page.close();
 });
 
+// Two more bypasses beyond plain event-handler attributes and `javascript:`
+// literals: a card note whose inner markup carries a hostile attribute that
+// parseCardNote's regex misses (a `/`-separated attribute, an entity-encoded
+// scheme), and an SVG SMIL element (`<set>`) that rewrites a safe attribute
+// to an unsafe one after the element is already in the page. Both must be
+// caught before anything reaches the live region, since a synthetic event
+// still runs an attribute-based handler even though it can't trigger real
+// navigation.
 test('a live preview never runs what the file contains', async () => {
   const { page, errors } = await openPage();
   const html = await page.evaluate(async () => {
@@ -121,14 +129,20 @@ test('a live preview never runs what the file contains', async () => {
       '',
       '<figure onmouseover="window.__pwned=6" data-ce-tag="text"><img src="data:text/html,x" style="color:red"></figure>',
       '',
+      '<p class="card-omit"><b/onmouseover=window.__pwned=7>x</b> <a href="&#106;avascript:window.__pwned=8">y</a></p>',
+      '',
+      '<div><svg><a href="#"><set attributeName="href" to="javascript:window.__pwned=9" begin="0s"/>z</a></svg></div>',
+      '',
     ].join('\n');
     const out = h.regionHTML(h.MarkdownDocument.parse(hostile).toHTML());
     await new Promise((r) => setTimeout(r, 200));
     for (const el of document.querySelectorAll('#region *')) el.dispatchEvent(new MouseEvent('mouseover'));
+    for (const el of document.querySelectorAll('#region *')) el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+    await new Promise((r) => setTimeout(r, 100));
     return out;
   });
   assert.equal(await page.evaluate(() => window.__pwned), undefined);
-  assert.doesNotMatch(html, /onerror|onmouseover|<script|javascript:|srcdoc|data:text/);
+  assert.doesNotMatch(html, /onerror|onmouseover|<script|javascript:|srcdoc|data:text|attributename/i);
   assert.match(html, /class="ct-md-static ct-site-preview"/);
   assert.deepEqual(errors, []);
   await page.close();
