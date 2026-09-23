@@ -91,7 +91,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   <div class="col-sm-6">
     <figure class="figure d-block">
       <img src="/images/position-cards/referee/punt.svg" alt="Punt — the whole crew of five, with the Referee highlighted as the white marker two to three yards behind the punter and three to five yards to his kicking-leg side." class="figure-img img-fluid border rounded p-2 bg-white">
-      <figcaption class="figure-caption">Punt</figcaption>
+      <figcaption class="figure-caption">Punt - Left footed kicker</figcaption>
     </figure>
   </div>
 </div>
