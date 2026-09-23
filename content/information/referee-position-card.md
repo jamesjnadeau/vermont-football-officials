@@ -41,13 +41,9 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- **Passing-arm side** of the quarterback, 10 to 12 yards deep, at least as wide
-  as the tight end. While A is in the huddle, 10–15 from the line and 5 wide of
-  it, where the clock operator can see you.
-- Count A with the Umpire — 11, held two seconds. A's substitutions in and out of
-  the huddle are yours.
-- Mark the ball ready after A is behind their line, and on a first down only
-  after the down box is set. Back-pedal to your spot first.
+- **Passing-arm side** of the quarterback, 10 to 12 yards deep, at least as wide as the tight end. While A is in the huddle, 10–15 from the line and 5 wide of it, where the clock operator can see you.
+- Count A with the Umpire — 11, held two seconds. A's substitutions in and out of the huddle are yours. Punch up to confirm with umpire.
+- Mark the ball ready after A is behind their line, and on a first down only after the down box is set. Back-pedal to your spot first.
 
 ### Your keys
 
