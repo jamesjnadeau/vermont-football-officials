@@ -1,4 +1,4 @@
-import { D as DocumentRootContext, C as ContentTools, a as ContentEdit, P as PROFILES, f as filterToolGroups, H as HTMLString } from "./remove-PhizlUwg.js";
+import { D as DocumentRootContext, C as ContentTools, a as ContentEdit, P as PROFILES, f as filterToolGroups, H as HTMLString } from "./remove-CMg4qlyt.js";
 import { s as setRootContext, r as rootContext } from "./root-context-CaKowcmF.js";
 import { s as sheetFactory, l as layered } from "./constructed-styles-BEftmh6P.js";
 class ShadowRootContext extends DocumentRootContext {
@@ -372,7 +372,8 @@ const SETTABLE_PROPERTIES = [
   "stylePalette",
   "imageUploader",
   "regionElements",
-  "profile"
+  "profile",
+  "unsavedTest"
 ];
 class ContentToolsEditor extends HTMLElement {
   static get observedAttributes() {
@@ -406,6 +407,7 @@ class ContentToolsEditor extends HTMLElement {
     this._profile = null;
     this._regionElements = null;
     this._fixtureTest = null;
+    this._unsavedTest = null;
     this._stylePalette = void 0;
     this._imageUploader = void 0;
     this._deferredTeardown = () => {
@@ -574,6 +576,16 @@ class ContentToolsEditor extends HTMLElement {
     this._fixtureTest = value;
     if (this._booted) {
       this._app._fixtureTest = value || DEFAULT_FIXTURE_TEST;
+    }
+  }
+  /** Whether leaving would lose work, for a host that saves. */
+  get unsavedTest() {
+    return this._unsavedTest;
+  }
+  set unsavedTest(value) {
+    this._unsavedTest = value;
+    if (this._booted) {
+      this._app._unsavedTest = value;
     }
   }
   get stylePalette() {
@@ -799,6 +811,7 @@ class ContentToolsEditor extends HTMLElement {
         filterToolGroups(this._activeProfile(), this._tools)
       );
     }
+    this._app._unsavedTest = this._unsavedTest;
     this._bridge = createEventBridge(this._app, this);
     this._booted = true;
     this.addEventListener("ct-started", this._reflect);

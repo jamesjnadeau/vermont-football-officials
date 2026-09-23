@@ -8095,6 +8095,7 @@ class _EditorApp extends ContentTools.ComponentUI {
     this._namingProp = null;
     this._profile = HTML_PROFILE;
     this._fixtureTest = (domElement) => domElement.hasAttribute("data-fixture");
+    this._unsavedTest = null;
     this._regionQuery = null;
     this._domRegions = null;
     this._regions = {};
@@ -8813,12 +8814,10 @@ class _EditorApp extends ContentTools.ComponentUI {
     rootContext().on("document", "keyup", this._handleHighlightOff);
     rootContext().on("document", "visibilitychange", this._handleVisibility);
     this._handleBeforeUnload = (ev) => {
-      if (this._state === "editing" && ContentTools.CANCEL_MESSAGE) {
-        if (this.history && this.history._snapshotIndex) {
-          const cancelMessage = ContentEdit._(ContentTools.CANCEL_MESSAGE);
-          (ev || rootContext().currentEvent()).returnValue = cancelMessage;
-          return cancelMessage;
-        }
+      if (ContentTools.CANCEL_MESSAGE && this._unsaved()) {
+        const cancelMessage = ContentEdit._(ContentTools.CANCEL_MESSAGE);
+        (ev || rootContext().currentEvent()).returnValue = cancelMessage;
+        return cancelMessage;
       }
     };
     rootContext().on("window", "beforeunload", this._handleBeforeUnload);
@@ -8826,6 +8825,12 @@ class _EditorApp extends ContentTools.ComponentUI {
       return this.destroy();
     };
     return rootContext().on("window", "unload", this._handleUnload);
+  }
+  _unsaved() {
+    if (this._unsavedTest) {
+      return this._unsavedTest();
+    }
+    return this._state === "editing" && Boolean(this.history && this.history._snapshotIndex);
   }
   _allowEmptyRegions(callback) {
     this._emptyRegionsAllowed = true;
