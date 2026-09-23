@@ -2,6 +2,10 @@
 title: Contact Us | Vermont Football Officials
 description: Get in touch with the Vermont Football Officials — questions, or information on becoming an official.
 layout: layouts/main.pug
+# The Pug plugin hands page data to Pug as its options, and this page is
+# rendered as a fragment that never sees the layout's doctype. Naming it here
+# makes Pug write boolean attributes bare (`required`, not `required="required"`).
+doctype: html
 ---
 
 h1 Contact Us
@@ -11,8 +15,27 @@ p
   | If you are thinking about officiating, start with 
   a(href='/information/becoming-an-official/') Becoming a Football Official
   |  — it covers what it costs, what you get paid and what is required. Then
-  |  email us using the address below; that is the first step.
-p
-  | Email us at 
-  a(href='mailto:james.nadeau@gmail.com') james.nadeau@gmail.com
-  |  and we'll get back to you.
+  |  fill out the form below; that is the first step, and we'll get back to you.
+
+//- A Netlify form: Netlify finds it in the built HTML at deploy time and
+//- collects the submissions. `form-name` has to be posted with the fields, and
+//- `bot-field` is a honeypot that only a bot would fill in.
+form.contact-form(name='contact' method='POST' action='/contact/thanks/' data-netlify='true' netlify-honeypot='bot-field')
+  input(type='hidden' name='form-name' value='contact')
+  p.d-none
+    label
+      | Leave this empty: 
+      input(type='text' name='bot-field' tabindex='-1' autocomplete='off')
+  .mb-3
+    label.form-label(for='contact-name') Name
+    input.form-control#contact-name(type='text' name='name' autocomplete='name' required)
+  .mb-3
+    label.form-label(for='contact-email') Email
+    input.form-control#contact-email(type='email' name='email' autocomplete='email' required)
+  .mb-3
+    label.form-label(for='contact-phone') Phone number
+    input.form-control#contact-phone(type='tel' name='phone' autocomplete='tel' required)
+  .mb-3
+    label.form-label(for='contact-message') Why are you interested? #[span.text-muted (optional)]
+    textarea.form-control#contact-message(name='message' rows='4' maxlength='1000')
+  button.btn.btn-dark(type='submit') Send

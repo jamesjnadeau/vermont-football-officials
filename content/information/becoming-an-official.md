@@ -136,4 +136,4 @@ You will not be assigned varsity. You are assigned to the level your mechanics, 
 
 **How do I actually start?**
 
-Through the [contact page](/contact/). One email.
+Through the [contact page](/contact/). One short form.
