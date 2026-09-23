@@ -43,14 +43,10 @@ print at 100% on Letter, two-sided, flip on the long edge.
 
 ### What you do
 
-- Seven yards off the line inside the tight ends, wherever the Referee is. Vary
-  your position laterally, shoulders parallel to the goal line.
-- Count A's eleven with the Referee, and count A's five ineligible linemen and
-  check their numbers.
-- Run: interior line play with the emphasis at the point of attack, then the
-  action on the tackled runner.
-- Pass: quick pass means no time to reach the line. Delayed pass, read the
-  crossing end or the screen behind the linemen, then move up.
+- 7-15 yards off the line inside the tight ends, opposite wherever the Referee is. Vary your position laterally, shoulders parallel to the goal line.
+- Count A's eleven with the Referee, and count A's five ineligible linemen and check their numbers. Punch up to confirm with referee.
+- Run: interior line play with the emphasis at the point of attack, then the action on the tackled runner.
+- Pass: quick pass means no time to reach the line. Delayed pass, read the crossing end or the screen behind the linemen, then move up.
 
 ### Your keys
 
