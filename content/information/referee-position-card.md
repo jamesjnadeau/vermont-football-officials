@@ -18,25 +18,23 @@ on every diagram.
 **[Download the Referee Position Card (PDF, 2 pages)](/cards/referee-position-card.pdf)** —
 print at 100% on Letter, two-sided, flip on the long edge.
 
-**Associations amend these** — check Vermont's guidance before teaching it.
-
 ---
 
 ## Run and pass
 
-*Snap between the –10 and the +10.*
+*Snaps beyond the 10 yard line.*
 
 <div class="row g-3 my-4">
   <div class="col-sm-6">
     <figure class="figure d-block">
       <img src="/images/position-cards/referee/run.svg" alt="Run — the whole crew of five, with the Referee highlighted as the white marker ten to twelve yards behind the line on the quarterback's passing-arm side, at least as wide as the tight end." class="figure-img img-fluid border rounded p-2 bg-white">
-      <figcaption class="figure-caption">Run</figcaption>
+      <figcaption class="figure-caption">Run - Left handed QB</figcaption>
     </figure>
   </div>
   <div class="col-sm-6">
     <figure class="figure d-block">
       <img src="/images/position-cards/referee/pass.svg" alt="Pass — the whole crew of five, with the Referee highlighted as the white marker ten to twelve back on the passing-arm side, holding a ten-yard buffer if the quarterback rolls." class="figure-img img-fluid border rounded p-2 bg-white">
-      <figcaption class="figure-caption">Pass</figcaption>
+      <figcaption class="figure-caption">Pass - Left handed QB</figcaption>
     </figure>
   </div>
 </div>
@@ -93,7 +91,7 @@ print at 100% on Letter, two-sided, flip on the long edge.
   <div class="col-sm-6">
     <figure class="figure d-block">
       <img src="/images/position-cards/referee/punt.svg" alt="Punt — the whole crew of five, with the Referee highlighted as the white marker two to three yards behind the punter and three to five yards to his kicking-leg side." class="figure-img img-fluid border rounded p-2 bg-white">
-      <figcaption class="figure-caption">Punt</figcaption>
+      <figcaption class="figure-caption">Punt - Left footed kicker</figcaption>
     </figure>
   </div>
 </div>
