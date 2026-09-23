@@ -35,8 +35,7 @@ arguments faster than being right does.
 
 ## What to study, in what order
 
-The site has ten reference cards and a rules summary, which is a lot to face
-with no entry point. This is the order that works.
+The site has ten reference cards and a rules summary, which is a lot to face with no entry point. This is the order that we found works.
 
 **1. The rules, in outline — a couple of evenings.**
 Read [Cliff Notes — the NFHS Rules Book](/information/football-rules-summary/)
@@ -54,23 +53,13 @@ whichever spot you are actually assigned. The others —
 [Back Judge](/information/back-judge-position-card/) — are worth reading later
 so you know what your crewmates are doing.
 
-**3. Between downs — an hour, and the highest-value hour on this list.**
-[Between Downs](/information/between-downs-crew-card/) covers what happens after
-the whistle and before the snap. New officials lose the game here, not on
-spectacular plays: getting the ball spotted, the chains set, and everyone ready.
+**3. Between downs — an hour, and could be the highest-value hour on this list.** [Between Downs](/information/between-downs-crew-card/) covers what happens after the whistle and before the snap. New officials lose the game here, not on spectacular plays: getting the ball spotted, the chains set, and everyone ready. These steps make the game go smoothly and quickly. Learn them and your crew will look good.
 
-**4. Run and pass plays — the bulk of what you will see.**
-[Run & Pass Plays](/information/run-pass-plays-crew-card/). Most snaps in most
-games are one of these.
+**4. Run and pass plays — the bulk of what you will see.** [Run & Pass Plays](/information/run-pass-plays-crew-card/). Most snaps in most games are one of these. Where to look, and who does what.
 
-**5. Kicking plays — every game has them and they go wrong fastest.**
-[Kicking Plays](/information/kicking-plays-crew-card/).
+**5. Kicking plays — every game has them and they go wrong fastest.** [Kicking Plays](/information/kicking-plays-crew-card/). 1/3 of the game is kicking plays. Some of the strangest penalty enforcement stem from here. Learning it helps you get it right every time.
 
-**6. The clock, then fouls.**
-[Clock & Timing](/information/clock-timing-crew-card/) and then
-[Fouls & Enforcement](/information/fouls-enforcement-crew-card/). Enforcement
-is the one thing you can genuinely defer — your white hat will walk you through
-it, and you will learn it fastest by watching it happen.
+**6. The clock, then fouls.** [Clock & Timing](/information/clock-timing-crew-card/) and then [Fouls & Enforcement](/information/fouls-enforcement-crew-card/). Enforcement is the one thing you can genuinely defer — your white hat will walk you through it, and you will learn it fastest by watching it happen. Knowing to spot the foul is more important now.
 
 Two more when you have room:
 [7-Man Mechanics](/information/7-man-mechanics/) if you ever work a larger crew,
@@ -94,9 +83,7 @@ activity to build knowledge, not to grade you.
 
 ## Your first game
 
-**Arrive early** — early enough for a full pregame with your crew, not early
-enough to just make kickoff. Ask your white hat when they want you there and
-then beat it.
+**Arrive early** enough for a full pregame with your crew, not early enough to just make kickoff. Ask your white hat when they want you there and then beat it. It's usually 30 minutes early for JV, and 90 minutes for varsity.
 
 **Bring** your uniform, flag, beanbag, whistle, down indicator, a pen, and your
 rule book. Bring a spare of anything small enough to lose.
@@ -133,10 +120,11 @@ the ones who wait to be corrected.
 
 ## Moving up
 
-You are assigned to the level you are ready for. What determines that is your
-knowledge of the mechanics, your knowledge of the rules, and your character on
-the field — not the number of seasons you have served. When you are ready for
-JV, you will be assigned JV; the same is true of varsity.
+You are assigned to the level you are ready for.
+
+What determines that is your knowledge of the mechanics, your knowledge of the rules, and your character on the field, not the number of seasons you have served.
+
+When you are ready for JV, you will be assigned JV; the same is true of varsity.
 
 Playoff assignments lean on seniority, but the association deliberately tries to
 give newer officials playoff experience each year rather than reserving it.
